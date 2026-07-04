@@ -21,16 +21,16 @@ class JournalEntryFactory extends Factory
     {
         return [
             'fiscal_year_id' => null,
-            'entry_number'   => 'JE-'.$this->faker->unique->numerify('######'),
-            'entry_date'     => $this->faker->date(),
+            'entry_number' => 'JE-'.$this->faker->unique->numerify('######'),
+            'entry_date' => $this->faker->date(),
             'reference_type' => JournalEntry::REFERENCE_MANUAL,
-            'reference_id'   => null,
-            'description'    => $this->faker->sentence,
-            'currency_code'  => 'USD',
-            'exchange_rate'  => 1,
-            'status'         => JournalEntry::STATUS_DRAFT,
-            'posted_at'      => null,
-            'created_by'     => null,
+            'reference_id' => null,
+            'description' => $this->faker->sentence,
+            'currency_code' => 'USD',
+            'exchange_rate' => 1,
+            'status' => JournalEntry::STATUS_DRAFT,
+            'posted_at' => null,
+            'created_by' => null,
         ];
     }
 }

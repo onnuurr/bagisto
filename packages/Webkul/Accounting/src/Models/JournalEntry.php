@@ -64,9 +64,9 @@ class JournalEntry extends Model implements JournalEntryContract
      * @var array
      */
     protected $casts = [
-        'entry_date'    => 'date',
+        'entry_date' => 'date',
         'exchange_rate' => 'decimal:6',
-        'posted_at'     => 'datetime',
+        'posted_at' => 'datetime',
     ];
 
     /**

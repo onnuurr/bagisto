@@ -68,7 +68,7 @@ class BalanceSheetController extends Controller
             ->where('type', $type)
             ->map(fn ($account) => [
                 'account' => $account,
-                'amount'  => $this->accountRepository->getBalance($account->id, $asOfDate),
+                'amount' => $this->accountRepository->getBalance($account->id, $asOfDate),
             ])
             ->filter(fn ($row) => (float) $row['amount'] !== 0.0)
             ->values();

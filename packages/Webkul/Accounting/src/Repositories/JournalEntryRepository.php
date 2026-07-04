@@ -57,16 +57,16 @@ class JournalEntryRepository extends Repository
 
             $journalEntry = $this->model->create([
                 'fiscal_year_id' => $fiscalYearId,
-                'entry_number'   => $this->generateEntryNumber(),
-                'entry_date'     => $data['entry_date'],
+                'entry_number' => $this->generateEntryNumber(),
+                'entry_date' => $data['entry_date'],
                 'reference_type' => $data['reference_type'] ?? JournalEntry::REFERENCE_MANUAL,
-                'reference_id'   => $data['reference_id'] ?? null,
-                'description'    => $data['description'] ?? null,
-                'currency_code'  => $data['currency_code'] ?? core()->getBaseCurrencyCode(),
-                'exchange_rate'  => $exchangeRate,
-                'status'         => $data['status'] ?? JournalEntry::STATUS_DRAFT,
-                'posted_at'      => ($data['status'] ?? null) === JournalEntry::STATUS_POSTED ? now() : null,
-                'created_by'     => $data['created_by'] ?? null,
+                'reference_id' => $data['reference_id'] ?? null,
+                'description' => $data['description'] ?? null,
+                'currency_code' => $data['currency_code'] ?? core()->getBaseCurrencyCode(),
+                'exchange_rate' => $exchangeRate,
+                'status' => $data['status'] ?? JournalEntry::STATUS_DRAFT,
+                'posted_at' => ($data['status'] ?? null) === JournalEntry::STATUS_POSTED ? now() : null,
+                'created_by' => $data['created_by'] ?? null,
             ]);
 
             foreach ($lines as $line) {
@@ -75,10 +75,10 @@ class JournalEntryRepository extends Repository
                 $credit = round((float) ($line['credit'] ?? 0), 4);
 
                 $journalEntry->lines()->create([
-                    'account_id'  => $line['account_id'],
-                    'debit'       => $debit,
-                    'credit'      => $credit,
-                    'base_debit'  => round($debit * $exchangeRate, 4),
+                    'account_id' => $line['account_id'],
+                    'debit' => $debit,
+                    'credit' => $credit,
+                    'base_debit' => round($debit * $exchangeRate, 4),
                     'base_credit' => round($credit * $exchangeRate, 4),
                     'description' => $line['description'] ?? null,
                 ]);
@@ -100,7 +100,7 @@ class JournalEntryRepository extends Repository
         }
 
         $journalEntry->update([
-            'status'    => JournalEntry::STATUS_POSTED,
+            'status' => JournalEntry::STATUS_POSTED,
             'posted_at' => now(),
         ]);
 

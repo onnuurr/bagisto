@@ -57,7 +57,7 @@ class IncomeStatementController extends Controller
             ->where('type', $type)
             ->map(fn ($account) => [
                 'account' => $account,
-                'amount'  => $this->accountRepository->getMovement($account->id, $startDate, $endDate),
+                'amount' => $this->accountRepository->getMovement($account->id, $startDate, $endDate),
             ])
             ->filter(fn ($row) => (float) $row['amount'] !== 0.0)
             ->values();

@@ -3226,7 +3226,6 @@ return [
             'index' => [
                 'title' => 'Chart of Accounts',
                 'create-btn' => 'Create Account',
-
                 'datagrid' => [
                     'id' => 'ID',
                     'code' => 'Code',
@@ -3241,7 +3240,6 @@ return [
                     'delete' => 'Delete',
                 ],
             ],
-
             'create' => [
                 'title' => 'Create Account',
                 'back-btn' => 'Back',
@@ -3256,7 +3254,6 @@ return [
                 'status' => 'Status',
                 'description' => 'Description',
             ],
-
             'edit' => [
                 'title' => 'Edit Account',
                 'back-btn' => 'Back',
@@ -3271,7 +3268,6 @@ return [
                 'status' => 'Status',
                 'description' => 'Description',
             ],
-
             'types' => [
                 'asset' => 'Asset',
                 'liability' => 'Liability',
@@ -3279,19 +3275,16 @@ return [
                 'revenue' => 'Revenue',
                 'expense' => 'Expense',
             ],
-
             'create-success' => 'Account created successfully.',
             'update-success' => 'Account updated successfully.',
             'delete-success' => 'Account deleted successfully.',
             'system-account-error' => 'This is a protected system account and cannot be deleted.',
             'in-use-error' => 'This account has child accounts or journal entries and cannot be deleted.',
         ],
-
         'journal-entries' => [
             'index' => [
                 'title' => 'Journal Entries',
                 'create-btn' => 'Create Journal Entry',
-
                 'datagrid' => [
                     'id' => 'ID',
                     'entry-number' => 'Entry Number',
@@ -3303,7 +3296,6 @@ return [
                     'view' => 'View',
                 ],
             ],
-
             'create' => [
                 'title' => 'Create Journal Entry',
                 'back-btn' => 'Back',
@@ -3320,7 +3312,6 @@ return [
                 'select-account' => 'Select Account',
                 'add-line' => 'Add Line',
             ],
-
             'view' => [
                 'back-btn' => 'Back',
                 'post-btn' => 'Post',
@@ -3336,36 +3327,30 @@ return [
                 'credit' => 'Credit',
                 'total' => 'Total',
             ],
-
             'statuses' => [
                 'draft' => 'Draft',
                 'posted' => 'Posted',
                 'void' => 'Void',
             ],
-
             'reference-types' => [
                 'manual' => 'Manual',
                 'invoice' => 'Invoice',
                 'refund' => 'Refund',
             ],
-
             'auto-post' => [
                 'invoice' => 'Auto-posted for invoice :invoice',
                 'payment' => 'Auto-posted payment for invoice :invoice',
                 'refund' => 'Auto-posted for refund #:refund',
             ],
-
             'errors' => [
                 'unbalanced-entry' => 'The journal entry is not balanced. Total debits must equal total credits.',
                 'only-draft-can-be-posted' => 'Only draft journal entries can be posted.',
                 'only-posted-can-be-voided' => 'Only posted journal entries can be voided.',
             ],
-
             'create-success' => 'Journal entry created successfully.',
             'post-success' => 'Journal entry posted successfully.',
             'void-success' => 'Journal entry voided successfully.',
         ],
-
         'ledger' => [
             'index' => [
                 'title' => 'Ledger',
@@ -3385,12 +3370,10 @@ return [
                 'no-transactions' => 'No transactions found for the selected period.',
             ],
         ],
-
         'fiscal-years' => [
             'index' => [
                 'title' => 'Fiscal Years',
                 'create-btn' => 'Create Fiscal Year',
-
                 'datagrid' => [
                     'id' => 'ID',
                     'code' => 'Code',
@@ -3400,7 +3383,6 @@ return [
                     'close' => 'Close',
                 ],
             ],
-
             'create' => [
                 'title' => 'Create Fiscal Year',
                 'back-btn' => 'Back',
@@ -3410,16 +3392,13 @@ return [
                 'start-date' => 'Start Date',
                 'end-date' => 'End Date',
             ],
-
             'statuses' => [
                 'open' => 'Open',
                 'closed' => 'Closed',
             ],
-
             'create-success' => 'Fiscal year created successfully.',
             'close-success' => 'Fiscal year closed successfully.',
         ],
-
         'settings' => [
             'edit' => [
                 'title' => 'Accounting Settings',
@@ -3435,10 +3414,8 @@ return [
                 'tax-payable-account' => 'Tax Payable Account',
                 'not-mapped' => 'Not Mapped',
             ],
-
             'update-success' => 'Accounting settings updated successfully.',
         ],
-
         'reports' => [
             'trial-balance' => [
                 'title' => 'Trial Balance',
@@ -3450,7 +3427,6 @@ return [
                 'credit' => 'Credit',
                 'total' => 'Total',
             ],
-
             'income-statement' => [
                 'title' => 'Income Statement',
                 'start-date' => 'Start Date',
@@ -3462,7 +3438,6 @@ return [
                 'total-expense' => 'Total Expense',
                 'net-income' => 'Net Income',
             ],
-
             'balance-sheet' => [
                 'title' => 'Balance Sheet',
                 'as-of-date' => 'As of Date',

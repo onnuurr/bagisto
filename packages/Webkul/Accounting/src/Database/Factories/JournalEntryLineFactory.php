@@ -22,9 +22,9 @@ class JournalEntryLineFactory extends Factory
         $amount = $this->faker->randomFloat(4, 10, 1000);
 
         return [
-            'debit'       => $amount,
-            'credit'      => 0,
-            'base_debit'  => $amount,
+            'debit' => $amount,
+            'credit' => 0,
+            'base_debit' => $amount,
             'base_credit' => 0,
             'description' => $this->faker->sentence,
         ];

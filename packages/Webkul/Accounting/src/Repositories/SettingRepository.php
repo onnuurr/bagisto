@@ -24,7 +24,7 @@ class SettingRepository extends Repository
     /**
      * Get a setting value by name.
      */
-    public function get(string $name, $default = null)
+    public function getValue(string $name, $default = null)
     {
         if (static::$cache === null) {
             static::$cache = $this->model->pluck('value', 'name')->all();
@@ -36,7 +36,7 @@ class SettingRepository extends Repository
     /**
      * Set (create or update) a setting value by name.
      */
-    public function set(string $name, $value): void
+    public function setValue(string $name, $value): void
     {
         $this->model->updateOrCreate(['name' => $name], ['value' => $value]);
 

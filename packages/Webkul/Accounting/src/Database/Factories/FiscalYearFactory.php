@@ -22,10 +22,10 @@ class FiscalYearFactory extends Factory
         $year = $this->faker->year();
 
         return [
-            'code'       => 'FY'.$year,
+            'code' => 'FY'.$year,
             'start_date' => $year.'-01-01',
-            'end_date'   => $year.'-12-31',
-            'status'     => FiscalYear::STATUS_OPEN,
+            'end_date' => $year.'-12-31',
+            'status' => FiscalYear::STATUS_OPEN,
         ];
     }
 }

@@ -52,23 +52,23 @@ class JournalEntryController extends Controller
     public function store(): RedirectResponse
     {
         $this->validate(request(), [
-            'entry_date'          => 'required|date',
-            'description'         => 'nullable|string',
-            'lines'               => 'required|array|min:2',
-            'lines.*.account_id'  => 'required|integer|exists:accounting_accounts,id',
-            'lines.*.debit'       => 'nullable|numeric|min:0',
-            'lines.*.credit'      => 'nullable|numeric|min:0',
+            'entry_date' => 'required|date',
+            'description' => 'nullable|string',
+            'lines' => 'required|array|min:2',
+            'lines.*.account_id' => 'required|integer|exists:accounting_accounts,id',
+            'lines.*.debit' => 'nullable|numeric|min:0',
+            'lines.*.credit' => 'nullable|numeric|min:0',
             'lines.*.description' => 'nullable|string',
         ]);
 
         try {
             $journalEntry = $this->journalEntryRepository->create([
-                'entry_date'     => request('entry_date'),
-                'description'    => request('description'),
-                'currency_code'  => core()->getBaseCurrencyCode(),
-                'status'         => request('action') === 'post' ? 'posted' : 'draft',
-                'created_by'     => auth()->guard('admin')->id(),
-                'lines'          => request('lines'),
+                'entry_date' => request('entry_date'),
+                'description' => request('description'),
+                'currency_code' => core()->getBaseCurrencyCode(),
+                'status' => request('action') === 'post' ? 'posted' : 'draft',
+                'created_by' => auth()->guard('admin')->id(),
+                'lines' => request('lines'),
             ]);
         } catch (\Exception $e) {
             session()->flash('error', $e->getMessage());

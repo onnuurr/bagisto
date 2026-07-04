@@ -52,10 +52,10 @@ class AccountController extends Controller
     public function store(): RedirectResponse
     {
         $this->validate(request(), [
-            'code'            => 'required|string|unique:accounting_accounts,code',
-            'name'            => 'required|string',
-            'type'            => 'required|in:'.implode(',', array_keys($this->types())),
-            'parent_id'       => 'nullable|integer|exists:accounting_accounts,id',
+            'code' => 'required|string|unique:accounting_accounts,code',
+            'name' => 'required|string',
+            'type' => 'required|in:'.implode(',', array_keys($this->types())),
+            'parent_id' => 'nullable|integer|exists:accounting_accounts,id',
             'opening_balance' => 'nullable|numeric',
         ]);
 
@@ -94,10 +94,10 @@ class AccountController extends Controller
     public function update(int $id): RedirectResponse
     {
         $this->validate(request(), [
-            'code'            => 'required|string|unique:accounting_accounts,code,'.$id,
-            'name'            => 'required|string',
-            'type'            => 'required|in:'.implode(',', array_keys($this->types())),
-            'parent_id'       => 'nullable|integer|exists:accounting_accounts,id|not_in:'.$id,
+            'code' => 'required|string|unique:accounting_accounts,code,'.$id,
+            'name' => 'required|string',
+            'type' => 'required|in:'.implode(',', array_keys($this->types())),
+            'parent_id' => 'nullable|integer|exists:accounting_accounts,id|not_in:'.$id,
             'opening_balance' => 'nullable|numeric',
         ]);
 
@@ -165,11 +165,11 @@ class AccountController extends Controller
     protected function types(): array
     {
         return [
-            Account::TYPE_ASSET     => trans('admin::app.accounting.accounts.types.asset'),
+            Account::TYPE_ASSET => trans('admin::app.accounting.accounts.types.asset'),
             Account::TYPE_LIABILITY => trans('admin::app.accounting.accounts.types.liability'),
-            Account::TYPE_EQUITY    => trans('admin::app.accounting.accounts.types.equity'),
-            Account::TYPE_REVENUE   => trans('admin::app.accounting.accounts.types.revenue'),
-            Account::TYPE_EXPENSE   => trans('admin::app.accounting.accounts.types.expense'),
+            Account::TYPE_EQUITY => trans('admin::app.accounting.accounts.types.equity'),
+            Account::TYPE_REVENUE => trans('admin::app.accounting.accounts.types.revenue'),
+            Account::TYPE_EXPENSE => trans('admin::app.accounting.accounts.types.expense'),
         ];
     }
 }

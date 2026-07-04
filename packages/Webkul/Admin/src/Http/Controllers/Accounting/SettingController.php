@@ -43,7 +43,7 @@ class SettingController extends Controller
         $accounts = $this->accountRepository->getActiveAccounts();
 
         $settings = collect($this->mappings)->mapWithKeys(
-            fn ($mapping) => [$mapping => $this->settingRepository->get($mapping)]
+            fn ($mapping) => [$mapping => $this->settingRepository->getValue($mapping)]
         );
 
         return view('admin::accounting.settings.edit', compact('accounts', 'settings'));
@@ -59,7 +59,7 @@ class SettingController extends Controller
         )->all());
 
         foreach ($this->mappings as $mapping) {
-            $this->settingRepository->set($mapping, request($mapping));
+            $this->settingRepository->setValue($mapping, request($mapping));
         }
 
         session()->flash('success', trans('admin::app.accounting.settings.update-success'));

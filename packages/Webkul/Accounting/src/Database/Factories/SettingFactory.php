@@ -20,7 +20,7 @@ class SettingFactory extends Factory
     public function definition(): array
     {
         return [
-            'name'  => $this->faker->unique->word(),
+            'name' => $this->faker->unique->word(),
             'value' => $this->faker->word(),
         ];
     }

@@ -57,8 +57,8 @@ class Account extends Model implements AccountContract
      */
     protected $casts = [
         'opening_balance' => 'decimal:4',
-        'is_system'        => 'boolean',
-        'is_active'        => 'boolean',
+        'is_system' => 'boolean',
+        'is_active' => 'boolean',
     ];
 
     /**

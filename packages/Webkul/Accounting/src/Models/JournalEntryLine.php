@@ -41,9 +41,9 @@ class JournalEntryLine extends Model implements JournalEntryLineContract
      * @var array
      */
     protected $casts = [
-        'debit'       => 'decimal:4',
-        'credit'      => 'decimal:4',
-        'base_debit'  => 'decimal:4',
+        'debit' => 'decimal:4',
+        'credit' => 'decimal:4',
+        'base_debit' => 'decimal:4',
         'base_credit' => 'decimal:4',
     ];
 

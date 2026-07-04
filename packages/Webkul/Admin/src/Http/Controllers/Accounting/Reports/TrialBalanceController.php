@@ -43,8 +43,8 @@ class TrialBalanceController extends Controller
 
             return [
                 'account' => $account,
-                'debit'   => $debit,
-                'credit'  => $credit,
+                'debit' => $debit,
+                'credit' => $credit,
             ];
         })->filter(fn ($row) => $row['debit'] || $row['credit'])->values();
 

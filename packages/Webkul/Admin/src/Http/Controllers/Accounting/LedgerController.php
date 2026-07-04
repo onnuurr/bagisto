@@ -70,11 +70,11 @@ class LedgerController extends Controller
                     : ((float) $line->base_credit - (float) $line->base_debit);
 
                 return [
-                    'date'    => $line->journalEntry->entry_date,
-                    'number'  => $line->journalEntry->entry_number,
+                    'date' => $line->journalEntry->entry_date,
+                    'number' => $line->journalEntry->entry_number,
                     'description' => $line->description ?: $line->journalEntry->description,
-                    'debit'   => (float) $line->base_debit,
-                    'credit'  => (float) $line->base_credit,
+                    'debit' => (float) $line->base_debit,
+                    'credit' => (float) $line->base_credit,
                     'balance' => $runningBalance,
                 ];
             });

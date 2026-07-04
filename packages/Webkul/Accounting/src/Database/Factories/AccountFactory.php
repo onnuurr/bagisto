@@ -20,20 +20,20 @@ class AccountFactory extends Factory
     public function definition(): array
     {
         return [
-            'parent_id'       => null,
-            'code'            => $this->faker->unique->numerify('####'),
-            'name'            => $this->faker->words(2, true),
-            'type'            => $this->faker->randomElement([
+            'parent_id' => null,
+            'code' => $this->faker->unique->numerify('####'),
+            'name' => $this->faker->words(2, true),
+            'type' => $this->faker->randomElement([
                 Account::TYPE_ASSET,
                 Account::TYPE_LIABILITY,
                 Account::TYPE_EQUITY,
                 Account::TYPE_REVENUE,
                 Account::TYPE_EXPENSE,
             ]),
-            'description'     => $this->faker->sentence,
+            'description' => $this->faker->sentence,
             'opening_balance' => 0,
-            'is_system'       => false,
-            'is_active'       => true,
+            'is_system' => false,
+            'is_active' => true,
         ];
     }
 }

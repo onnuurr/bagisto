@@ -47,16 +47,16 @@ class FiscalYearController extends Controller
     public function store(): RedirectResponse
     {
         $this->validate(request(), [
-            'code'       => 'required|string|unique:accounting_fiscal_years,code',
+            'code' => 'required|string|unique:accounting_fiscal_years,code',
             'start_date' => 'required|date',
-            'end_date'   => 'required|date|after:start_date',
+            'end_date' => 'required|date|after:start_date',
         ]);
 
         $this->fiscalYearRepository->create([
-            'code'       => request('code'),
+            'code' => request('code'),
             'start_date' => request('start_date'),
-            'end_date'   => request('end_date'),
-            'status'     => FiscalYear::STATUS_OPEN,
+            'end_date' => request('end_date'),
+            'status' => FiscalYear::STATUS_OPEN,
         ]);
 
         session()->flash('success', trans('admin::app.accounting.fiscal-years.create-success'));

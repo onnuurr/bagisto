@@ -40,9 +40,9 @@ class SalesEventSubscriber
     public function handleInvoiceSaved(Invoice $invoice): void
     {
         try {
-            $accountsReceivable = (int) $this->settingRepository->get('accounts_receivable_account');
+            $accountsReceivable = (int) $this->settingRepository->getValue('accounts_receivable_account');
 
-            $salesRevenue = (int) $this->settingRepository->get('sales_revenue_account');
+            $salesRevenue = (int) $this->settingRepository->getValue('sales_revenue_account');
 
             if (! $accountsReceivable || ! $salesRevenue) {
                 return;
@@ -55,45 +55,45 @@ class SalesEventSubscriber
             $lines[] = $this->line($salesRevenue, 0, (float) $invoice->base_sub_total);
 
             if ((float) $invoice->base_shipping_amount) {
-                if ($shippingRevenue = (int) $this->settingRepository->get('shipping_revenue_account')) {
+                if ($shippingRevenue = (int) $this->settingRepository->getValue('shipping_revenue_account')) {
                     $lines[] = $this->line($shippingRevenue, 0, (float) $invoice->base_shipping_amount);
                 }
             }
 
             if ((float) $invoice->base_tax_amount) {
-                if ($taxPayable = (int) $this->settingRepository->get('tax_payable_account')) {
+                if ($taxPayable = (int) $this->settingRepository->getValue('tax_payable_account')) {
                     $lines[] = $this->line($taxPayable, 0, (float) $invoice->base_tax_amount);
                 }
             }
 
             if ((float) $invoice->base_discount_amount) {
-                if ($salesDiscount = (int) $this->settingRepository->get('sales_discount_account')) {
+                if ($salesDiscount = (int) $this->settingRepository->getValue('sales_discount_account')) {
                     $lines[] = $this->line($salesDiscount, (float) $invoice->base_discount_amount, 0);
                 }
             }
 
             $this->journalEntryRepository->create([
-                'entry_date'     => $invoice->created_at ?? now(),
+                'entry_date' => $invoice->created_at ?? now(),
                 'reference_type' => JournalEntry::REFERENCE_INVOICE,
-                'reference_id'   => $invoice->id,
-                'description'    => trans('admin::app.accounting.journal-entries.auto-post.invoice', ['invoice' => $invoice->increment_id]),
-                'currency_code'  => $invoice->base_currency_code ?: core()->getBaseCurrencyCode(),
-                'status'         => JournalEntry::STATUS_POSTED,
-                'lines'          => $lines,
+                'reference_id' => $invoice->id,
+                'description' => trans('admin::app.accounting.journal-entries.auto-post.invoice', ['invoice' => $invoice->increment_id]),
+                'currency_code' => $invoice->base_currency_code ?: core()->getBaseCurrencyCode(),
+                'status' => JournalEntry::STATUS_POSTED,
+                'lines' => $lines,
             ]);
 
             if (
                 $invoice->state === 'paid'
-                && ($cashBank = (int) $this->settingRepository->get('cash_bank_account'))
+                && ($cashBank = (int) $this->settingRepository->getValue('cash_bank_account'))
             ) {
                 $this->journalEntryRepository->create([
-                    'entry_date'     => $invoice->created_at ?? now(),
+                    'entry_date' => $invoice->created_at ?? now(),
                     'reference_type' => JournalEntry::REFERENCE_INVOICE,
-                    'reference_id'   => $invoice->id,
-                    'description'    => trans('admin::app.accounting.journal-entries.auto-post.payment', ['invoice' => $invoice->increment_id]),
-                    'currency_code'  => $invoice->base_currency_code ?: core()->getBaseCurrencyCode(),
-                    'status'         => JournalEntry::STATUS_POSTED,
-                    'lines'          => [
+                    'reference_id' => $invoice->id,
+                    'description' => trans('admin::app.accounting.journal-entries.auto-post.payment', ['invoice' => $invoice->increment_id]),
+                    'currency_code' => $invoice->base_currency_code ?: core()->getBaseCurrencyCode(),
+                    'status' => JournalEntry::STATUS_POSTED,
+                    'lines' => [
                         $this->line($cashBank, (float) $invoice->base_grand_total, 0),
                         $this->line($accountsReceivable, 0, (float) $invoice->base_grand_total),
                     ],
@@ -112,9 +112,9 @@ class SalesEventSubscriber
     public function handleRefundSaved(Refund $refund): void
     {
         try {
-            $cashBank = (int) $this->settingRepository->get('cash_bank_account');
+            $cashBank = (int) $this->settingRepository->getValue('cash_bank_account');
 
-            $salesRevenue = (int) $this->settingRepository->get('sales_revenue_account');
+            $salesRevenue = (int) $this->settingRepository->getValue('sales_revenue_account');
 
             if (! $cashBank || ! $salesRevenue) {
                 return;
@@ -125,19 +125,19 @@ class SalesEventSubscriber
             ];
 
             if ((float) $refund->base_shipping_amount) {
-                if ($shippingRevenue = (int) $this->settingRepository->get('shipping_revenue_account')) {
+                if ($shippingRevenue = (int) $this->settingRepository->getValue('shipping_revenue_account')) {
                     $lines[] = $this->line($shippingRevenue, (float) $refund->base_shipping_amount, 0);
                 }
             }
 
             if ((float) $refund->base_tax_amount) {
-                if ($taxPayable = (int) $this->settingRepository->get('tax_payable_account')) {
+                if ($taxPayable = (int) $this->settingRepository->getValue('tax_payable_account')) {
                     $lines[] = $this->line($taxPayable, (float) $refund->base_tax_amount, 0);
                 }
             }
 
             if ((float) $refund->base_discount_amount) {
-                if ($salesDiscount = (int) $this->settingRepository->get('sales_discount_account')) {
+                if ($salesDiscount = (int) $this->settingRepository->getValue('sales_discount_account')) {
                     $lines[] = $this->line($salesDiscount, 0, (float) $refund->base_discount_amount);
                 }
             }
@@ -145,13 +145,13 @@ class SalesEventSubscriber
             $lines[] = $this->line($cashBank, 0, (float) $refund->base_grand_total);
 
             $this->journalEntryRepository->create([
-                'entry_date'     => $refund->created_at ?? now(),
+                'entry_date' => $refund->created_at ?? now(),
                 'reference_type' => JournalEntry::REFERENCE_REFUND,
-                'reference_id'   => $refund->id,
-                'description'    => trans('admin::app.accounting.journal-entries.auto-post.refund', ['refund' => $refund->id]),
-                'currency_code'  => $refund->base_currency_code ?: core()->getBaseCurrencyCode(),
-                'status'         => JournalEntry::STATUS_POSTED,
-                'lines'          => $lines,
+                'reference_id' => $refund->id,
+                'description' => trans('admin::app.accounting.journal-entries.auto-post.refund', ['refund' => $refund->id]),
+                'currency_code' => $refund->base_currency_code ?: core()->getBaseCurrencyCode(),
+                'status' => JournalEntry::STATUS_POSTED,
+                'lines' => $lines,
             ]);
         } catch (\Exception $e) {
             report($e);
@@ -165,8 +165,8 @@ class SalesEventSubscriber
     {
         return [
             'account_id' => $accountId,
-            'debit'      => round($debit, 4),
-            'credit'     => round($credit, 4),
+            'debit' => round($debit, 4),
+            'credit' => round($credit, 4),
         ];
     }
 }
