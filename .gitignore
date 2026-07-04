@@ -1,6 +1,5 @@
 .agents
 .agent*
-.claude
 .cursor
 .env
 .env.testing
