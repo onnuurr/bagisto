@@ -4903,6 +4903,7 @@ return [
                         'title' => '标题',
                         'title-info' => '使用您的账户凭证通过 Aras Kargo API 计算运费,如果 API 不可用则回退到固定费率。',
                         'username' => '用户名',
+                        'wsdl-url' => 'WSDL 地址',
                         'rate' => '费用',
                     ],
                 ],

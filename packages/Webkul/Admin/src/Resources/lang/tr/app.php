@@ -4903,6 +4903,7 @@ return [
                         'title' => 'Başlık',
                         'title-info' => 'Hesap bilgilerinizi kullanarak Aras Kargo API\'sinden kargo ücretlerini hesaplar ve API\'ye erişilemediğinde sabit bir ücrete geri döner.',
                         'username' => 'Kullanıcı Adı',
+                        'wsdl-url' => 'WSDL Adresi',
                         'rate' => 'Fiyat',
                     ],
                 ],

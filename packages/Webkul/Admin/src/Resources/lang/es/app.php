@@ -4903,6 +4903,7 @@ return [
                         'title' => 'Título',
                         'title-info' => 'Calcula las tarifas de envío mediante la API de Aras Kargo con las credenciales de su cuenta, y utiliza una tarifa fija de reserva si la API no está disponible.',
                         'username' => 'Nombre de usuario',
+                        'wsdl-url' => 'URL WSDL',
                         'rate' => 'Tarifa',
                     ],
                 ],

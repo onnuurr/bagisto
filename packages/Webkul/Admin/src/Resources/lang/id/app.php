@@ -4903,6 +4903,7 @@ return [
                         'title' => 'Judul',
                         'title-info' => 'Menghitung tarif pengiriman menggunakan API Aras Kargo dengan kredensial akun Anda, dan menggunakan tarif tetap cadangan jika API tidak tersedia.',
                         'username' => 'Nama Pengguna',
+                        'wsdl-url' => 'URL WSDL',
                         'rate' => 'Tarif',
                     ],
                 ],

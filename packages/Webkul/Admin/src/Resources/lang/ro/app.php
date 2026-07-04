@@ -4903,6 +4903,7 @@ return [
                         'title' => 'Title',
                         'title-info' => 'Calculates shipping rates using the Aras Kargo API with your account credentials, and falls back to a fixed rate if the API cannot be reached.',
                         'username' => 'Username',
+                        'wsdl-url' => 'WSDL URL',
                         'rate' => 'Rate',
                     ],
                 ],

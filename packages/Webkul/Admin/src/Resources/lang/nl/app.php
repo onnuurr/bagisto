@@ -4903,6 +4903,7 @@ return [
                         'title' => 'Titel',
                         'title-info' => 'Berekent verzendtarieven via de Aras Kargo API met uw accountgegevens, en valt terug op een vast tarief als de API niet beschikbaar is.',
                         'username' => 'Gebruikersnaam',
+                        'wsdl-url' => 'WSDL-URL',
                         'rate' => 'Tarief',
                     ],
                 ],

@@ -4903,6 +4903,7 @@ return [
                         'title' => 'Titel',
                         'title-info' => 'Berechnet Versandkosten über die Aras-Kargo-API mit Ihren Kontodaten und verwendet einen festen Ausweichtarif, wenn die API nicht erreichbar ist.',
                         'username' => 'Benutzername',
+                        'wsdl-url' => 'WSDL-URL',
                         'rate' => 'Preis',
                     ],
                 ],

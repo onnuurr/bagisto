@@ -4903,6 +4903,7 @@ return [
                         'title' => 'Tytuł',
                         'title-info' => 'Oblicza stawki wysyłki za pomocą API Aras Kargo przy użyciu danych logowania do konta, a w przypadku niedostępności API korzysta ze stałej stawki zastępczej.',
                         'username' => 'Nazwa użytkownika',
+                        'wsdl-url' => 'Adres URL WSDL',
                         'rate' => 'Stawka',
                     ],
                 ],

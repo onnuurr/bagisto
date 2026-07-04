@@ -4903,6 +4903,7 @@ return [
                         'title' => 'Titolo',
                         'title-info' => 'Calcola le tariffe di spedizione tramite l\'API di Aras Kargo con le credenziali del tuo account e utilizza una tariffa fissa di riserva se l\'API non è disponibile.',
                         'username' => 'Nome utente',
+                        'wsdl-url' => 'URL WSDL',
                         'rate' => 'Tariffa',
                     ],
                 ],

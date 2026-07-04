@@ -4903,6 +4903,7 @@ return [
                         'title' => 'Titre',
                         'title-info' => 'Calcule les frais d\'expédition via l\'API Aras Kargo avec les identifiants de votre compte, et utilise un tarif fixe de secours si l\'API est indisponible.',
                         'username' => 'Nom d\'utilisateur',
+                        'wsdl-url' => 'URL WSDL',
                         'rate' => 'Tarif',
                     ],
                 ],

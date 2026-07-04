@@ -4903,6 +4903,7 @@ return [
                         'title' => 'タイトル',
                         'title-info' => 'アカウントの認証情報を使用してAras Kargo APIから配送料金を計算し、APIが利用できない場合は固定料金にフォールバックします。',
                         'username' => 'ユーザー名',
+                        'wsdl-url' => 'WSDL URL',
                         'rate' => '料金',
                     ],
                 ],

@@ -1966,6 +1966,12 @@ return [
                 'channel_based' => true,
                 'locale_based' => false,
             ], [
+                'name' => 'wsdl_url',
+                'title' => 'admin::app.configuration.index.sales.shipping-methods.aras-kargo.wsdl-url',
+                'type' => 'text',
+                'channel_based' => true,
+                'locale_based' => false,
+            ], [
                 'name' => 'default_rate',
                 'title' => 'admin::app.configuration.index.sales.shipping-methods.aras-kargo.rate',
                 'type' => 'text',
