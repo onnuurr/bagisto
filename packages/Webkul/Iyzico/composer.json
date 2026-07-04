@@ -1,0 +1,27 @@
+{
+    "name": "bagisto/iyzico",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bagisto",
+            "email": "support@bagisto.com"
+        }
+    ],
+    "require": {
+        "iyzico/iyzipay-php": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webkul\\Iyzico\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\Iyzico\\Providers\\IyzicoServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

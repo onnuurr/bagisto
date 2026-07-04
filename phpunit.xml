@@ -36,6 +36,15 @@
             <directory suffix="Test.php">packages/Webkul/Installer/tests/Feature</directory>
         </testsuite>
 
+        <!-- Iyzico package testsuites. -->
+        <testsuite name="Iyzico Unit Test">
+            <directory suffix="Test.php">packages/Webkul/Iyzico/tests/Unit</directory>
+        </testsuite>
+
+        <testsuite name="Iyzico Feature Test">
+            <directory suffix="Test.php">packages/Webkul/Iyzico/tests/Feature</directory>
+        </testsuite>
+
         <!-- PayTR package testsuites. -->
         <testsuite name="PayTR Unit Test">
             <directory suffix="Test.php">packages/Webkul/PayTR/tests/Unit</directory>

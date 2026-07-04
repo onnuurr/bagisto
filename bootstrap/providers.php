@@ -21,6 +21,7 @@ use Webkul\GDPR\Providers\GDPRServiceProvider;
 use Webkul\ImageCache\Providers\ImageCacheServiceProvider;
 use Webkul\Installer\Providers\InstallerServiceProvider;
 use Webkul\Inventory\Providers\InventoryServiceProvider;
+use Webkul\Iyzico\Providers\IyzicoServiceProvider;
 use Webkul\MagicAI\Providers\MagicAIServiceProvider;
 use Webkul\Marketing\Providers\MarketingServiceProvider;
 use Webkul\Notification\Providers\NotificationServiceProvider;
@@ -73,6 +74,7 @@ return [
     ImageCacheServiceProvider::class,
     InstallerServiceProvider::class,
     InventoryServiceProvider::class,
+    IyzicoServiceProvider::class,
     MagicAIServiceProvider::class,
     MarketingServiceProvider::class,
     NotificationServiceProvider::class,
