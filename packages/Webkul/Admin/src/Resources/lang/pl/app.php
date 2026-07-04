@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => 'Dotyczy, jeśli włączono automatyczne generowanie faktury',
                     'info' => 'Ustaw informacje o metodach płatności',
                     'instructions' => 'Instrukcje',
+                    'local-payment' => 'Płatność lokalna',
+                    'local-payment-info' => 'Szablon lokalnej, ręcznej metody płatności, który można dostosować w razie potrzeby.',
                     'logo' => 'Logo',
                     'logo-information' => 'Rozdzielczość obrazu powinna wynosić 55px X 45px',
                     'mailing-address' => 'Wyślij czek na adres',

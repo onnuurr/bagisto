@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => 'Applicabile se la generazione automatica della fattura è abilitata',
                     'info' => 'Imposta le informazioni sui metodi di pagamento',
                     'instructions' => 'Istruzioni',
+                    'local-payment' => 'Pagamento locale',
+                    'local-payment-info' => 'Un modello di metodo di pagamento manuale locale personalizzabile in base alle esigenze.',
                     'logo' => 'Logo',
                     'logo-information' => 'La risoluzione dell\'immagine dovrebbe essere di 55px X 45px',
                     'mailing-address' => 'Invia Assegno a',

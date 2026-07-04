@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => 'Gilt, wenn die automatische Rechnungserstellung aktiviert ist',
                     'info' => 'Zahlungsmethodeninformationen festlegen',
                     'instructions' => 'Anweisungen',
+                    'local-payment' => 'Lokale Zahlung',
+                    'local-payment-info' => 'Eine lokale, manuelle Zahlungsmethode, die bei Bedarf angepasst werden kann.',
                     'logo' => 'Logo',
                     'logo-information' => 'Die Bildauflösung sollte etwa 55px x 45px betragen',
                     'mailing-address' => 'Scheck senden an',

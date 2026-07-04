@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => 'Berlaku jika pembuatan faktur otomatis diaktifkan',
                     'info' => 'Setel informasi metode pembayaran',
                     'instructions' => 'Instruksi',
+                    'local-payment' => 'Pembayaran Lokal',
+                    'local-payment-info' => 'Template metode pembayaran manual lokal yang dapat disesuaikan sesuai kebutuhan.',
                     'logo' => 'Logo',
                     'logo-information' => 'Resolusi gambar harus seperti 55px X 45px',
                     'mailing-address' => 'Kirim Cek ke',

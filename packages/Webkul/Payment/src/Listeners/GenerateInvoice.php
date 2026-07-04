@@ -49,6 +49,17 @@ class GenerateInvoice
                 core()->getConfigData('sales.payment_methods.moneytransfer.order_status')
             );
         }
+
+        if (
+            $order->payment->method == 'local_payment'
+            && core()->getConfigData('sales.payment_methods.local_payment.generate_invoice')
+        ) {
+            $this->invoiceRepository->create(
+                $this->prepareInvoiceData($order),
+                core()->getConfigData('sales.payment_methods.local_payment.invoice_status'),
+                core()->getConfigData('sales.payment_methods.local_payment.order_status')
+            );
+        }
     }
 
     /**

@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => 'Applicable if automatic generate invoice is enabled',
                     'info' => 'Set payment methods information',
                     'instructions' => 'Instructions',
+                    'local-payment' => 'Local Payment',
+                    'local-payment-info' => 'A local, manual payment method template you can customize as needed.',
                     'logo' => 'Logo',
                     'logo-information' => 'Image resolution should be like 55px X 45px',
                     'mailing-address' => 'Send Check to',

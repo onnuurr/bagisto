@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => 'Van toepassing als automatisch factuur genereren is ingeschakeld',
                     'info' => 'Stel betaalmethode-informatie in',
                     'instructions' => 'Instructies',
+                    'local-payment' => 'Lokale Betaling',
+                    'local-payment-info' => 'Een lokale, handmatige betaalmethode-sjabloon die u naar wens kunt aanpassen.',
                     'logo' => 'Logo',
                     'logo-information' => 'Afbeeldingsresolutie moet ongeveer 55px X 45px zijn',
                     'mailing-address' => 'Stuur cheque naar',

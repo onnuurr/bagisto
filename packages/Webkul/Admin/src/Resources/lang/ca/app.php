@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => 'Aplicable si es permet la generació automàtica de factures',
                     'info' => 'Configura la informació dels mètodes de pagament',
                     'instructions' => 'Instruccions',
+                    'local-payment' => 'Pagament local',
+                    'local-payment-info' => 'Un mètode de pagament manual local que es pot personalitzar segons calgui.',
                     'logo' => 'Logotip',
                     'logo-information' => 'La resolució de la imatge ha de ser de 55px x 45px',
                     'mailing-address' => 'Enviar xec a',

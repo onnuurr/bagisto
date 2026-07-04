@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => '适用于自动生成发票的情况',
                     'info' => '设置支付方式的信息',
                     'instructions' => '说明',
+                    'local-payment' => '本地支付',
+                    'local-payment-info' => '一个可根据需要自定义的本地手动付款方式模板。',
                     'logo' => '标志',
                     'logo-information' => '图像分辨率应为 55px × 45px',
                     'mailing-address' => '邮寄地址',

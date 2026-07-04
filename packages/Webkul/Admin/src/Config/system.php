@@ -2602,6 +2602,103 @@ return [
             ],
         ],
     ], [
+        'key' => 'sales.payment_methods.local_payment',
+        'name' => 'admin::app.configuration.index.sales.payment-methods.local-payment',
+        'info' => 'admin::app.configuration.index.sales.payment-methods.local-payment-info',
+        'sort' => 9,
+        'fields' => [
+            [
+                'name' => 'active',
+                'title' => 'admin::app.configuration.index.sales.payment-methods.status',
+                'type' => 'boolean',
+                'channel_based' => true,
+                'locale_based' => false,
+            ], [
+                'name' => 'title',
+                'title' => 'admin::app.configuration.index.sales.payment-methods.title',
+                'type' => 'text',
+                'depends' => 'active:1',
+                'validation' => 'required_if:active,1',
+                'channel_based' => true,
+                'locale_based' => true,
+            ], [
+                'name' => 'description',
+                'title' => 'admin::app.configuration.index.sales.payment-methods.description',
+                'type' => 'textarea',
+                'depends' => 'active:1',
+                'channel_based' => true,
+                'locale_based' => true,
+            ], [
+                'name' => 'image',
+                'title' => 'admin::app.configuration.index.sales.payment-methods.logo',
+                'type' => 'image',
+                'info' => 'admin::app.configuration.index.sales.payment-methods.logo-information',
+                'depends' => 'active:1',
+                'channel_based' => true,
+                'locale_based' => false,
+                'validation' => 'mimes:bmp,jpeg,jpg,png,webp',
+            ], [
+                'name' => 'instructions',
+                'title' => 'admin::app.configuration.index.sales.payment-methods.instructions',
+                'type' => 'textarea',
+                'depends' => 'active:1',
+                'channel_based' => true,
+                'locale_based' => true,
+            ], [
+                'name' => 'generate_invoice',
+                'title' => 'admin::app.configuration.index.sales.payment-methods.generate-invoice',
+                'type' => 'boolean',
+                'depends' => 'active:1',
+                'channel_based' => true,
+                'locale_based' => false,
+            ], [
+                'name' => 'invoice_status',
+                'title' => 'admin::app.configuration.index.sales.payment-methods.set-invoice-status',
+                'depends' => 'active:1',
+                'type' => 'select',
+                'options' => [
+                    [
+                        'title' => 'admin::app.configuration.index.sales.payment-methods.pending',
+                        'value' => 'pending',
+                    ], [
+                        'title' => 'admin::app.configuration.index.sales.payment-methods.paid',
+                        'value' => 'paid',
+                    ],
+                ],
+                'info' => 'admin::app.configuration.index.sales.payment-methods.set-order-status',
+                'channel_based' => true,
+                'locale_based' => false,
+            ], [
+                'name' => 'order_status',
+                'title' => 'admin::app.configuration.index.sales.payment-methods.set-order-status',
+                'type' => 'select',
+                'depends' => 'active:1',
+                'options' => [
+                    [
+                        'title' => 'admin::app.configuration.index.sales.payment-methods.pending',
+                        'value' => Order::STATUS_PENDING,
+                    ], [
+                        'title' => 'admin::app.configuration.index.sales.payment-methods.pending-payment',
+                        'value' => Order::STATUS_PENDING_PAYMENT,
+                    ], [
+                        'title' => 'admin::app.configuration.index.sales.payment-methods.processing',
+                        'value' => Order::STATUS_PROCESSING,
+                    ],
+                ],
+                'info' => 'admin::app.configuration.index.sales.payment-methods.generate-invoice-applicable',
+                'channel_based' => true,
+                'locale_based' => false,
+            ], [
+                'name' => 'sort',
+                'title' => 'admin::app.configuration.index.sales.payment-methods.sort-order',
+                'type' => 'number',
+                'depends' => 'active:1',
+                'validation' => 'required_if:active,1|integer|min:1',
+                'channel_based' => true,
+                'locale_based' => false,
+            ],
+        ],
+    ], [
         'key' => 'sales.order_settings',
         'name' => 'admin::app.configuration.index.sales.order-settings.title',
         'info' => 'admin::app.configuration.index.sales.order-settings.info',

@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => 'Otomatik fatura oluşturma etkinse uygulanır',
                     'info' => 'Ödeme yöntemi bilgilerini ayarlayın',
                     'instructions' => 'Talimatlar',
+                    'local-payment' => 'Yerel Ödeme',
+                    'local-payment-info' => 'İhtiyaca göre özelleştirebileceğiniz yerel, manuel bir ödeme yöntemi şablonu.',
                     'logo' => 'Logo',
                     'logo-information' => 'Resim çözünürlüğü 55 piksel X 45 piksel gibi olmalıdır',
                     'mailing-address' => 'Çeki Gönder',

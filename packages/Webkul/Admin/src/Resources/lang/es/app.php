@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => 'Aplicable si se habilita la generación automática de facturas',
                     'info' => 'Configurar la información de los métodos de pago',
                     'instructions' => 'Instrucciones',
+                    'local-payment' => 'Pago local',
+                    'local-payment-info' => 'Un método de pago manual local que se puede personalizar según sea necesario.',
                     'logo' => 'Logo',
                     'logo-information' => 'La resolución de la imagen debe ser de 55px x 45px',
                     'mailing-address' => 'Enviar cheque a',

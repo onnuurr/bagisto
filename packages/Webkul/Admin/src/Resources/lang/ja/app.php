@@ -4919,6 +4919,8 @@ return [
                     'generate-invoice-applicable' => '自動請求書生成が有効な場合に適用されます',
                     'info' => '支払い方法の情報を設定します',
                     'instructions' => '指示',
+                    'local-payment' => 'ローカル決済',
+                    'local-payment-info' => '必要に応じてカスタマイズできる、ローカルの手動決済方法テンプレートです。',
                     'logo' => 'ロゴ',
                     'logo-information' => '画像の解像度は55px X 45pxのようにする必要があります',
                     'mailing-address' => '送付先',
