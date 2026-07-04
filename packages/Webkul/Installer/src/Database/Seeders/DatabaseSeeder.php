@@ -3,6 +3,7 @@
 namespace Webkul\Installer\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Webkul\Installer\Database\Seeders\Accounting\DatabaseSeeder as AccountingSeeder;
 use Webkul\Installer\Database\Seeders\Attribute\DatabaseSeeder as AttributeSeeder;
 use Webkul\Installer\Database\Seeders\Category\DatabaseSeeder as CategorySeeder;
 use Webkul\Installer\Database\Seeders\CMS\DatabaseSeeder as CMSSeeder;
@@ -43,5 +44,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class, false, ['parameters' => $parameters]);
 
         $this->call(RMASeeder::class, false, ['parameters' => $parameters]);
+
+        $this->call(AccountingSeeder::class, false, ['parameters' => $parameters]);
     }
 }

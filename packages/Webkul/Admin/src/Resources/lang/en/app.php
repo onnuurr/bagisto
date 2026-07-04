@@ -3221,6 +3221,264 @@ return [
         'update-success' => 'CMS updated successfully.',
     ],
 
+    'accounting' => [
+        'accounts' => [
+            'index' => [
+                'title' => 'Chart of Accounts',
+                'create-btn' => 'Create Account',
+
+                'datagrid' => [
+                    'id' => 'ID',
+                    'code' => 'Code',
+                    'name' => 'Name',
+                    'parent' => 'Parent Account',
+                    'type' => 'Type',
+                    'opening-balance' => 'Opening Balance',
+                    'status' => 'Status',
+                    'active' => 'Active',
+                    'inactive' => 'Inactive',
+                    'edit' => 'Edit',
+                    'delete' => 'Delete',
+                ],
+            ],
+
+            'create' => [
+                'title' => 'Create Account',
+                'back-btn' => 'Back',
+                'save-btn' => 'Save Account',
+                'general' => 'General',
+                'code' => 'Code',
+                'name' => 'Name',
+                'type' => 'Type',
+                'parent' => 'Parent Account',
+                'no-parent' => 'No Parent',
+                'opening-balance' => 'Opening Balance',
+                'status' => 'Status',
+                'description' => 'Description',
+            ],
+
+            'edit' => [
+                'title' => 'Edit Account',
+                'back-btn' => 'Back',
+                'save-btn' => 'Save Account',
+                'general' => 'General',
+                'code' => 'Code',
+                'name' => 'Name',
+                'type' => 'Type',
+                'parent' => 'Parent Account',
+                'no-parent' => 'No Parent',
+                'opening-balance' => 'Opening Balance',
+                'status' => 'Status',
+                'description' => 'Description',
+            ],
+
+            'types' => [
+                'asset' => 'Asset',
+                'liability' => 'Liability',
+                'equity' => 'Equity',
+                'revenue' => 'Revenue',
+                'expense' => 'Expense',
+            ],
+
+            'create-success' => 'Account created successfully.',
+            'update-success' => 'Account updated successfully.',
+            'delete-success' => 'Account deleted successfully.',
+            'system-account-error' => 'This is a protected system account and cannot be deleted.',
+            'in-use-error' => 'This account has child accounts or journal entries and cannot be deleted.',
+        ],
+
+        'journal-entries' => [
+            'index' => [
+                'title' => 'Journal Entries',
+                'create-btn' => 'Create Journal Entry',
+
+                'datagrid' => [
+                    'id' => 'ID',
+                    'entry-number' => 'Entry Number',
+                    'entry-date' => 'Entry Date',
+                    'reference-type' => 'Reference',
+                    'description' => 'Description',
+                    'total' => 'Total',
+                    'status' => 'Status',
+                    'view' => 'View',
+                ],
+            ],
+
+            'create' => [
+                'title' => 'Create Journal Entry',
+                'back-btn' => 'Back',
+                'save-draft-btn' => 'Save as Draft',
+                'save-post-btn' => 'Save & Post',
+                'general' => 'General',
+                'entry-date' => 'Entry Date',
+                'description' => 'Description',
+                'lines' => 'Lines',
+                'account' => 'Account',
+                'line-description' => 'Description',
+                'debit' => 'Debit',
+                'credit' => 'Credit',
+                'select-account' => 'Select Account',
+                'add-line' => 'Add Line',
+            ],
+
+            'view' => [
+                'back-btn' => 'Back',
+                'post-btn' => 'Post',
+                'void-btn' => 'Void',
+                'entry-date' => 'Entry Date',
+                'status' => 'Status',
+                'reference-type' => 'Reference',
+                'currency' => 'Currency',
+                'description' => 'Description',
+                'account' => 'Account',
+                'line-description' => 'Description',
+                'debit' => 'Debit',
+                'credit' => 'Credit',
+                'total' => 'Total',
+            ],
+
+            'statuses' => [
+                'draft' => 'Draft',
+                'posted' => 'Posted',
+                'void' => 'Void',
+            ],
+
+            'reference-types' => [
+                'manual' => 'Manual',
+                'invoice' => 'Invoice',
+                'refund' => 'Refund',
+            ],
+
+            'auto-post' => [
+                'invoice' => 'Auto-posted for invoice :invoice',
+                'payment' => 'Auto-posted payment for invoice :invoice',
+                'refund' => 'Auto-posted for refund #:refund',
+            ],
+
+            'errors' => [
+                'unbalanced-entry' => 'The journal entry is not balanced. Total debits must equal total credits.',
+                'only-draft-can-be-posted' => 'Only draft journal entries can be posted.',
+                'only-posted-can-be-voided' => 'Only posted journal entries can be voided.',
+            ],
+
+            'create-success' => 'Journal entry created successfully.',
+            'post-success' => 'Journal entry posted successfully.',
+            'void-success' => 'Journal entry voided successfully.',
+        ],
+
+        'ledger' => [
+            'index' => [
+                'title' => 'Ledger',
+                'account' => 'Account',
+                'select-account' => 'Select Account',
+                'start-date' => 'Start Date',
+                'end-date' => 'End Date',
+                'filter-btn' => 'Filter',
+                'opening-balance' => 'Opening Balance',
+                'closing-balance' => 'Closing Balance',
+                'date' => 'Date',
+                'entry-number' => 'Entry Number',
+                'description' => 'Description',
+                'debit' => 'Debit',
+                'credit' => 'Credit',
+                'balance' => 'Balance',
+                'no-transactions' => 'No transactions found for the selected period.',
+            ],
+        ],
+
+        'fiscal-years' => [
+            'index' => [
+                'title' => 'Fiscal Years',
+                'create-btn' => 'Create Fiscal Year',
+
+                'datagrid' => [
+                    'id' => 'ID',
+                    'code' => 'Code',
+                    'start-date' => 'Start Date',
+                    'end-date' => 'End Date',
+                    'status' => 'Status',
+                    'close' => 'Close',
+                ],
+            ],
+
+            'create' => [
+                'title' => 'Create Fiscal Year',
+                'back-btn' => 'Back',
+                'save-btn' => 'Save Fiscal Year',
+                'code' => 'Code',
+                'code-placeholder' => 'e.g. FY2026',
+                'start-date' => 'Start Date',
+                'end-date' => 'End Date',
+            ],
+
+            'statuses' => [
+                'open' => 'Open',
+                'closed' => 'Closed',
+            ],
+
+            'create-success' => 'Fiscal year created successfully.',
+            'close-success' => 'Fiscal year closed successfully.',
+        ],
+
+        'settings' => [
+            'edit' => [
+                'title' => 'Accounting Settings',
+                'save-btn' => 'Save Settings',
+                'mapping-title' => 'Default Account Mapping',
+                'mapping-info' => 'Map the accounts used to automatically post journal entries when invoices, payments and refunds are created.',
+                'accounts-receivable-account' => 'Accounts Receivable Account',
+                'cash-bank-account' => 'Cash / Bank Account',
+                'sales-revenue-account' => 'Sales Revenue Account',
+                'shipping-revenue-account' => 'Shipping Revenue Account',
+                'sales-discount-account' => 'Sales Discount Account',
+                'sales-refund-account' => 'Sales Refund Account',
+                'tax-payable-account' => 'Tax Payable Account',
+                'not-mapped' => 'Not Mapped',
+            ],
+
+            'update-success' => 'Accounting settings updated successfully.',
+        ],
+
+        'reports' => [
+            'trial-balance' => [
+                'title' => 'Trial Balance',
+                'as-of-date' => 'As of Date',
+                'filter-btn' => 'Filter',
+                'code' => 'Code',
+                'account' => 'Account',
+                'debit' => 'Debit',
+                'credit' => 'Credit',
+                'total' => 'Total',
+            ],
+
+            'income-statement' => [
+                'title' => 'Income Statement',
+                'start-date' => 'Start Date',
+                'end-date' => 'End Date',
+                'filter-btn' => 'Filter',
+                'revenue' => 'Revenue',
+                'expenses' => 'Expenses',
+                'total-revenue' => 'Total Revenue',
+                'total-expense' => 'Total Expense',
+                'net-income' => 'Net Income',
+            ],
+
+            'balance-sheet' => [
+                'title' => 'Balance Sheet',
+                'as-of-date' => 'As of Date',
+                'filter-btn' => 'Filter',
+                'assets' => 'Assets',
+                'liabilities' => 'Liabilities',
+                'equity' => 'Equity',
+                'total-assets' => 'Total Assets',
+                'total-liabilities' => 'Total Liabilities',
+                'total-equity' => 'Total Equity',
+                'current-earnings' => 'Current Earnings',
+                'total-liabilities-and-equity' => 'Total Liabilities & Equity',
+            ],
+        ],
+    ],
+
     'settings' => [
         'locales' => [
             'index' => [
@@ -5290,6 +5548,13 @@ return [
             ],
 
             'sidebar' => [
+                'accounting' => 'Accounting',
+                'accounting-settings' => 'Settings',
+                'chart-of-accounts' => 'Chart of Accounts',
+                'fiscal-years' => 'Fiscal Years',
+                'journal-entries' => 'Journal Entries',
+                'ledger' => 'Ledger',
+                'reports' => 'Reports',
                 'attribute-families' => 'Attribute Families',
                 'attributes' => 'Attributes',
                 'booking-product' => 'Bookings',
@@ -5533,6 +5798,16 @@ return [
     ],
 
     'acl' => [
+        'accounting' => 'Accounting',
+        'accounting-accounts' => 'Chart of Accounts',
+        'accounting-close' => 'Close',
+        'accounting-fiscal-years' => 'Fiscal Years',
+        'accounting-journal-entries' => 'Journal Entries',
+        'accounting-ledger' => 'Ledger',
+        'accounting-post' => 'Post',
+        'accounting-reports' => 'Reports',
+        'accounting-settings' => 'Settings',
+        'accounting-void' => 'Void',
         'addresses' => 'Addresses',
         'attribute-families' => 'Attribute Families',
         'attributes' => 'Attributes',

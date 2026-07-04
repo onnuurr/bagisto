@@ -913,6 +913,116 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Accounting
+    |--------------------------------------------------------------------------
+    |
+    | All ACLs related to accounting will be placed here.
+    |
+    */
+    [
+        'key' => 'accounting',
+        'name' => 'admin::app.acl.accounting',
+        'route' => 'admin.accounting.accounts.index',
+        'sort' => 8,
+    ], [
+        'key' => 'accounting.accounts',
+        'name' => 'admin::app.acl.accounting-accounts',
+        'route' => 'admin.accounting.accounts.index',
+        'sort' => 1,
+    ], [
+        'key' => 'accounting.accounts.create',
+        'name' => 'admin::app.acl.create',
+        'route' => [
+            'admin.accounting.accounts.create',
+            'admin.accounting.accounts.store',
+        ],
+        'sort' => 1,
+    ], [
+        'key' => 'accounting.accounts.edit',
+        'name' => 'admin::app.acl.edit',
+        'route' => [
+            'admin.accounting.accounts.edit',
+            'admin.accounting.accounts.update',
+        ],
+        'sort' => 2,
+    ], [
+        'key' => 'accounting.accounts.delete',
+        'name' => 'admin::app.acl.delete',
+        'route' => 'admin.accounting.accounts.delete',
+        'sort' => 3,
+    ], [
+        'key' => 'accounting.journal_entries',
+        'name' => 'admin::app.acl.accounting-journal-entries',
+        'route' => 'admin.accounting.journal_entries.index',
+        'sort' => 2,
+    ], [
+        'key' => 'accounting.journal_entries.create',
+        'name' => 'admin::app.acl.create',
+        'route' => [
+            'admin.accounting.journal_entries.create',
+            'admin.accounting.journal_entries.store',
+        ],
+        'sort' => 1,
+    ], [
+        'key' => 'accounting.journal_entries.view',
+        'name' => 'admin::app.acl.view',
+        'route' => 'admin.accounting.journal_entries.view',
+        'sort' => 2,
+    ], [
+        'key' => 'accounting.journal_entries.post',
+        'name' => 'admin::app.acl.accounting-post',
+        'route' => 'admin.accounting.journal_entries.post',
+        'sort' => 3,
+    ], [
+        'key' => 'accounting.journal_entries.void',
+        'name' => 'admin::app.acl.accounting-void',
+        'route' => 'admin.accounting.journal_entries.void',
+        'sort' => 4,
+    ], [
+        'key' => 'accounting.ledger',
+        'name' => 'admin::app.acl.accounting-ledger',
+        'route' => 'admin.accounting.ledger.index',
+        'sort' => 3,
+    ], [
+        'key' => 'accounting.reports',
+        'name' => 'admin::app.acl.accounting-reports',
+        'route' => 'admin.accounting.reports.trial_balance',
+        'sort' => 4,
+    ], [
+        'key' => 'accounting.fiscal_years',
+        'name' => 'admin::app.acl.accounting-fiscal-years',
+        'route' => 'admin.accounting.fiscal_years.index',
+        'sort' => 5,
+    ], [
+        'key' => 'accounting.fiscal_years.create',
+        'name' => 'admin::app.acl.create',
+        'route' => [
+            'admin.accounting.fiscal_years.create',
+            'admin.accounting.fiscal_years.store',
+        ],
+        'sort' => 1,
+    ], [
+        'key' => 'accounting.fiscal_years.close',
+        'name' => 'admin::app.acl.accounting-close',
+        'route' => 'admin.accounting.fiscal_years.close',
+        'sort' => 2,
+    ], [
+        'key' => 'accounting.settings',
+        'name' => 'admin::app.acl.accounting-settings',
+        'route' => 'admin.accounting.settings.edit',
+        'sort' => 6,
+    ], [
+        'key' => 'accounting.settings.edit',
+        'name' => 'admin::app.acl.edit',
+        'route' => [
+            'admin.accounting.settings.edit',
+            'admin.accounting.settings.update',
+        ],
+        'sort' => 1,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Settings
     |--------------------------------------------------------------------------
     |
@@ -923,7 +1033,7 @@ return [
         'key' => 'settings',
         'name' => 'admin::app.acl.settings',
         'route' => 'admin.settings.users.index',
-        'sort' => 8,
+        'sort' => 9,
     ], [
         'key' => 'settings.locales',
         'name' => 'admin::app.acl.locales',
@@ -1242,6 +1352,6 @@ return [
             'admin.configuration.index',
             'admin.configuration.store',
         ],
-        'sort' => 9,
+        'sort' => 10,
     ],
 ];

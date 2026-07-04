@@ -303,13 +303,79 @@ return [
     ],
 
     /**
+     * Accounting.
+     */
+    [
+        'key' => 'accounting',
+        'name' => 'admin::app.components.layouts.sidebar.accounting',
+        'route' => 'admin.accounting.accounts.index',
+        'sort' => 8,
+        'icon' => 'icon-report',
+        'icon-class' => 'report-icon',
+    ], [
+        'key' => 'accounting.accounts',
+        'name' => 'admin::app.components.layouts.sidebar.chart-of-accounts',
+        'route' => 'admin.accounting.accounts.index',
+        'sort' => 1,
+        'icon' => '',
+    ], [
+        'key' => 'accounting.journal_entries',
+        'name' => 'admin::app.components.layouts.sidebar.journal-entries',
+        'route' => 'admin.accounting.journal_entries.index',
+        'sort' => 2,
+        'icon' => '',
+    ], [
+        'key' => 'accounting.ledger',
+        'name' => 'admin::app.components.layouts.sidebar.ledger',
+        'route' => 'admin.accounting.ledger.index',
+        'sort' => 3,
+        'icon' => '',
+    ], [
+        'key' => 'accounting.reports',
+        'name' => 'admin::app.components.layouts.sidebar.reports',
+        'route' => 'admin.accounting.reports.trial_balance',
+        'sort' => 4,
+        'icon' => '',
+    ], [
+        'key' => 'accounting.reports.trial_balance',
+        'name' => 'admin::app.accounting.reports.trial-balance.title',
+        'route' => 'admin.accounting.reports.trial_balance',
+        'sort' => 1,
+        'icon' => '',
+    ], [
+        'key' => 'accounting.reports.income_statement',
+        'name' => 'admin::app.accounting.reports.income-statement.title',
+        'route' => 'admin.accounting.reports.income_statement',
+        'sort' => 2,
+        'icon' => '',
+    ], [
+        'key' => 'accounting.reports.balance_sheet',
+        'name' => 'admin::app.accounting.reports.balance-sheet.title',
+        'route' => 'admin.accounting.reports.balance_sheet',
+        'sort' => 3,
+        'icon' => '',
+    ], [
+        'key' => 'accounting.fiscal_years',
+        'name' => 'admin::app.components.layouts.sidebar.fiscal-years',
+        'route' => 'admin.accounting.fiscal_years.index',
+        'sort' => 5,
+        'icon' => '',
+    ], [
+        'key' => 'accounting.settings',
+        'name' => 'admin::app.components.layouts.sidebar.accounting-settings',
+        'route' => 'admin.accounting.settings.edit',
+        'sort' => 6,
+        'icon' => '',
+    ],
+
+    /**
      * Settings.
      */
     [
         'key' => 'settings',
         'name' => 'admin::app.components.layouts.sidebar.settings',
         'route' => 'admin.settings.locales.index',
-        'sort' => 8,
+        'sort' => 9,
         'icon' => 'icon-settings',
         'icon-class' => 'settings-icon',
     ], [
@@ -399,7 +465,7 @@ return [
         'key' => 'configuration',
         'name' => 'admin::app.components.layouts.sidebar.configure',
         'route' => 'admin.configuration.index',
-        'sort' => 9,
+        'sort' => 10,
         'icon' => 'icon-configuration',
     ],
 ];

@@ -1,0 +1,26 @@
+{
+    "name": "bagisto/laravel-accounting",
+    "license": "MIT",
+    "description": "Accounting and finance package for Bagisto - chart of accounts, journal entries, ledger and financial statements",
+    "authors": [
+        {
+            "name": "Bagisto",
+            "email": "support@bagisto.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Webkul\\Accounting\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\Accounting\\Providers\\AccountingServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}
