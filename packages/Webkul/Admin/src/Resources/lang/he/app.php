@@ -4893,6 +4893,18 @@ return [
                             'title' => 'סוג',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'קוד לקוח',
+                        'description' => 'תיאור',
+                        'password' => 'סיסמה',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'סטטוס',
+                        'title' => 'כותרת',
+                        'title-info' => 'מחשב תעריפי משלוח באמצעות ה-API של Aras Kargo עם פרטי החשבון שלך, וחוזר לתעריף קבוע אם ה-API אינו זמין.',
+                        'username' => 'שם משתמש',
+                        'rate' => 'שער',
+                    ],
                 ],
 
                 'payment-methods' => [

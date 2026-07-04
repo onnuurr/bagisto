@@ -19,4 +19,13 @@ return [
         'default_rate' => '0',
         'class' => 'Webkul\Shipping\Carriers\Free',
     ],
+
+    'araskargo' => [
+        'code' => 'araskargo',
+        'title' => 'Aras Kargo',
+        'description' => 'Aras Kargo Shipping',
+        'active' => false,
+        'default_rate' => '0',
+        'class' => 'Webkul\Shipping\Carriers\ArasKargo',
+    ],
 ];

@@ -4893,6 +4893,18 @@ return [
                             'title' => 'প্রকার',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'কাস্টমার কোড',
+                        'description' => 'বিবরণ',
+                        'password' => 'পাসওয়ার্ড',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'স্থিতি',
+                        'title' => 'শিরোনাম',
+                        'title-info' => 'আপনার অ্যাকাউন্ট শংসাপত্র ব্যবহার করে Aras Kargo API থেকে শিপিং রেট গণনা করে এবং API অনুপলব্ধ হলে একটি নির্দিষ্ট হারে ফিরে যায়।',
+                        'username' => 'ব্যবহারকারীর নাম',
+                        'rate' => 'হার',
+                    ],
                 ],
 
                 'payment-methods' => [

@@ -4893,6 +4893,18 @@ return [
                             'title' => 'වර්ගය',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'පාරිභෝගික කේතය',
+                        'description' => 'විස්තර',
+                        'password' => 'මුරපදය',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'තත්වය',
+                        'title' => 'මාතෘකාව',
+                        'title-info' => 'ඔබගේ ගිණුම් අක්තපත්‍ර භාවිතයෙන් Aras Kargo API එකෙන් නැව්ගත කිරීමේ ගාස්තු ගණනය කරයි, API ලබා ගත නොහැකි නම් ස්ථාවර ගාස්තුවකට හැරී යයි.',
+                        'username' => 'පරිශීලක නාමය',
+                        'rate' => 'මිල',
+                    ],
                 ],
 
                 'payment-methods' => [

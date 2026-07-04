@@ -4893,6 +4893,18 @@ return [
                             'title' => 'Tip',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'Müşteri Kodu',
+                        'description' => 'Açıklama',
+                        'password' => 'Şifre',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'Durum',
+                        'title' => 'Başlık',
+                        'title-info' => 'Hesap bilgilerinizi kullanarak Aras Kargo API\'sinden kargo ücretlerini hesaplar ve API\'ye erişilemediğinde sabit bir ücrete geri döner.',
+                        'username' => 'Kullanıcı Adı',
+                        'rate' => 'Fiyat',
+                    ],
                 ],
 
                 'payment-methods' => [

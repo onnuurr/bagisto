@@ -4893,6 +4893,18 @@ return [
                             'title' => 'Type',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'Customer Code',
+                        'description' => 'Description',
+                        'password' => 'Password',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'Status',
+                        'title' => 'Title',
+                        'title-info' => 'Calculates shipping rates using the Aras Kargo API with your account credentials, and falls back to a fixed rate if the API cannot be reached.',
+                        'username' => 'Username',
+                        'rate' => 'Rate',
+                    ],
                 ],
 
                 'payment-methods' => [

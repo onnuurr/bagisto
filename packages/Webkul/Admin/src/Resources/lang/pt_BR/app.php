@@ -4893,6 +4893,18 @@ return [
                             'title' => 'Tipo',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'Código do cliente',
+                        'description' => 'Descrição',
+                        'password' => 'Senha',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'Status',
+                        'title' => 'Título',
+                        'title-info' => 'Calcula as taxas de envio usando a API da Aras Kargo com as credenciais da sua conta, e utiliza uma taxa fixa de reserva caso a API esteja indisponível.',
+                        'username' => 'Nome de usuário',
+                        'rate' => 'Taxa',
+                    ],
                 ],
 
                 'payment-methods' => [

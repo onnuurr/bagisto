@@ -4893,6 +4893,18 @@ return [
                             'title' => '类型',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => '客户代码',
+                        'description' => '描述',
+                        'password' => '密码',
+                        'page-title' => 'Aras Kargo',
+                        'status' => '状态',
+                        'title' => '标题',
+                        'title-info' => '使用您的账户凭证通过 Aras Kargo API 计算运费,如果 API 不可用则回退到固定费率。',
+                        'username' => '用户名',
+                        'rate' => '费用',
+                    ],
                 ],
 
                 'payment-methods' => [

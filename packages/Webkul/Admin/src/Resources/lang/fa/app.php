@@ -4893,6 +4893,18 @@ return [
                             'title' => 'نوع',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'کد مشتری',
+                        'description' => 'توضیحات',
+                        'password' => 'رمز عبور',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'وضعیت',
+                        'title' => 'عنوان',
+                        'title-info' => 'نرخ‌های ارسال را با استفاده از API آراس کارگو و اطلاعات حساب شما محاسبه می‌کند و در صورت در دسترس نبودن API از نرخ ثابت جایگزین استفاده می‌کند.',
+                        'username' => 'نام کاربری',
+                        'rate' => 'نرخ',
+                    ],
                 ],
 
                 'payment-methods' => [

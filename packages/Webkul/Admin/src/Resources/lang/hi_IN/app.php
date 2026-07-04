@@ -4893,6 +4893,18 @@ return [
                             'title' => 'प्रकार',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'ग्राहक कोड',
+                        'description' => 'विवरण',
+                        'password' => 'पासवर्ड',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'स्थिति',
+                        'title' => 'शीर्षक',
+                        'title-info' => 'आपके खाते की जानकारी का उपयोग करके Aras Kargo API से शिपिंग दरों की गणना करता है, और API उपलब्ध न होने पर एक निश्चित दर पर वापस चला जाता है।',
+                        'username' => 'उपयोगकर्ता नाम',
+                        'rate' => 'दर',
+                    ],
                 ],
 
                 'payment-methods' => [

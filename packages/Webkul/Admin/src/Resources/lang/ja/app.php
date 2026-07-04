@@ -4893,6 +4893,18 @@ return [
                             'title' => 'タイプ',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => '顧客コード',
+                        'description' => '説明',
+                        'password' => 'パスワード',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'ステータス',
+                        'title' => 'タイトル',
+                        'title-info' => 'アカウントの認証情報を使用してAras Kargo APIから配送料金を計算し、APIが利用できない場合は固定料金にフォールバックします。',
+                        'username' => 'ユーザー名',
+                        'rate' => '料金',
+                    ],
                 ],
 
                 'payment-methods' => [

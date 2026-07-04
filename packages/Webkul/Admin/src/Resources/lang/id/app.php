@@ -4893,6 +4893,18 @@ return [
                             'title' => 'Jenis',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'Kode Pelanggan',
+                        'description' => 'Deskripsi',
+                        'password' => 'Kata Sandi',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'Status',
+                        'title' => 'Judul',
+                        'title-info' => 'Menghitung tarif pengiriman menggunakan API Aras Kargo dengan kredensial akun Anda, dan menggunakan tarif tetap cadangan jika API tidak tersedia.',
+                        'username' => 'Nama Pengguna',
+                        'rate' => 'Tarif',
+                    ],
                 ],
 
                 'payment-methods' => [

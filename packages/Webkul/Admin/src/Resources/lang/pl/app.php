@@ -4893,6 +4893,18 @@ return [
                             'title' => 'Typ',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'Kod klienta',
+                        'description' => 'Opis',
+                        'password' => 'Hasło',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'Status',
+                        'title' => 'Tytuł',
+                        'title-info' => 'Oblicza stawki wysyłki za pomocą API Aras Kargo przy użyciu danych logowania do konta, a w przypadku niedostępności API korzysta ze stałej stawki zastępczej.',
+                        'username' => 'Nazwa użytkownika',
+                        'rate' => 'Stawka',
+                    ],
                 ],
 
                 'payment-methods' => [

@@ -4893,6 +4893,18 @@ return [
                             'title' => 'Tipus',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'Codi de client',
+                        'description' => 'Descripció',
+                        'password' => 'Contrasenya',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'Estat',
+                        'title' => 'Títol',
+                        'title-info' => 'Calcula les tarifes d\'enviament mitjançant l\'API d\'Aras Kargo amb les credencials del vostre compte, i utilitza una tarifa fixa de reserva si l\'API no està disponible.',
+                        'username' => 'Nom d\'usuari',
+                        'rate' => 'Tarifa',
+                    ],
                 ],
 
                 'payment-methods' => [

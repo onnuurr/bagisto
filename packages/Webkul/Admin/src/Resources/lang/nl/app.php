@@ -4893,6 +4893,18 @@ return [
                             'title' => 'Type',
                         ],
                     ],
+
+                    'aras-kargo' => [
+                        'customer-code' => 'Klantcode',
+                        'description' => 'Beschrijving',
+                        'password' => 'Wachtwoord',
+                        'page-title' => 'Aras Kargo',
+                        'status' => 'Status',
+                        'title' => 'Titel',
+                        'title-info' => 'Berekent verzendtarieven via de Aras Kargo API met uw accountgegevens, en valt terug op een vast tarief als de API niet beschikbaar is.',
+                        'username' => 'Gebruikersnaam',
+                        'rate' => 'Tarief',
+                    ],
                 ],
 
                 'payment-methods' => [
