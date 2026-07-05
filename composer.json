@@ -84,6 +84,7 @@
             "Webkul\\EUWithdrawal\\": "packages/Webkul/EUWithdrawal/src",
             "Webkul\\FPC\\": "packages/Webkul/FPC/src",
             "Webkul\\GDPR\\": "packages/Webkul/GDPR/src",
+            "Webkul\\GiftCard\\": "packages/Webkul/GiftCard/src",
             "Webkul\\ImageCache\\": "packages/Webkul/ImageCache/src",
             "Webkul\\Installer\\": "packages/Webkul/Installer/src",
             "Webkul\\Inventory\\": "packages/Webkul/Inventory/src",

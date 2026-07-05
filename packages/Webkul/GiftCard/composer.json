@@ -1,0 +1,26 @@
+{
+    "name": "bagisto/laravel-gift-card",
+    "license": "MIT",
+    "description": "Gift card package for store front and customers",
+    "authors": [
+        {
+            "name": "Bagisto",
+            "email": "support@bagisto.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Webkul\\GiftCard\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\GiftCard\\Providers\\GiftCardServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}
