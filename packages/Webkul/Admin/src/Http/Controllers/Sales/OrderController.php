@@ -15,6 +15,7 @@ use Webkul\Admin\Http\Resources\CartResource;
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Checkout\Repositories\CartRepository;
 use Webkul\Customer\Repositories\CustomerGroupRepository;
+use Webkul\Product\Models\ProductProxy;
 use Webkul\Sales\Repositories\OrderCommentRepository;
 use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Sales\Transformers\OrderResource;
@@ -125,7 +126,16 @@ class OrderController extends Controller
      */
     public function view(int $id)
     {
-        $order = $this->orderRepository->findOrFail($id);
+        $order = $this->orderRepository->with([
+            'items.product' => function ($morphTo) {
+                $morphTo->morphWith([
+                    ProductProxy::modelClass() => ['images'],
+                ]);
+            },
+            'billing_address',
+            'shipping_address',
+            'payment',
+        ])->findOrFail($id);
 
         return view('admin::sales.orders.view', compact('order'));
     }

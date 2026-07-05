@@ -6,6 +6,7 @@ use Illuminate\Http\Response;
 use Illuminate\View\View;
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Core\Traits\PDFHandler;
+use Webkul\Product\Models\ProductProxy;
 use Webkul\Sales\Repositories\InvoiceRepository;
 use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Shop\DataGrids\OrderDataGrid;
@@ -47,7 +48,16 @@ class OrderController extends Controller
      */
     public function view($id)
     {
-        $order = $this->orderRepository->findOneWhere([
+        $order = $this->orderRepository->with([
+            'items.product' => function ($morphTo) {
+                $morphTo->morphWith([
+                    ProductProxy::modelClass() => ['images'],
+                ]);
+            },
+            'billing_address',
+            'shipping_address',
+            'payment',
+        ])->findOneWhere([
             'customer_id' => auth()->guard('customer')->id(),
             'id' => $id,
         ]);

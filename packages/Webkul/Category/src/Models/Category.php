@@ -10,12 +10,29 @@ use Kalnoy\Nestedset\NodeTrait;
 use Webkul\Attribute\Models\AttributeProxy;
 use Webkul\Category\Contracts\Category as CategoryContract;
 use Webkul\Category\Database\Factories\CategoryFactory;
+use Webkul\Category\Repositories\CategoryRepository;
 use Webkul\Core\Eloquent\TranslatableModel;
 use Webkul\Product\Models\ProductProxy;
 
 class Category extends TranslatableModel implements CategoryContract
 {
     use HasFactory, NodeTrait;
+
+    /**
+     * Bootstrap the model and its traits.
+     *
+     * Invalidates the cached category trees on every write, regardless of
+     * whether it goes through the repository (create/update/delete) or
+     * mutates the model directly (e.g. mass status updates).
+     *
+     * @return void
+     */
+    protected static function booted(): void
+    {
+        static::saved(fn () => CategoryRepository::forgetCategoryTreeCache());
+
+        static::deleted(fn () => CategoryRepository::forgetCategoryTreeCache());
+    }
 
     /**
      * Translated attributes.

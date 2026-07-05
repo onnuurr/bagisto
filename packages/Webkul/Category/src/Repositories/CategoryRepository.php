@@ -3,6 +3,7 @@
 namespace Webkul\Category\Repositories;
 
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -178,9 +179,13 @@ class CategoryRepository extends Repository
      */
     public function getCategoryTree(?int $id = null)
     {
-        return $id
-            ? $this->model::orderBy('position', 'ASC')->where('id', '!=', $id)->get()->toTree()
-            : $this->model::orderBy('position', 'ASC')->get()->toTree();
+        return Cache::remember(
+            $this->categoryTreeCacheKey('category_tree', $id),
+            now()->addHour(),
+            fn () => $id
+                ? $this->model::orderBy('position', 'ASC')->where('id', '!=', $id)->get()->toTree()
+                : $this->model::orderBy('position', 'ASC')->get()->toTree()
+        );
     }
 
     /**
@@ -190,9 +195,13 @@ class CategoryRepository extends Repository
      */
     public function getCategoryTreeWithoutDescendant(?int $id = null)
     {
-        return $id
-            ? $this->model::orderBy('position', 'ASC')->where('id', '!=', $id)->whereNotDescendantOf($id)->get()->toTree()
-            : $this->model::orderBy('position', 'ASC')->get()->toTree();
+        return Cache::remember(
+            $this->categoryTreeCacheKey('category_tree_without_descendant', $id),
+            now()->addHour(),
+            fn () => $id
+                ? $this->model::orderBy('position', 'ASC')->where('id', '!=', $id)->whereNotDescendantOf($id)->get()->toTree()
+                : $this->model::orderBy('position', 'ASC')->get()->toTree()
+        );
     }
 
     /**
@@ -203,9 +212,42 @@ class CategoryRepository extends Repository
      */
     public function getVisibleCategoryTree($id = null)
     {
-        return $id
-            ? $this->model::orderBy('position', 'ASC')->where('status', 1)->descendantsAndSelf($id)->toTree($id)
-            : $this->model::orderBy('position', 'ASC')->where('status', 1)->get()->toTree();
+        return Cache::remember(
+            $this->categoryTreeCacheKey('visible_category_tree', $id),
+            now()->addHour(),
+            fn () => $id
+                ? $this->model::orderBy('position', 'ASC')->where('status', 1)->descendantsAndSelf($id)->toTree($id)
+                : $this->model::orderBy('position', 'ASC')->where('status', 1)->get()->toTree()
+        );
+    }
+
+    /**
+     * Build a cache key for a category tree variant that is automatically
+     * invalidated whenever a category is created, updated or deleted.
+     *
+     * @param  string  $prefix
+     * @param  int|null  $id
+     * @return string
+     */
+    private function categoryTreeCacheKey(string $prefix, ?int $id): string
+    {
+        $version = Cache::get('category_tree_cache_version', 1);
+
+        return "{$prefix}.v{$version}.".($id ?? 'all');
+    }
+
+    /**
+     * Invalidate all cached category tree variants.
+     *
+     * Bumping the version number is cheaper and driver-agnostic compared to
+     * tracking/forgetting every individual tree cache key, and it works even
+     * on cache stores (e.g. the default file driver) that don't support tags.
+     *
+     * @return void
+     */
+    public static function forgetCategoryTreeCache(): void
+    {
+        Cache::put('category_tree_cache_version', Cache::get('category_tree_cache_version', 1) + 1, now()->addDays(30));
     }
 
     /**
