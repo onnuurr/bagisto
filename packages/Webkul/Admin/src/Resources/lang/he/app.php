@@ -41,6 +41,8 @@ return [
             'enter-code' => 'הזן את קוד ה-6 ספרות מהאפליקציה שלך כדי להמשיך.',
             'title' => 'אימות אימות דו-שלבי',
             'verify-code' => 'אמת קוד',
+            'code-sent' => 'נשלח קוד אימות חדש.',
+            'resend-code' => 'שלח קוד מחדש',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'החשבון שלי',
             'update-success' => 'החשבון עודכן בהצלחה',
             'upload-image-info' => 'העלה תמונת פרופיל (110px X 110px) בפורמט PNG או JPG',
+            'method-authenticator' => 'אפליקציית אימות',
+            'method-sms' => 'SMS',
+            'phone' => 'מספר טלפון',
+            'send-code' => 'שלח קוד',
+            'two-factor-method' => 'שיטת אימות דו-שלבי',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => 'האימות הדו-שלבי הופעל בהצלחה.',
             'invalid-code' => 'קוד אימות לא תקין.',
             'verified-success' => 'האימות הדו-שלבי אומת בהצלחה.',
+            'code-sent-success' => 'קוד האימות נשלח בהצלחה.',
+            'phone-required' => 'יש להוסיף מספר טלפון לפני הפעלת אימות באמצעות SMS.',
         ],
 
         'setup' => [
@@ -5258,6 +5267,96 @@ return [
                     'build-views' => 'אחסן תצוגות במטמון',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'הגדר שערי SMS, התראות הזמנה ואימות דו-שלבי מבוסס SMS.',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => 'הגדרות SMS כלליות.',
+                    'title' => 'כללי',
+
+                    'settings' => [
+                        'active-gateway' => 'שער פעיל',
+                        'enabled' => 'מופעל',
+                        'title' => 'הגדרות',
+                        'title-info' => 'הפעל או השבת התראות SMS בכל האפליקציה שלך.',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'מזהה חשבון (SID) / מפתח API',
+                    'credential-secret' => 'אסימון אימות (Auth Token) / סוד API',
+                    'info' => 'הגדר את פרטי הגישה של ספק שער ה-SMS שלך.',
+                    'sender' => 'מספר שולח / מזהה שולח',
+                    'title' => 'שערים',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'הגדר את פרטי הגישה של Twilio API שלך.',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'הגדר את פרטי הגישה של Vonage (Nexmo) API שלך.',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'מסלול',
+                        'title' => 'MSG91',
+                        'title-info' => 'הגדר את פרטי הגישה של MSG91 API שלך.',
+                    ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'הגדר את פרטי הגישה של Verimor API שלך.',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => 'מופעל',
+                    'info' => 'הפעל התראות SMS לאירועי הזמנה והתאם אישית את תבניות ההודעה שלהן.',
+                    'template-label' => 'תבנית הודעה',
+                    'title' => 'התראות הזמנה',
+
+                    'order-placed' => [
+                        'title' => 'הזמנה בוצעה',
+                        'title-info' => 'עדכן את הלקוח ב-SMS כאשר מתבצעת הזמנה.',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => 'הזמנה נשלחה',
+                        'title-info' => 'עדכן את הלקוח ב-SMS כאשר הזמנתו נשלחת.',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => 'הזמנה בוטלה',
+                        'title-info' => 'עדכן את הלקוח ב-SMS כאשר הזמנתו מבוטלת.',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => 'חשבונית נוצרה',
+                        'title-info' => 'עדכן את הלקוח ב-SMS כאשר נוצרת חשבונית עבור הזמנתו.',
+                    ],
+
+                    'refund-created' => [
+                        'title' => 'החזר כספי נוצר',
+                        'title-info' => 'עדכן את הלקוח ב-SMS כאשר נוצר החזר כספי עבור הזמנתו.',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => 'אפשר למנהלים להשתמש ב-SMS כשיטת אימות דו-שלבי.',
+                    'title' => 'אימות דו-שלבי',
+
+                    'settings' => [
+                        'enabled' => 'מופעל',
+                        'title' => 'הגדרות',
+                'sms' => 'SMS',
+                        'title-info' => 'הפעל SMS כשיטת אימות דו-שלבי זמינה עבור חשבונות מנהל.',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5496,6 +5595,7 @@ return [
                     'use-cases' => 'מטרות שימוש',
                     'zoom' => 'הגדלה',
                 ],
+        'sms' => 'יומני SMS',
             ],
 
             'videos' => [
@@ -5919,6 +6019,55 @@ return [
             'refunded' => 'הביטול סומן כהוחזר.',
             'confirmation_resent' => 'דוא"ל האישור נשלח שוב.',
             'confirmation_failed' => 'שליחת דוא"ל האישור נכשלה. ראה את ציר הזמן לפרטים.',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'יומני SMS',
+
+        'index' => [
+            'title' => 'יומני SMS',
+
+            'datagrid' => [
+                'created-at' => 'נשלח בתאריך',
+                'delete' => 'מחק',
+                'event' => 'אירוע',
+                'gateway' => 'שער',
+                'id' => 'מזהה',
+                'message' => 'הודעה',
+                'recipient' => 'נמען',
+                'status' => 'סטטוס',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => 'שלום {customer_name}, הזמנתך #{order_id} בוצעה בהצלחה. סך הכל: {order_total}. תודה שקנית אצלנו!',
+            ],
+
+            'order-shipped' => [
+                'default-template' => 'שלום {customer_name}, הזמנתך #{order_id} נשלחה ובדרך אליך.',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => 'שלום {customer_name}, הזמנתך #{order_id} בוטלה.',
+            ],
+
+            'invoice-created' => [
+                'default-template' => 'שלום {customer_name}, נוצרה חשבונית עבור הזמנתך #{order_id}. סך הכל: {order_total}.',
+            ],
+
+            'refund-created' => [
+                'default-template' => 'שלום {customer_name}, טופל החזר כספי עבור הזמנתך #{order_id}.',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => 'קוד האימות שלך הוא :code. הוא יפוג בעוד 5 דקות.',
+        ],
+
+        'messages' => [
+            'delete-success' => 'יומן ה-SMS נמחק בהצלחה.',
         ],
     ],
 ];

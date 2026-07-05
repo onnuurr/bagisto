@@ -80,7 +80,7 @@
                             </x-admin::form.control-group>
 
                             <!-- Email -->
-                            <x-admin::form.control-group class="!mb-0">
+                            <x-admin::form.control-group>
                                 <x-admin::form.control-group.label class="required">
                                     @lang('admin::app.account.edit.email')
                                 </x-admin::form.control-group.label>
@@ -95,6 +95,24 @@
                                 />
 
                                 <x-admin::form.control-group.error control-name="email" />
+                            </x-admin::form.control-group>
+
+                            <!-- Phone -->
+                            <x-admin::form.control-group class="!mb-0">
+                                <x-admin::form.control-group.label>
+                                    @lang('admin::app.account.edit.phone')
+                                </x-admin::form.control-group.label>
+
+                                <x-admin::form.control-group.control
+                                    type="text"
+                                    name="phone"
+                                    id="phone"
+                                    :value="old('phone') ?: $user->phone"
+                                    :label="trans('admin::app.account.edit.phone')"
+                                    :placeholder="trans('admin::app.account.edit.phone')"
+                                />
+
+                                <x-admin::form.control-group.error control-name="phone" />
                             </x-admin::form.control-group>
                         </div>
                     </div>
@@ -256,20 +274,72 @@
                                 </div>
                             </div>
 
-                            <!-- QR Code & Verification State -->
+                            <!-- Method Selection, QR Code / SMS & Verification State -->
                             <div
                                 class="w-full"
                                 v-else
                             >
-                                <p class="text-center text-sm text-gray-600 dark:text-gray-300">
-                                    @lang('admin::app.account.setup.scan-qr')
-                                </p>
+                                @if (core()->getConfigData('sms.two_factor.settings.enabled'))
+                                    <p class="mb-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-300">
+                                        @lang('admin::app.account.edit.two-factor-method')
+                                    </p>
 
-                                <div
-                                    class="mt-4 flex justify-center"
-                                    v-if="qrCodeSvg"
-                                >
-                                    <div v-html="qrCodeSvg"></div>
+                                    <div class="mb-4 flex gap-2">
+                                        <button
+                                            type="button"
+                                            class="rounded-md border px-3 py-1.5 text-sm"
+                                            :class="method === 'authenticator' ? 'primary-button' : 'secondary-button'"
+                                            @click="selectMethod('authenticator')"
+                                        >
+                                            @lang('admin::app.account.edit.method-authenticator')
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="rounded-md border px-3 py-1.5 text-sm"
+                                            :class="method === 'sms' ? 'primary-button' : 'secondary-button'"
+                                            @click="selectMethod('sms')"
+                                        >
+                                            @lang('admin::app.account.edit.method-sms')
+                                        </button>
+                                    </div>
+                                @endif
+
+                                <div v-if="method === 'authenticator'">
+                                    <p class="text-center text-sm text-gray-600 dark:text-gray-300">
+                                        @lang('admin::app.account.setup.scan-qr')
+                                    </p>
+
+                                    <div
+                                        class="mt-4 flex justify-center"
+                                        v-if="qrCodeSvg"
+                                    >
+                                        <div v-html="qrCodeSvg"></div>
+                                    </div>
+                                </div>
+
+                                <div v-else>
+                                    @if ($user->phone)
+                                        <p class="text-center text-sm text-gray-600 dark:text-gray-300">
+                                            {{ $user->phone }}
+                                        </p>
+
+                                        <div class="mt-4 flex justify-center">
+                                            <button
+                                                type="button"
+                                                class="secondary-button"
+                                                :class="{ 'pointer-events-none opacity-75': isSendingCode }"
+                                                :disabled="isSendingCode"
+                                                @click="sendSmsCode"
+                                            >
+                                                @lang('admin::app.account.edit.send-code')
+                                            </button>
+                                        </div>
+                                    @else
+                                        <p class="text-center text-sm text-red-600 dark:text-red-400">
+                                            @lang('admin::app.account.messages.phone-required')
+                                        </p>
+                                    @endif
                                 </div>
 
                                 <x-admin::form
@@ -281,6 +351,12 @@
                                         ref="enableForm"
                                         @submit="handleSubmit($event, enableTwoFactor)"
                                     >
+                                        <input
+                                            type="hidden"
+                                            name="method"
+                                            :value="method"
+                                        />
+
                                         <x-admin::form.control-group>
                                             <x-admin::form.control-group.label class="required">
                                                 @lang('admin::app.account.setup.code-label')
@@ -345,6 +421,10 @@
 
                         isEnabling: false,
 
+                        isSendingCode: false,
+
+                        method: 'authenticator',
+
                         showBackupCodes: false,
 
                         backupCodes: [],
@@ -377,7 +457,38 @@
 
                         this.isEnabling = false;
 
+                        this.method = 'authenticator';
+
                         this.$emit('update:modelValue', false);
+                    },
+
+                    selectMethod(method) {
+                        this.method = method;
+                    },
+
+                    sendSmsCode() {
+                        if (this.isSendingCode) {
+                            return;
+                        }
+
+                        this.isSendingCode = true;
+
+                        this.$axios.post(`{{ route('admin.two_factor.sms.send') }}`)
+                            .then(response => {
+                                this.$emitter.emit('add-flash', {
+                                    type: 'success',
+                                    message: response.data.message
+                                });
+                            })
+                            .catch(error => {
+                                this.$emitter.emit('add-flash', {
+                                    type: 'error',
+                                    message: error.response?.data?.message
+                                });
+                            })
+                            .finally(() => {
+                                this.isSendingCode = false;
+                            });
                     },
 
                     enableTwoFactor(params, { setErrors }) {

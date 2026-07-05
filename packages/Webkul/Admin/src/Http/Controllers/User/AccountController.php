@@ -35,6 +35,7 @@ class AccountController extends Controller
         $this->validate(request(), [
             'name' => 'required',
             'email' => 'email|unique:admins,email,'.$user->id,
+            'phone' => 'nullable|string|max:20',
             'password' => 'nullable|min:6|confirmed',
             'current_password' => 'required|min:6',
             'image.*' => 'nullable|mimes:bmp,jpeg,jpg,png,webp',
@@ -43,6 +44,7 @@ class AccountController extends Controller
         $data = request()->only([
             'name',
             'email',
+            'phone',
             'password',
             'password_confirmation',
             'current_password',

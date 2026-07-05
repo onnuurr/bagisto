@@ -41,6 +41,8 @@ return [
             'enter-code' => 'Devam etmek için doğrulayıcı uygulamanızdan 6 haneli kodu girin.',
             'title' => 'İki Faktörlü Doğrulamayı Onayla',
             'verify-code' => 'Kodu Doğrula',
+            'code-sent' => 'Yeni bir doğrulama kodu gönderildi.',
+            'resend-code' => 'Kodu Yeniden Gönder',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'Hesabım',
             'update-success' => 'Hesap başarıyla güncellendi',
             'upload-image-info' => 'Profil Resmi Yükle (110px X 110px) PNG veya JPG formatında',
+            'method-authenticator' => 'Kimlik Doğrulayıcı Uygulama',
+            'method-sms' => 'SMS',
+            'phone' => 'Telefon Numarası',
+            'send-code' => 'Kod Gönder',
+            'two-factor-method' => 'İki Adımlı Doğrulama Yöntemi',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => 'İki faktörlü doğrulama başarıyla etkinleştirildi.',
             'invalid-code' => 'Geçersiz doğrulama kodu.',
             'verified-success' => 'İki faktörlü doğrulama başarıyla doğrulandı.',
+            'code-sent-success' => 'Doğrulama kodu başarıyla gönderildi.',
+            'phone-required' => 'SMS doğrulamasını etkinleştirmeden önce lütfen bir telefon numarası ekleyin.',
         ],
 
         'setup' => [
@@ -5258,6 +5267,96 @@ return [
                     'build-views' => 'Görünümleri Önbellekle',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'SMS ağ geçitlerini, sipariş bildirimlerini ve SMS tabanlı iki adımlı doğrulamayı yapılandırın.',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => 'Genel SMS ayarları.',
+                    'title' => 'Genel',
+
+                    'settings' => [
+                        'active-gateway' => 'Aktif Ağ Geçidi',
+                        'enabled' => 'Etkin',
+                        'title' => 'Ayarlar',
+                        'title-info' => 'SMS bildirimlerini tüm uygulamanız genelinde etkinleştirin veya devre dışı bırakın.',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'Hesap SID / API Anahtarı',
+                    'credential-secret' => 'Auth Token / API Secret',
+                    'info' => 'SMS ağ geçidi sağlayıcınız için kimlik bilgilerini yapılandırın.',
+                    'sender' => 'Gönderen Numara / Gönderen Kimliği',
+                    'title' => 'Ağ Geçitleri',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'Twilio API kimlik bilgilerinizi yapılandırın.',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'Vonage (Nexmo) API kimlik bilgilerinizi yapılandırın.',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'Rota',
+                        'title' => 'MSG91',
+                        'title-info' => 'MSG91 API kimlik bilgilerinizi yapılandırın.',
+                    ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Verimor API kimlik bilgilerinizi yapılandırın.',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => 'Etkin',
+                    'info' => 'Sipariş olayları için SMS bildirimlerini etkinleştirin ve mesaj şablonlarını özelleştirin.',
+                    'template-label' => 'Mesaj Şablonu',
+                    'title' => 'Sipariş Bildirimleri',
+
+                    'order-placed' => [
+                        'title' => 'Sipariş Oluşturuldu',
+                        'title-info' => 'Bir sipariş oluşturulduğunda müşteriyi SMS ile bilgilendirin.',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => 'Sipariş Kargoya Verildi',
+                        'title-info' => 'Siparişi kargoya verildiğinde müşteriyi SMS ile bilgilendirin.',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => 'Sipariş İptal Edildi',
+                        'title-info' => 'Siparişi iptal edildiğinde müşteriyi SMS ile bilgilendirin.',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => 'Fatura Oluşturuldu',
+                        'title-info' => 'Siparişi için bir fatura oluşturulduğunda müşteriyi SMS ile bilgilendirin.',
+                    ],
+
+                    'refund-created' => [
+                        'title' => 'İade Oluşturuldu',
+                        'title-info' => 'Siparişi için bir iade oluşturulduğunda müşteriyi SMS ile bilgilendirin.',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => 'Yöneticilerin SMS\'i iki adımlı doğrulama yöntemi olarak kullanmasına izin verin.',
+                    'title' => 'İki Adımlı Doğrulama',
+
+                    'settings' => [
+                        'enabled' => 'Etkin',
+                        'title' => 'Ayarlar',
+                'sms' => 'SMS',
+                        'title-info' => 'Yönetici hesapları için SMS\'i kullanılabilir bir iki adımlı doğrulama yöntemi olarak etkinleştirin.',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5496,6 +5595,7 @@ return [
                     'use-cases' => 'Kullanım Alanları',
                     'zoom' => 'Yakınlaştırma',
                 ],
+        'sms' => 'SMS Kayıtları',
             ],
 
             'videos' => [
@@ -5919,6 +6019,55 @@ return [
             'refunded' => 'Cayma talebi iade edildi olarak işaretlendi.',
             'confirmation_resent' => 'Onay e-postası yeniden gönderildi.',
             'confirmation_failed' => 'Onay e-postası gönderilemedi. Ayrıntılar için zaman çizelgesine bakın.',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'SMS Kayıtları',
+
+        'index' => [
+            'title' => 'SMS Kayıtları',
+
+            'datagrid' => [
+                'created-at' => 'Gönderilme Zamanı',
+                'delete' => 'Sil',
+                'event' => 'Olay',
+                'gateway' => 'Ağ Geçidi',
+                'id' => 'ID',
+                'message' => 'Mesaj',
+                'recipient' => 'Alıcı',
+                'status' => 'Durum',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => 'Merhaba {customer_name}, #{order_id} numaralı siparişiniz başarıyla oluşturuldu. Toplam: {order_total}. Bizi tercih ettiğiniz için teşekkür ederiz!',
+            ],
+
+            'order-shipped' => [
+                'default-template' => 'Merhaba {customer_name}, #{order_id} numaralı siparişiniz kargoya verildi ve yolda.',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => 'Merhaba {customer_name}, #{order_id} numaralı siparişiniz iptal edildi.',
+            ],
+
+            'invoice-created' => [
+                'default-template' => 'Merhaba {customer_name}, #{order_id} numaralı siparişiniz için bir fatura oluşturuldu. Toplam: {order_total}.',
+            ],
+
+            'refund-created' => [
+                'default-template' => 'Merhaba {customer_name}, #{order_id} numaralı siparişiniz için bir iade işlendi.',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => 'Doğrulama kodunuz :code. 5 dakika içinde sona erecektir.',
+        ],
+
+        'messages' => [
+            'delete-success' => 'SMS kaydı başarıyla silindi.',
         ],
     ],
 ];

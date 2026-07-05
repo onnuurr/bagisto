@@ -1225,6 +1225,19 @@ return [
             'admin.settings.data_transfer.imports.download_sample',
         ],
         'sort' => 4,
+    ], [
+        'key' => 'settings.sms',
+        'name' => 'admin::app.acl.sms',
+        'route' => 'admin.sms.index',
+        'sort' => 11,
+    ], [
+        'key' => 'settings.sms.delete',
+        'name' => 'admin::app.acl.delete',
+        'route' => [
+            'admin.sms.delete',
+            'admin.sms.mass_delete',
+        ],
+        'sort' => 1,
     ],
 
     /*

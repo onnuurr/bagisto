@@ -390,6 +390,12 @@ return [
         'route' => 'admin.settings.data_transfer.imports.index',
         'sort' => 1,
         'icon' => '',
+    ], [
+        'key' => 'settings.sms',
+        'name' => 'admin::app.components.layouts.sidebar.sms',
+        'route' => 'admin.sms.index',
+        'sort' => 11,
+        'icon' => '',
     ],
 
     /**

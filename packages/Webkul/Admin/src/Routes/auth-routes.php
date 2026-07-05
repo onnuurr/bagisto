@@ -37,6 +37,10 @@ Route::group(['prefix' => config('app.admin_url')], function () {
         Route::post('verify', 'verifyTwoFactorCode')
             ->middleware('throttle:5,1')
             ->name('admin.two_factor.verify.store');
+
+        Route::post('verify/resend', 'resendLoginCode')
+            ->middleware('throttle:5,1')
+            ->name('admin.two_factor.verify.resend');
     });
 
     /**

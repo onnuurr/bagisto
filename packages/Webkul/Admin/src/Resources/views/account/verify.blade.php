@@ -91,6 +91,22 @@
                     </div>
                 </x-admin::form>
 
+                @if (($admin ?? null)?->two_factor_method === 'sms')
+                    <div class="px-8 pb-6 text-center">
+                        <x-admin::form
+                            :action="route('admin.two_factor.verify.resend')"
+                            method="POST"
+                        >
+                            <button
+                                type="submit"
+                                class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
+                            >
+                                @lang('admin::app.users.verify.resend-code')
+                            </button>
+                        </x-admin::form>
+                    </div>
+                @endif
+
                 <!-- Back / Logout -->
                 <div class="border-t px-8 py-4 text-center dark:border-gray-800">
                     <x-admin::form

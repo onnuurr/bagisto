@@ -41,6 +41,8 @@ return [
             'enter-code' => 'Introdueix el codi de 6 dígits de la teva aplicació d’autenticació per continuar.',
             'title' => 'Verifica l’autenticació de dos factors',
             'verify-code' => 'Verifica el codi',
+            'code-sent' => 'S\'ha enviat un nou codi de verificació.',
+            'resend-code' => 'Reenviar codi',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'El meu compte',
             'update-success' => 'Compte actualitzat amb èxit',
             'upload-image-info' => 'Carrega una imatge de perfil (110px X 110px) en format PNG o JPG',
+            'method-authenticator' => 'Aplicació d\'autenticació',
+            'method-sms' => 'SMS',
+            'phone' => 'Número de telèfon',
+            'send-code' => 'Enviar codi',
+            'two-factor-method' => 'Mètode de dos factors',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => 'Autenticació de dos factors habilitada correctament.',
             'invalid-code' => 'Codi de verificació invàlid.',
             'verified-success' => 'Autenticació de dos factors verificada correctament.',
+            'code-sent-success' => 'Codi de verificació enviat correctament.',
+            'phone-required' => 'Afegiu un número de telèfon abans d\'habilitar la verificació per SMS.',
         ],
 
         'setup' => [
@@ -5258,6 +5267,96 @@ return [
                     'build-views' => 'Posar en memòria cau les vistes',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'Configureu les passarel·les d\'SMS, les notificacions de comandes i l\'autenticació de dos factors per SMS.',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => 'Configuració general d\'SMS.',
+                    'title' => 'General',
+
+                    'settings' => [
+                        'active-gateway' => 'Passarel·la activa',
+                        'enabled' => 'Habilitat',
+                        'title' => 'Configuració',
+                        'title-info' => 'Habiliteu o deshabiliteu les notificacions per SMS a tota la vostra aplicació.',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'SID del compte / Clau API',
+                    'credential-secret' => 'Testimoni d\'autenticació / Secret API',
+                    'info' => 'Configureu les credencials del vostre proveïdor de passarel·la SMS.',
+                    'sender' => 'Número de remitent / ID de remitent',
+                    'title' => 'Passarel·les',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'Configureu les vostres credencials de l\'API de Twilio.',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'Configureu les vostres credencials de l\'API de Vonage (Nexmo).',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'Ruta',
+                        'title' => 'MSG91',
+                        'title-info' => 'Configureu les vostres credencials de l\'API de MSG91.',
+                    ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Configureu les vostres credencials de l\'API de Verimor.',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => 'Habilitat',
+                    'info' => 'Habiliteu les notificacions per SMS per als esdeveniments de comanda i personalitzeu les plantilles de missatge.',
+                    'template-label' => 'Plantilla de missatge',
+                    'title' => 'Notificacions de comandes',
+
+                    'order-placed' => [
+                        'title' => 'Comanda realitzada',
+                        'title-info' => 'Notifiqueu el client per SMS quan es faci una comanda.',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => 'Comanda enviada',
+                        'title-info' => 'Notifiqueu el client per SMS quan s\'enviï la seva comanda.',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => 'Comanda cancel·lada',
+                        'title-info' => 'Notifiqueu el client per SMS quan es cancel·li la seva comanda.',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => 'Factura creada',
+                        'title-info' => 'Notifiqueu el client per SMS quan es creï una factura per a la seva comanda.',
+                    ],
+
+                    'refund-created' => [
+                        'title' => 'Reemborsament creat',
+                        'title-info' => 'Notifiqueu el client per SMS quan es creï un reemborsament per a la seva comanda.',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => 'Permeteu que els administradors utilitzin l\'SMS com a mètode d\'autenticació de dos factors.',
+                    'title' => 'Autenticació de dos factors',
+
+                    'settings' => [
+                        'enabled' => 'Habilitat',
+                        'title' => 'Configuració',
+                'sms' => 'SMS',
+                        'title-info' => 'Habiliteu l\'SMS com a mètode d\'autenticació de dos factors disponible per als comptes d\'administrador.',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5496,6 +5595,7 @@ return [
                     'use-cases' => 'Casos d\'Ús',
                     'zoom' => 'Zoom',
                 ],
+        'sms' => 'Registres d\'SMS',
             ],
 
             'videos' => [
@@ -5919,6 +6019,55 @@ return [
             'refunded' => 'El desistiment s\'ha marcat com a reemborsat.',
             'confirmation_resent' => 'S\'ha reenviat el correu de confirmació.',
             'confirmation_failed' => 'No s\'ha pogut enviar el correu de confirmació. Vegeu la cronologia per als detalls.',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'Registres d\'SMS',
+
+        'index' => [
+            'title' => 'Registres d\'SMS',
+
+            'datagrid' => [
+                'created-at' => 'Enviat el',
+                'delete' => 'Suprimeix',
+                'event' => 'Esdeveniment',
+                'gateway' => 'Passarel·la',
+                'id' => 'ID',
+                'message' => 'Missatge',
+                'recipient' => 'Destinatari',
+                'status' => 'Estat',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => 'Hola {customer_name}, la vostra comanda #{order_id} s\'ha realitzat correctament. Total: {order_total}. Gràcies per comprar amb nosaltres!',
+            ],
+
+            'order-shipped' => [
+                'default-template' => 'Hola {customer_name}, la vostra comanda #{order_id} s\'ha enviat i està en camí.',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => 'Hola {customer_name}, la vostra comanda #{order_id} s\'ha cancel·lat.',
+            ],
+
+            'invoice-created' => [
+                'default-template' => 'Hola {customer_name}, s\'ha generat una factura per a la vostra comanda #{order_id}. Total: {order_total}.',
+            ],
+
+            'refund-created' => [
+                'default-template' => 'Hola {customer_name}, s\'ha processat un reemborsament per a la vostra comanda #{order_id}.',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => 'El vostre codi de verificació és :code. Caducarà en 5 minuts.',
+        ],
+
+        'messages' => [
+            'delete-success' => 'Registre d\'SMS suprimit correctament.',
         ],
     ],
 ];

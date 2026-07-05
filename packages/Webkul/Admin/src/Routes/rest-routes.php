@@ -68,6 +68,8 @@ Route::controller(TwoFactorController::class)->prefix('two-factor')->group(funct
     Route::post('enable', 'enable')->middleware('throttle:5,1')->name('admin.two_factor.enable');
 
     Route::post('disable', 'disable')->name('admin.two_factor.disable');
+
+    Route::post('sms/send', 'sendSmsCode')->middleware('throttle:5,1')->name('admin.two_factor.sms.send');
 });
 
 Route::delete('logout', [SessionController::class, 'destroy'])->name('admin.session.destroy');

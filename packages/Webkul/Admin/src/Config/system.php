@@ -3620,4 +3620,243 @@ return [
             ],
         ],
     ],
+
+    /**
+     * SMS.
+     */
+    [
+        'key' => 'sms',
+        'name' => 'admin::app.configuration.index.sms.title',
+        'info' => 'admin::app.configuration.index.sms.info',
+        'sort' => 8,
+    ], [
+        'key' => 'sms.general',
+        'name' => 'admin::app.configuration.index.sms.general.title',
+        'info' => 'admin::app.configuration.index.sms.general.info',
+        'icon' => 'settings/settings.svg',
+        'sort' => 1,
+    ], [
+        'key' => 'sms.general.settings',
+        'name' => 'admin::app.configuration.index.sms.general.settings.title',
+        'info' => 'admin::app.configuration.index.sms.general.settings.title-info',
+        'sort' => 1,
+        'fields' => [
+            [
+                'name' => 'enabled',
+                'title' => 'admin::app.configuration.index.sms.general.settings.enabled',
+                'type' => 'boolean',
+            ], [
+                'name' => 'active_gateway',
+                'title' => 'admin::app.configuration.index.sms.general.settings.active-gateway',
+                'type' => 'select',
+                'options' => [
+                    [
+                        'title' => 'Twilio',
+                        'value' => 'twilio',
+                    ], [
+                        'title' => 'Vonage',
+                        'value' => 'vonage',
+                    ], [
+                        'title' => 'MSG91',
+                        'value' => 'msg91',
+                    ], [
+                        'title' => 'Verimor',
+                        'value' => 'verimor',
+                    ],
+                ],
+                'default' => 'twilio',
+            ],
+        ],
+    ], [
+        'key' => 'sms.gateways',
+        'name' => 'admin::app.configuration.index.sms.gateways.title',
+        'info' => 'admin::app.configuration.index.sms.gateways.info',
+        'icon' => 'settings/settings.svg',
+        'sort' => 2,
+    ], [
+        'key' => 'sms.gateways.twilio',
+        'name' => 'admin::app.configuration.index.sms.gateways.twilio.title',
+        'info' => 'admin::app.configuration.index.sms.gateways.twilio.title-info',
+        'sort' => 1,
+        'fields' => [
+            [
+                'name' => 'account_sid',
+                'title' => 'admin::app.configuration.index.sms.gateways.credential-id',
+                'type' => 'text',
+            ], [
+                'name' => 'auth_token',
+                'title' => 'admin::app.configuration.index.sms.gateways.credential-secret',
+                'type' => 'password',
+            ], [
+                'name' => 'from_number',
+                'title' => 'admin::app.configuration.index.sms.gateways.sender',
+                'type' => 'text',
+            ],
+        ],
+    ], [
+        'key' => 'sms.gateways.vonage',
+        'name' => 'admin::app.configuration.index.sms.gateways.vonage.title',
+        'info' => 'admin::app.configuration.index.sms.gateways.vonage.title-info',
+        'sort' => 2,
+        'fields' => [
+            [
+                'name' => 'api_key',
+                'title' => 'admin::app.configuration.index.sms.gateways.credential-id',
+                'type' => 'text',
+            ], [
+                'name' => 'api_secret',
+                'title' => 'admin::app.configuration.index.sms.gateways.credential-secret',
+                'type' => 'password',
+            ], [
+                'name' => 'from_number',
+                'title' => 'admin::app.configuration.index.sms.gateways.sender',
+                'type' => 'text',
+            ],
+        ],
+    ], [
+        'key' => 'sms.gateways.msg91',
+        'name' => 'admin::app.configuration.index.sms.gateways.msg91.title',
+        'info' => 'admin::app.configuration.index.sms.gateways.msg91.title-info',
+        'sort' => 3,
+        'fields' => [
+            [
+                'name' => 'auth_key',
+                'title' => 'admin::app.configuration.index.sms.gateways.credential-secret',
+                'type' => 'password',
+            ], [
+                'name' => 'sender_id',
+                'title' => 'admin::app.configuration.index.sms.gateways.sender',
+                'type' => 'text',
+            ], [
+                'name' => 'route',
+                'title' => 'admin::app.configuration.index.sms.gateways.msg91.route',
+                'type' => 'text',
+                'default' => '4',
+            ],
+        ],
+    ], [
+        'key' => 'sms.gateways.verimor',
+        'name' => 'admin::app.configuration.index.sms.gateways.verimor.title',
+        'info' => 'admin::app.configuration.index.sms.gateways.verimor.title-info',
+        'sort' => 4,
+        'fields' => [
+            [
+                'name' => 'username',
+                'title' => 'admin::app.configuration.index.sms.gateways.credential-id',
+                'type' => 'text',
+            ], [
+                'name' => 'password',
+                'title' => 'admin::app.configuration.index.sms.gateways.credential-secret',
+                'type' => 'password',
+            ], [
+                'name' => 'source_addr',
+                'title' => 'admin::app.configuration.index.sms.gateways.sender',
+                'type' => 'text',
+            ],
+        ],
+    ], [
+        'key' => 'sms.notifications',
+        'name' => 'admin::app.configuration.index.sms.notifications.title',
+        'info' => 'admin::app.configuration.index.sms.notifications.info',
+        'icon' => 'settings/settings.svg',
+        'sort' => 3,
+    ], [
+        'key' => 'sms.notifications.order_placed',
+        'name' => 'admin::app.configuration.index.sms.notifications.order-placed.title',
+        'info' => 'admin::app.configuration.index.sms.notifications.order-placed.title-info',
+        'sort' => 1,
+        'fields' => [
+            [
+                'name' => 'enabled',
+                'title' => 'admin::app.configuration.index.sms.notifications.enabled-label',
+                'type' => 'boolean',
+            ], [
+                'name' => 'template',
+                'title' => 'admin::app.configuration.index.sms.notifications.template-label',
+                'type' => 'textarea',
+            ],
+        ],
+    ], [
+        'key' => 'sms.notifications.order_shipped',
+        'name' => 'admin::app.configuration.index.sms.notifications.order-shipped.title',
+        'info' => 'admin::app.configuration.index.sms.notifications.order-shipped.title-info',
+        'sort' => 2,
+        'fields' => [
+            [
+                'name' => 'enabled',
+                'title' => 'admin::app.configuration.index.sms.notifications.enabled-label',
+                'type' => 'boolean',
+            ], [
+                'name' => 'template',
+                'title' => 'admin::app.configuration.index.sms.notifications.template-label',
+                'type' => 'textarea',
+            ],
+        ],
+    ], [
+        'key' => 'sms.notifications.order_cancelled',
+        'name' => 'admin::app.configuration.index.sms.notifications.order-cancelled.title',
+        'info' => 'admin::app.configuration.index.sms.notifications.order-cancelled.title-info',
+        'sort' => 3,
+        'fields' => [
+            [
+                'name' => 'enabled',
+                'title' => 'admin::app.configuration.index.sms.notifications.enabled-label',
+                'type' => 'boolean',
+            ], [
+                'name' => 'template',
+                'title' => 'admin::app.configuration.index.sms.notifications.template-label',
+                'type' => 'textarea',
+            ],
+        ],
+    ], [
+        'key' => 'sms.notifications.invoice_created',
+        'name' => 'admin::app.configuration.index.sms.notifications.invoice-created.title',
+        'info' => 'admin::app.configuration.index.sms.notifications.invoice-created.title-info',
+        'sort' => 4,
+        'fields' => [
+            [
+                'name' => 'enabled',
+                'title' => 'admin::app.configuration.index.sms.notifications.enabled-label',
+                'type' => 'boolean',
+            ], [
+                'name' => 'template',
+                'title' => 'admin::app.configuration.index.sms.notifications.template-label',
+                'type' => 'textarea',
+            ],
+        ],
+    ], [
+        'key' => 'sms.notifications.refund_created',
+        'name' => 'admin::app.configuration.index.sms.notifications.refund-created.title',
+        'info' => 'admin::app.configuration.index.sms.notifications.refund-created.title-info',
+        'sort' => 5,
+        'fields' => [
+            [
+                'name' => 'enabled',
+                'title' => 'admin::app.configuration.index.sms.notifications.enabled-label',
+                'type' => 'boolean',
+            ], [
+                'name' => 'template',
+                'title' => 'admin::app.configuration.index.sms.notifications.template-label',
+                'type' => 'textarea',
+            ],
+        ],
+    ], [
+        'key' => 'sms.two_factor',
+        'name' => 'admin::app.configuration.index.sms.two-factor.title',
+        'info' => 'admin::app.configuration.index.sms.two-factor.info',
+        'icon' => 'settings/settings.svg',
+        'sort' => 4,
+    ], [
+        'key' => 'sms.two_factor.settings',
+        'name' => 'admin::app.configuration.index.sms.two-factor.settings.title',
+        'info' => 'admin::app.configuration.index.sms.two-factor.settings.title-info',
+        'sort' => 1,
+        'fields' => [
+            [
+                'name' => 'enabled',
+                'title' => 'admin::app.configuration.index.sms.two-factor.settings.enabled',
+                'type' => 'boolean',
+            ],
+        ],
+    ],
 ];

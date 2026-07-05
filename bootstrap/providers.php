@@ -38,6 +38,7 @@ use Webkul\Sales\Providers\SalesServiceProvider;
 use Webkul\Shipping\Providers\ShippingServiceProvider;
 use Webkul\Shop\Providers\ShopServiceProvider;
 use Webkul\Sitemap\Providers\SitemapServiceProvider;
+use Webkul\SMS\Providers\SMSServiceProvider;
 use Webkul\SocialLogin\Providers\SocialLoginServiceProvider;
 use Webkul\SocialShare\Providers\SocialShareServiceProvider;
 use Webkul\Stripe\Providers\StripeServiceProvider;
@@ -91,6 +92,7 @@ return [
     ShippingServiceProvider::class,
     ShopServiceProvider::class,
     SitemapServiceProvider::class,
+    SMSServiceProvider::class,
     SocialLoginServiceProvider::class,
     SocialShareServiceProvider::class,
     StripeServiceProvider::class,
