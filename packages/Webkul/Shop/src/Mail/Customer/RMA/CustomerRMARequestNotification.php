@@ -2,18 +2,14 @@
 
 namespace Webkul\Shop\Mail\Customer\RMA;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Queue\SerializesModels;
 use Webkul\RMA\Contracts\RMA;
+use Webkul\Shop\Mail\Mailable;
 
 class CustomerRMARequestNotification extends Mailable
 {
-    use Queueable, SerializesModels;
-
     /**
      * Create a new message instance.
      */
@@ -35,7 +31,7 @@ class CustomerRMARequestNotification extends Mailable
                 $this->rma->order->customer->email,
                 $this->rma->order->customer->name
             )],
-            subject: trans('shop::app.rma.customer.create.heading'),
+            subject: $this->resolveSubject('shop.customers.rma.new-request', 'shop::app.rma.customer.create.heading'),
         );
     }
 
@@ -44,8 +40,10 @@ class CustomerRMARequestNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.rma.new-rma-request',
-        );
+        return $this->resolveContent('shop.customers.rma.new-request', 'shop::emails.customers.rma.new-rma-request', [
+            '{{customer_name}}' => $this->rma->order->customer->name,
+            '{{order_id}}' => '<a href="'.route('shop.customers.account.orders.view', $this->rma->order_id).'" style="font-weight: 600; color: #2563eb; text-decoration: none;">#'.$this->rma->order_id.'</a>',
+            '{{rma_details}}' => view('shop::emails.customers.rma.partials.new-rma-request', ['rma' => $this->rma])->render(),
+        ]);
     }
 }

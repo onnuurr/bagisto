@@ -29,7 +29,7 @@ class StatusUpdateNotification extends Mailable
                     core()->getAdminEmailDetails()['name']
                 ),
             ],
-            subject: trans('admin::app.emails.customers.gdpr.status-update.subject')
+            subject: $this->resolveSubject('admin.customers.gdpr.status-update', 'admin::app.emails.customers.gdpr.status-update.subject'),
         );
     }
 
@@ -38,8 +38,11 @@ class StatusUpdateNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'admin::emails.customers.gdpr.status-update-notification',
-        );
+        return $this->resolveContent('admin.customers.gdpr.status-update', 'admin::emails.customers.gdpr.status-update-notification', [
+            '{{admin_name}}' => core()->getAdminEmailDetails()['name'],
+            '{{request_status}}' => $this->gdprRequest->status,
+            '{{request_type}}' => $this->gdprRequest->type,
+            '{{message}}' => e($this->gdprRequest->message),
+        ]);
     }
 }

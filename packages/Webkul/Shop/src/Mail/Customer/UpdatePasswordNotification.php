@@ -26,7 +26,7 @@ class UpdatePasswordNotification extends Mailable
             to: [
                 new Address($this->customer->email, $this->customer->name),
             ],
-            subject: trans('shop::app.emails.customers.update-password.subject'),
+            subject: $this->resolveSubject('shop.customers.update-password', 'shop::app.emails.customers.update-password.subject'),
         );
     }
 
@@ -35,8 +35,8 @@ class UpdatePasswordNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.update-password',
-        );
+        return $this->resolveContent('shop.customers.update-password', 'shop::emails.customers.update-password', [
+            '{{customer_name}}' => $this->customer->name,
+        ]);
     }
 }

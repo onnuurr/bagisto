@@ -2,18 +2,14 @@
 
 namespace Webkul\Shop\Mail\Customer\RMA;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Queue\SerializesModels;
 use Webkul\RMA\Contracts\RMA;
+use Webkul\Shop\Mail\Mailable;
 
 class CustomerRMAStatusNotification extends Mailable
 {
-    use Queueable, SerializesModels;
-
     /**
      * Create a new message instance.
      */
@@ -33,7 +29,7 @@ class CustomerRMAStatusNotification extends Mailable
                 $this->rma->order->customer->email,
                 $this->rma->order->customer->name
             )],
-            subject: trans('shop::app.rma.mail.status.title'),
+            subject: $this->resolveSubject('shop.customers.rma.status', 'shop::app.rma.mail.status.title'),
         );
     }
 
@@ -42,8 +38,10 @@ class CustomerRMAStatusNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.rma.status',
-        );
+        return $this->resolveContent('shop.customers.rma.status', 'shop::emails.customers.rma.status', [
+            '{{customer_name}}' => $this->rma->order->customer->name,
+            '{{rma_id}}' => '<a href="'.route('shop.customers.account.rma.view', $this->rma->id).'" style="color: #0041FF; font-weight: bold;">#'.$this->rma->id.'</a>',
+            '{{rma_status}}' => $this->rma->status->title,
+        ]);
     }
 }

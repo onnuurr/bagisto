@@ -29,7 +29,7 @@ class InventorySourceNotification extends Mailable
                     $inventory->contact_name
                 ),
             ],
-            subject: trans('admin::app.emails.orders.inventory-source.subject'),
+            subject: $this->resolveSubject('admin.orders.inventory-source', 'admin::app.emails.orders.inventory-source.subject'),
         );
     }
 
@@ -38,8 +38,12 @@ class InventorySourceNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'admin::emails.orders.inventory-source',
-        );
+        return $this->resolveContent('admin.orders.inventory-source', 'admin::emails.orders.inventory-source', [
+            '{{contact_name}}' => $this->shipment->inventory_source->contact_name,
+            '{{shipment_id}}' => $this->shipment->increment_id,
+            '{{order_id}}' => '<a href="'.route('admin.sales.orders.view', $this->shipment->order_id).'" style="color: #2969FF;">#'.$this->shipment->order->increment_id.'</a>',
+            '{{order_date}}' => core()->formatDate($this->shipment->order->created_at, 'Y-m-d H:i:s'),
+            '{{order_details}}' => view('admin::emails.orders.partials.inventory-source', ['shipment' => $this->shipment])->render(),
+        ]);
     }
 }

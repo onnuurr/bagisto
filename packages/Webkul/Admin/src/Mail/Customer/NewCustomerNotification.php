@@ -29,7 +29,7 @@ class NewCustomerNotification extends Mailable
             to: [
                 new Address($this->customer->email),
             ],
-            subject: trans('shop::app.emails.customers.registration.subject'),
+            subject: $this->resolveSubject('admin.customers.new-customer', 'shop::app.emails.customers.registration.subject'),
         );
     }
 
@@ -38,8 +38,11 @@ class NewCustomerNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.new-customer',
-        );
+        return $this->resolveContent('admin.customers.new-customer', 'shop::emails.customers.new-customer', [
+            '{{customer_name}}' => $this->customer->name,
+            '{{customer_email}}' => $this->customer->email,
+            '{{password}}' => $this->password,
+            '{{sign_in_url}}' => route('shop.customer.session.index'),
+        ], layoutView: 'shop::emails.layout');
     }
 }

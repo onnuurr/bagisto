@@ -34,16 +34,18 @@ class Mailable extends BaseMailable implements ShouldQueue
      * template subject over the translated fallback.
      *
      * @param  string  $code
-     * @param  string  $fallbackKey
+     * @param  string|\Closure  $fallback  A translation key, or a closure returning the fallback subject.
      * @return string
      */
-    protected function resolveSubject($code, $fallbackKey, array $replace = [])
+    protected function resolveSubject($code, $fallback, array $replace = [])
     {
         $template = app(EmailTemplateRepository::class)->findActiveByCode($code);
 
-        return $template && $template->subject
-            ? $template->subject
-            : trans($fallbackKey, $replace);
+        if ($template && $template->subject) {
+            return $template->subject;
+        }
+
+        return $fallback instanceof \Closure ? $fallback() : trans($fallback, $replace);
     }
 
     /**
@@ -56,12 +58,12 @@ class Mailable extends BaseMailable implements ShouldQueue
      * @param  string  $layoutView
      * @return Content
      */
-    protected function resolveContent($code, $fallbackView, array $tokens = [], $layoutView = 'admin::emails.layout')
+    protected function resolveContent($code, $fallbackView, array $tokens = [], $layoutView = 'admin::emails.layout', array $fallbackWith = [])
     {
         $template = app(EmailTemplateRepository::class)->findActiveByCode($code);
 
         if (! $template) {
-            return new Content(view: $fallbackView);
+            return new Content(view: $fallbackView, with: $fallbackWith);
         }
 
         return new Content(

@@ -26,7 +26,7 @@ class SubscriptionNotification extends Mailable
             to: [
                 new Address($this->subscribersList->email),
             ],
-            subject: trans('shop::app.emails.customers.subscribed.subject'),
+            subject: $this->resolveSubject('shop.customers.subscribed', 'shop::app.emails.customers.subscribed.subject'),
         );
     }
 
@@ -35,11 +35,11 @@ class SubscriptionNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.subscribed',
-            with: [
-                'fullName' => trim($this->subscribersList->first_name.' '.$this->subscribersList->last_name),
-            ],
-        );
+        $fullName = trim($this->subscribersList->first_name.' '.$this->subscribersList->last_name);
+
+        return $this->resolveContent('shop.customers.subscribed', 'shop::emails.customers.subscribed', [
+            '{{customer_name}}' => $fullName ?: $this->subscribersList->email,
+            '{{unsubscribe_url}}' => route('shop.subscription.destroy', $this->subscribersList->token),
+        ], fallbackWith: ['fullName' => $fullName]);
     }
 }

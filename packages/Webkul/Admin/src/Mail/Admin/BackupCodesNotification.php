@@ -26,7 +26,7 @@ class BackupCodesNotification extends Mailable
             to: [
                 new Address($this->admin->email),
             ],
-            subject: trans('admin::app.account.emails.backup-codes.subject'),
+            subject: $this->resolveSubject('admin.backup-codes', 'admin::app.account.emails.backup-codes.subject'),
         );
     }
 
@@ -35,8 +35,14 @@ class BackupCodesNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'admin::emails.admin.backup-codes',
-        );
+        $codesList = implode('', array_map(
+            fn ($code) => '<div style="background: #F8F9FA;border: 2px solid #060C3B;border-radius: 4px;padding: 12px;text-align: center;font-family: monospace;font-size: 16px;font-weight: bold;color: #060C3B;">'.e($code).'</div>',
+            $this->backupCodes
+        ));
+
+        return $this->resolveContent('admin.backup-codes', 'admin::emails.admin.backup-codes', [
+            '{{admin_name}}' => $this->admin->name,
+            '{{backup_codes}}' => '<div style="display: grid;grid-template-columns: repeat(2, 1fr);gap: 12px;margin-bottom: 24px;">'.$codesList.'</div>',
+        ], fallbackWith: ['backupCodes' => $this->backupCodes]);
     }
 }

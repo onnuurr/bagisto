@@ -2,17 +2,14 @@
 
 namespace Webkul\Shop\Mail\Customer\EUWithdrawal;
 
-use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Queue\SerializesModels;
 use Webkul\EUWithdrawal\Contracts\Withdrawal as WithdrawalContract;
+use Webkul\Shop\Mail\Mailable;
 
 class WithdrawalConfirmation extends Mailable
 {
-    use SerializesModels;
-
     /**
      * Create a new mailable instance.
      */
@@ -28,7 +25,7 @@ class WithdrawalConfirmation extends Mailable
         return new Envelope(
             from: new Address($sender['email'], $sender['name']),
             to: [new Address($this->withdrawal->customer_email)],
-            subject: trans('shop::app.eu_withdrawal.emails.confirmation.subject', [
+            subject: $this->resolveSubject('shop.customers.eu-withdrawal.confirmation', 'shop::app.eu_withdrawal.emails.confirmation.subject', [
                 'order_id' => $this->withdrawal->order->increment_id ?? $this->withdrawal->order_id,
             ]),
         );
@@ -39,9 +36,19 @@ class WithdrawalConfirmation extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.eu-withdrawal.confirmation',
-            with: ['withdrawal' => $this->withdrawal],
-        );
+        $statusIntroKey = 'shop::app.eu_withdrawal.emails.confirmation.intro_'.$this->withdrawal->status;
+        $statusIntroKey = trans()->has($statusIntroKey) ? $statusIntroKey : 'shop::app.eu_withdrawal.emails.confirmation.intro';
+
+        $titleKey = 'shop::app.eu_withdrawal.emails.confirmation.title_'.$this->withdrawal->status;
+        $titleKey = trans()->has($titleKey) ? $titleKey : 'shop::app.eu_withdrawal.emails.confirmation.title';
+
+        return $this->resolveContent('shop.customers.eu-withdrawal.confirmation', 'shop::emails.customers.eu-withdrawal.confirmation', [
+            '{{customer_name}}' => $this->withdrawal->customer_email,
+            '{{title}}' => trans($titleKey),
+            '{{intro}}' => trans($statusIntroKey, [
+                'order_id' => $this->withdrawal->order->increment_id ?? $this->withdrawal->order_id,
+            ]),
+            '{{withdrawal_details}}' => view('shop::emails.customers.eu-withdrawal.partials.confirmation', ['withdrawal' => $this->withdrawal])->render(),
+        ], fallbackWith: ['withdrawal' => $this->withdrawal]);
     }
 }
