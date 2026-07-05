@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'URL do WSDL',
                         'rate' => 'Taxa',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'Token da API',
+                        'app-key' => 'Chave do aplicativo',
+                        'description' => 'Descrição',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'ID da transportadora preferida',
+                        'status' => 'Status',
+                        'title' => 'Título',
+                        'title-info' => 'Calcula uma taxa de envio em tempo real por meio da comparação de múltiplas transportadoras da Kargonomi, criando um envio rascunho para o carrinho e lendo sua cotação, com uma taxa fixa de reserva caso a API esteja indisponível.',
+                        'warehouse-id' => 'ID do armazém',
+                        'rate' => 'Taxa',
+                    ],
                 ],
 
                 'payment-methods' => [

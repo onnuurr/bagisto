@@ -28,4 +28,13 @@ return [
         'default_rate' => '0',
         'class' => 'Webkul\Shipping\Carriers\ArasKargo',
     ],
+
+    'kargonomi' => [
+        'code' => 'kargonomi',
+        'title' => 'Kargonomi',
+        'description' => 'Kargonomi Shipping',
+        'active' => false,
+        'default_rate' => '0',
+        'class' => 'Webkul\Shipping\Carriers\Kargonomi',
+    ],
 ];

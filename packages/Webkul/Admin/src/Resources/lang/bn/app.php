@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'WSDL URL',
                         'rate' => 'হার',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'API টোকেন',
+                        'app-key' => 'অ্যাপ কী',
+                        'description' => 'বিবরণ',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'পছন্দের ক্যারিয়ার আইডি',
+                        'status' => 'স্থিতি',
+                        'title' => 'শিরোনাম',
+                        'title-info' => 'কার্টের জন্য একটি খসড়া শিপমেন্ট তৈরি করে এবং এর মূল্য উদ্ধৃতি পড়ে Kargonomi-এর মাল্টি-ক্যারিয়ার রেট তুলনা থেকে একটি লাইভ শিপিং রেট গণনা করে, API অনুপলব্ধ হলে একটি নির্দিষ্ট হারে ফিরে যায়।',
+                        'warehouse-id' => 'ওয়্যারহাউস আইডি',
+                        'rate' => 'হার',
+                    ],
                 ],
 
                 'payment-methods' => [

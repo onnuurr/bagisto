@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'WSDL Adresi',
                         'rate' => 'Fiyat',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'API Token',
+                        'app-key' => 'Uygulama Anahtarı',
+                        'description' => 'Açıklama',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'Tercih Edilen Kargo Firması ID',
+                        'status' => 'Durum',
+                        'title' => 'Başlık',
+                        'title-info' => 'Sepet için taslak bir gönderi oluşturup fiyat teklifini okuyarak Kargonomi\'nin çoklu kargo firması fiyat karşılaştırmasından canlı bir kargo ücreti hesaplar; API\'ye erişilemediğinde sabit bir ücrete geri döner.',
+                        'warehouse-id' => 'Depo ID',
+                        'rate' => 'Fiyat',
+                    ],
                 ],
 
                 'payment-methods' => [

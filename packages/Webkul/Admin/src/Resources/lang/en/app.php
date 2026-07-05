@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'WSDL URL',
                         'rate' => 'Rate',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'API Token',
+                        'app-key' => 'App Key',
+                        'description' => 'Description',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'Preferred Carrier ID',
+                        'status' => 'Status',
+                        'title' => 'Title',
+                        'title-info' => 'Calculates a live shipping rate through Kargonomi\'s multi-carrier rate comparison by creating a draft shipment for the cart and reading its price quote, falling back to a fixed rate if the API is unavailable.',
+                        'warehouse-id' => 'Warehouse ID',
+                        'rate' => 'Rate',
+                    ],
                 ],
 
                 'payment-methods' => [

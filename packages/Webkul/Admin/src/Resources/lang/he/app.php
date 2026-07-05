@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'כתובת WSDL',
                         'rate' => 'שער',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'אסימון API',
+                        'app-key' => 'מפתח אפליקציה',
+                        'description' => 'תיאור',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'מזהה המוביל המועדף',
+                        'status' => 'סטטוס',
+                        'title' => 'כותרת',
+                        'title-info' => 'מחשב תעריף משלוח חי באמצעות השוואת מחירי מוביל מרובה של Kargonomi, על ידי יצירת משלוח טיוטה עבור העגלה וקריאת הצעת המחיר שלו, וחוזר לתעריף קבוע אם ה-API אינו זמין.',
+                        'warehouse-id' => 'מזהה מחסן',
+                        'rate' => 'שער',
+                    ],
                 ],
 
                 'payment-methods' => [

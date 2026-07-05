@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'WSDL 地址',
                         'rate' => '费用',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'API 令牌',
+                        'app-key' => '应用密钥',
+                        'description' => '描述',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => '首选承运商 ID',
+                        'status' => '状态',
+                        'title' => '标题',
+                        'title-info' => '通过创建购物车的草稿运单并读取其报价,利用 Kargonomi 的多承运商费率比较来计算实时运费;如果 API 不可用,则回退到固定费率。',
+                        'warehouse-id' => '仓库 ID',
+                        'rate' => '费用',
+                    ],
                 ],
 
                 'payment-methods' => [

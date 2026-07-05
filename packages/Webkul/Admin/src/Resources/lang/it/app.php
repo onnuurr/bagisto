@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'URL WSDL',
                         'rate' => 'Tariffa',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'Token API',
+                        'app-key' => 'Chiave dell\'app',
+                        'description' => 'Descrizione',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'ID corriere preferito',
+                        'status' => 'Stato',
+                        'title' => 'Titolo',
+                        'title-info' => 'Calcola una tariffa di spedizione in tempo reale tramite il confronto multi-corriere di Kargonomi, creando una spedizione bozza per il carrello e leggendone il preventivo, con una tariffa fissa di riserva se l\'API non è disponibile.',
+                        'warehouse-id' => 'ID magazzino',
+                        'rate' => 'Tariffa',
+                    ],
                 ],
 
                 'payment-methods' => [

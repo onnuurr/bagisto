@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'URL WSDL',
                         'rate' => 'Tarifa',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'Testimoni de l\'API',
+                        'app-key' => 'Clau de l\'aplicació',
+                        'description' => 'Descripció',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'ID del transportista preferit',
+                        'status' => 'Estat',
+                        'title' => 'Títol',
+                        'title-info' => 'Calcula una tarifa d\'enviament en directe mitjançant la comparació de tarifes multi-transportista de Kargonomi, creant un enviament esborrany per al carret i llegint-ne la cotització, amb una tarifa fixa de reserva si l\'API no està disponible.',
+                        'warehouse-id' => 'ID del magatzem',
+                        'rate' => 'Tarifa',
+                    ],
                 ],
 
                 'payment-methods' => [

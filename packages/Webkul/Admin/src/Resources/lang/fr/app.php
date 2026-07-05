@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'URL WSDL',
                         'rate' => 'Tarif',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'Jeton API',
+                        'app-key' => 'Clé d\'application',
+                        'description' => 'Description',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'ID du transporteur préféré',
+                        'status' => 'Statut',
+                        'title' => 'Titre',
+                        'title-info' => 'Calcule un tarif d\'expédition en direct via la comparaison multi-transporteurs de Kargonomi, en créant une expédition brouillon pour le panier et en lisant son devis, avec un tarif fixe de secours si l\'API est indisponible.',
+                        'warehouse-id' => 'ID de l\'entrepôt',
+                        'rate' => 'Tarif',
+                    ],
                 ],
 
                 'payment-methods' => [

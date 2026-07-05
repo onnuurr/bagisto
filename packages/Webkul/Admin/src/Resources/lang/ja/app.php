@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'WSDL URL',
                         'rate' => '料金',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'APIトークン',
+                        'app-key' => 'アプリキー',
+                        'description' => '説明',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => '優先配送業者ID',
+                        'status' => 'ステータス',
+                        'title' => 'タイトル',
+                        'title-info' => 'カート用の下書き配送を作成しその見積もりを読み取ることで、Kargonomiのマルチキャリア料金比較からライブ配送料金を計算し、APIが利用できない場合は固定料金にフォールバックします。',
+                        'warehouse-id' => '倉庫ID',
+                        'rate' => '料金',
+                    ],
                 ],
 
                 'payment-methods' => [

@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'URL WSDL',
                         'rate' => 'Tarif',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'Token API',
+                        'app-key' => 'Kunci Aplikasi',
+                        'description' => 'Deskripsi',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'ID Kurir Pilihan',
+                        'status' => 'Status',
+                        'title' => 'Judul',
+                        'title-info' => 'Menghitung tarif pengiriman langsung melalui perbandingan tarif multi-kurir Kargonomi dengan membuat pengiriman draf untuk keranjang dan membaca penawaran harganya, menggunakan tarif tetap cadangan jika API tidak tersedia.',
+                        'warehouse-id' => 'ID Gudang',
+                        'rate' => 'Tarif',
+                    ],
                 ],
 
                 'payment-methods' => [

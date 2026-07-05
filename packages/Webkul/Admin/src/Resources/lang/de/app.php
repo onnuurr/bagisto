@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'WSDL-URL',
                         'rate' => 'Preis',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'API-Token',
+                        'app-key' => 'App-Schlüssel',
+                        'description' => 'Beschreibung',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'Bevorzugte Versanddienstleister-ID',
+                        'status' => 'Status',
+                        'title' => 'Titel',
+                        'title-info' => 'Berechnet über Kargonomis Mehr-Carrier-Preisvergleich einen Live-Versandtarif, indem eine Entwurfssendung für den Warenkorb erstellt und deren Preisangebot ausgelesen wird; fällt bei Nichterreichbarkeit der API auf einen festen Tarif zurück.',
+                        'warehouse-id' => 'Lager-ID',
+                        'rate' => 'Preis',
+                    ],
                 ],
 
                 'payment-methods' => [

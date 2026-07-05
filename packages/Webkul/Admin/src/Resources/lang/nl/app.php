@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'WSDL-URL',
                         'rate' => 'Tarief',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'API-token',
+                        'app-key' => 'App-sleutel',
+                        'description' => 'Beschrijving',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'ID voorkeursvervoerder',
+                        'status' => 'Status',
+                        'title' => 'Titel',
+                        'title-info' => 'Berekent een live verzendtarief via Kargonomi\'s vergelijking van meerdere vervoerders door een conceptzending voor de winkelwagen aan te maken en de prijsopgave ervan te lezen, en valt terug op een vast tarief als de API niet beschikbaar is.',
+                        'warehouse-id' => 'Magazijn-ID',
+                        'rate' => 'Tarief',
+                    ],
                 ],
 
                 'payment-methods' => [

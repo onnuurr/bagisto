@@ -4906,6 +4906,19 @@ return [
                         'wsdl-url' => 'Adres URL WSDL',
                         'rate' => 'Stawka',
                     ],
+
+                    'kargonomi' => [
+                        'api-token' => 'Token API',
+                        'app-key' => 'Klucz aplikacji',
+                        'description' => 'Opis',
+                        'page-title' => 'Kargonomi',
+                        'shipping-provider-id' => 'ID preferowanego przewoźnika',
+                        'status' => 'Status',
+                        'title' => 'Tytuł',
+                        'title-info' => 'Oblicza aktualną stawkę wysyłki za pomocą porównania wielu przewoźników Kargonomi, tworząc wersję roboczą przesyłki dla koszyka i odczytując jej wycenę, a w przypadku niedostępności API korzysta ze stałej stawki zastępczej.',
+                        'warehouse-id' => 'ID magazynu',
+                        'rate' => 'Stawka',
+                    ],
                 ],
 
                 'payment-methods' => [
