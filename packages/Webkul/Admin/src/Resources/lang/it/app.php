@@ -41,6 +41,8 @@ return [
             'enter-code' => 'Inserisci il codice a 6 cifre dalla tua app di autenticazione per continuare.',
             'title' => 'Verifica Autenticazione a Due Fattori',
             'verify-code' => 'Verifica Codice',
+            'code-sent' => 'È stato inviato un nuovo codice di verifica.',
+            'resend-code' => 'Invia di nuovo il codice',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'Il Mio Account',
             'update-success' => 'Account aggiornato con successo',
             'upload-image-info' => 'Carica un’immagine del profilo (110px X 110px) in formato PNG o JPG',
+            'method-authenticator' => 'App di autenticazione',
+            'method-sms' => 'SMS',
+            'phone' => 'Numero di telefono',
+            'send-code' => 'Invia codice',
+            'two-factor-method' => 'Metodo a due fattori',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => 'Autenticazione a due fattori abilitata con successo.',
             'invalid-code' => 'Codice di verifica non valido.',
             'verified-success' => 'Autenticazione a due fattori verificata con successo.',
+            'code-sent-success' => 'Codice di verifica inviato con successo.',
+            'phone-required' => 'Aggiungi un numero di telefono prima di abilitare la verifica via SMS.',
         ],
 
         'setup' => [
@@ -5258,6 +5267,91 @@ return [
                     'build-views' => 'Metti in cache le viste',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'Configura i gateway SMS, le notifiche degli ordini e l\'autenticazione a due fattori via SMS.',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => 'Impostazioni generali SMS.',
+                    'title' => 'Generale',
+
+                    'settings' => [
+                        'active-gateway' => 'Gateway attivo',
+                        'enabled' => 'Abilitato',
+                        'title' => 'Impostazioni',
+                        'title-info' => 'Abilita o disabilita le notifiche SMS in tutta la tua applicazione.',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'SID account / Chiave API',
+                    'credential-secret' => 'Token di autenticazione / Secret API',
+                    'info' => 'Configura le credenziali del tuo fornitore di gateway SMS.',
+                    'sender' => 'Numero mittente / ID mittente',
+                    'title' => 'Gateway',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'Configura le tue credenziali API Twilio.',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'Configura le tue credenziali API Vonage (Nexmo).',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'Instradamento',
+                        'title' => 'MSG91',
+                        'title-info' => 'Configura le tue credenziali API MSG91.',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => 'Abilitato',
+                    'info' => 'Abilita le notifiche SMS per gli eventi degli ordini e personalizza i modelli di messaggio.',
+                    'template-label' => 'Modello di messaggio',
+                    'title' => 'Notifiche ordini',
+
+                    'order-placed' => [
+                        'title' => 'Ordine effettuato',
+                        'title-info' => 'Avvisa il cliente via SMS quando viene effettuato un ordine.',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => 'Ordine spedito',
+                        'title-info' => 'Avvisa il cliente via SMS quando il suo ordine viene spedito.',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => 'Ordine annullato',
+                        'title-info' => 'Avvisa il cliente via SMS quando il suo ordine viene annullato.',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => 'Fattura creata',
+                        'title-info' => 'Avvisa il cliente via SMS quando viene creata una fattura per il suo ordine.',
+                    ],
+
+                    'refund-created' => [
+                        'title' => 'Rimborso creato',
+                        'title-info' => 'Avvisa il cliente via SMS quando viene creato un rimborso per il suo ordine.',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => 'Consenti agli amministratori di usare l\'SMS come metodo di autenticazione a due fattori.',
+                    'title' => 'Autenticazione a due fattori',
+
+                    'settings' => [
+                        'enabled' => 'Abilitato',
+                        'title' => 'Impostazioni',
+                'sms' => 'SMS',
+                        'title-info' => 'Abilita l\'SMS come metodo di autenticazione a due fattori disponibile per gli account amministratore.',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5496,6 +5590,7 @@ return [
                     'use-cases' => 'Casi d\'Uso',
                     'zoom' => 'Zoom',
                 ],
+        'sms' => 'Registri SMS',
             ],
 
             'videos' => [
@@ -5919,6 +6014,55 @@ return [
             'refunded' => 'Il recesso è stato segnato come rimborsato.',
             'confirmation_resent' => 'L’e-mail di conferma è stata inviata di nuovo.',
             'confirmation_failed' => 'Impossibile inviare l’e-mail di conferma. Consultare la cronologia per maggiori dettagli.',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'Registri SMS',
+
+        'index' => [
+            'title' => 'Registri SMS',
+
+            'datagrid' => [
+                'created-at' => 'Inviato il',
+                'delete' => 'Elimina',
+                'event' => 'Evento',
+                'gateway' => 'Gateway',
+                'id' => 'ID',
+                'message' => 'Messaggio',
+                'recipient' => 'Destinatario',
+                'status' => 'Stato',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => 'Ciao {customer_name}, il tuo ordine #{order_id} è stato effettuato con successo. Totale: {order_total}. Grazie per aver fatto acquisti da noi!',
+            ],
+
+            'order-shipped' => [
+                'default-template' => 'Ciao {customer_name}, il tuo ordine #{order_id} è stato spedito ed è in transito.',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => 'Ciao {customer_name}, il tuo ordine #{order_id} è stato annullato.',
+            ],
+
+            'invoice-created' => [
+                'default-template' => 'Ciao {customer_name}, è stata generata una fattura per il tuo ordine #{order_id}. Totale: {order_total}.',
+            ],
+
+            'refund-created' => [
+                'default-template' => 'Ciao {customer_name}, è stato elaborato un rimborso per il tuo ordine #{order_id}.',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => 'Il tuo codice di verifica è :code. Scadrà tra 5 minuti.',
+        ],
+
+        'messages' => [
+            'delete-success' => 'Registro SMS eliminato con successo.',
         ],
     ],
 ];

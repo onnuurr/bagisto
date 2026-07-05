@@ -41,6 +41,8 @@ return [
             'enter-code' => '続行するには、認証アプリから6桁のコードを入力してください。',
             'title' => '二要素認証の確認',
             'verify-code' => 'コードを確認',
+            'code-sent' => '新しい確認コードが送信されました。',
+            'resend-code' => 'コードを再送信',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'マイアカウント',
             'update-success' => 'アカウントが正常に更新されました',
             'upload-image-info' => 'プロフィール画像をアップロード（110px X 110px、PNGまたはJPG形式）',
+            'method-authenticator' => '認証アプリ',
+            'method-sms' => 'SMS',
+            'phone' => '電話番号',
+            'send-code' => 'コードを送信',
+            'two-factor-method' => '二要素認証の方法',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => '二要素認証が正常に有効化されました。',
             'invalid-code' => '無効な確認コードです。',
             'verified-success' => '二要素認証が正常に確認されました。',
+            'code-sent-success' => '確認コードが正常に送信されました。',
+            'phone-required' => 'SMS認証を有効にする前に電話番号を追加してください。',
         ],
 
         'setup' => [
@@ -5258,6 +5267,91 @@ return [
                     'build-views' => 'ビューをキャッシュ',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'SMSゲートウェイ、注文通知、SMSベースの二要素認証を設定します。',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => '一般的なSMS設定。',
+                    'title' => '一般',
+
+                    'settings' => [
+                        'active-gateway' => '有効なゲートウェイ',
+                        'enabled' => '有効',
+                        'title' => '設定',
+                        'title-info' => 'アプリケーション全体でSMS通知を有効または無効にします。',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'アカウントSID / APIキー',
+                    'credential-secret' => '認証トークン / APIシークレット',
+                    'info' => 'SMSゲートウェイプロバイダーの認証情報を設定します。',
+                    'sender' => '送信元番号 / 送信者ID',
+                    'title' => 'ゲートウェイ',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'Twilio APIの認証情報を設定します。',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'Vonage (Nexmo) APIの認証情報を設定します。',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'ルート',
+                        'title' => 'MSG91',
+                        'title-info' => 'MSG91 APIの認証情報を設定します。',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => '有効',
+                    'info' => '注文イベントのSMS通知を有効にし、メッセージテンプレートをカスタマイズします。',
+                    'template-label' => 'メッセージテンプレート',
+                    'title' => '注文通知',
+
+                    'order-placed' => [
+                        'title' => '注文完了',
+                        'title-info' => '注文が確定したときにSMSで顧客に通知します。',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => '注文発送済み',
+                        'title-info' => '注文が発送されたときにSMSで顧客に通知します。',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => '注文キャンセル',
+                        'title-info' => '注文がキャンセルされたときにSMSで顧客に通知します。',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => '請求書作成',
+                        'title-info' => '注文の請求書が作成されたときにSMSで顧客に通知します。',
+                    ],
+
+                    'refund-created' => [
+                        'title' => '返金作成',
+                        'title-info' => '注文の返金が作成されたときにSMSで顧客に通知します。',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => '管理者が二要素認証の方法としてSMSを使用できるようにします。',
+                    'title' => '二要素認証',
+
+                    'settings' => [
+                        'enabled' => '有効',
+                        'title' => '設定',
+                'sms' => 'SMS',
+                        'title-info' => '管理者アカウントで利用可能な二要素認証の方法としてSMSを有効にします。',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5496,6 +5590,7 @@ return [
                     'use-cases' => '用途',
                     'zoom' => 'ズーム',
                 ],
+        'sms' => 'SMSログ',
             ],
 
             'videos' => [
@@ -5919,6 +6014,55 @@ return [
             'refunded' => '契約撤回を返金済みにしました。',
             'confirmation_resent' => '確認メールを再送しました。',
             'confirmation_failed' => '確認メールを送信できませんでした。詳細はタイムラインをご確認ください。',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'SMSログ',
+
+        'index' => [
+            'title' => 'SMSログ',
+
+            'datagrid' => [
+                'created-at' => '送信日時',
+                'delete' => '削除',
+                'event' => 'イベント',
+                'gateway' => 'ゲートウェイ',
+                'id' => 'ID',
+                'message' => 'メッセージ',
+                'recipient' => '受信者',
+                'status' => 'ステータス',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => '{customer_name}様、ご注文 #{order_id} が正常に完了しました。合計: {order_total}。ご利用ありがとうございます！',
+            ],
+
+            'order-shipped' => [
+                'default-template' => '{customer_name}様、ご注文 #{order_id} が発送され、配送中です。',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => '{customer_name}様、ご注文 #{order_id} はキャンセルされました。',
+            ],
+
+            'invoice-created' => [
+                'default-template' => '{customer_name}様、ご注文 #{order_id} の請求書が発行されました。合計: {order_total}。',
+            ],
+
+            'refund-created' => [
+                'default-template' => '{customer_name}様、ご注文 #{order_id} の返金処理が完了しました。',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => '確認コードは :code です。5分後に失効します。',
+        ],
+
+        'messages' => [
+            'delete-success' => 'SMSログが正常に削除されました。',
         ],
     ],
 ];

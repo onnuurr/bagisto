@@ -41,6 +41,8 @@ return [
             'enter-code' => '请输入您身份验证应用中的6位验证码以继续。',
             'title' => '验证双重身份验证',
             'verify-code' => '验证代码',
+            'code-sent' => '新的验证码已发送。',
+            'resend-code' => '重新发送验证码',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => '我的账户',
             'update-success' => '账户更新成功',
             'upload-image-info' => '上传个人头像（110px X 110px），支持 PNG 或 JPG 格式',
+            'method-authenticator' => '身份验证器应用',
+            'method-sms' => '短信',
+            'phone' => '电话号码',
+            'send-code' => '发送验证码',
+            'two-factor-method' => '双重验证方式',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => '双重身份验证已成功启用。',
             'invalid-code' => '无效的验证码。',
             'verified-success' => '双重身份验证已成功验证。',
+            'code-sent-success' => '验证码发送成功。',
+            'phone-required' => '启用短信验证前，请先添加电话号码。',
         ],
 
         'setup' => [
@@ -5258,6 +5267,91 @@ return [
                     'build-views' => '缓存视图',
                 ],
             ],
+
+            'sms' => [
+                'info' => '配置短信网关、订单通知和基于短信的双重验证。',
+                'title' => '短信',
+
+                'general' => [
+                    'info' => '常规短信设置。',
+                    'title' => '常规',
+
+                    'settings' => [
+                        'active-gateway' => '当前网关',
+                        'enabled' => '启用',
+                        'title' => '设置',
+                        'title-info' => '在您的整个应用程序中启用或禁用短信通知。',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => '账户 SID / API 密钥',
+                    'credential-secret' => '认证令牌 / API 密钥',
+                    'info' => '配置您的短信网关提供商的凭据。',
+                    'sender' => '发件号码 / 发件人 ID',
+                    'title' => '网关',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => '配置您的 Twilio API 凭据。',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => '配置您的 Vonage（Nexmo）API 凭据。',
+                    ],
+
+                    'msg91' => [
+                        'route' => '路由',
+                        'title' => 'MSG91',
+                        'title-info' => '配置您的 MSG91 API 凭据。',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => '启用',
+                    'info' => '为订单事件启用短信通知，并自定义其消息模板。',
+                    'template-label' => '消息模板',
+                    'title' => '订单通知',
+
+                    'order-placed' => [
+                        'title' => '订单已下达',
+                        'title-info' => '下单后通过短信通知客户。',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => '订单已发货',
+                        'title-info' => '订单发货后通过短信通知客户。',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => '订单已取消',
+                        'title-info' => '订单取消后通过短信通知客户。',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => '发票已生成',
+                        'title-info' => '为订单生成发票后通过短信通知客户。',
+                    ],
+
+                    'refund-created' => [
+                        'title' => '退款已生成',
+                        'title-info' => '为订单生成退款后通过短信通知客户。',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => '允许管理员使用短信作为双重验证方式。',
+                    'title' => '双重验证',
+
+                    'settings' => [
+                        'enabled' => '启用',
+                        'title' => '设置',
+                'sms' => '短信',
+                        'title-info' => '为管理员账户启用短信作为可用的双重验证方式。',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5496,6 +5590,7 @@ return [
                     'use-cases' => '用途',
                     'zoom' => '缩放',
                 ],
+        'sms' => '短信日志',
             ],
 
             'videos' => [
@@ -5919,6 +6014,55 @@ return [
             'refunded' => '撤回请求已标记为已退款。',
             'confirmation_resent' => '确认邮件已重新发送。',
             'confirmation_failed' => '无法发送确认邮件。详情请查看时间线。',
+        ],
+    ],
+
+    'sms' => [
+        'title' => '短信日志',
+
+        'index' => [
+            'title' => '短信日志',
+
+            'datagrid' => [
+                'created-at' => '发送时间',
+                'delete' => '删除',
+                'event' => '事件',
+                'gateway' => '网关',
+                'id' => 'ID',
+                'message' => '消息',
+                'recipient' => '收件人',
+                'status' => '状态',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => '您好 {customer_name}，您的订单 #{order_id} 已成功下达。总计：{order_total}。感谢您的惠顾！',
+            ],
+
+            'order-shipped' => [
+                'default-template' => '您好 {customer_name}，您的订单 #{order_id} 已发货，正在派送中。',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => '您好 {customer_name}，您的订单 #{order_id} 已取消。',
+            ],
+
+            'invoice-created' => [
+                'default-template' => '您好 {customer_name}，您的订单 #{order_id} 已生成发票。总计：{order_total}。',
+            ],
+
+            'refund-created' => [
+                'default-template' => '您好 {customer_name}，您的订单 #{order_id} 的退款已处理。',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => '您的验证码是 :code。它将在 5 分钟后过期。',
+        ],
+
+        'messages' => [
+            'delete-success' => '短信日志已成功删除。',
         ],
     ],
 ];

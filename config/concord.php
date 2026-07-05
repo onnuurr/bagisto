@@ -47,6 +47,7 @@ return [
         Webkul\Shipping\Providers\ModuleServiceProvider::class,
         Webkul\Shop\Providers\ModuleServiceProvider::class,
         Webkul\Sitemap\Providers\ModuleServiceProvider::class,
+        Webkul\SMS\Providers\ModuleServiceProvider::class,
         Webkul\SocialLogin\Providers\ModuleServiceProvider::class,
         Webkul\Stripe\Providers\ModuleServiceProvider::class,
         Webkul\Tax\Providers\ModuleServiceProvider::class,

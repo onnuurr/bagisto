@@ -41,6 +41,8 @@ return [
             'enter-code' => 'Enter the 6-digit code from your authenticator app to continue.',
             'title' => 'Verify Two-Factor Authentication',
             'verify-code' => 'Verify Code',
+            'code-sent' => 'A new verification code has been sent.',
+            'resend-code' => 'Resend Code',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'My Account',
             'update-success' => 'Account updated successfully',
             'upload-image-info' => 'Upload a Profile Image (110px X 110px) in PNG or JPG Format',
+            'method-authenticator' => 'Authenticator App',
+            'method-sms' => 'SMS',
+            'phone' => 'Phone Number',
+            'send-code' => 'Send Code',
+            'two-factor-method' => 'Two-Factor Method',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => 'Two-Factor Authentication enabled successfully.',
             'invalid-code' => 'Invalid verification code.',
             'verified-success' => 'Two-Factor Authentication verified successfully.',
+            'code-sent-success' => 'Verification code sent successfully.',
+            'phone-required' => 'Please add a phone number before enabling SMS verification.',
         ],
 
         'setup' => [
@@ -5258,6 +5267,91 @@ return [
                     'build-views' => 'Cache Views',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'Configure SMS gateways, order notifications, and SMS-based two-factor authentication.',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => 'General SMS settings.',
+                    'title' => 'General',
+
+                    'settings' => [
+                        'active-gateway' => 'Active Gateway',
+                        'enabled' => 'Enabled',
+                        'title' => 'Settings',
+                        'title-info' => 'Enable or disable SMS notifications across your entire application.',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'Account SID / API Key',
+                    'credential-secret' => 'Auth Token / API Secret',
+                    'info' => 'Configure credentials for your SMS gateway provider.',
+                    'sender' => 'From Number / Sender ID',
+                    'title' => 'Gateways',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'Configure your Twilio API credentials.',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'Configure your Vonage (Nexmo) API credentials.',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'Route',
+                        'title' => 'MSG91',
+                        'title-info' => 'Configure your MSG91 API credentials.',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => 'Enabled',
+                    'info' => 'Enable SMS notifications for order events and customize their message templates.',
+                    'template-label' => 'Message Template',
+                    'title' => 'Order Notifications',
+
+                    'order-placed' => [
+                        'title' => 'Order Placed',
+                        'title-info' => 'Notify the customer by SMS when an order is placed.',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => 'Order Shipped',
+                        'title-info' => 'Notify the customer by SMS when their order is shipped.',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => 'Order Cancelled',
+                        'title-info' => 'Notify the customer by SMS when their order is cancelled.',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => 'Invoice Created',
+                        'title-info' => 'Notify the customer by SMS when an invoice is created for their order.',
+                    ],
+
+                    'refund-created' => [
+                        'title' => 'Refund Created',
+                        'title-info' => 'Notify the customer by SMS when a refund is created for their order.',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => 'Allow admins to use SMS as a two-factor authentication method.',
+                    'title' => 'Two-Factor Authentication',
+
+                    'settings' => [
+                        'enabled' => 'Enabled',
+                        'title' => 'Settings',
+                'sms' => 'SMS',
+                        'title-info' => 'Enable SMS as an available two-factor authentication method for admin accounts.',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5496,6 +5590,7 @@ return [
                     'use-cases' => 'Use Cases',
                     'zoom' => 'Zoom',
                 ],
+        'sms' => 'SMS Logs',
             ],
 
             'videos' => [
@@ -5919,6 +6014,55 @@ return [
             'refunded' => 'Withdrawal has been marked as refunded.',
             'confirmation_resent' => 'Confirmation email has been resent.',
             'confirmation_failed' => 'Could not send the confirmation email. See the timeline for details.',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'SMS Logs',
+
+        'index' => [
+            'title' => 'SMS Logs',
+
+            'datagrid' => [
+                'created-at' => 'Sent At',
+                'delete' => 'Delete',
+                'event' => 'Event',
+                'gateway' => 'Gateway',
+                'id' => 'ID',
+                'message' => 'Message',
+                'recipient' => 'Recipient',
+                'status' => 'Status',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => 'Hi {customer_name}, your order #{order_id} has been placed successfully. Total: {order_total}. Thank you for shopping with us!',
+            ],
+
+            'order-shipped' => [
+                'default-template' => 'Hi {customer_name}, your order #{order_id} has been shipped and is on its way.',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => 'Hi {customer_name}, your order #{order_id} has been cancelled.',
+            ],
+
+            'invoice-created' => [
+                'default-template' => 'Hi {customer_name}, an invoice has been generated for your order #{order_id}. Total: {order_total}.',
+            ],
+
+            'refund-created' => [
+                'default-template' => 'Hi {customer_name}, a refund has been processed for your order #{order_id}.',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => 'Your verification code is :code. It will expire in 5 minutes.',
+        ],
+
+        'messages' => [
+            'delete-success' => 'SMS log deleted successfully.',
         ],
     ],
 ];

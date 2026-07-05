@@ -41,6 +41,8 @@ return [
             'enter-code' => 'Voer de 6-cijferige code van je authenticator-app in om door te gaan.',
             'title' => 'Twee-factor authenticatie verifiëren',
             'verify-code' => 'Code Verifiëren',
+            'code-sent' => 'Er is een nieuwe verificatiecode verzonden.',
+            'resend-code' => 'Code opnieuw versturen',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'Mijn Account',
             'update-success' => 'Account succesvol bijgewerkt',
             'upload-image-info' => 'Upload een profielfoto (110px X 110px) in PNG- of JPG-formaat',
+            'method-authenticator' => 'Authenticator-app',
+            'method-sms' => 'SMS',
+            'phone' => 'Telefoonnummer',
+            'send-code' => 'Code versturen',
+            'two-factor-method' => 'Tweefactormethode',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => 'Twee-factor authenticatie succesvol ingeschakeld.',
             'invalid-code' => 'Ongeldige verificatiecode.',
             'verified-success' => 'Twee-factor authenticatie succesvol geverifieerd.',
+            'code-sent-success' => 'Verificatiecode succesvol verzonden.',
+            'phone-required' => 'Voeg een telefoonnummer toe voordat u SMS-verificatie inschakelt.',
         ],
 
         'setup' => [
@@ -5258,6 +5267,91 @@ return [
                     'build-views' => 'Weergaven cachen',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'Configureer SMS-gateways, bestelmeldingen en SMS-gebaseerde tweefactorauthenticatie.',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => 'Algemene SMS-instellingen.',
+                    'title' => 'Algemeen',
+
+                    'settings' => [
+                        'active-gateway' => 'Actieve gateway',
+                        'enabled' => 'Ingeschakeld',
+                        'title' => 'Instellingen',
+                        'title-info' => 'Schakel SMS-meldingen in of uit voor uw volledige applicatie.',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'Account-SID / API-sleutel',
+                    'credential-secret' => 'Auth-token / API-secret',
+                    'info' => 'Configureer de inloggegevens van uw SMS-gatewayprovider.',
+                    'sender' => 'Afzendernummer / Afzender-ID',
+                    'title' => 'Gateways',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'Configureer uw Twilio API-inloggegevens.',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'Configureer uw Vonage (Nexmo) API-inloggegevens.',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'Route',
+                        'title' => 'MSG91',
+                        'title-info' => 'Configureer uw MSG91 API-inloggegevens.',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => 'Ingeschakeld',
+                    'info' => 'Schakel SMS-meldingen in voor bestelgebeurtenissen en pas de berichtsjablonen aan.',
+                    'template-label' => 'Berichtsjabloon',
+                    'title' => 'Bestelmeldingen',
+
+                    'order-placed' => [
+                        'title' => 'Bestelling geplaatst',
+                        'title-info' => 'Stel de klant per SMS op de hoogte wanneer een bestelling wordt geplaatst.',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => 'Bestelling verzonden',
+                        'title-info' => 'Stel de klant per SMS op de hoogte wanneer zijn bestelling wordt verzonden.',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => 'Bestelling geannuleerd',
+                        'title-info' => 'Stel de klant per SMS op de hoogte wanneer zijn bestelling wordt geannuleerd.',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => 'Factuur aangemaakt',
+                        'title-info' => 'Stel de klant per SMS op de hoogte wanneer er een factuur voor zijn bestelling wordt aangemaakt.',
+                    ],
+
+                    'refund-created' => [
+                        'title' => 'Terugbetaling aangemaakt',
+                        'title-info' => 'Stel de klant per SMS op de hoogte wanneer er een terugbetaling voor zijn bestelling wordt aangemaakt.',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => 'Sta beheerders toe SMS te gebruiken als tweefactorauthenticatiemethode.',
+                    'title' => 'Tweefactorauthenticatie',
+
+                    'settings' => [
+                        'enabled' => 'Ingeschakeld',
+                        'title' => 'Instellingen',
+                'sms' => 'SMS',
+                        'title-info' => 'Schakel SMS in als beschikbare tweefactorauthenticatiemethode voor beheerdersaccounts.',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5496,6 +5590,7 @@ return [
                     'use-cases' => 'Gebruiksscenario\'s',
                     'zoom' => 'Inzoomen',
                 ],
+        'sms' => 'SMS-logboek',
             ],
 
             'videos' => [
@@ -5919,6 +6014,55 @@ return [
             'refunded' => 'De herroeping is als terugbetaald gemarkeerd.',
             'confirmation_resent' => 'De bevestigingsmail is opnieuw verzonden.',
             'confirmation_failed' => 'De bevestigingsmail kon niet worden verzonden. Zie de tijdlijn voor meer informatie.',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'SMS-logboek',
+
+        'index' => [
+            'title' => 'SMS-logboek',
+
+            'datagrid' => [
+                'created-at' => 'Verzonden op',
+                'delete' => 'Verwijderen',
+                'event' => 'Gebeurtenis',
+                'gateway' => 'Gateway',
+                'id' => 'ID',
+                'message' => 'Bericht',
+                'recipient' => 'Ontvanger',
+                'status' => 'Status',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => 'Hallo {customer_name}, uw bestelling #{order_id} is succesvol geplaatst. Totaal: {order_total}. Bedankt voor uw aankoop bij ons!',
+            ],
+
+            'order-shipped' => [
+                'default-template' => 'Hallo {customer_name}, uw bestelling #{order_id} is verzonden en onderweg.',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => 'Hallo {customer_name}, uw bestelling #{order_id} is geannuleerd.',
+            ],
+
+            'invoice-created' => [
+                'default-template' => 'Hallo {customer_name}, er is een factuur aangemaakt voor uw bestelling #{order_id}. Totaal: {order_total}.',
+            ],
+
+            'refund-created' => [
+                'default-template' => 'Hallo {customer_name}, er is een terugbetaling verwerkt voor uw bestelling #{order_id}.',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => 'Uw verificatiecode is :code. Deze verloopt over 5 minuten.',
+        ],
+
+        'messages' => [
+            'delete-success' => 'SMS-logboek succesvol verwijderd.',
         ],
     ],
 ];

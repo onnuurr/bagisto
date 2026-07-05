@@ -104,6 +104,7 @@
             "Webkul\\Shipping\\": "packages/Webkul/Shipping/src",
             "Webkul\\Shop\\": "packages/Webkul/Shop/src",
             "Webkul\\Sitemap\\": "packages/Webkul/Sitemap/src",
+            "Webkul\\SMS\\": "packages/Webkul/SMS/src",
             "Webkul\\SocialLogin\\": "packages/Webkul/SocialLogin/src",
             "Webkul\\SocialShare\\": "packages/Webkul/SocialShare/src",
             "Webkul\\Stripe\\": "packages/Webkul/Stripe/src",

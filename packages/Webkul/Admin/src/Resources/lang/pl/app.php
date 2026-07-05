@@ -41,6 +41,8 @@ return [
             'enter-code' => 'Wprowadź 6-cyfrowy kod z aplikacji uwierzytelniającej, aby kontynuować.',
             'title' => 'Weryfikacja uwierzytelniania dwuskładnikowego',
             'verify-code' => 'Zweryfikuj kod',
+            'code-sent' => 'Wysłano nowy kod weryfikacyjny.',
+            'resend-code' => 'Wyślij kod ponownie',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'Moje konto',
             'update-success' => 'Konto zostało pomyślnie zaktualizowane',
             'upload-image-info' => 'Prześlij zdjęcie profilowe (110px X 110px) w formacie PNG lub JPG',
+            'method-authenticator' => 'Aplikacja uwierzytelniająca',
+            'method-sms' => 'SMS',
+            'phone' => 'Numer telefonu',
+            'send-code' => 'Wyślij kod',
+            'two-factor-method' => 'Metoda dwuskładnikowa',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => 'Uwierzytelnianie dwuskładnikowe włączone pomyślnie.',
             'invalid-code' => 'Nieprawidłowy kod weryfikacyjny.',
             'verified-success' => 'Uwierzytelnianie dwuskładnikowe pomyślnie zweryfikowane.',
+            'code-sent-success' => 'Kod weryfikacyjny wysłany pomyślnie.',
+            'phone-required' => 'Dodaj numer telefonu przed włączeniem weryfikacji SMS.',
         ],
 
         'setup' => [
@@ -5258,6 +5267,91 @@ return [
                     'build-views' => 'Wygeneruj cache widoków',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'Skonfiguruj bramki SMS, powiadomienia o zamówieniach oraz uwierzytelnianie dwuskładnikowe SMS.',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => 'Ogólne ustawienia SMS.',
+                    'title' => 'Ogólne',
+
+                    'settings' => [
+                        'active-gateway' => 'Aktywna bramka',
+                        'enabled' => 'Włączone',
+                        'title' => 'Ustawienia',
+                        'title-info' => 'Włącz lub wyłącz powiadomienia SMS w całej aplikacji.',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'SID konta / Klucz API',
+                    'credential-secret' => 'Token uwierzytelniający / Sekret API',
+                    'info' => 'Skonfiguruj dane uwierzytelniające dostawcy bramki SMS.',
+                    'sender' => 'Numer nadawcy / ID nadawcy',
+                    'title' => 'Bramki',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'Skonfiguruj dane uwierzytelniające API Twilio.',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'Skonfiguruj dane uwierzytelniające API Vonage (Nexmo).',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'Trasa',
+                        'title' => 'MSG91',
+                        'title-info' => 'Skonfiguruj dane uwierzytelniające API MSG91.',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => 'Włączone',
+                    'info' => 'Włącz powiadomienia SMS dla zdarzeń zamówień i dostosuj ich szablony wiadomości.',
+                    'template-label' => 'Szablon wiadomości',
+                    'title' => 'Powiadomienia o zamówieniach',
+
+                    'order-placed' => [
+                        'title' => 'Złożono zamówienie',
+                        'title-info' => 'Powiadom klienta SMS-em, gdy zamówienie zostanie złożone.',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => 'Zamówienie wysłane',
+                        'title-info' => 'Powiadom klienta SMS-em, gdy jego zamówienie zostanie wysłane.',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => 'Zamówienie anulowane',
+                        'title-info' => 'Powiadom klienta SMS-em, gdy jego zamówienie zostanie anulowane.',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => 'Utworzono fakturę',
+                        'title-info' => 'Powiadom klienta SMS-em, gdy zostanie utworzona faktura dla jego zamówienia.',
+                    ],
+
+                    'refund-created' => [
+                        'title' => 'Utworzono zwrot',
+                        'title-info' => 'Powiadom klienta SMS-em, gdy zostanie utworzony zwrot dla jego zamówienia.',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => 'Zezwól administratorom na używanie SMS jako metody uwierzytelniania dwuskładnikowego.',
+                    'title' => 'Uwierzytelnianie dwuskładnikowe',
+
+                    'settings' => [
+                        'enabled' => 'Włączone',
+                        'title' => 'Ustawienia',
+                'sms' => 'SMS',
+                        'title-info' => 'Włącz SMS jako dostępną metodę uwierzytelniania dwuskładnikowego dla kont administratorów.',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5496,6 +5590,7 @@ return [
                     'use-cases' => 'Zastosowanie',
                     'zoom' => 'Powiększenie',
                 ],
+        'sms' => 'Dzienniki SMS',
             ],
 
             'videos' => [
@@ -5919,6 +6014,55 @@ return [
             'refunded' => 'Odstąpienie zostało oznaczone jako zwrócone.',
             'confirmation_resent' => 'E-mail potwierdzający został wysłany ponownie.',
             'confirmation_failed' => 'Nie udało się wysłać e-maila potwierdzającego. Szczegóły znajdują się na osi czasu.',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'Dzienniki SMS',
+
+        'index' => [
+            'title' => 'Dzienniki SMS',
+
+            'datagrid' => [
+                'created-at' => 'Wysłano o',
+                'delete' => 'Usuń',
+                'event' => 'Zdarzenie',
+                'gateway' => 'Bramka',
+                'id' => 'ID',
+                'message' => 'Wiadomość',
+                'recipient' => 'Odbiorca',
+                'status' => 'Status',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => 'Cześć {customer_name}, Twoje zamówienie #{order_id} zostało pomyślnie złożone. Razem: {order_total}. Dziękujemy za zakupy u nas!',
+            ],
+
+            'order-shipped' => [
+                'default-template' => 'Cześć {customer_name}, Twoje zamówienie #{order_id} zostało wysłane i jest w drodze.',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => 'Cześć {customer_name}, Twoje zamówienie #{order_id} zostało anulowane.',
+            ],
+
+            'invoice-created' => [
+                'default-template' => 'Cześć {customer_name}, dla Twojego zamówienia #{order_id} wygenerowano fakturę. Razem: {order_total}.',
+            ],
+
+            'refund-created' => [
+                'default-template' => 'Cześć {customer_name}, dla Twojego zamówienia #{order_id} przetworzono zwrot.',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => 'Twój kod weryfikacyjny to :code. Wygaśnie za 5 minut.',
+        ],
+
+        'messages' => [
+            'delete-success' => 'Dziennik SMS został pomyślnie usunięty.',
         ],
     ],
 ];

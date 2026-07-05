@@ -6,9 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Webkul\Admin\Http\Controllers\Controller;
 use Webkul\Admin\Mail\Admin\BackupCodesNotification;
+use Webkul\SMS\Facades\Sms;
 
 class TwoFactorController extends Controller
 {
+    /**
+     * Cache key used to store the admin's SMS one-time-password.
+     */
+    protected function smsOtpCacheKey($admin): string
+    {
+        return "admin_two_factor_otp.{$admin->id}";
+    }
+
     /**
      * Show 2FA setup page with QR code and secret key.
      */
@@ -54,6 +63,32 @@ class TwoFactorController extends Controller
     }
 
     /**
+     * Send a one-time-password to the admin's phone number for SMS-based 2FA setup.
+     */
+    public function sendSmsCode()
+    {
+        $admin = auth('admin')->user();
+
+        if (! $admin) {
+            return response()->json([
+                'message' => trans('admin::app.errors.401.title'),
+            ], 401);
+        }
+
+        if (! $admin->phone) {
+            return response()->json([
+                'message' => trans('admin::app.account.messages.phone-required'),
+            ], 422);
+        }
+
+        Sms::generateAndSendOtp($admin->phone, $this->smsOtpCacheKey($admin));
+
+        return response()->json([
+            'message' => trans('admin::app.account.messages.code-sent-success'),
+        ]);
+    }
+
+    /**
      * Enable 2FA after verifying code.
      */
     public function enable(Request $request)
@@ -64,9 +99,15 @@ class TwoFactorController extends Controller
 
         $admin = auth('admin')->user();
 
-        $decryptedSecret = decrypt($admin->two_factor_secret);
+        $method = $request->input('method') === 'sms' ? 'sms' : 'authenticator';
 
-        $isValidCode = two_factor_authentication()->verifyQrCode($decryptedSecret, $request->code);
+        if ($method === 'sms') {
+            $isValidCode = Sms::verifyOtp($this->smsOtpCacheKey($admin), $request->code);
+        } else {
+            $decryptedSecret = decrypt($admin->two_factor_secret);
+
+            $isValidCode = two_factor_authentication()->verifyQrCode($decryptedSecret, $request->code);
+        }
 
         if (! $isValidCode) {
             return response()->json([
@@ -78,6 +119,7 @@ class TwoFactorController extends Controller
 
         $admin->forceFill([
             'two_factor_enabled' => true,
+            'two_factor_method' => $method,
             'two_factor_verified_at' => now(),
         ])->save();
 
@@ -156,7 +198,39 @@ class TwoFactorController extends Controller
      */
     public function showVerifyForm()
     {
-        return view('admin::account.verify');
+        $admin = auth('admin')->user();
+
+        if (
+            $admin
+            && $admin->two_factor_method === 'sms'
+            && $admin->phone
+        ) {
+            Sms::generateAndSendOtp($admin->phone, $this->smsOtpCacheKey($admin));
+        }
+
+        return view('admin::account.verify', compact('admin'));
+    }
+
+    /**
+     * Resend the SMS one-time-password during login verification.
+     */
+    public function resendLoginCode()
+    {
+        $admin = auth('admin')->user();
+
+        if (
+            ! $admin
+            || $admin->two_factor_method !== 'sms'
+            || ! $admin->phone
+        ) {
+            return back()->withErrors([
+                'code' => trans('admin::app.errors.401.title'),
+            ]);
+        }
+
+        Sms::generateAndSendOtp($admin->phone, $this->smsOtpCacheKey($admin));
+
+        return back()->with('success', trans('admin::app.users.verify.code-sent'));
     }
 
     /**
@@ -168,9 +242,15 @@ class TwoFactorController extends Controller
 
         $admin = auth('admin')->user();
 
-        $decryptedSecret = decrypt($admin->two_factor_secret);
+        if ($admin->two_factor_method === 'sms') {
+            $isValidCode = Sms::verifyOtp($this->smsOtpCacheKey($admin), $request->code);
+        } else {
+            $decryptedSecret = decrypt($admin->two_factor_secret);
 
-        if (two_factor_authentication()->verifyQrCode($decryptedSecret, $request->code)) {
+            $isValidCode = two_factor_authentication()->verifyQrCode($decryptedSecret, $request->code);
+        }
+
+        if ($isValidCode) {
             return $this->handleSuccessfulVerification();
         }
 

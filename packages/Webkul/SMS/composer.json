@@ -1,0 +1,21 @@
+{
+    "name": "bagisto/laravel-sms",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Webkul\\SMS\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\SMS\\Providers\\SMSServiceProvider"
+            ],
+            "aliases": {
+                "Sms": "Webkul\\SMS\\Facades\\Sms"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}

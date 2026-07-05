@@ -402,4 +402,15 @@ return [
         'sort' => 9,
         'icon' => 'icon-configuration',
     ],
+
+    /**
+     * SMS.
+     */
+    [
+        'key' => 'sms',
+        'name' => 'admin::app.components.layouts.sidebar.sms',
+        'route' => 'admin.sms.index',
+        'sort' => 10,
+        'icon' => 'icon-phone',
+    ],
 ];
