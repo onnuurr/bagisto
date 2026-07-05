@@ -2662,6 +2662,7 @@ return [
             'index' => [
                 'cart-rule-title' => '购物车规则',
                 'catalog-rule-title' => '产品目录规则',
+                'gift-card-title' => '礼品卡',
             ],
 
             'cart-rules' => [
@@ -2875,6 +2876,59 @@ return [
 
                 'delete-failed' => '购物车规则删除失败',
                 'delete-success' => '购物车规则删除成功',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => '创建礼品卡',
+                    'title' => '礼品卡',
+
+                    'datagrid' => [
+                        'amount' => '金额',
+                        'code' => '代码',
+                        'delete' => '删除',
+                        'edit' => '编辑',
+                        'expired' => '已过期',
+                        'expires-at' => '过期时间',
+                        'id' => 'ID',
+                        'mass-delete-success' => '所选礼品卡已成功删除',
+                        'status' => '状态',
+                        'unused' => '未使用',
+                        'used' => '已使用',
+                        'used-at' => '使用时间',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => '金额',
+                    'code' => '代码',
+                    'code-info' => '留空以自动生成。',
+                    'currency' => '货币',
+                    'customer-email' => '客户邮箱',
+                    'expires-at' => '过期时间',
+                    'quantity' => '数量',
+                    'quantity-info' => '要生成的礼品卡数量。当数量大于1时，代码将被忽略并自动生成。',
+                    'save-btn' => '保存礼品卡',
+                    'success' => '礼品卡创建成功',
+                    'title' => '创建礼品卡',
+                ],
+
+                'edit' => [
+                    'amount' => '金额',
+                    'code' => '代码',
+                    'currency' => '货币',
+                    'customer-email' => '客户邮箱',
+                    'expired' => '已过期',
+                    'expires-at' => '过期时间',
+                    'status' => '状态',
+                    'success' => '礼品卡更新成功',
+                    'title' => '编辑礼品卡',
+                    'unused' => '未使用',
+                    'used' => '已使用',
+                ],
+
+                'delete-failed' => '该礼品卡已被使用，无法删除',
+                'delete-success' => '礼品卡删除成功',
             ],
 
             'catalog-rules' => [
@@ -5558,6 +5612,7 @@ return [
         'events' => '事件',
         'exchange-rates' => '汇率',
         'gdpr' => 'GDPR',
+        'gift-cards' => '礼品卡',
         'groups' => '分组',
         'import' => '导入',
         'imports' => '导入',

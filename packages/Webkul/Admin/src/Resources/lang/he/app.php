@@ -2662,6 +2662,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'חוקי סל קניות',
                 'catalog-rule-title' => 'חוקי קטלוג',
+                'gift-card-title' => 'כרטיסי מתנה',
             ],
 
             'cart-rules' => [
@@ -2875,6 +2876,59 @@ return [
 
                 'delete-failed' => 'נכשל מחיקת כלל עגלת הקניות',
                 'delete-success' => 'כלל עגלת הקניות נמחק בהצלחה',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'יצירת כרטיס מתנה',
+                    'title' => 'כרטיסי מתנה',
+
+                    'datagrid' => [
+                        'amount' => 'סכום',
+                        'code' => 'קוד',
+                        'delete' => 'מחיקה',
+                        'edit' => 'עריכה',
+                        'expired' => 'פג תוקף',
+                        'expires-at' => 'תוקף עד',
+                        'id' => 'מזהה',
+                        'mass-delete-success' => 'כרטיסי המתנה שנבחרו נמחקו בהצלחה',
+                        'status' => 'סטטוס',
+                        'unused' => 'לא נוצל',
+                        'used' => 'נוצל',
+                        'used-at' => 'תאריך שימוש',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'סכום',
+                    'code' => 'קוד',
+                    'code-info' => 'השאר ריק ליצירה אוטומטית.',
+                    'currency' => 'מטבע',
+                    'customer-email' => 'דוא"ל לקוח',
+                    'expires-at' => 'תוקף עד',
+                    'quantity' => 'כמות',
+                    'quantity-info' => 'מספר כרטיסי המתנה ליצירה. הקוד מתעלם ונוצר אוטומטית כאשר הכמות גדולה מ-1.',
+                    'save-btn' => 'שמירת כרטיס מתנה',
+                    'success' => 'כרטיס המתנה נוצר בהצלחה',
+                    'title' => 'יצירת כרטיס מתנה',
+                ],
+
+                'edit' => [
+                    'amount' => 'סכום',
+                    'code' => 'קוד',
+                    'currency' => 'מטבע',
+                    'customer-email' => 'דוא"ל לקוח',
+                    'expired' => 'פג תוקף',
+                    'expires-at' => 'תוקף עד',
+                    'status' => 'סטטוס',
+                    'success' => 'כרטיס המתנה עודכן בהצלחה',
+                    'title' => 'עריכת כרטיס מתנה',
+                    'unused' => 'לא נוצל',
+                    'used' => 'נוצל',
+                ],
+
+                'delete-failed' => 'לא ניתן למחוק את כרטיס המתנה מכיוון שכבר נוצל',
+                'delete-success' => 'כרטיס המתנה נמחק בהצלחה',
             ],
 
             'catalog-rules' => [
@@ -5558,6 +5612,7 @@ return [
         'events' => 'אירועים',
         'exchange-rates' => 'שערי חליפין',
         'gdpr' => 'GDPR',
+        'gift-cards' => 'כרטיסי מתנה',
         'groups' => 'קבוצות',
         'import' => 'ייבוא',
         'imports' => 'ייבוא',

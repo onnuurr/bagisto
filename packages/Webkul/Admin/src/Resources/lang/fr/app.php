@@ -2662,6 +2662,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Règles du panier',
                 'catalog-rule-title' => 'Règles du catalogue',
+                'gift-card-title' => 'Cartes Cadeaux',
             ],
 
             'cart-rules' => [
@@ -2875,6 +2876,59 @@ return [
 
                 'delete-failed' => 'Échec de la suppression de la règle du panier',
                 'delete-success' => 'Règle du panier supprimée avec succès',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Créer une Carte Cadeau',
+                    'title' => 'Cartes Cadeaux',
+
+                    'datagrid' => [
+                        'amount' => 'Montant',
+                        'code' => 'Code',
+                        'delete' => 'Supprimer',
+                        'edit' => 'Modifier',
+                        'expired' => 'Expirée',
+                        'expires-at' => 'Expire le',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Cartes cadeaux sélectionnées supprimées avec succès',
+                        'status' => 'Statut',
+                        'unused' => 'Non utilisée',
+                        'used' => 'Utilisée',
+                        'used-at' => 'Utilisée le',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Montant',
+                    'code' => 'Code',
+                    'code-info' => 'Laisser vide pour générer automatiquement.',
+                    'currency' => 'Devise',
+                    'customer-email' => 'E-mail du client',
+                    'expires-at' => 'Expire le',
+                    'quantity' => 'Quantité',
+                    'quantity-info' => 'Nombre de cartes cadeaux à générer. Le code est ignoré et généré automatiquement lorsque la quantité est supérieure à 1.',
+                    'save-btn' => 'Enregistrer la Carte Cadeau',
+                    'success' => 'Carte cadeau créée avec succès',
+                    'title' => 'Créer une Carte Cadeau',
+                ],
+
+                'edit' => [
+                    'amount' => 'Montant',
+                    'code' => 'Code',
+                    'currency' => 'Devise',
+                    'customer-email' => 'E-mail du client',
+                    'expired' => 'Expirée',
+                    'expires-at' => 'Expire le',
+                    'status' => 'Statut',
+                    'success' => 'Carte cadeau mise à jour avec succès',
+                    'title' => 'Modifier la Carte Cadeau',
+                    'unused' => 'Non utilisée',
+                    'used' => 'Utilisée',
+                ],
+
+                'delete-failed' => 'La carte cadeau ne peut pas être supprimée car elle a déjà été utilisée',
+                'delete-success' => 'Carte cadeau supprimée avec succès',
             ],
 
             'catalog-rules' => [
@@ -5558,6 +5612,7 @@ return [
         'events' => 'Événements',
         'exchange-rates' => 'Taux de change',
         'gdpr' => 'RGPD',
+        'gift-cards' => 'Cartes Cadeaux',
         'groups' => 'Groupes',
         'import' => 'Importer',
         'imports' => 'Importations',

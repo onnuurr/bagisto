@@ -2662,6 +2662,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Warenkorbregeln',
                 'catalog-rule-title' => 'Katalogregeln',
+                'gift-card-title' => 'Geschenkgutscheine',
             ],
 
             'cart-rules' => [
@@ -2875,6 +2876,59 @@ return [
 
                 'delete-failed' => 'Löschen der Warenkorbregel fehlgeschlagen',
                 'delete-success' => 'Warenkorbregel erfolgreich gelöscht',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Geschenkgutschein erstellen',
+                    'title' => 'Geschenkgutscheine',
+
+                    'datagrid' => [
+                        'amount' => 'Betrag',
+                        'code' => 'Code',
+                        'delete' => 'Löschen',
+                        'edit' => 'Bearbeiten',
+                        'expired' => 'Abgelaufen',
+                        'expires-at' => 'Läuft ab am',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Ausgewählte Geschenkgutscheine erfolgreich gelöscht',
+                        'status' => 'Status',
+                        'unused' => 'Nicht verwendet',
+                        'used' => 'Verwendet',
+                        'used-at' => 'Verwendet am',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Betrag',
+                    'code' => 'Code',
+                    'code-info' => 'Leer lassen, um automatisch zu generieren.',
+                    'currency' => 'Währung',
+                    'customer-email' => 'Kunden-E-Mail',
+                    'expires-at' => 'Läuft ab am',
+                    'quantity' => 'Menge',
+                    'quantity-info' => 'Anzahl der zu erstellenden Geschenkgutscheine. Der Code wird ignoriert und automatisch generiert, wenn die Menge größer als 1 ist.',
+                    'save-btn' => 'Geschenkgutschein speichern',
+                    'success' => 'Geschenkgutschein erfolgreich erstellt',
+                    'title' => 'Geschenkgutschein erstellen',
+                ],
+
+                'edit' => [
+                    'amount' => 'Betrag',
+                    'code' => 'Code',
+                    'currency' => 'Währung',
+                    'customer-email' => 'Kunden-E-Mail',
+                    'expired' => 'Abgelaufen',
+                    'expires-at' => 'Läuft ab am',
+                    'status' => 'Status',
+                    'success' => 'Geschenkgutschein erfolgreich aktualisiert',
+                    'title' => 'Geschenkgutschein bearbeiten',
+                    'unused' => 'Nicht verwendet',
+                    'used' => 'Verwendet',
+                ],
+
+                'delete-failed' => 'Geschenkgutschein kann nicht gelöscht werden, da er bereits eingelöst wurde',
+                'delete-success' => 'Geschenkgutschein erfolgreich gelöscht',
             ],
 
             'catalog-rules' => [
@@ -5558,6 +5612,7 @@ return [
         'events' => 'Ereignisse',
         'exchange-rates' => 'Wechselkurse',
         'gdpr' => 'DSGVO',
+        'gift-cards' => 'Geschenkgutscheine',
         'groups' => 'Gruppen',
         'import' => 'Importieren',
         'imports' => 'Importe',

@@ -211,6 +211,12 @@ return [
         'sort' => 2,
         'icon' => '',
     ], [
+        'key' => 'marketing.promotions.gift_cards',
+        'name' => 'admin::app.marketing.promotions.index.gift-card-title',
+        'route' => 'admin.marketing.promotions.gift_cards.index',
+        'sort' => 3,
+        'icon' => '',
+    ], [
         'key' => 'marketing.communications',
         'name' => 'admin::app.components.layouts.sidebar.communications',
         'route' => 'admin.marketing.communications.email_templates.index',

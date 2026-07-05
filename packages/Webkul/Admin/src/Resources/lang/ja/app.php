@@ -2662,6 +2662,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'カートルール',
                 'catalog-rule-title' => 'カタログルール',
+                'gift-card-title' => 'ギフトカード',
             ],
 
             'cart-rules' => [
@@ -2875,6 +2876,59 @@ return [
 
                 'delete-failed' => 'カートルールの削除に失敗しました',
                 'delete-success' => 'カートルールが正常に削除されました',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'ギフトカードを作成',
+                    'title' => 'ギフトカード',
+
+                    'datagrid' => [
+                        'amount' => '金額',
+                        'code' => 'コード',
+                        'delete' => '削除',
+                        'edit' => '編集',
+                        'expired' => '期限切れ',
+                        'expires-at' => '有効期限',
+                        'id' => 'ID',
+                        'mass-delete-success' => '選択したギフトカードが正常に削除されました',
+                        'status' => 'ステータス',
+                        'unused' => '未使用',
+                        'used' => '使用済み',
+                        'used-at' => '使用日',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => '金額',
+                    'code' => 'コード',
+                    'code-info' => '自動生成する場合は空欄のままにしてください。',
+                    'currency' => '通貨',
+                    'customer-email' => '顧客のメールアドレス',
+                    'expires-at' => '有効期限',
+                    'quantity' => '数量',
+                    'quantity-info' => '生成するギフトカードの枚数。数量が1より大きい場合、コードは無視され自動生成されます。',
+                    'save-btn' => 'ギフトカードを保存',
+                    'success' => 'ギフトカードが正常に作成されました',
+                    'title' => 'ギフトカードを作成',
+                ],
+
+                'edit' => [
+                    'amount' => '金額',
+                    'code' => 'コード',
+                    'currency' => '通貨',
+                    'customer-email' => '顧客のメールアドレス',
+                    'expired' => '期限切れ',
+                    'expires-at' => '有効期限',
+                    'status' => 'ステータス',
+                    'success' => 'ギフトカードが正常に更新されました',
+                    'title' => 'ギフトカードを編集',
+                    'unused' => '未使用',
+                    'used' => '使用済み',
+                ],
+
+                'delete-failed' => 'このギフトカードはすでに利用されているため削除できません',
+                'delete-success' => 'ギフトカードが正常に削除されました',
             ],
 
             'catalog-rules' => [
@@ -5558,6 +5612,7 @@ return [
         'events' => 'イベント',
         'exchange-rates' => '為替レート',
         'gdpr' => 'GDPR',
+        'gift-cards' => 'ギフトカード',
         'groups' => 'グループ',
         'import' => 'インポート',
         'imports' => 'インポート',
