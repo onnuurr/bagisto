@@ -3312,6 +3312,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'E-mailuri de notificare',
+
+                'datagrid' => [
+                    'active' => 'Activ',
+                    'code' => 'Cod',
+                    'edit' => 'Editează',
+                    'id' => 'ID',
+                    'inactive' => 'Inactiv',
+                    'name' => 'Nume',
+                    'status' => 'Stare',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'Activ',
+                'back-btn' => 'Înapoi',
+                'code' => 'Cod',
+                'content' => 'Conținut',
+                'general' => 'General',
+                'inactive' => 'Inactiv',
+                'name' => 'Nume',
+                'save-btn' => 'Salvează',
+                'status' => 'Stare',
+                'subject' => 'Subiect',
+                'title' => 'Editează e-mailul de notificare',
+                'variables' => 'Variabile disponibile',
+                'variables-info' => 'Puteți utiliza următoarele variabile în subiect și conținut. Acestea vor fi înlocuite automat cu datele reale la trimiterea e-mailului.',
+            ],
+
+            'update-success' => 'E-mailul de notificare a fost actualizat cu succes.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5317,6 +5351,7 @@ return [
                 'inventory-sources' => 'Inventory Sources',
                 'invoices' => 'Invoices',
                 'locales' => 'Locales',
+                'notification-emails' => 'E-mailuri de notificare',
                 'marketing' => 'Marketing',
                 'mode' => 'Dark Mode',
                 'newsletter-subscriptions' => 'Newsletter Subscriptions',
@@ -5567,6 +5602,7 @@ return [
         'marketing' => 'Marketing',
         'newsletter-subscriptions' => 'Newsletter Subscriptions',
         'note' => 'Note',
+        'notification-emails' => 'E-mailuri de notificare',
         'orders' => 'Orders',
         'products' => 'Products',
         'promotions' => 'Promotions',

@@ -390,6 +390,12 @@ return [
         'route' => 'admin.settings.data_transfer.imports.index',
         'sort' => 1,
         'icon' => '',
+    ], [
+        'key' => 'settings.email_templates',
+        'name' => 'admin::app.components.layouts.sidebar.notification-emails',
+        'route' => 'admin.settings.email_templates.index',
+        'sort' => 11,
+        'icon' => '',
     ],
 
     /**

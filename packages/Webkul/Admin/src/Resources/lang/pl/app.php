@@ -3312,6 +3312,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'E-maile z powiadomieniami',
+
+                'datagrid' => [
+                    'active' => 'Aktywny',
+                    'code' => 'Kod',
+                    'edit' => 'Edytuj',
+                    'id' => 'ID',
+                    'inactive' => 'Nieaktywna',
+                    'name' => 'Nazwa',
+                    'status' => 'Status',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'Aktywny',
+                'back-btn' => 'Powrót',
+                'code' => 'Kod',
+                'content' => 'Treść',
+                'general' => 'Ogólne',
+                'inactive' => 'Nieaktywna',
+                'name' => 'Nazwa',
+                'save-btn' => 'Zapisz',
+                'status' => 'Status',
+                'subject' => 'Temat',
+                'title' => 'Edytuj e-mail z powiadomieniem',
+                'variables' => 'Dostępne zmienne',
+                'variables-info' => 'Możesz użyć następujących zmiennych w temacie i treści. Zostaną one automatycznie zastąpione rzeczywistymi danymi podczas wysyłania wiadomości e-mail.',
+            ],
+
+            'update-success' => 'E-mail z powiadomieniem został pomyślnie zaktualizowany.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5317,6 +5351,7 @@ return [
                 'inventory-sources' => 'Źródła inwentarza',
                 'invoices' => 'Faktury',
                 'locales' => 'Lokalizacje',
+                'notification-emails' => 'E-maile z powiadomieniami',
                 'marketing' => 'Marketing',
                 'mode' => 'Tryb ciemny',
                 'newsletter-subscriptions' => 'Subskrypcje newslettera',
@@ -5567,6 +5602,7 @@ return [
         'marketing' => 'Marketing',
         'newsletter-subscriptions' => 'Subskrypcje newslettera',
         'note' => 'Notatka',
+        'notification-emails' => 'E-maile z powiadomieniami',
         'orders' => 'Zamówienia',
         'products' => 'Produkty',
         'promotions' => 'Promocje',

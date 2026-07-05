@@ -22,8 +22,6 @@ class InvoicedNotification extends Mailable
      */
     public function envelope(): Envelope
     {
-        $order = $this->invoice->order;
-
         return new Envelope(
             to: [
                 new Address(
@@ -31,7 +29,7 @@ class InvoicedNotification extends Mailable
                     core()->getAdminEmailDetails()['name']
                 ),
             ],
-            subject: trans('admin::app.emails.orders.invoiced.subject'),
+            subject: $this->resolveSubject('admin.orders.invoiced', 'admin::app.emails.orders.invoiced.subject'),
         );
     }
 
@@ -40,8 +38,12 @@ class InvoicedNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'admin::emails.orders.invoiced',
-        );
+        return $this->resolveContent('admin.orders.invoiced', 'admin::emails.orders.invoiced', [
+            '{{admin_name}}' => core()->getAdminEmailDetails()['name'],
+            '{{invoice_id}}' => $this->invoice->increment_id,
+            '{{order_id}}' => '<a href="'.route('admin.sales.orders.view', $this->invoice->order_id).'" style="color: #2969FF;">#'.$this->invoice->order->increment_id.'</a>',
+            '{{order_date}}' => core()->formatDate($this->invoice->order->created_at, 'Y-m-d H:i:s'),
+            '{{order_details}}' => view('admin::emails.orders.partials.invoiced', ['invoice' => $this->invoice])->render(),
+        ]);
     }
 }

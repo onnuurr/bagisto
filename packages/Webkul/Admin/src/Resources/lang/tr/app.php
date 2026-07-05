@@ -3312,6 +3312,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'Bildirim E-postaları',
+
+                'datagrid' => [
+                    'active' => 'Aktif',
+                    'code' => 'Kod',
+                    'edit' => 'Düzenle',
+                    'id' => 'ID',
+                    'inactive' => 'Pasif',
+                    'name' => 'Ad',
+                    'status' => 'Durum',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'Aktif',
+                'back-btn' => 'Geri',
+                'code' => 'Kod',
+                'content' => 'İçerik',
+                'general' => 'Genel',
+                'inactive' => 'Pasif',
+                'name' => 'Ad',
+                'save-btn' => 'Kaydet',
+                'status' => 'Durum',
+                'subject' => 'Konu',
+                'title' => 'Bildirim E-postasını Düzenle',
+                'variables' => 'Kullanılabilir Değişkenler',
+                'variables-info' => 'Konu ve içerik alanlarında aşağıdaki değişkenleri kullanabilirsiniz. E-posta gönderildiğinde otomatik olarak gerçek verilerle değiştirilirler.',
+            ],
+
+            'update-success' => 'Bildirim e-postası başarıyla güncellendi.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5317,6 +5351,7 @@ return [
                 'inventory-sources' => 'Envanter Kaynakları',
                 'invoices' => 'Faturalar',
                 'locales' => 'Yerel Ayarlar',
+                'notification-emails' => 'Bildirim E-postaları',
                 'marketing' => 'Pazarlama',
                 'mode' => 'Karanlık Mod',
                 'newsletter-subscriptions' => 'Bülten Abonelikleri',
@@ -5567,6 +5602,7 @@ return [
         'marketing' => 'Pazarlama',
         'newsletter-subscriptions' => 'Bülten Abonelikleri',
         'note' => 'Not',
+        'notification-emails' => 'Bildirim E-postaları',
         'orders' => 'Siparişler',
         'products' => 'Ürünler',
         'promotions' => 'Promosyonlar',

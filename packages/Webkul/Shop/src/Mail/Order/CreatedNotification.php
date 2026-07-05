@@ -29,7 +29,7 @@ class CreatedNotification extends Mailable
                     $this->order->customer_full_name
                 ),
             ],
-            subject: trans('shop::app.emails.orders.created.subject'),
+            subject: $this->resolveSubject('shop.orders.created', 'shop::app.emails.orders.created.subject'),
         );
     }
 
@@ -38,8 +38,11 @@ class CreatedNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.orders.created',
-        );
+        return $this->resolveContent('shop.orders.created', 'shop::emails.orders.created', [
+            '{{customer_name}}' => $this->order->customer_full_name,
+            '{{order_id}}' => '<a href="'.route('shop.customers.account.orders.view', $this->order->id).'" style="color: #2969FF;">#'.$this->order->increment_id.'</a>',
+            '{{order_date}}' => core()->formatDate($this->order->created_at, 'Y-m-d H:i:s'),
+            '{{order_details}}' => view('shop::emails.orders.partials.created', ['order' => $this->order])->render(),
+        ]);
     }
 }

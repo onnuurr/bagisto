@@ -3312,6 +3312,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'Email Notifikasi',
+
+                'datagrid' => [
+                    'active' => 'Aktif',
+                    'code' => 'Kode',
+                    'edit' => 'Edit',
+                    'id' => 'ID',
+                    'inactive' => 'Tidak Aktif',
+                    'name' => 'Nama',
+                    'status' => 'Status',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'Aktif',
+                'back-btn' => 'Kembali',
+                'code' => 'Kode',
+                'content' => 'Konten',
+                'general' => 'Umum',
+                'inactive' => 'Tidak Aktif',
+                'name' => 'Nama',
+                'save-btn' => 'Simpan',
+                'status' => 'Status',
+                'subject' => 'Subjek',
+                'title' => 'Edit Email Notifikasi',
+                'variables' => 'Variabel yang Tersedia',
+                'variables-info' => 'Anda dapat menggunakan variabel berikut di subjek dan konten. Variabel ini akan otomatis diganti dengan data sebenarnya saat email dikirim.',
+            ],
+
+            'update-success' => 'Email notifikasi berhasil diperbarui.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5317,6 +5351,7 @@ return [
                 'inventory-sources' => 'Sumber Inventaris',
                 'invoices' => 'Faktur',
                 'locales' => 'Bahasa & Lokalisasi',
+                'notification-emails' => 'Email Notifikasi',
                 'marketing' => 'Pemasaran',
                 'mode' => 'Mode Gelap',
                 'newsletter-subscriptions' => 'Langganan Newsletter',
@@ -5567,6 +5602,7 @@ return [
         'marketing' => 'Pemasaran',
         'newsletter-subscriptions' => 'Langganan Newsletter',
         'note' => 'Catatan',
+        'notification-emails' => 'Email Notifikasi',
         'orders' => 'Pesanan',
         'products' => 'Produk',
         'promotions' => 'Promosi',

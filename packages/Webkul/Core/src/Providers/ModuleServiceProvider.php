@@ -10,6 +10,7 @@ use Webkul\Core\Models\CountryStateTranslation;
 use Webkul\Core\Models\CountryTranslation;
 use Webkul\Core\Models\Currency;
 use Webkul\Core\Models\CurrencyExchangeRate;
+use Webkul\Core\Models\EmailTemplate;
 use Webkul\Core\Models\Locale;
 use Webkul\Core\Models\SubscribersList;
 
@@ -29,6 +30,7 @@ class ModuleServiceProvider extends CoreModuleServiceProvider
         CountryTranslation::class,
         Currency::class,
         CurrencyExchangeRate::class,
+        EmailTemplate::class,
         Locale::class,
         SubscribersList::class,
     ];

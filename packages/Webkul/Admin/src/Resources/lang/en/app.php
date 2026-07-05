@@ -3312,6 +3312,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'Notification Emails',
+
+                'datagrid' => [
+                    'active' => 'Active',
+                    'code' => 'Code',
+                    'edit' => 'Edit',
+                    'id' => 'ID',
+                    'inactive' => 'Inactive',
+                    'name' => 'Name',
+                    'status' => 'Status',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'Active',
+                'back-btn' => 'Back',
+                'code' => 'Code',
+                'content' => 'Content',
+                'general' => 'General',
+                'inactive' => 'Inactive',
+                'name' => 'Name',
+                'save-btn' => 'Save',
+                'status' => 'Status',
+                'subject' => 'Subject',
+                'title' => 'Edit Notification Email',
+                'variables' => 'Available Variables',
+                'variables-info' => 'You can use the following variables in the subject and content. They will be replaced automatically with the actual data when the email is sent.',
+            ],
+
+            'update-success' => 'Notification email updated successfully.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5317,6 +5351,7 @@ return [
                 'inventory-sources' => 'Inventory Sources',
                 'invoices' => 'Invoices',
                 'locales' => 'Locales',
+                'notification-emails' => 'Notification Emails',
                 'marketing' => 'Marketing',
                 'mode' => 'Dark Mode',
                 'newsletter-subscriptions' => 'Newsletter Subscriptions',
@@ -5567,6 +5602,7 @@ return [
         'marketing' => 'Marketing',
         'newsletter-subscriptions' => 'Newsletter Subscriptions',
         'note' => 'Note',
+        'notification-emails' => 'Notification Emails',
         'orders' => 'Orders',
         'products' => 'Products',
         'promotions' => 'Promotions',

@@ -3312,6 +3312,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => '通知メール',
+
+                'datagrid' => [
+                    'active' => 'アクティブ',
+                    'code' => 'コード',
+                    'edit' => '編集',
+                    'id' => 'ID',
+                    'inactive' => '非アクティブ',
+                    'name' => '名前',
+                    'status' => 'ステータス',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'アクティブ',
+                'back-btn' => '戻る',
+                'code' => 'コード',
+                'content' => 'コンテンツ',
+                'general' => '一般',
+                'inactive' => '非アクティブ',
+                'name' => '名前',
+                'save-btn' => '保存',
+                'status' => 'ステータス',
+                'subject' => '件名',
+                'title' => '通知メールを編集',
+                'variables' => '利用可能な変数',
+                'variables-info' => '件名と本文で次の変数を使用できます。メール送信時に実際のデータに自動的に置き換えられます。',
+            ],
+
+            'update-success' => '通知メールが正常に更新されました。',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5317,6 +5351,7 @@ return [
                 'inventory-sources' => '在庫ソース',
                 'invoices' => '請求書',
                 'locales' => 'ロケール',
+                'notification-emails' => '通知メール',
                 'marketing' => 'マーケティング',
                 'mode' => 'ダークモード',
                 'newsletter-subscriptions' => 'ニュースレターの購読',
@@ -5567,6 +5602,7 @@ return [
         'marketing' => 'マーケティング',
         'newsletter-subscriptions' => 'ニュースレター購読',
         'note' => 'メモ',
+        'notification-emails' => '通知メール',
         'orders' => '注文',
         'products' => '製品',
         'promotions' => 'プロモーション',

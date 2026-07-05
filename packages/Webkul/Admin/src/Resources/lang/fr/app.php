@@ -3312,6 +3312,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'E-mails de notification',
+
+                'datagrid' => [
+                    'active' => 'Actif',
+                    'code' => 'Code',
+                    'edit' => 'Modifier',
+                    'id' => 'ID',
+                    'inactive' => 'Inactif',
+                    'name' => 'Nom',
+                    'status' => 'Statut',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'Actif',
+                'back-btn' => 'Retour',
+                'code' => 'Code',
+                'content' => 'Contenu',
+                'general' => 'Général',
+                'inactive' => 'Inactif',
+                'name' => 'Nom',
+                'save-btn' => 'Enregistrer',
+                'status' => 'Statut',
+                'subject' => 'Objet',
+                'title' => 'Modifier l\'e-mail de notification',
+                'variables' => 'Variables disponibles',
+                'variables-info' => 'Vous pouvez utiliser les variables suivantes dans l\'objet et le contenu. Elles seront automatiquement remplacées par les données réelles lors de l\'envoi de l\'e-mail.',
+            ],
+
+            'update-success' => 'E-mail de notification mis à jour avec succès.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5317,6 +5351,7 @@ return [
                 'inventory-sources' => 'Sources de l\'inventaire',
                 'invoices' => 'Factures',
                 'locales' => 'Paramètres régionaux',
+                'notification-emails' => 'E-mails de notification',
                 'marketing' => 'Marketing',
                 'mode' => 'Mode sombre',
                 'newsletter-subscriptions' => 'Abonnements à la newsletter',
@@ -5567,6 +5602,7 @@ return [
         'marketing' => 'Marketing',
         'newsletter-subscriptions' => 'Abonnements à la newsletter',
         'note' => 'Note',
+        'notification-emails' => 'E-mails de notification',
         'orders' => 'Commandes',
         'products' => 'Produits',
         'promotions' => 'Promotions',

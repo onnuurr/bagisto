@@ -3312,6 +3312,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'מיילים של התראות',
+
+                'datagrid' => [
+                    'active' => 'פעיל',
+                    'code' => 'קוד',
+                    'edit' => 'ערוך',
+                    'id' => 'מזהה',
+                    'inactive' => 'לא פעיל',
+                    'name' => 'שם',
+                    'status' => 'מצב',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'פעיל',
+                'back-btn' => 'חזור',
+                'code' => 'קוד',
+                'content' => 'תוכן',
+                'general' => 'כללי',
+                'inactive' => 'לא פעיל',
+                'name' => 'שם',
+                'save-btn' => 'שמור',
+                'status' => 'מצב',
+                'subject' => 'נושא',
+                'title' => 'עריכת מייל התראה',
+                'variables' => 'משתנים זמינים',
+                'variables-info' => 'ניתן להשתמש במשתנים הבאים בנושא ובתוכן. הם יוחלפו אוטומטית בנתונים האמיתיים בעת שליחת המייל.',
+            ],
+
+            'update-success' => 'מייל ההתראה עודכן בהצלחה.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5317,6 +5351,7 @@ return [
                 'inventory-sources' => 'מקורות מלאי',
                 'invoices' => 'חשבוניות',
                 'locales' => 'אזורים',
+                'notification-emails' => 'מיילים של התראות',
                 'marketing' => 'שיווק',
                 'mode' => 'מצב כהה',
                 'newsletter-subscriptions' => 'מנויי יומן חדשות',
@@ -5567,6 +5602,7 @@ return [
         'marketing' => 'שיווק',
         'newsletter-subscriptions' => 'הרשמות לניוזלטר',
         'note' => 'הערה',
+        'notification-emails' => 'מיילים של התראות',
         'orders' => 'הזמנות',
         'products' => 'מוצרים',
         'promotions' => 'קידום מכירות',

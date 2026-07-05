@@ -36,7 +36,7 @@ class InvoicedNotification extends Mailable
                     $this->invoice->order->customer_full_name
                 ),
             ],
-            subject: trans('shop::app.emails.orders.invoiced.subject'),
+            subject: $this->resolveSubject('shop.orders.invoiced', 'shop::app.emails.orders.invoiced.subject'),
         );
     }
 
@@ -45,9 +45,13 @@ class InvoicedNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.orders.invoiced',
-        );
+        return $this->resolveContent('shop.orders.invoiced', 'shop::emails.orders.invoiced', [
+            '{{customer_name}}' => $this->invoice->order->customer_full_name,
+            '{{invoice_id}}' => $this->invoice->increment_id,
+            '{{order_id}}' => '<a href="'.route('shop.customers.account.orders.view', $this->invoice->order_id).'" style="color: #2969FF;">#'.$this->invoice->order->increment_id.'</a>',
+            '{{order_date}}' => core()->formatDate($this->invoice->order->created_at, 'Y-m-d H:i:s'),
+            '{{order_details}}' => view('shop::emails.orders.partials.invoiced', ['invoice' => $this->invoice])->render(),
+        ]);
     }
 
     /**

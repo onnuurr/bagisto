@@ -29,7 +29,7 @@ class RegistrationNotification extends Mailable
                     core()->getAdminEmailDetails()['name']
                 ),
             ],
-            subject: trans('admin::app.emails.customers.registration.subject'),
+            subject: $this->resolveSubject('admin.customers.registration', 'admin::app.emails.customers.registration.subject'),
         );
     }
 
@@ -38,8 +38,9 @@ class RegistrationNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'admin::emails.customers.registration',
-        );
+        return $this->resolveContent('admin.customers.registration', 'admin::emails.customers.registration', [
+            '{{admin_name}}' => core()->getAdminEmailDetails()['name'],
+            '{{customer_name}}' => '<a href="'.route('admin.customers.customers.view', $this->customer->id).'" style="color: #2969FF;">'.$this->customer->name.'</a>',
+        ]);
     }
 }

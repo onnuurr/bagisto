@@ -3312,6 +3312,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'E-mails de notificação',
+
+                'datagrid' => [
+                    'active' => 'Ativo',
+                    'code' => 'Código',
+                    'edit' => 'Editar',
+                    'id' => 'ID',
+                    'inactive' => 'Inativa',
+                    'name' => 'Nome',
+                    'status' => 'Status',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'Ativo',
+                'back-btn' => 'Voltar',
+                'code' => 'Código',
+                'content' => 'Conteúdo',
+                'general' => 'Geral',
+                'inactive' => 'Inativa',
+                'name' => 'Nome',
+                'save-btn' => 'Salvar',
+                'status' => 'Status',
+                'subject' => 'Assunto',
+                'title' => 'Editar e-mail de notificação',
+                'variables' => 'Variáveis disponíveis',
+                'variables-info' => 'Você pode usar as seguintes variáveis no assunto e no conteúdo. Elas serão substituídas automaticamente pelos dados reais quando o e-mail for enviado.',
+            ],
+
+            'update-success' => 'E-mail de notificação atualizado com sucesso.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5317,6 +5351,7 @@ return [
                 'inventory-sources' => 'Fontes de Estoque',
                 'invoices' => 'Faturas',
                 'locales' => 'Localizações',
+                'notification-emails' => 'E-mails de notificação',
                 'marketing' => 'Marketing',
                 'mode' => 'Modo Escuro',
                 'newsletter-subscriptions' => 'Inscrições na Newsletter',
@@ -5567,6 +5602,7 @@ return [
         'marketing' => 'Marketing',
         'newsletter-subscriptions' => 'Assinaturas de Newsletter',
         'note' => 'Nota',
+        'notification-emails' => 'E-mails de notificação',
         'orders' => 'Pedidos',
         'products' => 'Produtos',
         'promotions' => 'Promoções',

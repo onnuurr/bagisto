@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Webkul\Admin\Http\Controllers\Settings\ChannelController;
 use Webkul\Admin\Http\Controllers\Settings\CurrencyController;
 use Webkul\Admin\Http\Controllers\Settings\DataTransfer\ImportController;
+use Webkul\Admin\Http\Controllers\Settings\EmailTemplateController;
 use Webkul\Admin\Http\Controllers\Settings\ExchangeRateController;
 use Webkul\Admin\Http\Controllers\Settings\InventorySourceController;
 use Webkul\Admin\Http\Controllers\Settings\LocaleController;
@@ -222,5 +223,16 @@ Route::prefix('settings')->group(function () {
 
             Route::get('download-error-report/{id}', 'downloadErrorReport')->name('admin.settings.data_transfer.imports.download_error_report');
         });
+    });
+
+    /**
+     * Email templates routes.
+     */
+    Route::controller(EmailTemplateController::class)->prefix('email-templates')->group(function () {
+        Route::get('', 'index')->name('admin.settings.email_templates.index');
+
+        Route::get('edit/{id}', 'edit')->name('admin.settings.email_templates.edit');
+
+        Route::put('edit/{id}', 'update')->name('admin.settings.email_templates.update');
     });
 });
