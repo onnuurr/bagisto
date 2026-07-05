@@ -289,7 +289,7 @@ class CartController extends APIController
             'code' => 'required',
         ]);
 
-        if (Cart::getCart()->gift_card_code == $validatedData['code']) {
+        if (Cart::getCart()->gift_card?->code == $validatedData['code']) {
             return (new JsonResource([
                 'data' => new CartResource(Cart::getCart()),
                 'message' => trans('shop::app.checkout.gift-card.already-applied'),
