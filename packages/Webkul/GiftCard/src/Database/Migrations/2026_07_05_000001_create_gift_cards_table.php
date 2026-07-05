@@ -27,7 +27,7 @@ return new class extends Migration
             $table->integer('created_by')->unsigned()->nullable();
             $table->timestamps();
 
-            $table->foreign('cart_id')->references('id')->on('carts')->onDelete('set null');
+            $table->foreign('cart_id')->references('id')->on('cart')->onDelete('set null');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('set null');
             $table->foreign('created_by')->references('id')->on('admins')->onDelete('set null');
         });
