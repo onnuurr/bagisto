@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => 'ඔබේ MSG91 API අක්තපත්‍ර වින්‍යාස කරන්න.',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'ඔබේ Verimor API අක්තපත්‍ර වින්‍යාස කරන්න.',
+                    ],
                 ],
 
                 'notifications' => [

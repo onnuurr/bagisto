@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => 'Skonfiguruj dane uwierzytelniające API MSG91.',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Skonfiguruj dane uwierzytelniające API Verimor.',
+                    ],
                 ],
 
                 'notifications' => [

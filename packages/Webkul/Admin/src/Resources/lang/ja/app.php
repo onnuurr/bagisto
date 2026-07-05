@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => 'MSG91 APIの認証情報を設定します。',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Verimor APIの認証情報を設定します。',
+                    ],
                 ],
 
                 'notifications' => [

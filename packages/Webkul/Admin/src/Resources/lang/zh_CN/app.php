@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => '配置您的 MSG91 API 凭据。',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => '配置您的 Verimor API 凭据。',
+                    ],
                 ],
 
                 'notifications' => [

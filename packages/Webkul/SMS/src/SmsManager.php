@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Cache;
 use Webkul\SMS\Drivers\Contracts\SmsDriver;
 use Webkul\SMS\Drivers\Msg91Driver;
 use Webkul\SMS\Drivers\TwilioDriver;
+use Webkul\SMS\Drivers\VerimorDriver;
 use Webkul\SMS\Drivers\VonageDriver;
 use Webkul\SMS\Repositories\SmsLogRepository;
 
@@ -29,9 +30,10 @@ class SmsManager
         $gateway ??= $this->activeGateway();
 
         return match ($gateway) {
-            'vonage' => app(VonageDriver::class),
-            'msg91'  => app(Msg91Driver::class),
-            default  => app(TwilioDriver::class),
+            'vonage'  => app(VonageDriver::class),
+            'msg91'   => app(Msg91Driver::class),
+            'verimor' => app(VerimorDriver::class),
+            default   => app(TwilioDriver::class),
         };
     }
 

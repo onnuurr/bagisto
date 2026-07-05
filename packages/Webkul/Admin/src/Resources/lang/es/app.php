@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => 'Configure sus credenciales de la API de MSG91.',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Configure sus credenciales de la API de Verimor.',
+                    ],
                 ],
 
                 'notifications' => [

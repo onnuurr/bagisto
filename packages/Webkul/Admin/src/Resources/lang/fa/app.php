@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => 'اطلاعات ورود API MSG91 خود را پیکربندی کنید.',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'اطلاعات ورود API Verimor خود را پیکربندی کنید.',
+                    ],
                 ],
 
                 'notifications' => [

@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => 'Konfigurasikan kredensial API MSG91 Anda.',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Konfigurasikan kredensial API Verimor Anda.',
+                    ],
                 ],
 
                 'notifications' => [

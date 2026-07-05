@@ -3659,6 +3659,9 @@ return [
                     ], [
                         'title' => 'MSG91',
                         'value' => 'msg91',
+                    ], [
+                        'title' => 'Verimor',
+                        'value' => 'verimor',
                     ],
                 ],
                 'default' => 'twilio',
@@ -3729,6 +3732,26 @@ return [
                 'title' => 'admin::app.configuration.index.sms.gateways.msg91.route',
                 'type' => 'text',
                 'default' => '4',
+            ],
+        ],
+    ], [
+        'key' => 'sms.gateways.verimor',
+        'name' => 'admin::app.configuration.index.sms.gateways.verimor.title',
+        'info' => 'admin::app.configuration.index.sms.gateways.verimor.title-info',
+        'sort' => 4,
+        'fields' => [
+            [
+                'name' => 'username',
+                'title' => 'admin::app.configuration.index.sms.gateways.credential-id',
+                'type' => 'text',
+            ], [
+                'name' => 'password',
+                'title' => 'admin::app.configuration.index.sms.gateways.credential-secret',
+                'type' => 'password',
+            ], [
+                'name' => 'source_addr',
+                'title' => 'admin::app.configuration.index.sms.gateways.sender',
+                'type' => 'text',
             ],
         ],
     ], [

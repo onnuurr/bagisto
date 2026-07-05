@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => 'Налаштуйте облікові дані API MSG91.',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Налаштуйте облікові дані API Verimor.',
+                    ],
                 ],
 
                 'notifications' => [

@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => 'قم بتهيئة بيانات اعتماد MSG91 API.',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'قم بتهيئة بيانات اعتماد Verimor API.',
+                    ],
                 ],
 
                 'notifications' => [

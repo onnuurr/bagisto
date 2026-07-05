@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => 'MSG91 API kimlik bilgilerinizi yapılandırın.',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Verimor API kimlik bilgilerinizi yapılandırın.',
+                    ],
                 ],
 
                 'notifications' => [

@@ -5306,6 +5306,11 @@ return [
                         'title' => 'MSG91',
                         'title-info' => 'আপনার MSG91 API শংসাপত্র কনফিগার করুন।',
                     ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'আপনার Verimor API শংসাপত্র কনফিগার করুন।',
+                    ],
                 ],
 
                 'notifications' => [
