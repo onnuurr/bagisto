@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Webkul\CartRule\Repositories\CartRuleCouponRepository;
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Checkout\Models\CartAddress;
+use Webkul\GiftCard\Repositories\GiftCardRepository;
 use Webkul\Product\Exceptions\InsufficientProductInventoryException;
 use Webkul\Product\Repositories\ProductRepository;
 use Webkul\Shipping\Facades\Shipping;
@@ -22,7 +23,8 @@ class CartController extends APIController
      */
     public function __construct(
         protected ProductRepository $productRepository,
-        protected CartRuleCouponRepository $cartRuleCouponRepository
+        protected CartRuleCouponRepository $cartRuleCouponRepository,
+        protected GiftCardRepository $giftCardRepository
     ) {}
 
     /**
@@ -275,6 +277,52 @@ class CartController extends APIController
         return new JsonResource([
             'data' => new CartResource(Cart::getCart()),
             'message' => trans('shop::app.checkout.coupon.remove'),
+        ]);
+    }
+
+    /**
+     * Apply gift card to the cart.
+     */
+    public function storeGiftCard()
+    {
+        $validatedData = $this->validate(request(), [
+            'code' => 'required',
+        ]);
+
+        if (Cart::getCart()->gift_card_code == $validatedData['code']) {
+            return (new JsonResource([
+                'data' => new CartResource(Cart::getCart()),
+                'message' => trans('shop::app.checkout.gift-card.already-applied'),
+            ]))->response()->setStatusCode(Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
+        $giftCard = $this->giftCardRepository->findRedeemableByCode($validatedData['code']);
+
+        if (! $giftCard) {
+            return (new JsonResource([
+                'data' => new CartResource(Cart::getCart()),
+                'message' => trans('shop::app.checkout.gift-card.invalid'),
+            ]))->response()->setStatusCode(Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
+        Cart::setGiftCard($giftCard)->collectTotals();
+
+        return new JsonResource([
+            'data' => new CartResource(Cart::getCart()),
+            'message' => trans('shop::app.checkout.gift-card.success-apply'),
+        ]);
+    }
+
+    /**
+     * Remove applied gift card from the cart.
+     */
+    public function destroyGiftCard(): JsonResource
+    {
+        Cart::removeGiftCard()->collectTotals();
+
+        return new JsonResource([
+            'data' => new CartResource(Cart::getCart()),
+            'message' => trans('shop::app.checkout.gift-card.remove'),
         ]);
     }
 

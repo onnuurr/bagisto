@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Despeses d\'enviament (Excl. Impostos)',
                 'delivery-charges-incl-tax' => 'Despeses d\'enviament (Incl. Impostos)',
                 'discount-amount' => 'Import de Descompte',
+                'gift-card-amount' => 'Targeta Regal',
                 'grand-total' => 'Total General',
                 'included' => 'Inclòs',
                 'excl-tax' => 'Sense impostos:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Despeses d\'enviament (Excl. Impostos)',
                 'delivery-charges-incl-tax' => 'Despeses d\'enviament (Incl. Impostos)',
                 'discount-amount' => 'Import de descompte',
+                'gift-card-amount' => 'Targeta Regal',
                 'excl-tax' => 'Excl. Impostos:',
                 'grand-total' => 'Total General',
                 'included' => 'Inclòs',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Codi de descompte aplicat amb èxit.',
             'usage-limit-exceeded' => 'Aquest codi de cupó ha assolit el seu límit d\'ús i ja no és vàlid.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'El codi de targeta regal ja ha estat aplicat.',
+            'applied' => 'Targeta Regal Aplicada',
+            'apply' => 'Aplicar Targeta Regal',
+            'button-title' => 'Aplicar',
+            'enter-your-code' => 'Introdueix el teu codi',
+            'invalid' => 'El codi de targeta regal no és vàlid.',
+            'remove' => 'Eliminar Targeta Regal',
+            'subtotal' => 'Subtotal',
+            'success-apply' => 'Codi de targeta regal aplicat amb èxit.',
+            'title' => 'Targeta Regal',
+        ],
+
 
         'login' => [
             'email' => 'Correu electrònic',

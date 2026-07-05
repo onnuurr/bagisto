@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'ডেলিভারি চার্জ (কর বাদে)',
                 'delivery-charges-incl-tax' => 'ডেলিভারি চার্জ (কর সহ)',
                 'discount-amount' => 'ছাড়ের পরিমাণ',
+                'gift-card-amount' => 'গিফট কার্ড',
                 'grand-total' => 'সর্বমোট',
                 'included' => 'অন্তর্ভুক্ত',
                 'excl-tax' => 'কর ব্যতীত:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'ডেলিভারি চার্জ (কর বাদে)',
                 'delivery-charges-incl-tax' => 'ডেলিভারি চার্জ (কর সহ)',
                 'discount-amount' => 'ছাড়ের পরিমাণ',
+                'gift-card-amount' => 'গিফট কার্ড',
                 'excl-tax' => 'কর বাদে:',
                 'grand-total' => 'সর্বমোট',
                 'included' => 'অন্তর্ভুক্ত',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'কুপন কোড সফলভাবে প্রয়োগ হয়েছে।',
             'usage-limit-exceeded' => 'এই কুপন কোডটি তার ব্যবহারের সীমায় পৌঁছেছে এবং আর বৈধ নয়।',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'গিফট কার্ড কোড ইতিমধ্যে প্রয়োগ করা হয়েছে।',
+            'applied' => 'গিফট কার্ড প্রয়োগ হয়েছে',
+            'apply' => 'গিফট কার্ড প্রয়োগ করুন',
+            'button-title' => 'প্রয়োগ করুন',
+            'enter-your-code' => 'আপনার কোড লিখুন',
+            'invalid' => 'গিফট কার্ড কোড অবৈধ।',
+            'remove' => 'গিফট কার্ড সরান',
+            'subtotal' => 'সাবটোটাল',
+            'success-apply' => 'গিফট কার্ড কোড সফলভাবে প্রয়োগ হয়েছে।',
+            'title' => 'গিফট কার্ড',
+        ],
+
 
         'login' => [
             'email' => 'ইমেইল',

@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'वितरण शुल्क (कर से छूट)',
                 'delivery-charges-incl-tax' => 'वितरण शुल्क (कर सहित)',
                 'discount-amount' => 'डिस्काउंट राशि',
+                'gift-card-amount' => 'गिफ्ट कार्ड',
                 'grand-total' => 'कुल योग',
                 'included' => 'शामिल',
                 'excl-tax' => 'कर रहित:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'वितरण शुल्क (कर से छूट)',
                 'delivery-charges-incl-tax' => 'वितरण शुल्क (कर सहित)',
                 'discount-amount' => 'डिस्काउंट राशि',
+                'gift-card-amount' => 'गिफ्ट कार्ड',
                 'excl-tax' => 'कर से छूट:',
                 'grand-total' => 'कुल योग',
                 'included' => 'शामिल',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'कूपन कोड सफलतापूर्वक लागू हुआ।',
             'usage-limit-exceeded' => 'यह कूपन कोड अपनी उपयोग सीमा तक पहुँच गया है और अब मान्य नहीं है।',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'गिफ्ट कार्ड कोड पहले से ही लागू हो गया है।',
+            'applied' => 'गिफ्ट कार्ड लागू हो गया',
+            'apply' => 'गिफ्ट कार्ड लागू करें',
+            'button-title' => 'लागू करें',
+            'enter-your-code' => 'अपना कोड दर्ज करें',
+            'invalid' => 'गिफ्ट कार्ड कोड अवैध है।',
+            'remove' => 'गिफ्ट कार्ड हटाएं',
+            'subtotal' => 'उप-कुल',
+            'success-apply' => 'गिफ्ट कार्ड कोड सफलतापूर्वक लागू हुआ।',
+            'title' => 'गिफ्ट कार्ड',
+        ],
+
 
         'login' => [
             'email' => 'ईमेल',

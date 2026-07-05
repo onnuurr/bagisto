@@ -12,6 +12,7 @@ use Webkul\Checkout\Contracts\Cart as CartContract;
 use Webkul\Checkout\Database\Factories\CartFactory;
 use Webkul\Core\Models\ChannelProxy;
 use Webkul\Customer\Models\CustomerProxy;
+use Webkul\GiftCard\Models\GiftCardProxy;
 
 class Cart extends Model implements CartContract
 {
@@ -126,6 +127,14 @@ class Cart extends Model implements CartContract
     public function payment(): HasOne
     {
         return $this->hasOne(CartPaymentProxy::modelClass());
+    }
+
+    /**
+     * Get the gift card applied to the cart.
+     */
+    public function gift_card(): BelongsTo
+    {
+        return $this->belongsTo(GiftCardProxy::modelClass());
     }
 
     /**

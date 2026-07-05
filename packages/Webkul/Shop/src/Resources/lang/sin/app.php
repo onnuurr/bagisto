@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'භාණ්ඩ ගෙවීම් (බදා නොමැතියි)',
                 'delivery-charges-incl-tax' => 'භාණ්ඩ ගෙවීම් (බදා සමග)',
                 'discount-amount' => 'වටාන මුදල',
+                'gift-card-amount' => 'තෑගි කාඩ්පත',
                 'grand-total' => 'සම්පූර්ණ එකතුව',
                 'included' => 'ඇතුළත්',
                 'excl-tax' => 'බදු රහිතව:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'භාණ්ඩ ගෙවීම් (බදා නොමැතියි)',
                 'delivery-charges-incl-tax' => 'භාණ්ඩ ගෙවීම් (බදා සමග)',
                 'discount-amount' => 'වටාන මුදල',
+                'gift-card-amount' => 'තෑගි කාඩ්පත',
                 'excl-tax' => 'බදා නොමැතියි:',
                 'grand-total' => 'සම්පූර්ණ එකතුව',
                 'included' => 'ඇතුළත්',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'කෝපන කේතය සාර්ථකව අදිනය',
             'usage-limit-exceeded' => 'මෙම කූපන් කේතය එහි භාවිත සීමාවට ළඟා වී ඇති අතර තවදුරටත් වලංගු නොවේ.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'තෑගි කාඩ්පත් කේතය දැනටමත් යොදවා ඇත.',
+            'applied' => 'තෑගි කාඩ්පත යොදවන ලදි',
+            'apply' => 'තෑගි කාඩ්පත යොදන්න',
+            'button-title' => 'යොමුවන්',
+            'enter-your-code' => 'කේතය ඇතුල් කරන්න',
+            'invalid' => 'තෑගි කාඩ්පත් කේතය වලංගු නොවේ.',
+            'remove' => 'තෑගි කාඩ්පත ඉවත් කරන්න',
+            'subtotal' => 'උපකරණය',
+            'success-apply' => 'තෑගි කාඩ්පත් කේතය සාර්ථකව යොදන ලදි.',
+            'title' => 'තෑගි කාඩ්පත',
+        ],
+
 
         'login' => [
             'email' => 'විද්‍යුත් තැපෑල',

@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'رسوم التوصيل (بدون ضريبة)',
                 'delivery-charges-incl-tax' => 'رسوم التوصيل (شاملة الضريبة)',
                 'discount-amount' => 'مبلغ الخصم',
+                'gift-card-amount' => 'بطاقة الهدية',
                 'grand-total' => 'المجموع الكلي',
                 'included' => 'مشمول',
                 'excl-tax' => 'باستثناء الضريبة:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'رسوم التوصيل (بدون ضريبة)',
                 'delivery-charges-incl-tax' => 'رسوم التوصيل (شاملة الضريبة)',
                 'discount-amount' => 'مبلغ الخصم',
+                'gift-card-amount' => 'بطاقة الهدية',
                 'excl-tax' => 'بدون ضريبة:',
                 'grand-total' => 'المجموع الكلي',
                 'included' => 'مشمول',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'تم تطبيق كود الكوبون بنجاح.',
             'usage-limit-exceeded' => 'لقد وصل كود الكوبون هذا إلى الحد الأقصى للاستخدام ولم يعد صالحًا.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'تم تطبيق كود بطاقة الهدية بالفعل.',
+            'applied' => 'تم تطبيق بطاقة الهدية',
+            'apply' => 'تطبيق بطاقة الهدية',
+            'button-title' => 'تطبيق',
+            'enter-your-code' => 'أدخل كودك',
+            'invalid' => 'كود بطاقة الهدية غير صالح.',
+            'remove' => 'إزالة بطاقة الهدية',
+            'subtotal' => 'المجموع الفرعي',
+            'success-apply' => 'تم تطبيق كود بطاقة الهدية بنجاح.',
+            'title' => 'بطاقة الهدية',
+        ],
+
 
         'login' => [
             'email' => 'البريد الإلكتروني',

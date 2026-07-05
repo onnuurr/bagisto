@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Taxe de livrare (fără taxe)',
                 'delivery-charges-incl-tax' => 'Taxe de livrare (cu taxe)',
                 'discount-amount' => 'Sumă reducere',
+                'gift-card-amount' => 'Card Cadou',
                 'grand-total' => 'Total general',
                 'included' => 'Inclus',
                 'excl-tax' => 'Fără taxe:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Taxe de livrare (fără taxe)',
                 'delivery-charges-incl-tax' => 'Taxe de livrare (cu taxe)',
                 'discount-amount' => 'Sumă reducere',
+                'gift-card-amount' => 'Card Cadou',
                 'excl-tax' => 'Fără taxe:',
                 'grand-total' => 'Total general',
                 'included' => 'Inclus',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Codul cuponului a fost aplicat cu succes.',
             'usage-limit-exceeded' => 'This coupon code has reached its usage limit and is no longer valid.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'Codul cardului cadou a fost deja aplicat.',
+            'applied' => 'Card Cadou Aplicat',
+            'apply' => 'Aplică Card Cadou',
+            'button-title' => 'Aplică',
+            'enter-your-code' => 'Introduceți codul',
+            'invalid' => 'Codul cardului cadou este invalid.',
+            'remove' => 'Elimină Card Cadou',
+            'subtotal' => 'Subtotal',
+            'success-apply' => 'Codul cardului cadou a fost aplicat cu succes.',
+            'title' => 'Card Cadou',
+        ],
+
 
         'login' => [
             'email' => 'E-mail',

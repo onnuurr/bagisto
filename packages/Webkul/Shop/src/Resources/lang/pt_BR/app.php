@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Taxas de Entrega (Excl. Imposto)',
                 'delivery-charges-incl-tax' => 'Taxas de Entrega (Incl. Imposto)',
                 'discount-amount' => 'Valor do Desconto',
+                'gift-card-amount' => 'Cartão Presente',
                 'grand-total' => 'Total Geral',
                 'included' => 'Incluído',
                 'excl-tax' => 'Sem impostos:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Taxas de Entrega (Excl. Imposto)',
                 'delivery-charges-incl-tax' => 'Taxas de Entrega (Incl. Imposto)',
                 'discount-amount' => 'Valor do Desconto',
+                'gift-card-amount' => 'Cartão Presente',
                 'excl-tax' => 'Excl. Imposto:',
                 'grand-total' => 'Total Geral',
                 'included' => 'Incluído',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Código do cupom aplicado com sucesso.',
             'usage-limit-exceeded' => 'Este código de cupom atingiu seu limite de uso e não é mais válido.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'Código do cartão presente já aplicado.',
+            'applied' => 'Cartão Presente Aplicado',
+            'apply' => 'Aplicar Cartão Presente',
+            'button-title' => 'Aplicar',
+            'enter-your-code' => 'Digite seu código',
+            'invalid' => 'Código do cartão presente é inválido.',
+            'remove' => 'Remover Cartão Presente',
+            'subtotal' => 'Subtotal',
+            'success-apply' => 'Código do cartão presente aplicado com sucesso.',
+            'title' => 'Cartão Presente',
+        ],
+
 
         'login' => [
             'email' => 'E-mail',
