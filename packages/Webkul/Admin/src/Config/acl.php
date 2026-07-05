@@ -1225,6 +1225,19 @@ return [
             'admin.settings.data_transfer.imports.download_sample',
         ],
         'sort' => 4,
+    ], [
+        'key' => 'settings.sms',
+        'name' => 'admin::app.acl.sms',
+        'route' => 'admin.sms.index',
+        'sort' => 11,
+    ], [
+        'key' => 'settings.sms.delete',
+        'name' => 'admin::app.acl.delete',
+        'route' => [
+            'admin.sms.delete',
+            'admin.sms.mass_delete',
+        ],
+        'sort' => 1,
     ],
 
     /*
@@ -1243,28 +1256,5 @@ return [
             'admin.configuration.store',
         ],
         'sort' => 9,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | SMS
-    |--------------------------------------------------------------------------
-    |
-    | All ACLs related to SMS logs will be placed here.
-    |
-    */
-    [
-        'key' => 'sms',
-        'name' => 'admin::app.acl.sms',
-        'route' => 'admin.sms.index',
-        'sort' => 10,
-    ], [
-        'key' => 'sms.delete',
-        'name' => 'admin::app.acl.delete',
-        'route' => [
-            'admin.sms.delete',
-            'admin.sms.mass_delete',
-        ],
-        'sort' => 1,
     ],
 ];

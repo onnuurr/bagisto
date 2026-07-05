@@ -111,7 +111,7 @@ class SmsLogDataGrid extends DataGrid
      */
     public function prepareActions()
     {
-        if (bouncer()->hasPermission('sms.delete')) {
+        if (bouncer()->hasPermission('settings.sms.delete')) {
             $this->addAction([
                 'icon' => 'icon-delete',
                 'title' => trans('admin::app.sms.index.datagrid.delete'),
@@ -130,7 +130,7 @@ class SmsLogDataGrid extends DataGrid
      */
     public function prepareMassActions()
     {
-        if (bouncer()->hasPermission('sms.delete')) {
+        if (bouncer()->hasPermission('settings.sms.delete')) {
             $this->addMassAction([
                 'title' => trans('admin::app.sms.index.datagrid.delete'),
                 'method' => 'POST',
