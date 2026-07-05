@@ -15,5 +15,13 @@ class EventServiceProvider extends ServiceProvider
         'checkout.order.save.after' => [
             'Webkul\GiftCard\Listeners\Order@manageGiftCard',
         ],
+
+        'sales.order.cancel.after' => [
+            'Webkul\GiftCard\Listeners\Order@refundGiftCard',
+        ],
+
+        'sales.refund.save.after' => [
+            'Webkul\GiftCard\Listeners\Order@refundGiftCardFromRefund',
+        ],
     ];
 }
