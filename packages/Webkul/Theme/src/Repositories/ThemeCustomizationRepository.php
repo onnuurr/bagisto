@@ -2,15 +2,29 @@
 
 namespace Webkul\Theme\Repositories;
 
+use Illuminate\Container\Container;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Stevebauman\Purify\Facades\Purify;
 use Webkul\Core\Eloquent\Repository;
 use Webkul\Theme\Contracts\ThemeCustomization;
+use Webkul\Theme\ThemeBlockRegistry;
 
 class ThemeCustomizationRepository extends Repository
 {
+    /**
+     * Create a new repository instance.
+     *
+     * @return void
+     */
+    public function __construct(
+        protected ThemeBlockRegistry $themeBlockRegistry,
+        Container $container
+    ) {
+        parent::__construct($container);
+    }
+
     /**
      * Specify model class name.
      */
@@ -41,13 +55,15 @@ class ThemeCustomizationRepository extends Repository
             $data[$locale]['options']['css'] = $this->sanitizeStaticCss($data[$locale]['options']['css'] ?? '');
         }
 
-        if (in_array($data['type'], ['image_carousel', 'services_content'])) {
+        $hasUpload = $this->themeBlockRegistry->get($data['type'])['has_upload'] ?? false;
+
+        if ($hasUpload) {
             unset($data[$locale]['options']);
         }
 
         $theme = parent::update($data, $id);
 
-        if (in_array($data['type'], ['image_carousel', 'services_content'])) {
+        if ($hasUpload) {
             $this->uploadImage(request()->all(), $theme);
         }
 

@@ -36,54 +36,19 @@
 
     <!-- Loop over the theme customization -->
     @foreach ($customizations as $customization)
-        @php ($data = $customization->options) @endphp
+        @php
+            $data = $customization->options;
 
-        <!-- Static Content -->
-        @switch ($customization->type)
-            @case ($customization::IMAGE_CAROUSEL)
-                <!-- Image Carousel -->
-                <x-shop::carousel
-                    :options="$data"
-                    aria-label="{{ trans('shop::app.home.index.image-carousel') }}"
-                />
+            $themeBlockDefinition = app(\Webkul\Theme\ThemeBlockRegistry::class)->get($customization->type);
+        @endphp
 
-                @break
-            @case ($customization::STATIC_CONTENT)
-                <!-- Push Style -->
-                @if (! empty($data['css']))
-                    @push ('styles')
-                        <style>
-                            {!! $data['css'] !!}
-                        </style>
-                    @endpush
-                @endif
-
-                <!-- Render HTML -->
-                @if (! empty($data['html']))
-                    {!! $data['html'] !!}
-                @endif
-
-                @break
-            @case ($customization::CATEGORY_CAROUSEL)
-                <!-- Categories carousel -->
-                <x-shop::categories.carousel
-                    :title="$data['title'] ?? ''"
-                    :src="route('shop.api.categories.index', $data['filters'] ?? [])"
-                    :navigation-link="route('shop.home.index')"
-                    aria-label="{{ trans('shop::app.home.index.categories-carousel') }}"
-                />
-
-                @break
-            @case ($customization::PRODUCT_CAROUSEL)
-                <!-- Product Carousel -->
-                <x-shop::products.carousel
-                    :title="$data['title'] ?? ''"
-                    :src="route('shop.api.products.index', $data['filters'] ?? [])"
-                    :navigation-link="route('shop.search.index', $data['filters'] ?? [])"
-                    aria-label="{{ trans('shop::app.home.index.product-carousel') }}"
-                />
-
-                @break
-        @endswitch
+        {{--
+            Rendered via the block's `shop_view`, registered in
+            Webkul\Theme\ThemeBlockRegistry (see ThemeServiceProvider for the
+            core blocks). Blocks rendered by a dedicated layout slot instead
+            (footer links, services strip) register a null `shop_view` and
+            are intentionally skipped here.
+        --}}
+        @includeWhen(! empty($themeBlockDefinition['shop_view']), $themeBlockDefinition['shop_view'] ?? '')
     @endforeach
 </x-shop::layouts>

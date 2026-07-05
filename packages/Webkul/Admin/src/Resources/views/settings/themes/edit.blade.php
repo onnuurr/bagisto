@@ -9,6 +9,8 @@
         $currentChannel = core()->getRequestedChannel();
 
         $currentLocale = core()->getRequestedLocale();
+
+        $themeBlockDefinition = app(\Webkul\Theme\ThemeBlockRegistry::class)->get($theme->type);
     @endphp
 
     <x-admin::form
@@ -86,23 +88,8 @@
 
         <div class="mt-3.5 flex gap-2.5 max-xl:flex-wrap">
             <div class="w-full">
-                <!-- Image-Carousel Template -->
-                @includeWhen($theme->type === 'image_carousel', 'admin::settings.themes.edit.image-carousel')
-
-                <!-- Product-Carousel Template -->
-                @includeWhen($theme->type === 'product_carousel', 'admin::settings.themes.edit.product-carousel')
-
-                <!-- Category Template -->
-                @includeWhen($theme->type === 'category_carousel', 'admin::settings.themes.edit.category-carousel')
-
-                <!-- Static-Content Template -->
-                @includeWhen($theme->type === 'static_content', 'admin::settings.themes.edit.static-content')
-
-                <!-- Footer Template -->
-                @includeWhen($theme->type === 'footer_links', 'admin::settings.themes.edit.footer-links')
-
-                <!-- Services-content Template -->
-                @includeWhen($theme->type === 'services_content', 'admin::settings.themes.edit.services-content')
+                <!-- Block-specific Template (registered via Webkul\Theme\ThemeBlockRegistry) -->
+                @includeWhen(! empty($themeBlockDefinition['admin_view']), $themeBlockDefinition['admin_view'] ?? '')
             </div>
 
             <!-- General -->

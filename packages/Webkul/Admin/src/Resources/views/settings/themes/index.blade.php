@@ -199,14 +199,14 @@
 
                 data() {
                     return {
-                        themeTypes: {
-                            product_carousel: "@lang('admin::app.settings.themes.create.type.product-carousel')",
-                            category_carousel: "@lang('admin::app.settings.themes.create.type.category-carousel')",
-                            static_content: "@lang('admin::app.settings.themes.create.type.static-content')",
-                            image_carousel: "@lang('admin::app.settings.themes.create.type.image-carousel')",
-                            footer_links: "@lang('admin::app.settings.themes.create.type.footer-links')",
-                            services_content: "@lang('admin::app.settings.themes.create.type.services-content')",
-                        },
+                        /**
+                         * Sourced from Webkul\Theme\ThemeBlockRegistry so packages that
+                         * register additional block types show up here automatically.
+                         */
+                        themeTypes: @json(
+                            collect(app(\Webkul\Theme\ThemeBlockRegistry::class)->all())
+                                ->mapWithKeys(fn ($definition, $type) => [$type => trans($definition['label'])])
+                        ),
 
                         isLoading: false,
                     };

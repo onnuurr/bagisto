@@ -12,6 +12,7 @@ use Webkul\Admin\Http\Controllers\Controller;
 use Webkul\Admin\Http\Requests\MassDestroyRequest;
 use Webkul\Admin\Http\Requests\MassUpdateRequest;
 use Webkul\Theme\Repositories\ThemeCustomizationRepository;
+use Webkul\Theme\ThemeBlockRegistry;
 
 class ThemeController extends Controller
 {
@@ -20,7 +21,10 @@ class ThemeController extends Controller
      *
      * @return void
      */
-    public function __construct(public ThemeCustomizationRepository $themeCustomizationRepository) {}
+    public function __construct(
+        public ThemeCustomizationRepository $themeCustomizationRepository,
+        protected ThemeBlockRegistry $themeBlockRegistry
+    ) {}
 
     /**
      * Display a listing resource for the available tax rates.
@@ -56,7 +60,7 @@ class ThemeController extends Controller
         $validated = $this->validate(request(), [
             'name' => 'required',
             'sort_order' => 'required|numeric',
-            'type' => 'required|in:product_carousel,category_carousel,static_content,image_carousel,footer_links,services_content',
+            'type' => 'required|in:'.implode(',', $this->themeBlockRegistry->types()),
             'channel_id' => 'required|in:'.implode(',', (core()->getAllChannels()->pluck('id')->toArray())),
             'theme_code' => 'required',
         ]);
@@ -94,7 +98,7 @@ class ThemeController extends Controller
         $this->validate(request(), [
             'name' => 'required',
             'sort_order' => 'required|numeric',
-            'type' => 'required|in:product_carousel,category_carousel,static_content,image_carousel,footer_links,services_content',
+            'type' => 'required|in:'.implode(',', $this->themeBlockRegistry->types()),
             'channel_id' => 'required|in:'.implode(',', (core()->getAllChannels()->pluck('id')->toArray())),
             'theme_code' => 'required',
         ]);
