@@ -1225,6 +1225,10 @@ return [
                     'title' => 'Categories',
                 ],
 
+                'tag' => [
+                    'title' => 'Etichetă produs',
+                ],
+
                 'images' => [
                     'info' => 'Image resolution should be like 560px X 609px',
                     'title' => 'Images',
@@ -2014,6 +2018,46 @@ return [
             'delete-failed' => 'Error encountered while deleting category',
             'delete-success' => 'The category has been successfully deleted.',
             'update-success' => 'Category updated successfully.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Creează etichetă produs',
+                'title' => 'Etichete produs',
+
+                'datagrid' => [
+                    'delete' => 'Delete',
+                    'delete-failed' => 'A apărut o eroare la ștergerea etichetei produsului',
+                    'delete-success' => 'Eticheta produsului a fost ștearsă cu succes.',
+                    'edit' => 'Edit',
+                    'id' => 'ID',
+                    'image' => 'Image',
+                    'mass-delete-success' => 'Etichetele de produs selectate au fost șterse cu succes',
+                    'name' => 'Name',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Back',
+                'create-success' => 'Eticheta produsului a fost creată cu succes.',
+                'general' => 'General',
+                'image' => 'Image',
+                'image-info' => 'Imaginea va fi afișată pe produs dacă este disponibilă, altfel numele va fi afișat ca insignă text.',
+                'name' => 'Name',
+                'save-btn' => 'Salvează eticheta produsului',
+                'title' => 'Adaugă etichetă de produs nouă',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Back',
+                'general' => 'General',
+                'image' => 'Image',
+                'image-info' => 'Imaginea va fi afișată pe produs dacă este disponibilă, altfel numele va fi afișat ca insignă text.',
+                'name' => 'Name',
+                'save-btn' => 'Salvează eticheta produsului',
+                'title' => 'Editează eticheta produsului',
+                'update-success' => 'Eticheta produsului a fost actualizată cu succes.',
+            ],
         ],
 
         'families' => [
@@ -5410,6 +5454,7 @@ return [
                 'mode' => 'Dark Mode',
                 'newsletter-subscriptions' => 'Newsletter Subscriptions',
                 'orders' => 'Orders',
+                'product-tags' => 'Etichete produs',
                 'products' => 'Products',
                 'promotions' => 'Promotions',
                 'reasons' => 'Reasons',
@@ -5659,6 +5704,7 @@ return [
         'note' => 'Note',
         'notification-emails' => 'E-mailuri de notificare',
         'orders' => 'Orders',
+        'product-tags' => 'Etichete produs',
         'products' => 'Products',
         'promotions' => 'Promotions',
         'refunds' => 'Refunds',

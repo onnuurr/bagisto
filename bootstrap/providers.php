@@ -32,6 +32,7 @@ use Webkul\PayTR\Providers\PayTRServiceProvider;
 use Webkul\PayU\Providers\PayUServiceProvider;
 use Webkul\PhonePe\Providers\PhonePeServiceProvider;
 use Webkul\Product\Providers\ProductServiceProvider;
+use Webkul\ProductTag\Providers\ProductTagServiceProvider;
 use Webkul\Razorpay\Providers\RazorpayServiceProvider;
 use Webkul\RMA\Providers\RMAServiceProvider;
 use Webkul\Rule\Providers\RuleServiceProvider;
@@ -87,6 +88,7 @@ return [
     PaypalServiceProvider::class,
     PhonePeServiceProvider::class,
     ProductServiceProvider::class,
+    ProductTagServiceProvider::class,
     RMAServiceProvider::class,
     RazorpayServiceProvider::class,
     RuleServiceProvider::class,

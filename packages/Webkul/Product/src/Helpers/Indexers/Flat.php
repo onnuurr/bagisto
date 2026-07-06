@@ -151,6 +151,7 @@ class Flat extends AbstractIndexer
                         'type' => $product->type,
                         'sku' => $product->sku,
                         'attribute_family_id' => $product->attribute_family_id,
+                        'product_tag_id' => $product->product_tag_id,
                     ]);
 
                     foreach ($familyAttributes as $attribute) {

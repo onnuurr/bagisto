@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Kategorie',
                 ],
 
+                'tag' => [
+                    'title' => 'Tag produktu',
+                ],
+
                 'images' => [
                     'info' => 'Rozdzielczość obrazu powinna wynosić około 560px X 609px',
                     'title' => 'Obrazy',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'Wystąpił błąd podczas usuwania kategorii.',
             'delete-success' => 'Pomyślnie usunięto kategorię.',
             'update-success' => 'Pomyślnie zaktualizowano kategorię.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Utwórz tag produktu',
+                'title' => 'Tagi produktów',
+
+                'datagrid' => [
+                    'delete' => 'Usuń',
+                    'delete-failed' => 'Wystąpił błąd podczas usuwania tagu produktu',
+                    'delete-success' => 'Tag produktu został pomyślnie usunięty.',
+                    'edit' => 'Edytuj',
+                    'id' => 'ID',
+                    'image' => 'Obraz',
+                    'mass-delete-success' => 'Wybrane tagi produktów zostały pomyślnie usunięte',
+                    'name' => 'Nazwa',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Powrót',
+                'create-success' => 'Tag produktu został pomyślnie utworzony.',
+                'general' => 'Ogólne',
+                'image' => 'Obraz',
+                'image-info' => 'Jeśli obraz jest dostępny, zostanie wyświetlony na produkcie, w przeciwnym razie nazwa zostanie wyświetlona jako odznaka tekstowa.',
+                'name' => 'Nazwa',
+                'save-btn' => 'Zapisz tag produktu',
+                'title' => 'Dodaj nowy tag produktu',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Powrót',
+                'general' => 'Ogólne',
+                'image' => 'Obraz',
+                'image-info' => 'Jeśli obraz jest dostępny, zostanie wyświetlony na produkcie, w przeciwnym razie nazwa zostanie wyświetlona jako odznaka tekstowa.',
+                'name' => 'Nazwa',
+                'save-btn' => 'Zapisz tag produktu',
+                'title' => 'Edytuj tag produktu',
+                'update-success' => 'Tag produktu został pomyślnie zaktualizowany.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Włączone',
                         'title' => 'Ustawienia',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'Włącz SMS jako dostępną metodę uwierzytelniania dwuskładnikowego dla kont administratorów.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Tryb ciemny',
                 'newsletter-subscriptions' => 'Subskrypcje newslettera',
                 'orders' => 'Zamówienia',
+                'product-tags' => 'Tagi produktów',
                 'products' => 'Produkty',
                 'promotions' => 'Promocje',
                 'reasons' => 'Powód',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Zastosowanie',
                     'zoom' => 'Powiększenie',
                 ],
-        'sms' => 'Dzienniki SMS',
+                'sms' => 'Dzienniki SMS',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Notatka',
         'notification-emails' => 'E-maile z powiadomieniami',
         'orders' => 'Zamówienia',
+        'product-tags' => 'Tagi produktów',
         'products' => 'Produkty',
         'promotions' => 'Promocje',
         'refunds' => 'Zwroty',

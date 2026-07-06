@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Categorias',
                 ],
 
+                'tag' => [
+                    'title' => 'Tag do produto',
+                ],
+
                 'images' => [
                     'info' => 'A resolução da imagem deve ser de cerca de 560px X 609px',
                     'title' => 'Imagens',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'Erro ao excluir a categoria',
             'delete-success' => 'A categoria foi excluída com sucesso.',
             'update-success' => 'Categoria atualizada com sucesso.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Criar tag de produto',
+                'title' => 'Tags de produto',
+
+                'datagrid' => [
+                    'delete' => 'Excluir',
+                    'delete-failed' => 'Ocorreu um erro ao excluir a tag do produto',
+                    'delete-success' => 'A tag do produto foi excluída com sucesso.',
+                    'edit' => 'Editar',
+                    'id' => 'ID',
+                    'image' => 'Imagem',
+                    'mass-delete-success' => 'As tags de produto selecionadas foram excluídas com sucesso',
+                    'name' => 'Nome',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Voltar',
+                'create-success' => 'Tag do produto criada com sucesso.',
+                'general' => 'Geral',
+                'image' => 'Imagem',
+                'image-info' => 'A imagem será exibida no produto se disponível; caso contrário, o nome será exibido como um selo de texto.',
+                'name' => 'Nome',
+                'save-btn' => 'Salvar tag do produto',
+                'title' => 'Adicionar nova tag de produto',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Voltar',
+                'general' => 'Geral',
+                'image' => 'Imagem',
+                'image-info' => 'A imagem será exibida no produto se disponível; caso contrário, o nome será exibido como um selo de texto.',
+                'name' => 'Nome',
+                'save-btn' => 'Salvar tag do produto',
+                'title' => 'Editar tag do produto',
+                'update-success' => 'Tag do produto atualizada com sucesso.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Ativado',
                         'title' => 'Configurações',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'Ative o SMS como um método de autenticação de dois fatores disponível para contas de administrador.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Modo Escuro',
                 'newsletter-subscriptions' => 'Inscrições na Newsletter',
                 'orders' => 'Pedidos',
+                'product-tags' => 'Tags de produto',
                 'products' => 'Produtos',
                 'promotions' => 'Promoções',
                 'reasons' => 'Motivo',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Casos de Uso',
                     'zoom' => 'Ampliar',
                 ],
-        'sms' => 'Registros de SMS',
+                'sms' => 'Registros de SMS',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Nota',
         'notification-emails' => 'E-mails de notificação',
         'orders' => 'Pedidos',
+        'product-tags' => 'Tags de produto',
         'products' => 'Produtos',
         'promotions' => 'Promoções',
         'refunds' => 'Reembolsos',

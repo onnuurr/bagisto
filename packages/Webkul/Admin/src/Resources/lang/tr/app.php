@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Kategoriler',
                 ],
 
+                'tag' => [
+                    'title' => 'Ürün Etiketi',
+                ],
+
                 'images' => [
                     'info' => 'Resim çözünürlüğü 560px X 609px gibi olmalıdır',
                     'title' => 'Resimler',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'Kategori silinirken bir hata oluştu',
             'delete-success' => 'Kategori başarıyla silindi.',
             'update-success' => 'Kategori başarıyla güncellendi.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Ürün Etiketi Oluştur',
+                'title' => 'Ürün Etiketleri',
+
+                'datagrid' => [
+                    'delete' => 'Sil',
+                    'delete-failed' => 'Ürün etiketi silinirken bir hata oluştu',
+                    'delete-success' => 'Ürün etiketi başarıyla silindi.',
+                    'edit' => 'Düzenle',
+                    'id' => 'ID',
+                    'image' => 'Görsel',
+                    'mass-delete-success' => 'Seçilen ürün etiketleri başarıyla silindi',
+                    'name' => 'Adı',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Geri',
+                'create-success' => 'Ürün etiketi başarıyla oluşturuldu.',
+                'general' => 'Genel',
+                'image' => 'Görsel',
+                'image-info' => 'Görsel mevcutsa ürün üzerinde görsel gösterilir, aksi takdirde ad bir metin rozeti olarak gösterilir.',
+                'name' => 'Adı',
+                'save-btn' => 'Ürün Etiketini Kaydet',
+                'title' => 'Yeni Ürün Etiketi Ekle',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Geri',
+                'general' => 'Genel',
+                'image' => 'Görsel',
+                'image-info' => 'Görsel mevcutsa ürün üzerinde görsel gösterilir, aksi takdirde ad bir metin rozeti olarak gösterilir.',
+                'name' => 'Adı',
+                'save-btn' => 'Ürün Etiketini Kaydet',
+                'title' => 'Ürün Etiketini Düzenle',
+                'update-success' => 'Ürün etiketi başarıyla güncellendi.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Etkin',
                         'title' => 'Ayarlar',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'Yönetici hesapları için SMS\'i kullanılabilir bir iki adımlı doğrulama yöntemi olarak etkinleştirin.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Karanlık Mod',
                 'newsletter-subscriptions' => 'Bülten Abonelikleri',
                 'orders' => 'Siparişler',
+                'product-tags' => 'Ürün Etiketleri',
                 'products' => 'Ürünler',
                 'promotions' => 'Promosyonlar',
                 'reasons' => 'Sebep',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Kullanım Alanları',
                     'zoom' => 'Yakınlaştırma',
                 ],
-        'sms' => 'SMS Kayıtları',
+                'sms' => 'SMS Kayıtları',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Not',
         'notification-emails' => 'Bildirim E-postaları',
         'orders' => 'Siparişler',
+        'product-tags' => 'Ürün Etiketleri',
         'products' => 'Ürünler',
         'promotions' => 'Promosyonlar',
         'refunds' => 'İade İşlemleri',

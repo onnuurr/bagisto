@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Categories',
                 ],
 
+                'tag' => [
+                    'title' => 'Etiqueta del producte',
+                ],
+
                 'images' => [
                     'info' => 'La resolució de la imatge hauria de ser d\'aproximadament 560px X 609px',
                     'title' => 'Imatges',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'S\'ha produït un error en eliminar la categoria.',
             'delete-success' => 'La categoria s\'ha eliminat amb éxit.',
             'update-success' => 'Categoria actualitzada amb éxit.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Crear etiqueta de producte',
+                'title' => 'Etiquetes de producte',
+
+                'datagrid' => [
+                    'delete' => 'Eliminar',
+                    'delete-failed' => 'S\'ha produït un error en eliminar l\'etiqueta del producte',
+                    'delete-success' => 'L\'etiqueta del producte s\'ha eliminat correctament.',
+                    'edit' => 'Editar',
+                    'id' => 'ID',
+                    'image' => 'Imatge',
+                    'mass-delete-success' => 'Les etiquetes de producte seleccionades s\'han eliminat correctament',
+                    'name' => 'Nom',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Enrere',
+                'create-success' => 'L\'etiqueta del producte s\'ha creat correctament.',
+                'general' => 'General',
+                'image' => 'Imatge',
+                'image-info' => 'La imatge es mostrarà al producte si està disponible, en cas contrari es mostrarà el nom com una insígnia de text.',
+                'name' => 'Nom',
+                'save-btn' => 'Desar etiqueta de producte',
+                'title' => 'Afegir nova etiqueta de producte',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Enrere',
+                'general' => 'General',
+                'image' => 'Imatge',
+                'image-info' => 'La imatge es mostrarà al producte si està disponible, en cas contrari es mostrarà el nom com una insígnia de text.',
+                'name' => 'Nom',
+                'save-btn' => 'Desar etiqueta de producte',
+                'title' => 'Editar l\'etiqueta del producte',
+                'update-success' => 'L\'etiqueta del producte s\'ha actualitzat correctament.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Habilitat',
                         'title' => 'Configuració',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'Habiliteu l\'SMS com a mètode d\'autenticació de dos factors disponible per als comptes d\'administrador.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Mode fosc',
                 'newsletter-subscriptions' => 'Subscriure\'s al butlletí',
                 'orders' => 'Comandes',
+                'product-tags' => 'Etiquetes de producte',
                 'products' => 'Productes',
                 'promotions' => 'Promocions',
                 'reasons' => 'Reason',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Casos d\'Ús',
                     'zoom' => 'Zoom',
                 ],
-        'sms' => 'Registres d\'SMS',
+                'sms' => 'Registres d\'SMS',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Nota',
         'notification-emails' => 'Correus de notificació',
         'orders' => 'Comandes',
+        'product-tags' => 'Etiquetes de producte',
         'products' => 'Productes',
         'promotions' => 'Promocions',
         'refunds' => 'Reemborsaments',

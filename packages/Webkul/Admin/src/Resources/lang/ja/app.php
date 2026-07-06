@@ -1234,6 +1234,10 @@ return [
                     'title' => 'カテゴリー',
                 ],
 
+                'tag' => [
+                    'title' => '商品タグ',
+                ],
+
                 'images' => [
                     'info' => '画像の解像度は560px X 609pxのようにする必要があります',
                     'title' => '画像',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'カテゴリの削除中にエラーが発生しました',
             'delete-success' => 'カテゴリが正常に削除されました。',
             'update-success' => 'カテゴリが正常に更新されました。',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => '商品タグを作成',
+                'title' => '商品タグ',
+
+                'datagrid' => [
+                    'delete' => '削除',
+                    'delete-failed' => '商品タグの削除中にエラーが発生しました',
+                    'delete-success' => '商品タグは正常に削除されました。',
+                    'edit' => '編集',
+                    'id' => 'ID',
+                    'image' => '画像',
+                    'mass-delete-success' => '選択した商品タグは正常に削除されました',
+                    'name' => '名前',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => '戻る',
+                'create-success' => '商品タグが正常に作成されました。',
+                'general' => '一般',
+                'image' => '画像',
+                'image-info' => '画像がある場合は商品に画像が表示され、ない場合は名前がテキストバッジとして表示されます。',
+                'name' => '名前',
+                'save-btn' => '商品タグを保存',
+                'title' => '新しい商品タグを追加',
+            ],
+
+            'edit' => [
+                'back-btn' => '戻る',
+                'general' => '一般',
+                'image' => '画像',
+                'image-info' => '画像がある場合は商品に画像が表示され、ない場合は名前がテキストバッジとして表示されます。',
+                'name' => '名前',
+                'save-btn' => '商品タグを保存',
+                'title' => '商品タグを編集',
+                'update-success' => '商品タグが正常に更新されました。',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => '有効',
                         'title' => '設定',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => '管理者アカウントで利用可能な二要素認証の方法としてSMSを有効にします。',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'ダークモード',
                 'newsletter-subscriptions' => 'ニュースレターの購読',
                 'orders' => '注文',
+                'product-tags' => '商品タグ',
                 'products' => '製品',
                 'promotions' => 'プロモーション',
                 'reasons' => '理由',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => '用途',
                     'zoom' => 'ズーム',
                 ],
-        'sms' => 'SMSログ',
+                'sms' => 'SMSログ',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'メモ',
         'notification-emails' => '通知メール',
         'orders' => '注文',
+        'product-tags' => '商品タグ',
         'products' => '製品',
         'promotions' => 'プロモーション',
         'refunds' => '返金',

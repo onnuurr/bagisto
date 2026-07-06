@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Kategorien',
                 ],
 
+                'tag' => [
+                    'title' => 'Produkt-Tag',
+                ],
+
                 'images' => [
                     'info' => 'Die Bildauflösung sollte etwa 560px X 609px sein',
                     'title' => 'Bilder',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'Fehler beim Löschen der Kategorie aufgetreten',
             'delete-success' => 'Die Kategorie wurde erfolgreich gelöscht.',
             'update-success' => 'Kategorie erfolgreich aktualisiert.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Produkt-Tag erstellen',
+                'title' => 'Produkt-Tags',
+
+                'datagrid' => [
+                    'delete' => 'Löschen',
+                    'delete-failed' => 'Fehler beim Löschen des Produkt-Tags',
+                    'delete-success' => 'Das Produkt-Tag wurde erfolgreich gelöscht.',
+                    'edit' => 'Bearbeiten',
+                    'id' => 'ID',
+                    'image' => 'Bild',
+                    'mass-delete-success' => 'Ausgewählte Produkt-Tags wurden erfolgreich gelöscht',
+                    'name' => 'Name',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Zurück',
+                'create-success' => 'Produkt-Tag erfolgreich erstellt.',
+                'general' => 'Allgemein',
+                'image' => 'Bild',
+                'image-info' => 'Falls vorhanden, wird das Bild am Produkt angezeigt, andernfalls wird der Name als Text-Badge angezeigt.',
+                'name' => 'Name',
+                'save-btn' => 'Produkt-Tag speichern',
+                'title' => 'Neues Produkt-Tag hinzufügen',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Zurück',
+                'general' => 'Allgemein',
+                'image' => 'Bild',
+                'image-info' => 'Falls vorhanden, wird das Bild am Produkt angezeigt, andernfalls wird der Name als Text-Badge angezeigt.',
+                'name' => 'Name',
+                'save-btn' => 'Produkt-Tag speichern',
+                'title' => 'Produkt-Tag bearbeiten',
+                'update-success' => 'Produkt-Tag erfolgreich aktualisiert.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Aktiviert',
                         'title' => 'Einstellungen',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'SMS als verfügbare Zwei-Faktor-Authentifizierungsmethode für Admin-Konten aktivieren.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Dunkler Modus',
                 'newsletter-subscriptions' => 'Newsletter-Abonnements',
                 'orders' => 'Bestellungen',
+                'product-tags' => 'Produkt-Tags',
                 'products' => 'Produkte',
                 'promotions' => 'Aktionen',
                 'reasons' => 'Reason',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Verwendungszwecke',
                     'zoom' => 'Vergrößern',
                 ],
-        'sms' => 'SMS-Protokolle',
+                'sms' => 'SMS-Protokolle',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Notiz',
         'notification-emails' => 'Benachrichtigungs-E-Mails',
         'orders' => 'Bestellungen',
+        'product-tags' => 'Produkt-Tags',
         'products' => 'Produkte',
         'promotions' => 'Aktionen',
         'refunds' => 'Rückerstattungen',

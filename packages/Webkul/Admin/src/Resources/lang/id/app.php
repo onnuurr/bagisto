@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Kategori',
                 ],
 
+                'tag' => [
+                    'title' => 'Tag Produk',
+                ],
+
                 'images' => [
                     'info' => 'Resolusi gambar sebaiknya 560px X 609px',
                     'title' => 'Gambar',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'Terjadi kesalahan saat menghapus kategori',
             'delete-success' => 'Kategori berhasil dihapus.',
             'update-success' => 'Kategori berhasil diperbarui.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Buat Tag Produk',
+                'title' => 'Tag Produk',
+
+                'datagrid' => [
+                    'delete' => 'Hapus',
+                    'delete-failed' => 'Terjadi kesalahan saat menghapus tag produk',
+                    'delete-success' => 'Tag produk berhasil dihapus.',
+                    'edit' => 'Edit',
+                    'id' => 'ID',
+                    'image' => 'Gambar',
+                    'mass-delete-success' => 'Tag produk terpilih berhasil dihapus',
+                    'name' => 'Nama',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Kembali',
+                'create-success' => 'Tag produk berhasil dibuat.',
+                'general' => 'Umum',
+                'image' => 'Gambar',
+                'image-info' => 'Gambar akan ditampilkan pada produk jika tersedia, jika tidak nama akan ditampilkan sebagai lencana teks.',
+                'name' => 'Nama',
+                'save-btn' => 'Simpan Tag Produk',
+                'title' => 'Tambah Tag Produk Baru',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Kembali',
+                'general' => 'Umum',
+                'image' => 'Gambar',
+                'image-info' => 'Gambar akan ditampilkan pada produk jika tersedia, jika tidak nama akan ditampilkan sebagai lencana teks.',
+                'name' => 'Nama',
+                'save-btn' => 'Simpan Tag Produk',
+                'title' => 'Edit Tag Produk',
+                'update-success' => 'Tag produk berhasil diperbarui.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Diaktifkan',
                         'title' => 'Pengaturan',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'Aktifkan SMS sebagai metode autentikasi dua faktor yang tersedia untuk akun admin.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Mode Gelap',
                 'newsletter-subscriptions' => 'Langganan Newsletter',
                 'orders' => 'Pesanan',
+                'product-tags' => 'Tag Produk',
                 'products' => 'Produk',
                 'promotions' => 'Promosi',
                 'reasons' => 'Alasan',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Kasus Penggunaan',
                     'zoom' => 'Perbesar',
                 ],
-        'sms' => 'Log SMS',
+                'sms' => 'Log SMS',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Catatan',
         'notification-emails' => 'Email Notifikasi',
         'orders' => 'Pesanan',
+        'product-tags' => 'Tag Produk',
         'products' => 'Produk',
         'promotions' => 'Promosi',
         'refunds' => 'Pengembalian Dana',

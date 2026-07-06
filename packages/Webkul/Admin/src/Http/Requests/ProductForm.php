@@ -104,6 +104,7 @@ class ProductForm extends FormRequest
                     });
                 }),
             ],
+            'product_tag_id' => ['nullable', 'exists:product_tags,id'],
         ]);
 
         if (request()->images) {

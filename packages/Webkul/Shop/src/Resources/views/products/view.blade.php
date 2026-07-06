@@ -297,6 +297,22 @@
                             <div class="relative max-w-[590px] max-1180:w-full max-1180:max-w-full max-1180:px-5 max-sm:px-4">
                                 {!! view_render_event('bagisto.shop.products.name.before', ['product' => $product]) !!}
 
+                                @if ($product->tag)
+                                    <div class="mb-1.5">
+                                        @if ($product->tag->image_url)
+                                            <img
+                                                src="{{ $product->tag->image_url }}"
+                                                alt="{{ $product->tag->name }}"
+                                                class="h-8 max-w-[96px] object-contain"
+                                            />
+                                        @else
+                                            <span class="inline-block rounded-[44px] bg-zinc-800 px-2.5 py-1 text-sm text-white" v-pre>
+                                                {{ $product->tag->name }}
+                                            </span>
+                                        @endif
+                                    </div>
+                                @endif
+
                                 <div class="flex justify-between gap-4">
                                     <h1 class="break-words text-3xl font-medium max-sm:text-xl" v-pre>
                                         {{ $product->name }}

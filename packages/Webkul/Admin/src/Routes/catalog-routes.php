@@ -11,6 +11,7 @@ use Webkul\Admin\Http\Controllers\Catalog\Product\GroupedController;
 use Webkul\Admin\Http\Controllers\Catalog\Product\SimpleController;
 use Webkul\Admin\Http\Controllers\Catalog\Product\VirtualController;
 use Webkul\Admin\Http\Controllers\Catalog\ProductController;
+use Webkul\Admin\Http\Controllers\Catalog\ProductTagController;
 
 /**
  * Catalog routes.
@@ -77,6 +78,25 @@ Route::prefix('catalog')->group(function () {
         Route::get('search', 'search')->name('admin.catalog.categories.search');
 
         Route::get('tree', 'tree')->name('admin.catalog.categories.tree');
+    });
+
+    /**
+     * Product tags routes.
+     */
+    Route::controller(ProductTagController::class)->prefix('product-tags')->group(function () {
+        Route::get('', 'index')->name('admin.catalog.product_tags.index');
+
+        Route::get('create', 'create')->name('admin.catalog.product_tags.create');
+
+        Route::post('create', 'store')->name('admin.catalog.product_tags.store');
+
+        Route::get('edit/{id}', 'edit')->name('admin.catalog.product_tags.edit');
+
+        Route::put('edit/{id}', 'update')->name('admin.catalog.product_tags.update');
+
+        Route::delete('edit/{id}', 'destroy')->name('admin.catalog.product_tags.delete');
+
+        Route::post('mass-delete', 'massDestroy')->name('admin.catalog.product_tags.mass_delete');
     });
 
     /**

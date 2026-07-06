@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Categorie',
                 ],
 
+                'tag' => [
+                    'title' => 'Tag prodotto',
+                ],
+
                 'images' => [
                     'info' => 'La risoluzione dell\'immagine dovrebbe essere di circa 560px X 609px',
                     'title' => 'Immagini',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'Errore durante l\'eliminazione della categoria.',
             'delete-success' => 'La categoria è stata eliminata con successo.',
             'update-success' => 'Categoria aggiornata con successo.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Crea tag prodotto',
+                'title' => 'Tag prodotto',
+
+                'datagrid' => [
+                    'delete' => 'Elimina',
+                    'delete-failed' => 'Si è verificato un errore durante l\'eliminazione del tag prodotto',
+                    'delete-success' => 'Il tag prodotto è stato eliminato con successo.',
+                    'edit' => 'Modifica',
+                    'id' => 'ID',
+                    'image' => 'Immagine',
+                    'mass-delete-success' => 'I tag prodotto selezionati sono stati eliminati con successo',
+                    'name' => 'Nome',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Indietro',
+                'create-success' => 'Tag prodotto creato con successo.',
+                'general' => 'Generale',
+                'image' => 'Immagine',
+                'image-info' => 'L\'immagine verrà mostrata sul prodotto se disponibile, altrimenti verrà mostrato il nome come badge testuale.',
+                'name' => 'Nome',
+                'save-btn' => 'Salva tag prodotto',
+                'title' => 'Aggiungi nuovo tag prodotto',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Indietro',
+                'general' => 'Generale',
+                'image' => 'Immagine',
+                'image-info' => 'L\'immagine verrà mostrata sul prodotto se disponibile, altrimenti verrà mostrato il nome come badge testuale.',
+                'name' => 'Nome',
+                'save-btn' => 'Salva tag prodotto',
+                'title' => 'Modifica tag prodotto',
+                'update-success' => 'Tag prodotto aggiornato con successo.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Abilitato',
                         'title' => 'Impostazioni',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'Abilita l\'SMS come metodo di autenticazione a due fattori disponibile per gli account amministratore.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Modalità Scura',
                 'newsletter-subscriptions' => 'Abbonamenti alla Newsletter',
                 'orders' => 'Ordini',
+                'product-tags' => 'Tag prodotto',
                 'products' => 'Prodotti',
                 'promotions' => 'Promozioni',
                 'reasons' => 'Motivo',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Casi d\'Uso',
                     'zoom' => 'Zoom',
                 ],
-        'sms' => 'Registri SMS',
+                'sms' => 'Registri SMS',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Nota',
         'notification-emails' => 'Email di notifica',
         'orders' => 'Ordini',
+        'product-tags' => 'Tag prodotto',
         'products' => 'Prodotti',
         'promotions' => 'Promozioni',
         'refunds' => 'Rimborsi',

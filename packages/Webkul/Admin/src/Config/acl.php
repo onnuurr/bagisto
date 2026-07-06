@@ -361,10 +361,39 @@ return [
         ],
         'sort' => 3,
     ], [
+        'key' => 'catalog.product_tags',
+        'name' => 'admin::app.acl.product-tags',
+        'route' => 'admin.catalog.product_tags.index',
+        'sort' => 3,
+    ], [
+        'key' => 'catalog.product_tags.create',
+        'name' => 'admin::app.acl.create',
+        'route' => [
+            'admin.catalog.product_tags.create',
+            'admin.catalog.product_tags.store',
+        ],
+        'sort' => 1,
+    ], [
+        'key' => 'catalog.product_tags.edit',
+        'name' => 'admin::app.acl.edit',
+        'route' => [
+            'admin.catalog.product_tags.edit',
+            'admin.catalog.product_tags.update',
+        ],
+        'sort' => 2,
+    ], [
+        'key' => 'catalog.product_tags.delete',
+        'name' => 'admin::app.acl.delete',
+        'route' => [
+            'admin.catalog.product_tags.delete',
+            'admin.catalog.product_tags.mass_delete',
+        ],
+        'sort' => 3,
+    ], [
         'key' => 'catalog.attributes',
         'name' => 'admin::app.acl.attributes',
         'route' => 'admin.catalog.attributes.index',
-        'sort' => 3,
+        'sort' => 4,
     ], [
         'key' => 'catalog.attributes.create',
         'name' => 'admin::app.acl.create',
@@ -393,7 +422,7 @@ return [
         'key' => 'catalog.families',
         'name' => 'admin::app.acl.attribute-families',
         'route' => 'admin.catalog.families.index',
-        'sort' => 4,
+        'sort' => 5,
     ], [
         'key' => 'catalog.families.create',
         'name' => 'admin::app.acl.create',

@@ -21,6 +21,7 @@ use Webkul\Inventory\Models\InventorySourceProxy;
 use Webkul\Product\Contracts\Product as ProductContract;
 use Webkul\Product\Database\Factories\ProductFactory;
 use Webkul\Product\Type\AbstractType;
+use Webkul\ProductTag\Models\ProductTagProxy;
 
 class Product extends Model implements ProductContract
 {
@@ -34,6 +35,7 @@ class Product extends Model implements ProductContract
         'attribute_family_id',
         'sku',
         'parent_id',
+        'product_tag_id',
     ];
 
     /**
@@ -129,6 +131,14 @@ class Product extends Model implements ProductContract
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(CategoryProxy::modelClass(), 'product_categories');
+    }
+
+    /**
+     * Get the tag that owns the product.
+     */
+    public function tag(): BelongsTo
+    {
+        return $this->belongsTo(ProductTagProxy::modelClass(), 'product_tag_id');
     }
 
     /**

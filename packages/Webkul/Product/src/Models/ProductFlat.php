@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Webkul\Product\Contracts\ProductFlat as ProductFlatContract;
 use Webkul\Product\Type\AbstractType;
+use Webkul\ProductTag\Models\ProductTagProxy;
 
 class ProductFlat extends Model implements ProductFlatContract
 {
@@ -67,6 +68,16 @@ class ProductFlat extends Model implements ProductFlatContract
     public function variants()
     {
         return $this->hasMany(static::class, 'parent_id');
+    }
+
+    /**
+     * Get the tag that owns the product.
+     *
+     * @return BelongsTo
+     */
+    public function tag()
+    {
+        return $this->belongsTo(ProductTagProxy::modelClass(), 'product_tag_id');
     }
 
     /**

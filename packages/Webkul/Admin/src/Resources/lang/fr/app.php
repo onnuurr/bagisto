@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Catégories',
                 ],
 
+                'tag' => [
+                    'title' => 'Étiquette produit',
+                ],
+
                 'images' => [
                     'info' => 'La résolution de l\'image devrait être de 560px X 609px',
                     'title' => 'Images',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'Erreur lors de la suppression de la catégorie',
             'delete-success' => 'La catégorie a été supprimée avec succès.',
             'update-success' => 'Catégorie mise à jour avec succès.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Créer une étiquette produit',
+                'title' => 'Étiquettes produit',
+
+                'datagrid' => [
+                    'delete' => 'Supprimer',
+                    'delete-failed' => 'Une erreur s\'est produite lors de la suppression de l\'étiquette produit',
+                    'delete-success' => 'L\'étiquette produit a été supprimée avec succès.',
+                    'edit' => 'Modifier',
+                    'id' => 'ID',
+                    'image' => 'Image',
+                    'mass-delete-success' => 'Les étiquettes produit sélectionnées ont été supprimées avec succès',
+                    'name' => 'Nom',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Retour',
+                'create-success' => 'L\'étiquette produit a été créée avec succès.',
+                'general' => 'Général',
+                'image' => 'Image',
+                'image-info' => 'L\'image sera affichée sur le produit si elle est disponible, sinon le nom sera affiché sous forme de badge textuel.',
+                'name' => 'Nom',
+                'save-btn' => 'Enregistrer l\'étiquette produit',
+                'title' => 'Ajouter une nouvelle étiquette produit',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Retour',
+                'general' => 'Général',
+                'image' => 'Image',
+                'image-info' => 'L\'image sera affichée sur le produit si elle est disponible, sinon le nom sera affiché sous forme de badge textuel.',
+                'name' => 'Nom',
+                'save-btn' => 'Enregistrer l\'étiquette produit',
+                'title' => 'Modifier l\'étiquette produit',
+                'update-success' => 'L\'étiquette produit a été mise à jour avec succès.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Activé',
                         'title' => 'Paramètres',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'Activez le SMS comme méthode d\'authentification à deux facteurs disponible pour les comptes administrateurs.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Mode sombre',
                 'newsletter-subscriptions' => 'Abonnements à la newsletter',
                 'orders' => 'Commandes',
+                'product-tags' => 'Étiquettes produit',
                 'products' => 'Produits',
                 'promotions' => 'Promotions',
                 'reasons' => 'Raison',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Utilisations',
                     'zoom' => 'Zoom',
                 ],
-        'sms' => 'Journaux SMS',
+                'sms' => 'Journaux SMS',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Note',
         'notification-emails' => 'E-mails de notification',
         'orders' => 'Commandes',
+        'product-tags' => 'Étiquettes produit',
         'products' => 'Produits',
         'promotions' => 'Promotions',
         'refunds' => 'Remboursements',

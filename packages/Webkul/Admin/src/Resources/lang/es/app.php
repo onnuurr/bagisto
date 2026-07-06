@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Categorías',
                 ],
 
+                'tag' => [
+                    'title' => 'Etiqueta de producto',
+                ],
+
                 'images' => [
                     'info' => 'La resolución de la imagen debe ser de alrededor de 560px X 609px',
                     'title' => 'Imágenes',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'Se produjo un error al eliminar la categoría',
             'delete-success' => 'La categoría se eliminó con éxito.',
             'update-success' => 'Categoría actualizada con éxito.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Crear etiqueta de producto',
+                'title' => 'Etiquetas de producto',
+
+                'datagrid' => [
+                    'delete' => 'Eliminar',
+                    'delete-failed' => 'Se produjo un error al eliminar la etiqueta de producto',
+                    'delete-success' => 'La etiqueta de producto se eliminó correctamente.',
+                    'edit' => 'Editar',
+                    'id' => 'ID',
+                    'image' => 'Imagen',
+                    'mass-delete-success' => 'Las etiquetas de producto seleccionadas se eliminaron correctamente',
+                    'name' => 'Nombre',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Atrás',
+                'create-success' => 'Etiqueta de producto creada correctamente.',
+                'general' => 'General',
+                'image' => 'Imagen',
+                'image-info' => 'La imagen se mostrará en el producto si está disponible; de lo contrario, se mostrará el nombre como una insignia de texto.',
+                'name' => 'Nombre',
+                'save-btn' => 'Guardar etiqueta de producto',
+                'title' => 'Añadir nueva etiqueta de producto',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Atrás',
+                'general' => 'General',
+                'image' => 'Imagen',
+                'image-info' => 'La imagen se mostrará en el producto si está disponible; de lo contrario, se mostrará el nombre como una insignia de texto.',
+                'name' => 'Nombre',
+                'save-btn' => 'Guardar etiqueta de producto',
+                'title' => 'Editar etiqueta de producto',
+                'update-success' => 'Etiqueta de producto actualizada correctamente.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Habilitado',
                         'title' => 'Configuración',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'Habilite el SMS como método de autenticación de dos factores disponible para las cuentas de administrador.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Modo oscuro',
                 'newsletter-subscriptions' => 'Suscripciones al boletín',
                 'orders' => 'Pedidos',
+                'product-tags' => 'Etiquetas de producto',
                 'products' => 'Productos',
                 'promotions' => 'Promociones',
                 'reasons' => 'Razón',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Casos de Uso',
                     'zoom' => 'Zoom',
                 ],
-        'sms' => 'Registros de SMS',
+                'sms' => 'Registros de SMS',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Nota',
         'notification-emails' => 'Correos de notificación',
         'orders' => 'Pedidos',
+        'product-tags' => 'Etiquetas de producto',
         'products' => 'Productos',
         'promotions' => 'Promociones',
         'refunds' => 'Reembolsos',

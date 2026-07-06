@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Categorieën',
                 ],
 
+                'tag' => [
+                    'title' => 'Producttag',
+                ],
+
                 'images' => [
                     'info' => 'De beeldresolutie moet zijn zoals 560px X 609px',
                     'title' => 'Afbeeldingen',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'Fout opgetreden bij het verwijderen van de categorie',
             'delete-success' => 'De categorie is succesvol verwijderd.',
             'update-success' => 'Categorie succesvol bijgewerkt.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Producttag aanmaken',
+                'title' => 'Producttags',
+
+                'datagrid' => [
+                    'delete' => 'Verwijderen',
+                    'delete-failed' => 'Er is een fout opgetreden bij het verwijderen van de producttag',
+                    'delete-success' => 'De producttag is succesvol verwijderd.',
+                    'edit' => 'Bewerken',
+                    'id' => 'ID',
+                    'image' => 'Afbeelding',
+                    'mass-delete-success' => 'Geselecteerde producttags zijn succesvol verwijderd',
+                    'name' => 'Naam',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Terug',
+                'create-success' => 'Producttag succesvol aangemaakt.',
+                'general' => 'Algemeen',
+                'image' => 'Afbeelding',
+                'image-info' => 'De afbeelding wordt op het product getoond indien beschikbaar, anders wordt de naam getoond als tekstbadge.',
+                'name' => 'Naam',
+                'save-btn' => 'Producttag opslaan',
+                'title' => 'Nieuwe producttag toevoegen',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Terug',
+                'general' => 'Algemeen',
+                'image' => 'Afbeelding',
+                'image-info' => 'De afbeelding wordt op het product getoond indien beschikbaar, anders wordt de naam getoond als tekstbadge.',
+                'name' => 'Naam',
+                'save-btn' => 'Producttag opslaan',
+                'title' => 'Producttag bewerken',
+                'update-success' => 'Producttag succesvol bijgewerkt.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Ingeschakeld',
                         'title' => 'Instellingen',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'Schakel SMS in als beschikbare tweefactorauthenticatiemethode voor beheerdersaccounts.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Donkere Modus',
                 'newsletter-subscriptions' => 'Nieuwsbriefabonnementen',
                 'orders' => 'Bestellingen',
+                'product-tags' => 'Producttags',
                 'products' => 'Producten',
                 'promotions' => 'Promoties',
                 'reasons' => 'Reden',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Gebruiksscenario\'s',
                     'zoom' => 'Inzoomen',
                 ],
-        'sms' => 'SMS-logboek',
+                'sms' => 'SMS-logboek',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Notitie',
         'notification-emails' => 'Meldings-e-mails',
         'orders' => 'Bestellingen',
+        'product-tags' => 'Producttags',
         'products' => 'Producten',
         'promotions' => 'Promoties',
         'refunds' => 'Terugbetalingen',

@@ -1234,6 +1234,10 @@ return [
                     'title' => '分类',
                 ],
 
+                'tag' => [
+                    'title' => '商品标签',
+                ],
+
                 'images' => [
                     'info' => '图像分辨率应为560px X 609px',
                     'title' => '图片',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => '删除类别时发生错误',
             'delete-success' => '分类已成功删除。',
             'update-success' => '分类更新成功。',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => '创建商品标签',
+                'title' => '商品标签',
+
+                'datagrid' => [
+                    'delete' => '删除',
+                    'delete-failed' => '删除商品标签时出错',
+                    'delete-success' => '商品标签已成功删除。',
+                    'edit' => '编辑',
+                    'id' => 'ID',
+                    'image' => '图片',
+                    'mass-delete-success' => '所选商品标签已成功删除',
+                    'name' => '名称*',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => '返回',
+                'create-success' => '商品标签创建成功。',
+                'general' => '常规',
+                'image' => '图片',
+                'image-info' => '如果有图片,将在商品上显示图片,否则将以文本徽章的形式显示名称。',
+                'name' => '名称*',
+                'save-btn' => '保存商品标签',
+                'title' => '添加新商品标签',
+            ],
+
+            'edit' => [
+                'back-btn' => '返回',
+                'general' => '常规',
+                'image' => '图片',
+                'image-info' => '如果有图片,将在商品上显示图片,否则将以文本徽章的形式显示名称。',
+                'name' => '名称*',
+                'save-btn' => '保存商品标签',
+                'title' => '编辑商品标签',
+                'update-success' => '商品标签更新成功。',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => '启用',
                         'title' => '设置',
-                'sms' => '短信',
+                        'sms' => '短信',
                         'title-info' => '为管理员账户启用短信作为可用的双重验证方式。',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => '暗模式',
                 'newsletter-subscriptions' => '订阅通讯',
                 'orders' => '订单',
+                'product-tags' => '商品标签',
                 'products' => '产品',
                 'promotions' => '促销',
                 'reasons' => '原因',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => '用途',
                     'zoom' => '缩放',
                 ],
-        'sms' => '短信日志',
+                'sms' => '短信日志',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => '备注',
         'notification-emails' => '通知邮件',
         'orders' => '订单',
+        'product-tags' => '商品标签',
         'products' => '产品',
         'promotions' => '促销',
         'refunds' => '退款',

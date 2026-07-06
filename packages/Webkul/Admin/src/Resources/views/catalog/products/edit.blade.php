@@ -265,6 +265,9 @@
 
                         <!-- Categories View Blade File -->
                         @include('admin::catalog.products.edit.categories')
+
+                        <!-- Tag View Blade File -->
+                        @include('admin::catalog.products.edit.tag')
                     @endif
                 </div>
 
@@ -294,6 +297,9 @@
 
                         <!-- Categories View Blade File -->
                         @include('admin::catalog.products.edit.categories')
+
+                        <!-- Tag View Blade File -->
+                        @include('admin::catalog.products.edit.tag')
                     </div>
                 @endif
 

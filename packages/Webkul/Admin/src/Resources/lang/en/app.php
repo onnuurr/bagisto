@@ -1234,6 +1234,10 @@ return [
                     'title' => 'Categories',
                 ],
 
+                'tag' => [
+                    'title' => 'Product Tag',
+                ],
+
                 'images' => [
                     'info' => 'Image resolution should be like 560px X 609px',
                     'title' => 'Images',
@@ -2023,6 +2027,46 @@ return [
             'delete-failed' => 'Error encountered while deleting category',
             'delete-success' => 'The category has been successfully deleted.',
             'update-success' => 'Category updated successfully.',
+        ],
+
+        'product-tags' => [
+            'index' => [
+                'add-btn' => 'Create Product Tag',
+                'title' => 'Product Tags',
+
+                'datagrid' => [
+                    'delete' => 'Delete',
+                    'delete-failed' => 'Error encountered while deleting product tag',
+                    'delete-success' => 'The product tag has been successfully deleted.',
+                    'edit' => 'Edit',
+                    'id' => 'ID',
+                    'image' => 'Image',
+                    'mass-delete-success' => 'Selected product tags were successfully deleted',
+                    'name' => 'Name',
+                ],
+            ],
+
+            'create' => [
+                'back-btn' => 'Back',
+                'create-success' => 'Product tag created successfully.',
+                'general' => 'General',
+                'image' => 'Image',
+                'image-info' => 'Image will be shown on the product if available, otherwise the name will be shown as a text badge.',
+                'name' => 'Name',
+                'save-btn' => 'Save Product Tag',
+                'title' => 'Add New Product Tag',
+            ],
+
+            'edit' => [
+                'back-btn' => 'Back',
+                'general' => 'General',
+                'image' => 'Image',
+                'image-info' => 'Image will be shown on the product if available, otherwise the name will be shown as a text badge.',
+                'name' => 'Name',
+                'save-btn' => 'Save Product Tag',
+                'title' => 'Edit Product Tag',
+                'update-success' => 'Product tag updated successfully.',
+            ],
         ],
 
         'families' => [
@@ -5440,7 +5484,7 @@ return [
                     'settings' => [
                         'enabled' => 'Enabled',
                         'title' => 'Settings',
-                'sms' => 'SMS',
+                        'sms' => 'SMS',
                         'title-info' => 'Enable SMS as an available two-factor authentication method for admin accounts.',
                     ],
                 ],
@@ -5509,6 +5553,7 @@ return [
                 'mode' => 'Dark Mode',
                 'newsletter-subscriptions' => 'Newsletter Subscriptions',
                 'orders' => 'Orders',
+                'product-tags' => 'Product Tags',
                 'products' => 'Products',
                 'promotions' => 'Promotions',
                 'reasons' => 'Reasons',
@@ -5684,7 +5729,7 @@ return [
                     'use-cases' => 'Use Cases',
                     'zoom' => 'Zoom',
                 ],
-        'sms' => 'SMS Logs',
+                'sms' => 'SMS Logs',
             ],
 
             'videos' => [
@@ -5759,6 +5804,7 @@ return [
         'note' => 'Note',
         'notification-emails' => 'Notification Emails',
         'orders' => 'Orders',
+        'product-tags' => 'Product Tags',
         'products' => 'Products',
         'promotions' => 'Promotions',
         'refunds' => 'Refunds',
