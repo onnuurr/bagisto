@@ -13,12 +13,12 @@
                 enctype="multipart/form-data"
                 method="PUT"
             >
-                <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-                    <p class="text-xl font-bold text-gray-800 dark:text-white">
+                <x-admin::layouts.page-header>
+                    <x-slot:title>
                         @lang('admin::app.account.edit.title')
-                    </p>
+                    </x-slot>
 
-                    <div class="flex items-center gap-x-2.5">
+                    <x-slot:actions>
                         <!-- Back Button -->
                         <a
                             href="{{ route('admin.dashboard.index') }}"
@@ -28,16 +28,14 @@
                         </a>
 
                         <!-- Save Button -->
-                        <div class="flex items-center gap-x-2.5">
-                            <button 
-                                type="submit"
-                                class="primary-button"
-                            >
-                                @lang('admin::app.account.edit.save-btn')
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            @lang('admin::app.account.edit.save-btn')
+                        </button>
+                    </x-slot>
+                </x-admin::layouts.page-header>
 
                 <!-- Full Panel -->
                 <div class="mt-3.5 flex gap-2.5 max-xl:flex-wrap">

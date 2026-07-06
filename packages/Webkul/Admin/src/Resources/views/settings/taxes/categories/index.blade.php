@@ -5,25 +5,23 @@
     </x-slot>
 
     <v-tax-categories>
-        <div class="flex items-center justify-between">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.settings.taxes.categories.index.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
-                <div class="flex items-center gap-x-2.5">
-                    <!-- Create Tax Category Button -->
-                    @if (bouncer()->hasPermission('settings.taxes.tax_categories.create'))
-                        <button
-                            type="button"
-                            class="primary-button"
-                        >
-                            @lang('admin::app.settings.taxes.categories.index.create.title')
-                        </button>
-                    @endif
-                </div>
-            </div>
-        </div>
+            <x-slot:actions>
+                <!-- Create Tax Category Button -->
+                @if (bouncer()->hasPermission('settings.taxes.tax_categories.create'))
+                    <button
+                        type="button"
+                        class="primary-button"
+                    >
+                        @lang('admin::app.settings.taxes.categories.index.create.title')
+                    </button>
+                @endif
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- DataGrid Shimmer -->
         <x-admin::shimmer.datagrid />
@@ -34,26 +32,24 @@
             type="text/x-template"
             id="v-tax-categories-template"
         >
-            <div class="flex items-center justify-between">
-                <p class="text-xl font-bold text-gray-800 dark:text-white">
+            <x-admin::layouts.page-header>
+                <x-slot:title>
                     @lang('admin::app.settings.taxes.categories.index.title')
-                </p>
+                </x-slot>
 
-                <div class="flex items-center gap-x-2.5">
-                    <div class="flex items-center gap-x-2.5">
-                        <!-- Create Tax Category Button -->
-                        @if (bouncer()->hasPermission('settings.taxes.tax_categories.create'))
-                            <button
-                                type="button"
-                                class="primary-button"
-                                @click="selectedTaxRates={}; selectedTaxCategories=0; $refs.taxCategory.toggle()"
-                            >
-                                @lang('admin::app.settings.taxes.categories.index.create.title')
-                            </button>
-                        @endif
-                    </div>
-                </div>
-            </div>
+                <x-slot:actions>
+                    <!-- Create Tax Category Button -->
+                    @if (bouncer()->hasPermission('settings.taxes.tax_categories.create'))
+                        <button
+                            type="button"
+                            class="primary-button"
+                            @click="selectedTaxRates={}; selectedTaxCategories=0; $refs.taxCategory.toggle()"
+                        >
+                            @lang('admin::app.settings.taxes.categories.index.create.title')
+                        </button>
+                    @endif
+                </x-slot>
+            </x-admin::layouts.page-header>
 
             <x-admin::datagrid
                 :src="route('admin.settings.taxes.categories.index')"

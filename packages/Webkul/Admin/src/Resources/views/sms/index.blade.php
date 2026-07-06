@@ -3,16 +3,16 @@
         @lang('admin::app.sms.index.title')
     </x-slot>
 
-    <div class="flex items-center justify-between">
-        <p class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.sms.index.title')
-        </p>
+        </x-slot>
 
-        <div class="flex items-center gap-x-2.5">
+        <x-slot:actions>
             <!-- Export Modal -->
             <x-admin::datagrid.export :src="route('admin.sms.index')" />
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     {!! view_render_event('bagisto.admin.sms.list.before') !!}
 

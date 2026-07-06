@@ -16,20 +16,18 @@
         enctype="multipart/form-data"
         v-slot="{ errors }"
     >
-        <div class="flex items-center justify-between">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.settings.themes.edit.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
-                <div class="flex items-center gap-x-2.5">
-                    <a
-                        href="{{ route('admin.settings.themes.index') }}"
-                        class="transparent-button hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800"
-                    >
-                        @lang('admin::app.settings.themes.edit.back')
-                    </a>
-                </div>
+            <x-slot:actions>
+                <a
+                    href="{{ route('admin.settings.themes.index') }}"
+                    class="transparent-button hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800"
+                >
+                    @lang('admin::app.settings.themes.edit.back')
+                </a>
 
                 <button
                     type="submit"
@@ -37,8 +35,8 @@
                 >
                     @lang('admin::app.settings.themes.edit.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- Channel and Locale Switcher -->
         <div class="mt-7 flex items-center justify-between gap-4 max-md:flex-wrap">

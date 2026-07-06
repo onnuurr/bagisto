@@ -7,18 +7,20 @@
 
     <!-- Create Gift Card Vue Component -->
     <v-create-gift-card>
-        <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.marketing.promotions.gift-cards.index.title')
-            </p>
+            </x-slot>
 
             <!-- Create Button -->
             @if (bouncer()->hasPermission('marketing.promotions.gift_cards.create'))
-                <div class="primary-button">
-                    @lang('admin::app.marketing.promotions.gift-cards.index.create-btn')
-                </div>
+                <x-slot:actions>
+                    <div class="primary-button">
+                        @lang('admin::app.marketing.promotions.gift-cards.index.create-btn')
+                    </div>
+                </x-slot>
             @endif
-        </div>
+        </x-admin::layouts.page-header>
 
         <!-- Added For Shimmer -->
         <x-admin::shimmer.datagrid />
@@ -31,21 +33,23 @@
             type="text/x-template"
             id="v-create-gift-card-template"
         >
-            <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-                <p class="text-xl font-bold text-gray-800 dark:text-white">
+            <x-admin::layouts.page-header>
+                <x-slot:title>
                     @lang('admin::app.marketing.promotions.gift-cards.index.title')
-                </p>
+                </x-slot>
 
                 <!-- Create Button -->
                 @if (bouncer()->hasPermission('marketing.promotions.gift_cards.create'))
-                    <div
-                        class="primary-button"
-                        @click="isEditing = false; $refs.giftCard.toggle()"
-                    >
-                        @lang('admin::app.marketing.promotions.gift-cards.index.create-btn')
-                    </div>
+                    <x-slot:actions>
+                        <div
+                            class="primary-button"
+                            @click="isEditing = false; $refs.giftCard.toggle()"
+                        >
+                            @lang('admin::app.marketing.promotions.gift-cards.index.create-btn')
+                        </div>
+                    </x-slot>
                 @endif
-            </div>
+            </x-admin::layouts.page-header>
 
             {!! view_render_event('bagisto.admin.marketing.promotions.gift_cards.list.before') !!}
 

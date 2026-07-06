@@ -4,14 +4,12 @@
         @lang('admin::app.sales.rma.custom-field.index.title')
     </x-slot>
 
-    <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-        <!-- Title -->
-        <p class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.sales.rma.custom-field.index.title')
-        </p>
+        </x-slot>
 
-        <!-- Create Button -->
-        <div class="flex items-center gap-x-2.5">
+        <x-slot:actions>
             @if (bouncer()->hasPermission('sales.rma.custom-fields.create'))
                 <a
                     class="primary-button"
@@ -20,8 +18,8 @@
                     @lang('admin::app.sales.rma.custom-field.index.create-btn')
                 </a>
             @endif
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     {!! view_render_event('bagisto.admin.catalog.rma.custom-field.list.before') !!}
 

@@ -12,13 +12,12 @@
 
         {!! view_render_event('bagisto.admin.cms.pages.create.create_form_controls.before') !!}
 
-        <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.cms.create.title')
-            </p>
+            </x-slot>
 
-
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Back Button -->
                 <a
                     href="{{ route('admin.cms.index') }}"
@@ -34,8 +33,8 @@
                 >
                     @lang('admin::app.cms.create.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- body content -->
         <div class="mt-3.5 flex gap-2.5 max-xl:flex-wrap">

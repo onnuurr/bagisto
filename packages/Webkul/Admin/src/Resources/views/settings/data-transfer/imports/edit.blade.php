@@ -14,12 +14,12 @@
         {!! view_render_event('bagisto.admin.settings.data_transfer.imports.create.create_form_controls.before', ['import' => $import]) !!}
 
         <!-- Page Header -->
-        <div class="flex items-center justify-between">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.settings.data-transfer.imports.edit.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Back Button -->
                 <a
                     href="{{ route('admin.settings.data_transfer.imports.index') }}"
@@ -35,8 +35,8 @@
                 >
                     @lang('admin::app.settings.data-transfer.imports.edit.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- Body Content -->
         <div class="mt-3.5 flex gap-2.5 max-xl:flex-wrap">

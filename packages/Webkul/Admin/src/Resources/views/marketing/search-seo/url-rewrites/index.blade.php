@@ -7,18 +7,20 @@
 
     <!-- Create Sitemap Vue Component -->
     <v-create-sitemaps>
-        <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.marketing.search-seo.url-rewrites.index.title')
-            </p>
+            </x-slot>
 
-            <!-- Create Button -->
-            @if (bouncer()->hasPermission('marketing.search_seo.url_rewrites.create'))
-                <div class="primary-button">
-                    @lang('admin::app.marketing.search-seo.url-rewrites.index.create-btn')
-                </div>
-            @endif
-        </div>
+            <x-slot:actions>
+                <!-- Create Button -->
+                @if (bouncer()->hasPermission('marketing.search_seo.url_rewrites.create'))
+                    <div class="primary-button">
+                        @lang('admin::app.marketing.search-seo.url-rewrites.index.create-btn')
+                    </div>
+                @endif
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- Added For Shimmer -->
         <x-admin::shimmer.datagrid />
@@ -31,21 +33,23 @@
             type="text/x-template"
             id="v-create-sitemaps-template"
         >
-            <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-                <p class="text-xl font-bold text-gray-800 dark:text-white">
+            <x-admin::layouts.page-header>
+                <x-slot:title>
                     @lang('admin::app.marketing.search-seo.url-rewrites.index.title')
-                </p>
+                </x-slot>
 
-                <!-- Create Button -->
-                @if (bouncer()->hasPermission('marketing.search_seo.url_rewrites.create'))
-                    <div
-                        class="primary-button"
-                        @click="selectedSitemap=0; $refs.sitemap.toggle()"
-                    >
-                        @lang('admin::app.marketing.search-seo.url-rewrites.index.create-btn')
-                    </div>
-                @endif
-            </div>
+                <x-slot:actions>
+                    <!-- Create Button -->
+                    @if (bouncer()->hasPermission('marketing.search_seo.url_rewrites.create'))
+                        <div
+                            class="primary-button"
+                            @click="selectedSitemap=0; $refs.sitemap.toggle()"
+                        >
+                            @lang('admin::app.marketing.search-seo.url-rewrites.index.create-btn')
+                        </div>
+                    @endif
+                </x-slot>
+            </x-admin::layouts.page-header>
 
             {!! view_render_event('bagisto.admin.marketing.search_seo.url_rewrites.list.before') !!}
 

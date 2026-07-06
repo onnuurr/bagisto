@@ -3,12 +3,12 @@
         @lang('admin::app.marketing.communications.templates.index.title')
     </x-slot>
 
-    <div class="flex justify-between gap-4 max-sm:flex-wrap">
-        <p class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.marketing.communications.templates.index.title')
-        </p>
+        </x-slot>
 
-        <div class="flex items-center gap-x-2.5">
+        <x-slot:actions>
             @if (bouncer()->hasPermission('marketing.communications.email_templates.create'))
                 <a href="{{ route('admin.marketing.communications.email_templates.create') }}">
                     <div class="primary-button">
@@ -16,8 +16,8 @@
                     </div>
                 </a>
             @endif
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     {!! view_render_event('bagisto.admin.marketing.communications.templates.list.before') !!}
 

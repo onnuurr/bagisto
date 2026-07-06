@@ -6,12 +6,12 @@
     {!! view_render_event('bagisto.admin.settings.currencies.create.before') !!}
 
     <v-currencies>
-        <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.settings.currencies.index.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Create Currency Button -->
                 @if (bouncer()->hasPermission('settings.currencies.create'))
                     <button
@@ -21,8 +21,8 @@
                         @lang('admin::app.settings.currencies.index.create-btn')
                     </button>
                 @endif
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- DataGrid Shimmer -->
         <x-admin::shimmer.datagrid />
@@ -35,12 +35,12 @@
             type="text/x-template"
             id="v-currencies-template"
         >
-            <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-                <p class="text-xl font-bold text-gray-800 dark:text-white">
+            <x-admin::layouts.page-header>
+                <x-slot:title>
                     @lang('admin::app.settings.currencies.index.title')
-                </p>
+                </x-slot>
 
-                <div class="flex items-center gap-x-2.5">
+                <x-slot:actions>
                     <!-- Create Currency Button -->
                     @if (bouncer()->hasPermission('settings.currencies.create'))
                         <button
@@ -51,8 +51,8 @@
                             @lang('admin::app.settings.currencies.index.create-btn')
                         </button>
                     @endif
-                </div>
-            </div>
+                </x-slot>
+            </x-admin::layouts.page-header>
 
             <x-admin::datagrid
                 :src="route('admin.settings.currencies.index')"

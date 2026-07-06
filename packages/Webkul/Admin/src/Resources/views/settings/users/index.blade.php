@@ -4,12 +4,12 @@
     </x-slot>
 
     <v-users>
-        <div class="flex items-center justify-between">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.settings.users.index.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Create Button -->
                 @if (bouncer()->hasPermission('settings.users.create'))
                     <button
@@ -19,8 +19,8 @@
                         @lang('admin::app.settings.users.index.create.title')
                     </button>
                 @endif
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <x-admin::shimmer.datagrid />
     </v-users>
@@ -30,12 +30,12 @@
             type="text/x-template"
             id="v-users-template"
         >
-            <div class="flex items-center justify-between">
-                <p class="text-xl font-bold text-gray-800 dark:text-white">
+            <x-admin::layouts.page-header>
+                <x-slot:title>
                     @lang('admin::app.settings.users.index.title')
-                </p>
+                </x-slot>
 
-                <div class="flex items-center gap-x-2.5">
+                <x-slot:actions>
                     @if (bouncer()->hasPermission('settings.users.create'))
                         <button
                             type="button"
@@ -45,8 +45,8 @@
                             @lang('admin::app.settings.users.index.create.title')
                         </button>
                     @endif
-                </div>
-            </div>
+                </x-slot>
+            </x-admin::layouts.page-header>
 
             <x-admin::datagrid
                 :src="route('admin.settings.users.index')"

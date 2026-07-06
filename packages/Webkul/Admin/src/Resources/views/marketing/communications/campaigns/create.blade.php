@@ -10,12 +10,12 @@
 
         {!! view_render_event('bagisto.admin.marketing.communications.campaigns.create.create_form_controls.before') !!}
 
-        <div class="flex items-center justify-between">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.marketing.communications.campaigns.create.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Back Button -->
                 <a
                     href="{{ route('admin.marketing.communications.campaigns.index') }}"
@@ -31,8 +31,8 @@
                 >
                     @lang('admin::app.marketing.communications.campaigns.create.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
         <!-- Information -->
         <div class="mt-3.5 flex gap-2.5 max-xl:flex-wrap">
             <!-- Left Section -->

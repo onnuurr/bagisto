@@ -5,24 +5,26 @@
     </x-slot>
 
     <!-- Heading of the page -->
-    <div class="mb-7 flex items-center justify-between">
-        <p class="py-3 text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header class="mb-7">
+        <x-slot:title>
             @lang('admin::app.configuration.index.title')
-        </p>
+        </x-slot>
 
-        <!-- Configuration Search Bar Vue Component -->
-        <v-configuration-search>
-            <div class="relative flex w-[525px] max-w-[525px] items-center max-lg:w-[400px] ltr:ml-2.5 rtl:mr-2.5">
-                <i class="icon-search absolute top-1.5 flex items-center text-2xl ltr:left-3 rtl:right-3"></i>
+        <x-slot:actions>
+            <!-- Configuration Search Bar Vue Component -->
+            <v-configuration-search>
+                <div class="relative flex w-[525px] max-w-[525px] items-center max-lg:w-[400px] ltr:ml-2.5 rtl:mr-2.5">
+                    <i class="icon-search absolute top-1.5 flex items-center text-2xl ltr:left-3 rtl:right-3"></i>
 
-                <input
-                    type="text"
-                    class="block w-full rounded-lg border bg-white px-10 py-1.5 leading-6 text-gray-600 transition-all hover:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300"
-                    placeholder="@lang('admin::app.configuration.index.search')"
-                >
-            </div>
-        </v-configuration-search>
-    </div>
+                    <input
+                        type="text"
+                        class="block w-full rounded-lg border bg-white px-10 py-1.5 leading-6 text-gray-600 transition-all hover:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300"
+                        placeholder="@lang('admin::app.configuration.index.search')"
+                    >
+                </div>
+            </v-configuration-search>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     <!-- Page Content -->
     <div class="grid gap-y-8">

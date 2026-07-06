@@ -13,12 +13,12 @@
         {!! view_render_event('bagisto.admin.catalog.attributes.create.create_form_controls.before') !!}
 
         <!-- Actions Buttons -->
-        <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.catalog.attributes.create.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Back Button -->
                 <a
                     href="{{ route('admin.catalog.attributes.index') }}"
@@ -34,8 +34,8 @@
                 >
                     @lang('admin::app.catalog.attributes.create.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- Create Attributes Vue Components -->
         <v-create-attributes>
