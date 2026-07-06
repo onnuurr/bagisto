@@ -64,7 +64,7 @@
     }
     
     .box-shadow {
-        @apply border-[1px] dark:border-gray-800 shadow;
+        @apply border border-gray-200 dark:border-gray-800;
     }
 
     .icon-phone:before {
@@ -398,11 +398,11 @@
     }
 
     .primary-button {
-        @apply bg-primary border border-primary-900 cursor-pointer flex focus:opacity-[0.9] font-semibold gap-x-1 hover:opacity-[0.9] items-center place-content-center px-3 py-1.5 rounded text-white transition-all;
+        @apply bg-primary border border-primary cursor-pointer flex items-center font-semibold gap-x-1 place-content-center px-3.5 py-2 rounded text-sm text-white transition-all shadow-[0_4px_20px_rgba(255,159,67,0.15)] hover:bg-[#e8862e] hover:border-[#e8862e] hover:shadow-[0_3px_10px_rgba(255,159,67,0.5)] focus:bg-[#e8862e] focus:border-[#e8862e] focus:shadow-[0_3px_10px_rgba(255,159,67,0.5)];
     }
 
     .secondary-button {
-        @apply flex cursor-pointer place-content-center items-center gap-x-1 whitespace-nowrap rounded border-2 border-primary bg-white px-3 py-1.5 font-semibold text-primary transition-all hover:bg-[#fff5ec61] focus:bg-[#fff5ec61] dark:border-gray-400 dark:bg-gray-800 dark:text-white dark:hover:opacity-80;
+        @apply flex cursor-pointer place-content-center items-center gap-x-1 whitespace-nowrap rounded border-2 border-primary bg-white px-3.5 py-2 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-white hover:shadow-[0_3px_10px_rgba(255,159,67,0.5)] focus:bg-primary focus:text-white dark:border-gray-400 dark:bg-gray-800 dark:text-white dark:hover:opacity-80;
     }
 
     .transparent-button {
