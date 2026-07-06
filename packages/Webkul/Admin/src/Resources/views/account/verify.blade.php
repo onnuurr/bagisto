@@ -25,14 +25,14 @@
                 <!-- Header -->
                 <div class="flex flex-col items-center gap-2 px-8 pt-8 text-center">
                     <!-- Lock Badge -->
-                    <div class="mb-2 flex h-14 w-14 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-950">
+                    <div class="mb-2 flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 dark:bg-primary/20">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke-width="1.8"
                             stroke="currentColor"
-                            class="h-7 w-7 text-blue-600 dark:text-blue-400"
+                            class="h-7 w-7 text-primary dark:text-primary-400"
                         >
                             <path
                                 stroke-linecap="round"
@@ -99,7 +99,7 @@
                         >
                             <button
                                 type="submit"
-                                class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
+                                class="text-sm font-medium text-primary hover:underline dark:text-primary-400"
                             >
                                 @lang('admin::app.users.verify.resend-code')
                             </button>
@@ -118,7 +118,7 @@
 
                     <button
                         type="button"
-                        class="text-sm font-medium text-gray-500 transition-all hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+                        class="text-sm font-medium text-gray-500 transition-all hover:text-primary dark:text-gray-300 dark:hover:text-primary-400"
                         onclick="event.preventDefault(); document.getElementById('adminLogout').submit();"
                     >
                         @lang('admin::app.users.verify.back')
@@ -129,8 +129,8 @@
             <!-- Powered By -->
             <div class="text-sm font-normal">
                 @lang('admin::app.users.sessions.powered-by-description', [
-                    'bagisto' => '<a class="text-blue-600 hover:underline" href="https://bagisto.com/en/">Bagisto</a>',
-                    'webkul' => '<a class="text-blue-600 hover:underline" href="https://webkul.com/">Webkul</a>',
+                    'bagisto' => '<a class="text-primary hover:underline" href="https://bagisto.com/en/">Bagisto</a>',
+                    'webkul' => '<a class="text-primary hover:underline" href="https://webkul.com/">Webkul</a>',
                 ])
             </div>
         </div>

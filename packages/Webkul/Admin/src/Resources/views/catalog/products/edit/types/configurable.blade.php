@@ -169,8 +169,8 @@
             <span
                 class="icon-uncheckbox flex cursor-pointer select-none text-2xl"
                 :class="{
-                    '!icon-checked text-blue-600': variants.length == selectedVariants.length,
-                    '!icon-checkbox-partial text-blue-600': selectedVariants.length && variants.length != selectedVariants.length
+                    '!icon-checked text-primary': variants.length == selectedVariants.length,
+                    '!icon-checkbox-partial text-primary': selectedVariants.length && variants.length != selectedVariants.length
                 }"
                 for="select-all-variants"
                 @click="selectAll"
@@ -183,11 +183,11 @@
                 <x-slot:toggle>
                     <button
                         type="button"
-                        class="flex cursor-pointer items-center rounded-md p-1.5 text-xs font-semibold text-blue-600 transition-all hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-gray-950"
+                        class="flex cursor-pointer items-center rounded-md p-1.5 text-xs font-semibold text-primary transition-all hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-gray-950"
                     >
                         @lang('admin::app.catalog.products.edit.types.configurable.mass-edit.select-variants')
 
-                        <i class="icon-sort-down text-2xl text-blue-600"></i>
+                        <i class="icon-sort-down text-2xl text-primary"></i>
                     </button>
                 </x-slot>
 
@@ -209,7 +209,7 @@
                                 >
 
                                 <label
-                                    class="icon-uncheckbox peer-checked:icon-checked cursor-pointer text-2xl peer-checked:text-blue-600"
+                                    class="icon-uncheckbox peer-checked:icon-checked cursor-pointer text-2xl peer-checked:text-primary"
                                     :for="'attribute_' + attribute.id + '_option_' + option.id"
                                 >
                                 </label>
@@ -235,11 +235,11 @@
                 <x-slot:toggle>
                     <button
                         type="button"
-                        class="flex cursor-pointer items-center rounded-md p-1.5 text-xs font-semibold text-blue-600 transition-all hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-gray-950"
+                        class="flex cursor-pointer items-center rounded-md p-1.5 text-xs font-semibold text-primary transition-all hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-gray-950"
                     >
                         @lang('admin::app.catalog.products.edit.types.configurable.mass-edit.select-action')
 
-                        <i class="icon-sort-down text-2xl text-blue-600"></i>
+                        <i class="icon-sort-down text-2xl text-primary"></i>
                     </button>
                 </x-slot>
 
@@ -784,7 +784,7 @@
                     >
 
                     <label
-                        class="icon-uncheckbox peer-checked:icon-checked cursor-pointer text-2xl peer-checked:text-blue-600"
+                        class="icon-uncheckbox peer-checked:icon-checked cursor-pointer text-2xl peer-checked:text-primary"
                         :for="'variant_' + variant.id"
                     ></label>
                 </div>
@@ -1071,7 +1071,7 @@
 
                                             <a
                                                 :href="'{{ route('admin.catalog.products.edit', ':id') }}'.replace(':id', variant.id)" 
-                                                class="inline-block text-blue-500 hover:text-blue-600 hover:underline"
+                                                class="inline-block text-primary hover:underline"
                                                 target="_blank"
                                             >
                                                 @lang('admin::app.catalog.products.edit.types.configurable.edit.edit-link-title')

@@ -166,7 +166,7 @@
 
                                     <label
                                         for="empty_option"
-                                        class="icon-uncheckbox peer-checked:icon-checked cursor-pointer rounded-md text-2xl peer-checked:text-blue-600"
+                                        class="icon-uncheckbox peer-checked:icon-checked cursor-pointer rounded-md text-2xl peer-checked:text-primary"
                                     >
                                     </label>
 

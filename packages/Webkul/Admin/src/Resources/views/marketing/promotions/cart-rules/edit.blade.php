@@ -190,7 +190,7 @@
                             <!-- Auto-Generate Banner -->
                             <div
                                 v-if="parseInt(useAutoGeneration)"
-                                class="mb-4 overflow-hidden rounded-md bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 p-4 shadow-md"
+                                class="mb-4 overflow-hidden rounded-md bg-gradient-to-r from-primary-500 via-violet-500 to-pink-500 p-4 shadow-md"
                             >
                                 <div class="flex flex-wrap items-center justify-between gap-3">
                                     <div class="flex items-center gap-3">

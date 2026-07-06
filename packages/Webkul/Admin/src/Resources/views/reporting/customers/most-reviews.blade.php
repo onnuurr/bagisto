@@ -25,7 +25,7 @@
 
                     <a
                         href="{{ route('admin.reporting.customers.view', ['type' => 'customers-with-most-reviews']) }}"
-                        class="cursor-pointer text-sm text-blue-600 transition-all hover:underline"
+                        class="cursor-pointer text-sm text-primary transition-all hover:underline"
                     >
                         @lang('admin::app.reporting.customers.index.view-details')
                     </a>

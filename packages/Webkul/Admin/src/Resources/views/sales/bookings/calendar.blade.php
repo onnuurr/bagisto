@@ -40,7 +40,7 @@
                             :class="[
                                 event.status === 'pending' ? 'border-amber-500 bg-amber-50/90 hover:bg-amber-100 dark:border-amber-400 dark:bg-amber-500/15 dark:hover:bg-amber-500/25' :
                                 event.status === 'completed' ? 'border-emerald-500 bg-emerald-50/90 hover:bg-emerald-100 dark:border-emerald-400 dark:bg-emerald-500/15 dark:hover:bg-emerald-500/25' :
-                                event.status === 'closed' ? 'border-blue-500 bg-blue-50/90 hover:bg-blue-100 dark:border-blue-400 dark:bg-blue-500/15 dark:hover:bg-blue-500/25' :
+                                event.status === 'closed' ? 'border-primary bg-primary-50/90 hover:bg-primary-100 dark:border-primary-400 dark:bg-primary-500/15 dark:hover:bg-primary-500/25' :
                                 event.status === 'canceled' ? 'border-rose-500 bg-rose-50/90 hover:bg-rose-100 dark:border-rose-400 dark:bg-rose-500/15 dark:hover:bg-rose-500/25' :
                                 'border-emerald-500 bg-emerald-50/90 hover:bg-emerald-100 dark:border-emerald-400 dark:bg-emerald-500/15 dark:hover:bg-emerald-500/25',
                                 event.time_difference ? 'p-2' : 'px-2 py-1'
@@ -52,7 +52,7 @@
                                     :class="[
                                         event.status === 'pending' ? 'bg-amber-500' :
                                         event.status === 'completed' ? 'bg-emerald-500' :
-                                        event.status === 'closed' ? 'bg-blue-500' :
+                                        event.status === 'closed' ? 'bg-primary' :
                                         event.status === 'canceled' ? 'bg-rose-500' :
                                         'bg-emerald-500',
                                     ]"
@@ -86,7 +86,7 @@
                 <x-slot:header>
                     <div class="flex w-full items-center justify-between gap-3">
                         <div class="flex items-center gap-3">
-                            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-50 text-primary dark:bg-primary-500/20 dark:text-primary-400">
                                 <span class="icon-calendar text-2xl"></span>
                             </span>
 
@@ -106,7 +106,7 @@
                             :class="[
                                 event.status === 'pending' ? 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-300' :
                                 event.status === 'completed' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300' :
-                                event.status === 'closed' ? 'bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300' :
+                                event.status === 'closed' ? 'bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-300' :
                                 event.status === 'canceled' ? 'bg-rose-100 text-rose-700 dark:bg-rose-500/20 dark:text-rose-300' :
                                 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300',
                             ]"
@@ -116,7 +116,7 @@
                                 :class="[
                                     event.status === 'pending' ? 'bg-amber-500' :
                                     event.status === 'completed' ? 'bg-emerald-500' :
-                                    event.status === 'closed' ? 'bg-blue-500' :
+                                    event.status === 'closed' ? 'bg-primary' :
                                     event.status === 'canceled' ? 'bg-rose-500' :
                                     'bg-emerald-500',
                                 ]"

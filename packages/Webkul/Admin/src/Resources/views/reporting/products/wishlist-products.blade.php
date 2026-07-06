@@ -25,7 +25,7 @@
 
                     <a
                         href="{{ route('admin.reporting.products.view', ['type' => 'total-products-added-to-wishlist']) }}"
-                        class="cursor-pointer text-sm text-blue-600 transition-all hover:underline"
+                        class="cursor-pointer text-sm text-primary transition-all hover:underline"
                     >
                         @lang('admin::app.reporting.products.index.view-details')
                     </a>
