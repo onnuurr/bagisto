@@ -41,7 +41,7 @@
                         <div class="journal-scroll flex overflow-auto border-b dark:border-gray-800">
                             <div
                                 class="flex cursor-pointer items-center gap-1 border-b-2 px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-950"
-                                :class="{'border-blue-600 dark:border-blue-600': status == data.status}"
+                                :class="{'border-primary dark:border-primary': status == data.status}"
                                 v-for="data in orderType"
                                 @click="status=data.status; getNotification()"
                             >
@@ -176,7 +176,7 @@
                             },
 
                             completed : {
-                                icon: 'icon-done bg-blue-100 text-blue-600 dark:!text-blue-600',
+                                icon: 'icon-done bg-primary-100 text-primary dark:!text-primary',
                                 message: '@lang('admin::app.notifications.order-status-messages.completed')',
                                 status: 'completed'
                             },

@@ -248,14 +248,14 @@
                 <!-- Add Button -->
                 <div class="flex items-center gap-x-5">
                     <p
-                        class="cursor-pointer font-semibold text-blue-600 transition-all hover:underline"
+                        class="cursor-pointer font-semibold text-primary transition-all hover:underline"
                         @click="$refs['productSearch' + option.id].openDrawer()"
                     >
                         @lang('admin::app.catalog.products.edit.types.bundle.option.add-btn')
                     </p>
 
                     <p
-                        class="cursor-pointer font-semibold text-blue-600 transition-all hover:underline"
+                        class="cursor-pointer font-semibold text-primary transition-all hover:underline"
                         @click="edit"
                     >
                         @lang('admin::app.catalog.products.edit.types.bundle.option.edit-btn')
@@ -305,7 +305,7 @@
                                     />
 
                                     <label
-                                        class="cursor-pointer text-2xl peer-checked:text-blue-600"
+                                        class="cursor-pointer text-2xl peer-checked:text-primary"
                                         :class="[option.type == 'checkbox' || option.type == 'multiselect' ? 'icon-uncheckbox  peer-checked:icon-checked' : 'icon-radio-normal peer-checked:icon-radio-selected']"
                                         :for="'bundle_options[' + option.id + '][products][' + element.id + '][is_default]'"
                                     >

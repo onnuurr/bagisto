@@ -109,7 +109,7 @@
 
                         <p class="mt-1 text-sm font-medium">
                             <a
-                                class="text-blue-600 hover:underline dark:text-blue-400"
+                                class="text-primary hover:underline dark:text-primary-400"
                                 href="{{ route('admin.sales.orders.view', $withdrawal->order_id) }}"
                             >
                                 #{{ optional($withdrawal->order)->increment_id ?? $withdrawal->order_id }}

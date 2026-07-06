@@ -93,7 +93,7 @@
     </div>
 
     <!-- Contact CTA -->
-    <div class="flex flex-wrap items-center justify-between gap-5 rounded-xl bg-gradient-to-r from-blue-600 to-blue-800 px-7 py-6 shadow-lg">
+    <div class="flex flex-wrap items-center justify-between gap-5 rounded-xl bg-gradient-to-r from-primary to-orange-700 px-7 py-6 shadow-lg">
         <div class="flex items-center gap-4">
             <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -116,7 +116,7 @@
             href="https://bagisto.com/en/contacts/"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 font-semibold text-blue-700 transition-all hover:bg-blue-50"
+            class="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 font-semibold text-orange-700 transition-all hover:bg-primary-50"
         >
             @lang('admin::app.help.index.cta-btn')
 

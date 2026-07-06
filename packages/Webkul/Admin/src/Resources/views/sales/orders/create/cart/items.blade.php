@@ -339,7 +339,7 @@
                                         </x-admin::form.control-group>
 
                                         <button
-                                            class="cursor-pointer text-sm text-blue-600 transition-all hover:underline"
+                                            class="cursor-pointer text-sm text-primary transition-all hover:underline"
                                             :disabled="! product.is_saleable"
                                         >
                                             @lang('admin::app.sales.orders.create.cart.items.search.add-to-cart')

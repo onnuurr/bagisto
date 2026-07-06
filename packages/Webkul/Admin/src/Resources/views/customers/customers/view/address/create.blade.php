@@ -16,7 +16,7 @@
         <!-- Address Create Button -->
         @if (bouncer()->hasPermission('customers.addresses.create'))
             <div
-                class="flex cursor-pointer items-center justify-between gap-1.5 px-2.5 text-blue-600 transition-all hover:underline"
+                class="flex cursor-pointer items-center justify-between gap-1.5 px-2.5 text-primary transition-all hover:underline"
                 @click="$refs.createAddress.toggle()"
             >
                 @lang('admin::app.customers.customers.view.address.create.create-btn')

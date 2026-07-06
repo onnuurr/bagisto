@@ -83,7 +83,7 @@
                                         v-model="applied.massActions.indices"
                                     >
 
-                                    <span class="icon-uncheckbox peer-checked:icon-checked cursor-pointer rounded-md text-2xl peer-checked:text-blue-600">
+                                    <span class="icon-uncheckbox peer-checked:icon-checked cursor-pointer rounded-md text-2xl peer-checked:text-primary">
                                     </span>
                                 </label>
                             </p>

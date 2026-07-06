@@ -303,7 +303,7 @@
                                             <template v-if="! address.default_address">
                                                 <x-admin::button
                                                     button-type="button"
-                                                    class="flex cursor-pointer justify-center text-sm text-blue-600 transition-all hover:underline"
+                                                    class="flex cursor-pointer justify-center text-sm text-primary transition-all hover:underline"
                                                     :title="trans('admin::app.customers.customers.view.set-as-default')"
                                                     ::loading="isUpdating[index]"
                                                     ::disabled="isUpdating[index]"

@@ -153,7 +153,7 @@
                                                 <a
                                                     :href="element.file_url"
                                                     target="_blank"
-                                                    class="break-all text-blue-600 transition-all hover:underline"
+                                                    class="break-all text-primary transition-all hover:underline"
                                                 >
                                                     @{{ element.file_name }}
                                                 </a>
@@ -167,7 +167,7 @@
                                                 <a
                                                     :href="element.url"
                                                     target="_blank"
-                                                    class="break-all text-blue-600 transition-all hover:underline"
+                                                    class="break-all text-primary transition-all hover:underline"
                                                 >
                                                     @{{ element.url }}
                                                 </a>
@@ -183,7 +183,7 @@
                                                 <a
                                                     :href="element.sample_file_url"
                                                     target="_blank"
-                                                    class="break-all text-blue-600 transition-all hover:underline"
+                                                    class="break-all text-primary transition-all hover:underline"
                                                 >
                                                     @{{ element.sample_file_name }}
                                                 </a>
@@ -197,7 +197,7 @@
                                                 <a
                                                     :href="element.sample_url"
                                                     target="_blank"
-                                                    class="break-all text-blue-600 transition-all hover:underline"
+                                                    class="break-all text-primary transition-all hover:underline"
                                                 >
                                                     @{{ element.sample_url }}
                                                 </a>
@@ -222,7 +222,7 @@
                                     </p>
 
                                     <p
-                                        class="cursor-pointer text-blue-600 transition-all hover:underline"
+                                        class="cursor-pointer text-primary transition-all hover:underline"
                                         @click="selectedLink = element; $refs.updateCreateLinkDrawer.open()"
                                     >
                                         @lang('admin::app.catalog.products.edit.types.downloadable.links.edit-btn')
@@ -406,7 +406,7 @@
 
                                             <a
                                                 :href="selectedLink.sample_file_url"
-                                                class="break-all text-sm text-blue-600 transition-all hover:underline"
+                                                class="break-all text-sm text-primary transition-all hover:underline"
                                                 target="_blank"
                                                 v-if="selectedLink.file_url"
                                             >
@@ -494,7 +494,7 @@
                                             <a
                                                 :href="selectedLink.sample_file_url"
                                                 target="_blank"
-                                                class="break-all text-sm text-blue-600 transition-all hover:underline"
+                                                class="break-all text-sm text-primary transition-all hover:underline"
                                                 v-if="selectedLink.sample_file_url"
                                             >
                                                 @{{ selectedLink.sample_file_name }}
@@ -632,7 +632,7 @@
                                                 <a
                                                     :href="element.file_url"
                                                     target="_blank"
-                                                    class="break-all text-blue-600 transition-all hover:underline"
+                                                    class="break-all text-primary transition-all hover:underline"
                                                 >
                                                     @{{ element.file_name }}
                                                 </a>
@@ -646,7 +646,7 @@
                                                 <a
                                                     :href="element.url"
                                                     target="_blank"
-                                                    class="break-all text-blue-600 transition-all hover:underline"
+                                                    class="break-all text-primary transition-all hover:underline"
                                                 >
                                                     @{{ element.url }}
                                                 </a>
@@ -667,7 +667,7 @@
                                     </p>
 
                                     <p
-                                        class="cursor-pointer text-blue-600 transition-all hover:underline"
+                                        class="cursor-pointer text-primary transition-all hover:underline"
                                         @click="selectedSample = element; $refs.updateCreateSampleDrawer.open()"
                                     >
                                         @lang('admin::app.catalog.products.edit.types.downloadable.samples.edit-btn')
@@ -817,7 +817,7 @@
                                             <a
                                                 :href="selectedSample.sample_file_url"
                                                 target="_blank"
-                                                class="break-all text-sm text-blue-600 transition-all hover:underline"
+                                                class="break-all text-sm text-primary transition-all hover:underline"
                                                 v-if="selectedSample.file_url"
                                             >
                                                 @{{ selectedSample.file_name }}

@@ -145,7 +145,7 @@
                                         class="profile-info-icon"
                                         v-else
                                     >
-                                        <button class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-blue-400 text-sm font-semibold leading-6 text-white transition-all hover:bg-blue-500 focus:bg-blue-500">
+                                        <button class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-primary text-sm font-semibold leading-6 text-white transition-all hover:opacity-90 focus:opacity-90">
                                             @{{ record.user_name[0].toUpperCase() }}
                                         </button>
                                     </div>

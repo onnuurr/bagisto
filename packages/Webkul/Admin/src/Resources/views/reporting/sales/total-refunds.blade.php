@@ -24,7 +24,7 @@
 
                     <a
                         href="{{ route('admin.reporting.sales.view', ['type' => 'refunds']) }}"
-                        class="cursor-pointer text-sm text-blue-600 transition-all hover:underline"
+                        class="cursor-pointer text-sm text-primary transition-all hover:underline"
                     >
                         @lang('admin::app.reporting.sales.index.view-details')
                     </a>

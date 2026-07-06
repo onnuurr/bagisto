@@ -204,7 +204,7 @@
 
                                                             <a
                                                                 href="{{ Storage::url($attribute['option_label']) }}"
-                                                                class="text-blue-600 hover:underline"
+                                                                class="text-primary hover:underline"
                                                                 download="{{ File::basename($attribute['option_label']) }}"
                                                             >
                                                                 {{ File::basename($attribute['option_label']) }}
@@ -536,7 +536,7 @@
                                     >
 
                                     <span
-                                        class="icon-uncheckbox peer-checked:icon-checked cursor-pointer rounded-md text-2xl peer-checked:text-blue-600"
+                                        class="icon-uncheckbox peer-checked:icon-checked cursor-pointer rounded-md text-2xl peer-checked:text-primary"
                                         role="button"
                                         tabindex="0"
                                     >
@@ -573,7 +573,7 @@
                             <!-- Notes List Title and Time -->
                             <p class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 @if ($comment->customer_notified)
-                                    <span class="icon-done h-fit rounded-full bg-blue-100 text-2xl text-blue-600"></span>
+                                    <span class="icon-done h-fit rounded-full bg-primary-100 text-2xl text-primary"></span>
 
                                     @lang('admin::app.sales.orders.view.customer-notified', ['date' => core()->formatDate($comment->created_at, 'Y-m-d H:i:s a')])
                                 @else
@@ -829,14 +829,14 @@
                                 <div class="flex gap-2.5">
                                     <a
                                         href="{{ route('admin.sales.invoices.view', $invoice->id) }}"
-                                        class="text-sm text-blue-600 transition-all hover:underline"
+                                        class="text-sm text-primary transition-all hover:underline"
                                     >
                                         @lang('admin::app.sales.orders.view.view')
                                     </a>
 
                                     <a
                                         href="{{ route('admin.sales.invoices.print', $invoice->id) }}"
-                                        class="text-sm text-blue-600 transition-all hover:underline"
+                                        class="text-sm text-primary transition-all hover:underline"
                                     >
                                         @lang('admin::app.sales.orders.view.download-pdf')
                                     </a>
@@ -880,7 +880,7 @@
                                 <div class="flex gap-2.5">
                                     <a
                                         href="{{ route('admin.sales.shipments.view', $shipment->id) }}"
-                                        class="text-sm text-blue-600 transition-all hover:underline"
+                                        class="text-sm text-primary transition-all hover:underline"
                                     >
                                         @lang('admin::app.sales.orders.view.view')
                                     </a>
@@ -941,7 +941,7 @@
                                 <div class="flex gap-2.5">
                                     <a
                                         href="{{ route('admin.sales.refunds.view', $refund->id) }}"
-                                        class="text-sm text-blue-600 transition-all hover:underline"
+                                        class="text-sm text-primary transition-all hover:underline"
                                     >
                                         @lang('admin::app.sales.orders.view.view')
                                     </a>

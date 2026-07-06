@@ -58,16 +58,16 @@
 
                 <!-- Validation In Process -->
                 <div
-                    class="flex w-full place-content-between items-center rounded-sm border border-blue-200 bg-blue-50 p-3 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
+                    class="flex w-full place-content-between items-center rounded-sm border border-primary-200 bg-primary-50 p-3 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
                     v-if="importResource.state == 'validating'"
                 >
                     <p class="flex items-center gap-2">
-                        <i class="icon-information rounded-full bg-blue-200 text-2xl text-blue-600 dark:!text-blue-600"></i>
+                        <i class="icon-information rounded-full bg-primary-200 text-2xl text-primary dark:!text-primary"></i>
 
                         @lang('admin::app.settings.data-transfer.imports.import.validating-info')
 
                         <!-- Spinner -->
-                        <svg class="ml-2 h-5 w-5 animate-spin text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"  aria-hidden="true" viewBox="0 0 24 24">
+                        <svg class="ml-2 h-5 w-5 animate-spin text-primary" xmlns="http://www.w3.org/2000/svg" fill="none"  aria-hidden="true" viewBox="0 0 24 24">
                             <circle
                                 class="opacity-25"
                                 cx="12"
