@@ -15,26 +15,24 @@
             id="v-create-group-template"
         >
             <div>
-                <div class="flex items-center justify-between">
-                    <p class="text-xl font-bold text-gray-800 dark:text-white">
+                <x-admin::layouts.page-header>
+                    <x-slot:title>
                         @lang('admin::app.customers.groups.index.title')
-                    </p>
+                    </x-slot>
 
-                    <div class="flex items-center gap-x-2.5">
-                        <div class="flex items-center gap-x-2.5">
-                            <!-- Create a new Group -->
-                            @if (bouncer()->hasPermission('customers.groups.create'))
-                                <button
-                                    type="button"
-                                    class="primary-button"
-                                    @click="selectedGroups=0; $refs.groupUpdateOrCreateModal.open()"
-                                >
-                                    @lang('admin::app.customers.groups.index.create.create-btn')
-                                </button>
-                            @endif
-                        </div>
-                    </div>
-                </div>
+                    <x-slot:actions>
+                        <!-- Create a new Group -->
+                        @if (bouncer()->hasPermission('customers.groups.create'))
+                            <button
+                                type="button"
+                                class="primary-button"
+                                @click="selectedGroups=0; $refs.groupUpdateOrCreateModal.open()"
+                            >
+                                @lang('admin::app.customers.groups.index.create.create-btn')
+                            </button>
+                        @endif
+                    </x-slot>
+                </x-admin::layouts.page-header>
 
                 {!! view_render_event('bagisto.admin.customers.groups.list.before') !!}
 

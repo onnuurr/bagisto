@@ -6,12 +6,12 @@
     {!! view_render_event('bagisto.admin.settings.locales.create.before') !!}
 
     <v-locales>
-        <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.settings.locales.index.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 @if (bouncer()->hasPermission('settings.locales.create'))
                     <button
                         type="button"
@@ -20,8 +20,8 @@
                         @lang('admin::app.settings.locales.index.create-btn')
                     </button>
                 @endif
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- DataGrid Shimmer -->
         <x-admin::shimmer.datagrid />
@@ -34,12 +34,12 @@
             type="text/x-template"
             id="v-locales-template"
         >
-            <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-                <p class="text-xl font-bold text-gray-800 dark:text-white">
+            <x-admin::layouts.page-header>
+                <x-slot:title>
                     @lang('admin::app.settings.locales.index.title')
-                </p>
+                </x-slot>
 
-                <div class="flex items-center gap-x-2.5">
+                <x-slot:actions>
                     <!-- Locale Create Button -->
                     @if (bouncer()->hasPermission('settings.locales.create'))
                         <button
@@ -50,8 +50,8 @@
                             @lang('admin::app.settings.locales.index.create-btn')
                         </button>
                     @endif
-                </div>
-            </div>
+                </x-slot>
+            </x-admin::layouts.page-header>
 
             <x-admin::datagrid
                 :src="route('admin.settings.locales.index')"

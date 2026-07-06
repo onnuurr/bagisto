@@ -6,13 +6,13 @@
     {!! view_render_event('bagisto.admin.settings.taxes.rates.create.before') !!}
 
     <x-admin::form :action="route('admin.settings.taxes.rates.store')">
-        <div class="flex items-center justify-between">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.settings.taxes.rates.create.title')
-            </p>
+            </x-slot>
 
             <!-- Back Button -->
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <a
                     href="{{ route('admin.settings.taxes.rates.index') }}"
                     class="transparent-button hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800"
@@ -21,14 +21,14 @@
                 </a>
 
                 <!-- Save Button -->
-                <button 
-                    type="submit" 
+                <button
+                    type="submit"
                     class="primary-button"
                 >
                     @lang('admin::app.settings.taxes.rates.create.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <v-create-taxrate>
             <!-- Shimmer Effect -->

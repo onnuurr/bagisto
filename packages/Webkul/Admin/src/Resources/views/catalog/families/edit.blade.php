@@ -12,12 +12,12 @@
         {!! view_render_event('bagisto.admin.catalog.families.edit.edit_form_control.before', ['attributeFamily' => $attributeFamily]) !!}
 
         <!-- Page Header -->
-        <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.catalog.families.edit.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <a
                     href="{{ route('admin.catalog.families.index') }}"
                     class="transparent-button hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800"
@@ -25,14 +25,14 @@
                     @lang('admin::app.catalog.families.edit.back-btn')
                 </a>
 
-                <button 
-                    type="submit" 
+                <button
+                    type="submit"
                     class="primary-button"
                 >
                     @lang('admin::app.catalog.families.edit.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- Container -->
         <div class="mt-3.5 flex gap-2.5 max-xl:flex-wrap">

@@ -18,24 +18,23 @@
             id="v-rma-rules-template"
         >
             <div>
-                <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-                    <!-- Title -->
-                    <p class="text-xl font-bold text-gray-800 dark:text-white">
+                <x-admin::layouts.page-header>
+                    <x-slot:title>
                         @lang('admin::app.sales.rma.rules.index.title')
-                    </p>
+                    </x-slot>
 
                     @if (bouncer()->hasPermission('sales.rma.rules.create'))
-                        <!-- Create Button -->
-                        <div class="flex items-center gap-x-2.5">
+                        <x-slot:actions>
+                            <!-- Create Button -->
                             <button
                                 class="primary-button"
                                 @click="selectedLocales=0; resetForm(); $refs.rulesModal.toggle()"
                             >
                                 @lang('admin::app.sales.rma.rules.index.create-btn')
                             </button>
-                        </div>
+                        </x-slot>
                     @endif
-                </div>
+                </x-admin::layouts.page-header>
 
                 <x-admin::datagrid
                     :src="route('admin.sales.rma.rules.index')"

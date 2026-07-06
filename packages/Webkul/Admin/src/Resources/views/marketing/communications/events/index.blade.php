@@ -4,20 +4,20 @@
     </x-slot>
 
     <v-events>
-        <div class="flex justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.marketing.communications.events.index.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Create Button -->
                 @if (bouncer()->hasPermission('marketing.communications.events.create'))
                     <div class="primary-button">
                         @lang('admin::app.marketing.communications.events.index.create-btn')
                     </div>
                 @endif
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- DataGrid Shimmer -->
         <x-admin::shimmer.datagrid />
@@ -28,12 +28,12 @@
             type="text/x-template"
             id="v-events-template"
         >
-            <div class="flex justify-between gap-4 max-sm:flex-wrap">
-                <p class="text-xl font-bold text-gray-800 dark:text-white">
+            <x-admin::layouts.page-header>
+                <x-slot:title>
                     @lang('admin::app.marketing.communications.events.index.title')
-                </p>
+                </x-slot>
 
-                <div class="flex items-center gap-x-2.5">
+                <x-slot:actions>
                     <!-- Create Button -->
                     @if (bouncer()->hasPermission('marketing.communications.events.create'))
                         <div
@@ -43,8 +43,8 @@
                             @lang('admin::app.marketing.communications.events.index.create-btn')
                         </div>
                     @endif
-                </div>
-            </div>
+                </x-slot>
+            </x-admin::layouts.page-header>
 
             {!! view_render_event('bagisto.admin.marketing.communications.events.list.before') !!}
 

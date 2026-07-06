@@ -13,12 +13,12 @@
 
         {!! view_render_event('bagisto.admin.marketing.promotions.catalog_rules.create.create_form_controls.before', ['catalogRule' => $catalogRule]) !!}
 
-        <div class="mt-3 flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header class="mt-3">
+            <x-slot:title>
                 @lang('admin::app.marketing.promotions.catalog-rules.edit.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Back Button -->
                 <a
                     href="{{ route('admin.marketing.promotions.catalog_rules.index') }}"
@@ -34,8 +34,8 @@
                 >
                     @lang('admin::app.marketing.promotions.catalog-rules.edit.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- Edit Catalog form -->
         <v-catalog-rule-edit-form>

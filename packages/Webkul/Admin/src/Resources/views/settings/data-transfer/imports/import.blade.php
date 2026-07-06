@@ -3,12 +3,12 @@
         @lang('admin::app.settings.data-transfer.imports.import.title')
     </x-slot>
 
-    <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-        <p class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.settings.data-transfer.imports.import.title')
-        </p>
+        </x-slot>
 
-        <div class="flex items-center gap-x-2.5">
+        <x-slot:actions>
             <!-- Back Button -->
             <a
                 href="{{ route('admin.settings.data_transfer.imports.index') }}"
@@ -24,8 +24,8 @@
             >
                 @lang('admin::app.settings.data-transfer.imports.import.edit-btn')
             </a>
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     <!-- Import Vue Component -->
     <v-import />

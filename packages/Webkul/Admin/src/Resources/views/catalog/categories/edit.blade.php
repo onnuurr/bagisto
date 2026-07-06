@@ -18,12 +18,12 @@
 
         {!! view_render_event('bagisto.admin.catalog.categories.edit.edit_form_controls.before', ['category' => $category]) !!}
 
-        <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.catalog.categories.edit.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Back Button -->
                 <a
                     href="{{ route('admin.catalog.categories.index') }}"
@@ -39,8 +39,8 @@
                 >
                     @lang('admin::app.catalog.categories.edit.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- Filter Row -->
         <div class="mt-7 flex items-center justify-between gap-4 max-md:flex-wrap">

@@ -14,12 +14,12 @@
 
         {!! view_render_event('bagisto.admin.marketing.promotions.cart_rules.edit.edit_form_controls.before', ['cartRule' => $cartRule]) !!}
 
-        <div class="mt-3 flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header class="mt-3">
+            <x-slot:title>
                 @lang('admin::app.marketing.promotions.cart-rules.edit.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Back Button -->
                 <a
                     href="{{ route('admin.marketing.promotions.cart_rules.index') }}"
@@ -36,8 +36,8 @@
                 >
                     @lang('admin::app.marketing.promotions.cart-rules.edit.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- Vue Component -->
         <v-cart-rule-edit-form>

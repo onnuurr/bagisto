@@ -11,18 +11,16 @@
             type="text/x-template"
             id="v-booking-products-template"
         >
-            <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-                <div class="flex flex-col">
-                    <p class="py-3 text-xl font-bold text-gray-800 dark:text-white">
-                        @lang('admin::app.sales.booking.index.title')
-                    </p>
+            <x-admin::layouts.page-header>
+                <x-slot:title>
+                    @lang('admin::app.sales.booking.index.title')
+                </x-slot>
 
-                    <p class="-mt-1 text-sm text-gray-500 dark:text-gray-400">
-                        @lang('admin::app.sales.booking.index.title') overview
-                    </p>
-                </div>
+                <x-slot:subtitle>
+                    @lang('admin::app.sales.booking.index.title') overview
+                </x-slot>
 
-                <div class="flex items-center gap-2.5">
+                <x-slot:actions>
                     <!-- Export Modal -->
                     <x-admin::datagrid.export
                         v-if="viewType == 'table'"
@@ -49,8 +47,8 @@
                             @click="viewType = 'table'"
                         ></button>
                     </div>
-                </div>
-            </div>
+                </x-slot>
+            </x-admin::layouts.page-header>
 
             <template v-if="viewType == 'table'">
                 <x-admin::datagrid :src="route('admin.sales.bookings.index')" />

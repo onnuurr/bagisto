@@ -8,21 +8,20 @@
         @lang('admin::app.sales.rma.create-rma.create-title')
     </x-slot:title>
 
-    <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-        <!-- Heading -->
-        <h1 class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.sales.rma.create-rma.create-title')
-        </h1>
+        </x-slot>
 
-        <div class="flex items-center gap-x-2.5">
+        <x-slot:actions>
             <a
                 href="{{ route('admin.sales.rma.requests.index') }}"
                 class="transparent-button hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800"
             >
                 @lang('admin::app.settings.channels.edit.back-btn')
             </a>
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     {!! view_render_event('bagisto.admin.rma.create.list.before') !!}
 

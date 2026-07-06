@@ -3,29 +3,27 @@
         @lang('admin::app.settings.themes.index.title')
     </x-slot>
    
-    <div class="flex items-center justify-between">
-        <p class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.settings.themes.index.title')
-        </p>
-        
-        <div class="flex items-center gap-x-2.5">
-            <div class="flex items-center gap-x-2.5">
-                {!! view_render_event('bagisto.admin.settings.themes.create.before') !!}
+        </x-slot>
 
-                <!-- Create Button -->
-                <v-create-theme-form>
-                    <button
-                        type="button"
-                        class="primary-button"
-                    >
-                        @lang('admin::app.settings.themes.index.create-btn')
-                    </button>  
-                </v-create-theme-form>
+        <x-slot:actions>
+            {!! view_render_event('bagisto.admin.settings.themes.create.before') !!}
 
-                {!! view_render_event('bagisto.admin.settings.themes.create.after') !!}
-            </div>
-        </div>
-    </div>
+            <!-- Create Button -->
+            <v-create-theme-form>
+                <button
+                    type="button"
+                    class="primary-button"
+                >
+                    @lang('admin::app.settings.themes.index.create-btn')
+                </button>
+            </v-create-theme-form>
+
+            {!! view_render_event('bagisto.admin.settings.themes.create.after') !!}
+        </x-slot>
+    </x-admin::layouts.page-header>
     
     {!! view_render_event('bagisto.admin.settings.themes.list.before') !!}
 

@@ -21,12 +21,12 @@
 
         {!! view_render_event('bagisto.admin.settings.channels.edit.edit_form_controls.before', ['channel' => $channel]) !!}
 
-        <div class="flex items-center justify-between">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.settings.channels.edit.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <a
                     href="{{ route('admin.settings.channels.index') }}"
                     class="transparent-button hover:bg-gray-200 dark:text-white dark:hover:bg-gray-800"
@@ -41,8 +41,8 @@
                 >
                     @lang('admin::app.settings.channels.edit.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- Locale Switcher -->
         <div class="mt-7 flex items-center justify-between gap-4 max-md:flex-wrap">

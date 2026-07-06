@@ -6,12 +6,12 @@
     {!! view_render_event('bagisto.admin.settings.exchange_rates.create.before') !!}
 
     <v-exchange-rates>
-        <div class="flex items-center justify-between">
-            <p class="text-xl font-bold text-gray-800 dark:text-white">
+        <x-admin::layouts.page-header>
+            <x-slot:title>
                 @lang('admin::app.settings.exchange-rates.index.title')
-            </p>
+            </x-slot>
 
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Update Exchange Rate Button -->
                 <a
                     href="{{ route('admin.settings.exchange_rates.update_rates') }}"
@@ -29,8 +29,8 @@
                         @lang('admin::app.settings.exchange-rates.index.create-btn')
                     </button>
                 @endif
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <!-- DataGrid Shimmer -->
         <x-admin::shimmer.datagrid />
@@ -43,12 +43,12 @@
             type="text/x-template"
             id="v-exchange-rates-template"
         >
-            <div class="flex items-center justify-between">
-                <p class="text-xl font-bold text-gray-800 dark:text-white">
+            <x-admin::layouts.page-header>
+                <x-slot:title>
                     @lang('admin::app.settings.exchange-rates.index.title')
-                </p>
+                </x-slot>
 
-                <div class="flex items-center gap-x-2.5">
+                <x-slot:actions>
                     <!-- Update Exchange Rate Button -->
                     <a href="{{ route('admin.settings.exchange_rates.update_rates') }}" class="primary-button">
                         @lang('admin::app.settings.exchange-rates.index.update-rates')
@@ -64,8 +64,8 @@
                             @lang('admin::app.settings.exchange-rates.index.create-btn')
                         </button>
                     @endif
-                </div>
-            </div>
+                </x-slot>
+            </x-admin::layouts.page-header>
 
             <x-admin::datagrid
                 :src="route('admin.settings.exchange_rates.index')"

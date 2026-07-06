@@ -19,16 +19,12 @@
         enctype="multipart/form-data"
     >
         <!-- Save Inventory -->
-        <div class="mt-3.5 flex items-center justify-between gap-4 max-sm:flex-wrap">
-            <p 
-                class="text-xl font-bold text-gray-800 dark:text-white"
-                v-pre
-            >
+        <x-admin::layouts.page-header class="mt-3.5">
+            <x-slot:title>
                 {{ $name }}
-            </p>
+            </x-slot>
 
-            <!-- Save Inventory -->
-            <div class="flex items-center gap-x-2.5">
+            <x-slot:actions>
                 <!-- Back Button -->
                 <a
                     href="{{ route('admin.configuration.index') }}"
@@ -43,8 +39,8 @@
                 >
                     @lang('admin::app.configuration.index.save-btn')
                 </button>
-            </div>
-        </div>
+            </x-slot>
+        </x-admin::layouts.page-header>
 
         <div class="mt-7 flex items-center justify-between gap-4 max-md:flex-wrap">
             <div class="flex items-center gap-x-1">
