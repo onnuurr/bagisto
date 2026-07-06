@@ -9,11 +9,11 @@
                 >
                     <a
                         href="{{ $menuItem->getUrl() }}"
-                        class="flex gap-2.5 p-1.5 items-center cursor-pointer hover:rounded-lg {{ $menuItem->isActive() == 'active' ? 'bg-primary rounded-lg' : ' hover:bg-gray-100 hover:dark:bg-gray-950' }} peer"
+                        class="flex gap-2.5 p-1.5 items-center cursor-pointer hover:rounded-lg {{ $menuItem->isActive() == 'active' ? 'bg-primary/10 rounded-lg dark:bg-primary/20' : ' hover:bg-primary/10 hover:dark:bg-primary/10' }} peer"
                     >
-                        <span class="{{ $menuItem->getIcon() }} text-2xl {{ $menuItem->isActive() ? 'text-white' : ''}}"></span>
-                        
-                        <p class="text-gray-600 dark:text-gray-300 font-semibold whitespace-nowrap group-[.sidebar-collapsed]/container:hidden {{ $menuItem->isActive() ? 'text-white' : ''}}">
+                        <span class="{{ $menuItem->getIcon() }} text-2xl {{ $menuItem->isActive() ? 'text-primary' : ''}}"></span>
+
+                        <p class="text-gray-600 dark:text-gray-300 font-semibold whitespace-nowrap group-[.sidebar-collapsed]/container:hidden {{ $menuItem->isActive() ? 'text-primary' : ''}}">
                             {{ $menuItem->getName() }}
                         </p>
                     </a>
@@ -44,10 +44,10 @@
             <div class="px-4 group/item">
                 <a
                     href="{{ route('admin.help.index') }}"
-                    class="flex gap-2.5 p-1.5 items-center cursor-pointer hover:rounded-lg {{ $isHelpActive ? 'bg-primary rounded-lg' : 'hover:bg-gray-100 hover:dark:bg-gray-950' }}"
+                    class="flex gap-2.5 p-1.5 items-center cursor-pointer hover:rounded-lg {{ $isHelpActive ? 'bg-primary/10 rounded-lg dark:bg-primary/20' : 'hover:bg-primary/10 hover:dark:bg-primary/10' }}"
                 >
                     <svg
-                        class="h-6 w-6 shrink-0 {{ $isHelpActive ? 'text-white' : 'text-gray-600 dark:text-gray-300' }}"
+                        class="h-6 w-6 shrink-0 {{ $isHelpActive ? 'text-primary' : 'text-gray-600 dark:text-gray-300' }}"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -60,7 +60,7 @@
                         <path d="M12 17.2h.01"></path>
                     </svg>
 
-                    <p class="text-gray-600 dark:text-gray-300 font-semibold whitespace-nowrap group-[.sidebar-collapsed]/container:hidden {{ $isHelpActive ? 'text-white' : '' }}">
+                    <p class="text-gray-600 dark:text-gray-300 font-semibold whitespace-nowrap group-[.sidebar-collapsed]/container:hidden {{ $isHelpActive ? 'text-primary' : '' }}">
                         @lang('admin::app.components.layouts.sidebar.help')
                     </p>
                 </a>
