@@ -9,7 +9,7 @@
                 >
                     <a
                         href="{{ $menuItem->getUrl() }}"
-                        class="flex gap-2.5 p-1.5 items-center cursor-pointer hover:rounded-lg {{ $menuItem->isActive() == 'active' ? 'bg-blue-600 rounded-lg' : ' hover:bg-gray-100 hover:dark:bg-gray-950' }} peer"
+                        class="flex gap-2.5 p-1.5 items-center cursor-pointer hover:rounded-lg {{ $menuItem->isActive() == 'active' ? 'bg-primary rounded-lg' : ' hover:bg-gray-100 hover:dark:bg-gray-950' }} peer"
                     >
                         <span class="{{ $menuItem->getIcon() }} text-2xl {{ $menuItem->isActive() ? 'text-white' : ''}}"></span>
                         
@@ -23,7 +23,7 @@
                             @foreach ($menuItem->getChildren() as $subMenuItem)
                                 <a
                                     href="{{ $subMenuItem->getUrl() }}"
-                                    class="text-sm text-{{ $subMenuItem->isActive() ? 'blue':'gray' }}-600 dark:text-{{ $subMenuItem->isActive() ? 'blue':'gray' }}-300 whitespace-nowrap py-1 group-[.sidebar-collapsed]/container:px-5 group-[.sidebar-collapsed]/container:py-2.5 group-[.inactive]/item:px-5 group-[.inactive]/item:py-2.5 hover:text-blue-600 dark:hover:bg-gray-950"
+                                    class="text-sm {{ $subMenuItem->isActive() ? 'text-primary dark:text-primary-400' : 'text-gray-600 dark:text-gray-300' }} whitespace-nowrap py-1 group-[.sidebar-collapsed]/container:px-5 group-[.sidebar-collapsed]/container:py-2.5 group-[.inactive]/item:px-5 group-[.inactive]/item:py-2.5 hover:text-primary dark:hover:bg-gray-950"
                                 >
                                     {{ $subMenuItem->getName() }}
                                 </a>
@@ -44,7 +44,7 @@
             <div class="px-4 group/item">
                 <a
                     href="{{ route('admin.help.index') }}"
-                    class="flex gap-2.5 p-1.5 items-center cursor-pointer hover:rounded-lg {{ $isHelpActive ? 'bg-blue-600 rounded-lg' : 'hover:bg-gray-100 hover:dark:bg-gray-950' }}"
+                    class="flex gap-2.5 p-1.5 items-center cursor-pointer hover:rounded-lg {{ $isHelpActive ? 'bg-primary rounded-lg' : 'hover:bg-gray-100 hover:dark:bg-gray-950' }}"
                 >
                     <svg
                         class="h-6 w-6 shrink-0 {{ $isHelpActive ? 'text-white' : 'text-gray-600 dark:text-gray-300' }}"

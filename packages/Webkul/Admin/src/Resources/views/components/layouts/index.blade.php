@@ -48,7 +48,7 @@
     />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     />
 
@@ -131,8 +131,8 @@
                 <div class="mt-auto">
                     <div class="border-t bg-white py-2 text-center text-xs sm:text-sm dark:border-gray-800 dark:bg-gray-900 dark:text-white">
                         @lang('admin::app.components.layouts.powered-by.description', [
-                            'bagisto' => '<a class="text-blue-600 hover:underline dark:text-darkBlue" href="https://bagisto.com/en/">Bagisto</a>',
-                            'webkul' => '<a class="text-blue-600 hover:underline dark:text-darkBlue" href="https://webkul.com/">Webkul</a>',
+                            'bagisto' => '<a class="text-primary hover:underline dark:text-primary-400" href="https://bagisto.com/en/">Bagisto</a>',
+                            'webkul' => '<a class="text-primary hover:underline dark:text-primary-400" href="https://webkul.com/">Webkul</a>',
                         ])
                     </div>
                 </div>

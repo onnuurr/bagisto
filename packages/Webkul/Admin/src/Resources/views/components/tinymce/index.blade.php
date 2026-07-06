@@ -99,7 +99,7 @@
                                 </template>
 
                                 <template v-else>
-                                    <span class="icon-magic text-2xl text-blue-600"></span>
+                                    <span class="icon-magic text-2xl text-primary"></span>
 
                                     @lang('admin::app.components.tinymce.ai-generation.generate')
                                 </template>
