@@ -51,8 +51,8 @@
                                     <span
                                         class="icon-uncheckbox cursor-pointer rounded-md text-2xl"
                                         :class="[
-                                            applied.massActions.meta.mode === 'all' ? 'peer-checked:icon-checked peer-checked:text-blue-600 ' : (
-                                                applied.massActions.meta.mode === 'partial' ? 'peer-checked:icon-checkbox-partial peer-checked:text-blue-600' : ''
+                                            applied.massActions.meta.mode === 'all' ? 'peer-checked:icon-checked peer-checked:text-primary ' : (
+                                                applied.massActions.meta.mode === 'partial' ? 'peer-checked:icon-checkbox-partial peer-checked:text-primary' : ''
                                             ),
                                         ]"
                                     >
@@ -121,7 +121,7 @@
                                             v-model="applied.massActions.indices"
                                         >
 
-                                        <span class="icon-uncheckbox peer-checked:icon-checked cursor-pointer rounded-md text-2xl peer-checked:text-blue-600">
+                                        <span class="icon-uncheckbox peer-checked:icon-checked cursor-pointer rounded-md text-2xl peer-checked:text-primary">
                                         </span>
                                     </label>
                                 </p>

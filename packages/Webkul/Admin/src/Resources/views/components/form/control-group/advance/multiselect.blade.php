@@ -86,7 +86,7 @@
                         <div
                             class="flex cursor-pointer items-center justify-between gap-2 px-3 py-2 text-sm transition-all hover:bg-gray-100 dark:hover:bg-gray-800"
                             :class="isSelected(option.id)
-                                ? 'font-semibold text-blue-600 dark:text-blue-500'
+                                ? 'font-semibold text-primary dark:text-primary-500'
                                 : 'text-gray-600 dark:text-gray-300'"
                             v-for="option in filteredOptions"
                             :key="option.id"
@@ -95,7 +95,7 @@
                             <span class="truncate">@{{ option.label }}</span>
 
                             <span
-                                class="icon-checked shrink-0 text-xl text-blue-600 dark:text-blue-500"
+                                class="icon-checked shrink-0 text-xl text-primary dark:text-primary-500"
                                 v-show="isSelected(option.id)"
                             ></span>
                         </div>

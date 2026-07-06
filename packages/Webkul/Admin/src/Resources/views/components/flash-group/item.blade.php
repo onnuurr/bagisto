@@ -58,35 +58,35 @@
 
                     typeStyles: {
                         success: {
-                            container: 'background: #059669',
+                            container: 'background: #28C76F',
 
                             message: 'color: #FFFFFF',
 
-                            icon: 'color: #059669'
+                            icon: 'color: #28C76F'
                         },
 
                         error: {
-                            container: 'background: #EF4444',
+                            container: 'background: #FF6666',
 
                             message: 'color: #FFFFFF',
 
-                            icon: 'color: #EF4444'
+                            icon: 'color: #FF6666'
                         },
 
                         warning: {
-                            container: 'background: #FACC15',
-
-                            message: 'color: #1F2937',
-
-                            icon: 'color: #FACC15'
-                        },
-
-                        info: {
-                            container: 'background: #0284C7',
+                            container: 'background: #FF9900',
 
                             message: 'color: #FFFFFF',
 
-                            icon: 'color: #0284C7'
+                            icon: 'color: #FF9900'
+                        },
+
+                        info: {
+                            container: 'background: #17A2B8',
+
+                            message: 'color: #FFFFFF',
+
+                            icon: 'color: #17A2B8'
                         },
                     },
                 };

@@ -40,13 +40,13 @@
                             <!-- Sales Percentage -->
                             <div class="flex items-center gap-0.5">
                                 <span
-                                    class="text-base text-emerald-500"
-                                    :class="[report.statistics.total_sales.progress < 0 ? 'icon-down-stat text-red-500 dark:!text-red-500' : 'icon-up-stat text-emerald-500 dark:!text-emerald-500']"
+                                    class="text-base text-success"
+                                    :class="[report.statistics.total_sales.progress < 0 ? 'icon-down-stat text-danger dark:!text-danger' : 'icon-up-stat text-success dark:!text-success']"
                                 ></span>
 
                                 <p
-                                    class="text-xs font-semibold text-emerald-500"
-                                    :class="[report.statistics.total_sales.progress < 0 ?  'text-red-500' : 'text-emerald-500']"
+                                    class="text-xs font-semibold text-success"
+                                    :class="[report.statistics.total_sales.progress < 0 ?  'text-danger' : 'text-success']"
                                 >
                                     @{{ Math.abs(report.statistics.total_sales.progress.toFixed(2)) }}%
                                 </p>
@@ -76,13 +76,13 @@
                             <!-- Order Percentage -->
                             <div class="flex items-center gap-0.5">
                                 <span
-                                    class="text-base text-emerald-500"
-                                    :class="[report.statistics.total_orders.progress < 0 ? 'icon-down-stat text-red-500 dark:!text-red-500' : 'icon-up-stat text-emerald-500 dark:!text-emerald-500']"
+                                    class="text-base text-success"
+                                    :class="[report.statistics.total_orders.progress < 0 ? 'icon-down-stat text-danger dark:!text-danger' : 'icon-up-stat text-success dark:!text-success']"
                                 ></span>
 
                                 <p
-                                    class="text-xs font-semibold text-emerald-500"
-                                    :class="[report.statistics.total_orders.progress < 0 ?  'text-red-500' : 'text-emerald-500']"
+                                    class="text-xs font-semibold text-success"
+                                    :class="[report.statistics.total_orders.progress < 0 ?  'text-danger' : 'text-success']"
                                 >
                                     @{{ Math.abs(report.statistics.total_orders.progress.toFixed(2)) }}%
                                 </p>
@@ -112,13 +112,13 @@
                             <!-- Customers Percentage -->
                             <div class="flex items-center gap-0.5">
                                 <span
-                                    class="text-base text-emerald-500"
-                                    :class="[report.statistics.total_customers.progress < 0 ? 'icon-down-stat text-red-500 dark:!text-red-500' : 'icon-up-stat text-emerald-500 dark:!text-emerald-500']"
+                                    class="text-base text-success"
+                                    :class="[report.statistics.total_customers.progress < 0 ? 'icon-down-stat text-danger dark:!text-danger' : 'icon-up-stat text-success dark:!text-success']"
                                 ></span>
 
                                 <p
-                                    class="text-xs font-semibold text-emerald-500"
-                                    :class="[report.statistics.total_customers.progress < 0 ?  'text-red-500' : 'text-emerald-500']"
+                                    class="text-xs font-semibold text-success"
+                                    :class="[report.statistics.total_customers.progress < 0 ?  'text-danger' : 'text-success']"
                                 >
                                     @{{ Math.abs(report.statistics.total_customers.progress.toFixed(2)) }}%
                                 </p>
@@ -148,13 +148,13 @@
                             <!-- Sales Percentage -->
                             <div class="flex items-center gap-0.5">
                                 <span
-                                    class="text-base text-emerald-500"
-                                    :class="[report.statistics.avg_sales.progress < 0 ? 'icon-down-stat text-red-500 dark:!text-red-500' : 'icon-up-stat text-emerald-500 dark:!text-emerald-500']"
+                                    class="text-base text-success"
+                                    :class="[report.statistics.avg_sales.progress < 0 ? 'icon-down-stat text-danger dark:!text-danger' : 'icon-up-stat text-success dark:!text-success']"
                                 ></span>
 
                                 <p
                                     class="text-xs font-semibold"
-                                    :class="[report.statistics.avg_sales.progress < 0 ?  'text-red-500' : 'text-emerald-500']"
+                                    :class="[report.statistics.avg_sales.progress < 0 ?  'text-danger' : 'text-success']"
                                 >
                                     @{{ Math.abs(report.statistics.avg_sales.progress).toFixed(2) }}%
                                 </p>
