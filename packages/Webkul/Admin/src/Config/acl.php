@@ -631,6 +631,29 @@ return [
         'route' => 'admin.marketing.promotions.catalog_rules.delete',
         'sort' => 3,
     ], [
+        'key' => 'marketing.promotions.gift_cards',
+        'name' => 'admin::app.acl.gift-cards',
+        'route' => 'admin.marketing.promotions.gift_cards.index',
+        'sort' => 3,
+    ], [
+        'key' => 'marketing.promotions.gift_cards.create',
+        'name' => 'admin::app.acl.create',
+        'route' => 'admin.marketing.promotions.gift_cards.store',
+        'sort' => 1,
+    ], [
+        'key' => 'marketing.promotions.gift_cards.edit',
+        'name' => 'admin::app.acl.edit',
+        'route' => 'admin.marketing.promotions.gift_cards.update',
+        'sort' => 2,
+    ], [
+        'key' => 'marketing.promotions.gift_cards.delete',
+        'name' => 'admin::app.acl.delete',
+        'route' => [
+            'admin.marketing.promotions.gift_cards.delete',
+            'admin.marketing.promotions.gift_cards.mass_delete',
+        ],
+        'sort' => 3,
+    ], [
         'key' => 'marketing.communications',
         'name' => 'admin::app.acl.communications',
         'route' => 'admin.marketing.communications.email_templates.index',
@@ -1226,10 +1249,23 @@ return [
         ],
         'sort' => 4,
     ], [
+        'key' => 'settings.sms',
+        'name' => 'admin::app.acl.sms',
+        'route' => 'admin.sms.index',
+        'sort' => 11,
+    ], [
+        'key' => 'settings.sms.delete',
+        'name' => 'admin::app.acl.delete',
+        'route' => [
+            'admin.sms.delete',
+            'admin.sms.mass_delete',
+        ],
+        'sort' => 1,
+    ], [
         'key' => 'settings.email_templates',
         'name' => 'admin::app.acl.notification-emails',
         'route' => 'admin.settings.email_templates.index',
-        'sort' => 11,
+        'sort' => 12,
     ], [
         'key' => 'settings.email_templates.edit',
         'name' => 'admin::app.acl.edit',

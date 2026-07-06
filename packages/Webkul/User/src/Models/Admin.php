@@ -25,6 +25,7 @@ class Admin extends Authenticatable implements AdminContract
     protected $fillable = [
         'name',
         'email',
+        'phone',
         'password',
         'image',
         'api_token',
@@ -34,6 +35,7 @@ class Admin extends Authenticatable implements AdminContract
         'two_factor_enabled',
         'two_factor_backup_codes',
         'two_factor_verified_at',
+        'two_factor_method',
     ];
 
     /**

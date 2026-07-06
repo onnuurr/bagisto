@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'דמי משלוח (לא כולל מס)',
                 'delivery-charges-incl-tax' => 'דמי משלוח (כולל מס)',
                 'discount-amount' => 'סכום ההנחה',
+                'gift-card-amount' => 'כרטיס מתנה',
                 'grand-total' => 'סכום כולל',
                 'included' => 'כלול',
                 'excl-tax' => 'ללא מס:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'דמי משלוח (לא כולל מס)',
                 'delivery-charges-incl-tax' => 'דמי משלוח (כולל מס)',
                 'discount-amount' => 'סכום ההנחה',
+                'gift-card-amount' => 'כרטיס מתנה',
                 'excl-tax' => 'לא כולל מס:',
                 'grand-total' => 'סכום כולל',
                 'included' => 'כלול',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'קוד הקופון הוחל בהצלחה.',
             'usage-limit-exceeded' => 'קוד קופון זה הגיע למגבלת השימוש שלו ואינו תקף יותר.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'קוד כרטיס המתנה כבר הוחל.',
+            'applied' => 'כרטיס המתנה הוחל',
+            'apply' => 'החל כרטיס מתנה',
+            'button-title' => 'החל',
+            'enter-your-code' => 'הזן את קודך',
+            'invalid' => 'קוד כרטיס המתנה אינו חוקי.',
+            'remove' => 'הסר כרטיס מתנה',
+            'subtotal' => 'סכום ביניים',
+            'success-apply' => 'קוד כרטיס המתנה הוחל בהצלחה.',
+            'title' => 'כרטיס מתנה',
+        ],
+
 
         'login' => [
             'email' => 'אימייל',

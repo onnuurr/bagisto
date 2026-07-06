@@ -41,6 +41,8 @@ return [
             'enter-code' => 'Geben Sie den 6-stelligen Code aus Ihrer Authentifikator-App ein, um fortzufahren.',
             'title' => 'Zwei-Faktor-Authentifizierung verifizieren',
             'verify-code' => 'Code überprüfen',
+            'code-sent' => 'Ein neuer Bestätigungscode wurde gesendet.',
+            'resend-code' => 'Code erneut senden',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'Mein Konto',
             'update-success' => 'Konto erfolgreich aktualisiert',
             'upload-image-info' => 'Laden Sie ein Profilbild hoch (110px X 110px) im PNG- oder JPG-Format',
+            'method-authenticator' => 'Authenticator-App',
+            'method-sms' => 'SMS',
+            'phone' => 'Telefonnummer',
+            'send-code' => 'Code senden',
+            'two-factor-method' => 'Zwei-Faktor-Methode',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => 'Zwei-Faktor-Authentifizierung erfolgreich aktiviert.',
             'invalid-code' => 'Ungültiger Verifizierungscode.',
             'verified-success' => 'Zwei-Faktor-Authentifizierung erfolgreich verifiziert.',
+            'code-sent-success' => 'Bestätigungscode erfolgreich gesendet.',
+            'phone-required' => 'Bitte fügen Sie eine Telefonnummer hinzu, bevor Sie die SMS-Verifizierung aktivieren.',
         ],
 
         'setup' => [
@@ -2662,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Warenkorbregeln',
                 'catalog-rule-title' => 'Katalogregeln',
+                'gift-card-title' => 'Geschenkgutscheine',
             ],
 
             'cart-rules' => [
@@ -2875,6 +2885,59 @@ return [
 
                 'delete-failed' => 'Löschen der Warenkorbregel fehlgeschlagen',
                 'delete-success' => 'Warenkorbregel erfolgreich gelöscht',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Geschenkgutschein erstellen',
+                    'title' => 'Geschenkgutscheine',
+
+                    'datagrid' => [
+                        'amount' => 'Betrag',
+                        'code' => 'Code',
+                        'delete' => 'Löschen',
+                        'edit' => 'Bearbeiten',
+                        'expired' => 'Abgelaufen',
+                        'expires-at' => 'Läuft ab am',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Ausgewählte Geschenkgutscheine erfolgreich gelöscht',
+                        'status' => 'Status',
+                        'unused' => 'Nicht verwendet',
+                        'used' => 'Verwendet',
+                        'used-at' => 'Verwendet am',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Betrag',
+                    'code' => 'Code',
+                    'code-info' => 'Leer lassen, um automatisch zu generieren.',
+                    'currency' => 'Währung',
+                    'customer-email' => 'Kunden-E-Mail',
+                    'expires-at' => 'Läuft ab am',
+                    'quantity' => 'Menge',
+                    'quantity-info' => 'Anzahl der zu erstellenden Geschenkgutscheine. Der Code wird ignoriert und automatisch generiert, wenn die Menge größer als 1 ist.',
+                    'save-btn' => 'Geschenkgutschein speichern',
+                    'success' => 'Geschenkgutschein erfolgreich erstellt',
+                    'title' => 'Geschenkgutschein erstellen',
+                ],
+
+                'edit' => [
+                    'amount' => 'Betrag',
+                    'code' => 'Code',
+                    'currency' => 'Währung',
+                    'customer-email' => 'Kunden-E-Mail',
+                    'expired' => 'Abgelaufen',
+                    'expires-at' => 'Läuft ab am',
+                    'status' => 'Status',
+                    'success' => 'Geschenkgutschein erfolgreich aktualisiert',
+                    'title' => 'Geschenkgutschein bearbeiten',
+                    'unused' => 'Nicht verwendet',
+                    'used' => 'Verwendet',
+                ],
+
+                'delete-failed' => 'Geschenkgutschein kann nicht gelöscht werden, da er bereits eingelöst wurde',
+                'delete-success' => 'Geschenkgutschein erfolgreich gelöscht',
             ],
 
             'catalog-rules' => [
@@ -5292,6 +5355,96 @@ return [
                     'build-views' => 'Ansichten cachen',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'Konfigurieren Sie SMS-Gateways, Bestellbenachrichtigungen und die SMS-basierte Zwei-Faktor-Authentifizierung.',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => 'Allgemeine SMS-Einstellungen.',
+                    'title' => 'Allgemein',
+
+                    'settings' => [
+                        'active-gateway' => 'Aktives Gateway',
+                        'enabled' => 'Aktiviert',
+                        'title' => 'Einstellungen',
+                        'title-info' => 'Aktivieren oder deaktivieren Sie SMS-Benachrichtigungen für Ihre gesamte Anwendung.',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'Account SID / API-Schlüssel',
+                    'credential-secret' => 'Auth Token / API-Secret',
+                    'info' => 'Konfigurieren Sie die Zugangsdaten für Ihren SMS-Gateway-Anbieter.',
+                    'sender' => 'Absendernummer / Sender-ID',
+                    'title' => 'Gateways',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'Konfigurieren Sie Ihre Twilio-API-Zugangsdaten.',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'Konfigurieren Sie Ihre Vonage (Nexmo) API-Zugangsdaten.',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'Route',
+                        'title' => 'MSG91',
+                        'title-info' => 'Konfigurieren Sie Ihre MSG91-API-Zugangsdaten.',
+                    ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Konfigurieren Sie Ihre Verimor-API-Zugangsdaten.',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => 'Aktiviert',
+                    'info' => 'Aktivieren Sie SMS-Benachrichtigungen für Bestellereignisse und passen Sie deren Nachrichtenvorlagen an.',
+                    'template-label' => 'Nachrichtenvorlage',
+                    'title' => 'Bestellbenachrichtigungen',
+
+                    'order-placed' => [
+                        'title' => 'Bestellung aufgegeben',
+                        'title-info' => 'Den Kunden per SMS benachrichtigen, wenn eine Bestellung aufgegeben wird.',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => 'Bestellung versandt',
+                        'title-info' => 'Den Kunden per SMS benachrichtigen, wenn seine Bestellung versandt wird.',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => 'Bestellung storniert',
+                        'title-info' => 'Den Kunden per SMS benachrichtigen, wenn seine Bestellung storniert wird.',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => 'Rechnung erstellt',
+                        'title-info' => 'Den Kunden per SMS benachrichtigen, wenn eine Rechnung für seine Bestellung erstellt wird.',
+                    ],
+
+                    'refund-created' => [
+                        'title' => 'Erstattung erstellt',
+                        'title-info' => 'Den Kunden per SMS benachrichtigen, wenn eine Erstattung für seine Bestellung erstellt wird.',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => 'Administratoren erlauben, SMS als Zwei-Faktor-Authentifizierungsmethode zu verwenden.',
+                    'title' => 'Zwei-Faktor-Authentifizierung',
+
+                    'settings' => [
+                        'enabled' => 'Aktiviert',
+                        'title' => 'Einstellungen',
+                'sms' => 'SMS',
+                        'title-info' => 'SMS als verfügbare Zwei-Faktor-Authentifizierungsmethode für Admin-Konten aktivieren.',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5531,6 +5684,7 @@ return [
                     'use-cases' => 'Verwendungszwecke',
                     'zoom' => 'Vergrößern',
                 ],
+        'sms' => 'SMS-Protokolle',
             ],
 
             'videos' => [
@@ -5593,6 +5747,7 @@ return [
         'events' => 'Ereignisse',
         'exchange-rates' => 'Wechselkurse',
         'gdpr' => 'DSGVO',
+        'gift-cards' => 'Geschenkgutscheine',
         'groups' => 'Gruppen',
         'import' => 'Importieren',
         'imports' => 'Importe',
@@ -5955,6 +6110,55 @@ return [
             'refunded' => 'Der Widerruf wurde als erstattet markiert.',
             'confirmation_resent' => 'Die Bestätigungs-E-Mail wurde erneut gesendet.',
             'confirmation_failed' => 'Die Bestätigungs-E-Mail konnte nicht gesendet werden. Einzelheiten finden Sie im Verlauf.',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'SMS-Protokolle',
+
+        'index' => [
+            'title' => 'SMS-Protokolle',
+
+            'datagrid' => [
+                'created-at' => 'Gesendet am',
+                'delete' => 'Löschen',
+                'event' => 'Ereignis',
+                'gateway' => 'Gateway',
+                'id' => 'ID',
+                'message' => 'Nachricht',
+                'recipient' => 'Empfänger',
+                'status' => 'Status',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => 'Hallo {customer_name}, Ihre Bestellung #{order_id} wurde erfolgreich aufgegeben. Gesamt: {order_total}. Vielen Dank für Ihren Einkauf bei uns!',
+            ],
+
+            'order-shipped' => [
+                'default-template' => 'Hallo {customer_name}, Ihre Bestellung #{order_id} wurde versandt und ist unterwegs.',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => 'Hallo {customer_name}, Ihre Bestellung #{order_id} wurde storniert.',
+            ],
+
+            'invoice-created' => [
+                'default-template' => 'Hallo {customer_name}, für Ihre Bestellung #{order_id} wurde eine Rechnung erstellt. Gesamt: {order_total}.',
+            ],
+
+            'refund-created' => [
+                'default-template' => 'Hallo {customer_name}, für Ihre Bestellung #{order_id} wurde eine Erstattung bearbeitet.',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => 'Ihr Bestätigungscode lautet :code. Er läuft in 5 Minuten ab.',
+        ],
+
+        'messages' => [
+            'delete-success' => 'SMS-Protokoll erfolgreich gelöscht.',
         ],
     ],
 ];

@@ -211,6 +211,12 @@ return [
         'sort' => 2,
         'icon' => '',
     ], [
+        'key' => 'marketing.promotions.gift_cards',
+        'name' => 'admin::app.marketing.promotions.index.gift-card-title',
+        'route' => 'admin.marketing.promotions.gift_cards.index',
+        'sort' => 3,
+        'icon' => '',
+    ], [
         'key' => 'marketing.communications',
         'name' => 'admin::app.components.layouts.sidebar.communications',
         'route' => 'admin.marketing.communications.email_templates.index',
@@ -391,10 +397,16 @@ return [
         'sort' => 1,
         'icon' => '',
     ], [
+        'key' => 'settings.sms',
+        'name' => 'admin::app.components.layouts.sidebar.sms',
+        'route' => 'admin.sms.index',
+        'sort' => 11,
+        'icon' => '',
+    ], [
         'key' => 'settings.email_templates',
         'name' => 'admin::app.components.layouts.sidebar.notification-emails',
         'route' => 'admin.settings.email_templates.index',
-        'sort' => 11,
+        'sort' => 12,
         'icon' => '',
     ],
 

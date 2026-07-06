@@ -55,6 +55,11 @@ Route::group(['middleware' => ['admin', NoCacheMiddleware::class], 'prefix' => c
     require 'notification-routes.php';
 
     /**
+     * SMS routes.
+     */
+    require 'sms-routes.php';
+
+    /**
      * Help & Resources routes.
      */
     require 'help-routes.php';

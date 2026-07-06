@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Delivery Charges (Excl. Tax)',
                 'delivery-charges-incl-tax' => 'Delivery Charges (Incl. Tax)',
                 'discount-amount' => 'Discount Amount',
+                'gift-card-amount' => 'Gift Card',
                 'grand-total' => 'Grand Total',
                 'included' => 'Included',
                 'excl-tax' => 'Excl. Tax:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Delivery Charges (Excl. Tax)',
                 'delivery-charges-incl-tax' => 'Delivery Charges (Incl. Tax)',
                 'discount-amount' => 'Discount Amount',
+                'gift-card-amount' => 'Gift Card',
                 'excl-tax' => 'Excl. Tax:',
                 'grand-total' => 'Grand Total',
                 'included' => 'Included',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Coupon code applied successfully.',
             'usage-limit-exceeded' => 'This coupon code has reached its usage limit and is no longer valid.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'Gift card code already applied.',
+            'applied' => 'Gift Card Applied',
+            'apply' => 'Apply Gift Card',
+            'button-title' => 'Apply',
+            'enter-your-code' => 'Enter your code',
+            'invalid' => 'Gift card code is invalid.',
+            'remove' => 'Remove Gift Card',
+            'subtotal' => 'Subtotal',
+            'success-apply' => 'Gift card code applied successfully.',
+            'title' => 'Gift Card',
+        ],
+
 
         'login' => [
             'email' => 'Email',

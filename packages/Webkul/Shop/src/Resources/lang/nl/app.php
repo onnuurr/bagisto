@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Verzendkosten (Excl. BTW)',
                 'delivery-charges-incl-tax' => 'Verzendkosten (Incl. BTW)',
                 'discount-amount' => 'Korting',
+                'gift-card-amount' => 'Cadeaubon',
                 'grand-total' => 'Totaalbedrag',
                 'included' => 'Inbegrepen',
                 'excl-tax' => 'Excl. btw:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Verzendkosten (Excl. BTW)',
                 'delivery-charges-incl-tax' => 'Verzendkosten (Incl. BTW)',
                 'discount-amount' => 'Kortingbedrag',
+                'gift-card-amount' => 'Cadeaubon',
                 'excl-tax' => 'Excl. BTW:',
                 'grand-total' => 'Totaalbedrag',
                 'included' => 'Inbegrepen',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Couponcode succesvol toegepast.',
             'usage-limit-exceeded' => 'Deze couponcode heeft de gebruikslimiet bereikt en is niet meer geldig.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'Cadeaubon code is al toegepast.',
+            'applied' => 'Cadeaubon toegepast',
+            'apply' => 'Cadeaubon toepassen',
+            'button-title' => 'Toepassen',
+            'enter-your-code' => 'Voer uw code in',
+            'invalid' => 'Cadeaubon code is ongeldig.',
+            'remove' => 'Cadeaubon verwijderen',
+            'subtotal' => 'Subtotaal',
+            'success-apply' => 'Cadeaubon code succesvol toegepast.',
+            'title' => 'Cadeaubon',
+        ],
+
 
         'login' => [
             'email' => 'E-mail',

@@ -41,6 +41,8 @@ return [
             'enter-code' => 'Masukkan kode 6 digit dari aplikasi autentikator Anda untuk melanjutkan.',
             'title' => 'Verifikasi Autentikasi Dua Faktor',
             'verify-code' => 'Verifikasi Kode',
+            'code-sent' => 'Kode verifikasi baru telah dikirim.',
+            'resend-code' => 'Kirim Ulang Kode',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'Akun Saya',
             'update-success' => 'Akun berhasil diperbarui',
             'upload-image-info' => 'Unggah Gambar Profil (110px X 110px) dalam Format PNG atau JPG',
+            'method-authenticator' => 'Aplikasi Autentikator',
+            'method-sms' => 'SMS',
+            'phone' => 'Nomor Telepon',
+            'send-code' => 'Kirim Kode',
+            'two-factor-method' => 'Metode Dua Faktor',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => 'Autentikasi Dua Faktor berhasil diaktifkan.',
             'invalid-code' => 'Kode verifikasi tidak valid.',
             'verified-success' => 'Autentikasi Dua Faktor berhasil diverifikasi.',
+            'code-sent-success' => 'Kode verifikasi berhasil dikirim.',
+            'phone-required' => 'Silakan tambahkan nomor telepon sebelum mengaktifkan verifikasi SMS.',
         ],
 
         'setup' => [
@@ -2662,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Aturan Keranjang',
                 'catalog-rule-title' => 'Aturan Katalog',
+                'gift-card-title' => 'Kartu Hadiah',
             ],
 
             'cart-rules' => [
@@ -2875,6 +2885,59 @@ return [
 
                 'delete-failed' => 'Gagal Menghapus Aturan Keranjang',
                 'delete-success' => 'Aturan Keranjang Berhasil Dihapus',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Buat Kartu Hadiah',
+                    'title' => 'Kartu Hadiah',
+
+                    'datagrid' => [
+                        'amount' => 'Jumlah',
+                        'code' => 'Kode',
+                        'delete' => 'Hapus',
+                        'edit' => 'Edit',
+                        'expired' => 'Kedaluwarsa',
+                        'expires-at' => 'Kedaluwarsa Pada',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Kartu Hadiah Terpilih Berhasil Dihapus',
+                        'status' => 'Status',
+                        'unused' => 'Belum Digunakan',
+                        'used' => 'Sudah Digunakan',
+                        'used-at' => 'Digunakan Pada',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Jumlah',
+                    'code' => 'Kode',
+                    'code-info' => 'Biarkan kosong untuk menghasilkan otomatis.',
+                    'currency' => 'Mata Uang',
+                    'customer-email' => 'Email Pelanggan',
+                    'expires-at' => 'Kedaluwarsa Pada',
+                    'quantity' => 'Jumlah (Kuantitas)',
+                    'quantity-info' => 'Jumlah kartu hadiah yang akan dibuat. Kode akan diabaikan dan dibuat otomatis jika kuantitas lebih dari 1.',
+                    'save-btn' => 'Simpan Kartu Hadiah',
+                    'success' => 'Kartu hadiah berhasil dibuat',
+                    'title' => 'Buat Kartu Hadiah',
+                ],
+
+                'edit' => [
+                    'amount' => 'Jumlah',
+                    'code' => 'Kode',
+                    'currency' => 'Mata Uang',
+                    'customer-email' => 'Email Pelanggan',
+                    'expired' => 'Kedaluwarsa',
+                    'expires-at' => 'Kedaluwarsa Pada',
+                    'status' => 'Status',
+                    'success' => 'Kartu hadiah berhasil diperbarui',
+                    'title' => 'Edit Kartu Hadiah',
+                    'unused' => 'Belum Digunakan',
+                    'used' => 'Sudah Digunakan',
+                ],
+
+                'delete-failed' => 'Kartu hadiah tidak dapat dihapus karena sudah digunakan',
+                'delete-success' => 'Kartu hadiah berhasil dihapus',
             ],
 
             'catalog-rules' => [
@@ -5292,6 +5355,96 @@ return [
                     'build-views' => 'Cache Tampilan',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'Konfigurasikan gateway SMS, notifikasi pesanan, dan autentikasi dua faktor berbasis SMS.',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => 'Pengaturan SMS umum.',
+                    'title' => 'Umum',
+
+                    'settings' => [
+                        'active-gateway' => 'Gateway Aktif',
+                        'enabled' => 'Diaktifkan',
+                        'title' => 'Pengaturan',
+                        'title-info' => 'Aktifkan atau nonaktifkan notifikasi SMS di seluruh aplikasi Anda.',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'SID Akun / Kunci API',
+                    'credential-secret' => 'Token Auth / Secret API',
+                    'info' => 'Konfigurasikan kredensial penyedia gateway SMS Anda.',
+                    'sender' => 'Nomor Pengirim / ID Pengirim',
+                    'title' => 'Gateway',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'Konfigurasikan kredensial API Twilio Anda.',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'Konfigurasikan kredensial API Vonage (Nexmo) Anda.',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'Rute',
+                        'title' => 'MSG91',
+                        'title-info' => 'Konfigurasikan kredensial API MSG91 Anda.',
+                    ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Konfigurasikan kredensial API Verimor Anda.',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => 'Diaktifkan',
+                    'info' => 'Aktifkan notifikasi SMS untuk peristiwa pesanan dan sesuaikan templat pesannya.',
+                    'template-label' => 'Templat Pesan',
+                    'title' => 'Notifikasi Pesanan',
+
+                    'order-placed' => [
+                        'title' => 'Pesanan Dibuat',
+                        'title-info' => 'Beri tahu pelanggan lewat SMS saat pesanan dibuat.',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => 'Pesanan Dikirim',
+                        'title-info' => 'Beri tahu pelanggan lewat SMS saat pesanannya dikirim.',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => 'Pesanan Dibatalkan',
+                        'title-info' => 'Beri tahu pelanggan lewat SMS saat pesanannya dibatalkan.',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => 'Faktur Dibuat',
+                        'title-info' => 'Beri tahu pelanggan lewat SMS saat faktur dibuat untuk pesanannya.',
+                    ],
+
+                    'refund-created' => [
+                        'title' => 'Pengembalian Dana Dibuat',
+                        'title-info' => 'Beri tahu pelanggan lewat SMS saat pengembalian dana dibuat untuk pesanannya.',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => 'Izinkan admin menggunakan SMS sebagai metode autentikasi dua faktor.',
+                    'title' => 'Autentikasi Dua Faktor',
+
+                    'settings' => [
+                        'enabled' => 'Diaktifkan',
+                        'title' => 'Pengaturan',
+                'sms' => 'SMS',
+                        'title-info' => 'Aktifkan SMS sebagai metode autentikasi dua faktor yang tersedia untuk akun admin.',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5531,6 +5684,7 @@ return [
                     'use-cases' => 'Kasus Penggunaan',
                     'zoom' => 'Perbesar',
                 ],
+        'sms' => 'Log SMS',
             ],
 
             'videos' => [
@@ -5593,6 +5747,7 @@ return [
         'events' => 'Acara',
         'exchange-rates' => 'Kurs',
         'gdpr' => 'GDPR',
+        'gift-cards' => 'Kartu Hadiah',
         'groups' => 'Grup',
         'import' => 'Impor',
         'imports' => 'Impor',
@@ -5955,6 +6110,55 @@ return [
             'refunded' => 'Penarikan diri telah ditandai sebagai dikembalikan.',
             'confirmation_resent' => 'Email konfirmasi telah dikirim ulang.',
             'confirmation_failed' => 'Tidak dapat mengirim email konfirmasi. Lihat linimasa untuk detailnya.',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'Log SMS',
+
+        'index' => [
+            'title' => 'Log SMS',
+
+            'datagrid' => [
+                'created-at' => 'Dikirim Pada',
+                'delete' => 'Hapus',
+                'event' => 'Peristiwa',
+                'gateway' => 'Gateway',
+                'id' => 'ID',
+                'message' => 'Pesan',
+                'recipient' => 'Penerima',
+                'status' => 'Status',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => 'Hai {customer_name}, pesanan Anda #{order_id} telah berhasil dibuat. Total: {order_total}. Terima kasih telah berbelanja dengan kami!',
+            ],
+
+            'order-shipped' => [
+                'default-template' => 'Hai {customer_name}, pesanan Anda #{order_id} telah dikirim dan sedang dalam perjalanan.',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => 'Hai {customer_name}, pesanan Anda #{order_id} telah dibatalkan.',
+            ],
+
+            'invoice-created' => [
+                'default-template' => 'Hai {customer_name}, faktur telah dibuat untuk pesanan Anda #{order_id}. Total: {order_total}.',
+            ],
+
+            'refund-created' => [
+                'default-template' => 'Hai {customer_name}, pengembalian dana telah diproses untuk pesanan Anda #{order_id}.',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => 'Kode verifikasi Anda adalah :code. Kode ini akan kedaluwarsa dalam 5 menit.',
+        ],
+
+        'messages' => [
+            'delete-success' => 'Log SMS berhasil dihapus.',
         ],
     ],
 ];

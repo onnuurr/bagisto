@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Webkul\CartRule\Exceptions\CouponUsageLimitExceededException;
 use Webkul\Core\Eloquent\Repository;
+use Webkul\GiftCard\Exceptions\GiftCardAlreadyRedeemedException;
 use Webkul\Product\Repositories\ProductCustomizableOptionRepository;
 use Webkul\Sales\Contracts\Order as OrderContract;
 use Webkul\Sales\Generators\OrderSequencer;
@@ -89,10 +90,14 @@ class OrderRepository extends Repository
             DB::rollBack();
 
             /**
-             * Do not retry when coupon usage limits are exceeded — this is a
-             * definitive business-logic failure, not a transient DB error.
+             * Do not retry when coupon usage limits are exceeded or a gift
+             * card is no longer redeemable — these are definitive
+             * business-logic failures, not transient DB errors.
              */
-            if ($e instanceof CouponUsageLimitExceededException) {
+            if (
+                $e instanceof CouponUsageLimitExceededException
+                || $e instanceof GiftCardAlreadyRedeemedException
+            ) {
                 throw $e;
             }
 

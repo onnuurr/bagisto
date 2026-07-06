@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => '配送料（税抜き）',
                 'delivery-charges-incl-tax' => '配送料（税込み）',
                 'discount-amount' => '割引額',
+                'gift-card-amount' => 'ギフトカード',
                 'grand-total' => '合計金額',
                 'included' => '含む',
                 'excl-tax' => '税抜:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => '配送料（税抜き）',
                 'delivery-charges-incl-tax' => '配送料（税込み）',
                 'discount-amount' => '割引額',
+                'gift-card-amount' => 'ギフトカード',
                 'excl-tax' => '税抜き:',
                 'grand-total' => '合計金額',
                 'included' => '含む',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'クーポンコードが正常に適用されました。',
             'usage-limit-exceeded' => 'このクーポンコードは使用回数の上限に達しており、無効です。',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'ギフトカードコードは既に適用されています。',
+            'applied' => 'ギフトカードが適用されました',
+            'apply' => 'ギフトカードを適用',
+            'button-title' => '適用',
+            'enter-your-code' => 'コードを入力してください',
+            'invalid' => 'ギフトカードコードが無効です。',
+            'remove' => 'ギフトカードを削除',
+            'subtotal' => '小計',
+            'success-apply' => 'ギフトカードコードが正常に適用されました。',
+            'title' => 'ギフトカード',
+        ],
+
 
         'login' => [
             'email' => 'メールアドレス',

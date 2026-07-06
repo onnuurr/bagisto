@@ -2662,6 +2662,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Cart Rules',
                 'catalog-rule-title' => 'Catalog Rules',
+                'gift-card-title' => 'Carduri Cadou',
             ],
 
             'cart-rules' => [
@@ -2875,6 +2876,59 @@ return [
 
                 'delete-failed' => 'Cart Rule Deleted Failed',
                 'delete-success' => 'Cart Rule Deleted Successfully',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Creează Card Cadou',
+                    'title' => 'Carduri Cadou',
+
+                    'datagrid' => [
+                        'amount' => 'Sumă',
+                        'code' => 'Cod',
+                        'delete' => 'Șterge',
+                        'edit' => 'Editează',
+                        'expired' => 'Expirat',
+                        'expires-at' => 'Expiră la',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Cardurile cadou selectate au fost șterse cu succes',
+                        'status' => 'Stare',
+                        'unused' => 'Neutilizat',
+                        'used' => 'Utilizat',
+                        'used-at' => 'Utilizat la',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Sumă',
+                    'code' => 'Cod',
+                    'code-info' => 'Lăsați gol pentru generare automată.',
+                    'currency' => 'Monedă',
+                    'customer-email' => 'E-mail Client',
+                    'expires-at' => 'Expiră la',
+                    'quantity' => 'Cantitate',
+                    'quantity-info' => 'Numărul de carduri cadou de generat. Codul este ignorat și generat automat atunci când cantitatea este mai mare de 1.',
+                    'save-btn' => 'Salvează Cardul Cadou',
+                    'success' => 'Cardul cadou a fost creat cu succes',
+                    'title' => 'Creează Card Cadou',
+                ],
+
+                'edit' => [
+                    'amount' => 'Sumă',
+                    'code' => 'Cod',
+                    'currency' => 'Monedă',
+                    'customer-email' => 'E-mail Client',
+                    'expired' => 'Expirat',
+                    'expires-at' => 'Expiră la',
+                    'status' => 'Stare',
+                    'success' => 'Cardul cadou a fost actualizat cu succes',
+                    'title' => 'Editează Cardul Cadou',
+                    'unused' => 'Neutilizat',
+                    'used' => 'Utilizat',
+                ],
+
+                'delete-failed' => 'Cardul cadou nu poate fi șters deoarece a fost deja utilizat',
+                'delete-success' => 'Cardul cadou a fost șters cu succes',
             ],
 
             'catalog-rules' => [
@@ -5593,6 +5647,7 @@ return [
         'events' => 'Events',
         'exchange-rates' => 'Exchange Rates',
         'gdpr' => 'GDPR',
+        'gift-cards' => 'Carduri Cadou',
         'groups' => 'Groups',
         'import' => 'Import',
         'imports' => 'Imports',

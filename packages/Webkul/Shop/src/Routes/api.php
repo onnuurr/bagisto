@@ -76,6 +76,10 @@ Route::group(['prefix' => 'api'], function () {
 
         Route::delete('coupon', 'destroyCoupon')->name('shop.api.checkout.cart.coupon.remove');
 
+        Route::post('gift-card', 'storeGiftCard')->name('shop.api.checkout.cart.gift_card.apply');
+
+        Route::delete('gift-card', 'destroyGiftCard')->name('shop.api.checkout.cart.gift_card.remove');
+
         Route::get('cross-sell', 'crossSellProducts')->name('shop.api.checkout.cart.cross-sell.index');
     });
 

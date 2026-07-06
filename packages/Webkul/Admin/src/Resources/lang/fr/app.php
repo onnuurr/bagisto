@@ -41,6 +41,8 @@ return [
             'enter-code' => 'Entrez le code à 6 chiffres de votre application d’authentification pour continuer.',
             'title' => 'Vérifier l’authentification à deux facteurs',
             'verify-code' => 'Vérifier le code',
+            'code-sent' => 'Un nouveau code de vérification a été envoyé.',
+            'resend-code' => 'Renvoyer le code',
         ],
     ],
 
@@ -81,6 +83,11 @@ return [
             'title' => 'Mon compte',
             'update-success' => 'Compte mis à jour avec succès',
             'upload-image-info' => 'Téléchargez une image de profil (110px X 110px) au format PNG ou JPG',
+            'method-authenticator' => 'Application d\'authentification',
+            'method-sms' => 'SMS',
+            'phone' => 'Numéro de téléphone',
+            'send-code' => 'Envoyer le code',
+            'two-factor-method' => 'Méthode à deux facteurs',
         ],
 
         'emails' => [
@@ -105,6 +112,8 @@ return [
             'enabled-success' => 'Authentification à deux facteurs activée avec succès.',
             'invalid-code' => 'Code de vérification invalide.',
             'verified-success' => 'Authentification à deux facteurs vérifiée avec succès.',
+            'code-sent-success' => 'Code de vérification envoyé avec succès.',
+            'phone-required' => 'Veuillez ajouter un numéro de téléphone avant d\'activer la vérification par SMS.',
         ],
 
         'setup' => [
@@ -2662,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Règles du panier',
                 'catalog-rule-title' => 'Règles du catalogue',
+                'gift-card-title' => 'Cartes Cadeaux',
             ],
 
             'cart-rules' => [
@@ -2875,6 +2885,59 @@ return [
 
                 'delete-failed' => 'Échec de la suppression de la règle du panier',
                 'delete-success' => 'Règle du panier supprimée avec succès',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Créer une Carte Cadeau',
+                    'title' => 'Cartes Cadeaux',
+
+                    'datagrid' => [
+                        'amount' => 'Montant',
+                        'code' => 'Code',
+                        'delete' => 'Supprimer',
+                        'edit' => 'Modifier',
+                        'expired' => 'Expirée',
+                        'expires-at' => 'Expire le',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Cartes cadeaux sélectionnées supprimées avec succès',
+                        'status' => 'Statut',
+                        'unused' => 'Non utilisée',
+                        'used' => 'Utilisée',
+                        'used-at' => 'Utilisée le',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Montant',
+                    'code' => 'Code',
+                    'code-info' => 'Laisser vide pour générer automatiquement.',
+                    'currency' => 'Devise',
+                    'customer-email' => 'E-mail du client',
+                    'expires-at' => 'Expire le',
+                    'quantity' => 'Quantité',
+                    'quantity-info' => 'Nombre de cartes cadeaux à générer. Le code est ignoré et généré automatiquement lorsque la quantité est supérieure à 1.',
+                    'save-btn' => 'Enregistrer la Carte Cadeau',
+                    'success' => 'Carte cadeau créée avec succès',
+                    'title' => 'Créer une Carte Cadeau',
+                ],
+
+                'edit' => [
+                    'amount' => 'Montant',
+                    'code' => 'Code',
+                    'currency' => 'Devise',
+                    'customer-email' => 'E-mail du client',
+                    'expired' => 'Expirée',
+                    'expires-at' => 'Expire le',
+                    'status' => 'Statut',
+                    'success' => 'Carte cadeau mise à jour avec succès',
+                    'title' => 'Modifier la Carte Cadeau',
+                    'unused' => 'Non utilisée',
+                    'used' => 'Utilisée',
+                ],
+
+                'delete-failed' => 'La carte cadeau ne peut pas être supprimée car elle a déjà été utilisée',
+                'delete-success' => 'Carte cadeau supprimée avec succès',
             ],
 
             'catalog-rules' => [
@@ -5292,6 +5355,96 @@ return [
                     'build-views' => 'Mettre en cache les vues',
                 ],
             ],
+
+            'sms' => [
+                'info' => 'Configurez les passerelles SMS, les notifications de commande et l\'authentification à deux facteurs par SMS.',
+                'title' => 'SMS',
+
+                'general' => [
+                    'info' => 'Paramètres SMS généraux.',
+                    'title' => 'Général',
+
+                    'settings' => [
+                        'active-gateway' => 'Passerelle active',
+                        'enabled' => 'Activé',
+                        'title' => 'Paramètres',
+                        'title-info' => 'Activez ou désactivez les notifications SMS sur toute votre application.',
+                    ],
+                ],
+
+                'gateways' => [
+                    'credential-id' => 'SID de compte / clé API',
+                    'credential-secret' => 'Jeton d\'authentification / clé secrète API',
+                    'info' => 'Configurez les identifiants de votre fournisseur de passerelle SMS.',
+                    'sender' => 'Numéro d\'expéditeur / identifiant d\'expéditeur',
+                    'title' => 'Passerelles',
+
+                    'twilio' => [
+                        'title' => 'Twilio',
+                        'title-info' => 'Configurez vos identifiants API Twilio.',
+                    ],
+
+                    'vonage' => [
+                        'title' => 'Vonage',
+                        'title-info' => 'Configurez vos identifiants API Vonage (Nexmo).',
+                    ],
+
+                    'msg91' => [
+                        'route' => 'Route',
+                        'title' => 'MSG91',
+                        'title-info' => 'Configurez vos identifiants API MSG91.',
+                    ],
+
+                    'verimor' => [
+                        'title' => 'Verimor',
+                        'title-info' => 'Configurez vos identifiants API Verimor.',
+                    ],
+                ],
+
+                'notifications' => [
+                    'enabled-label' => 'Activé',
+                    'info' => 'Activez les notifications SMS pour les événements de commande et personnalisez leurs modèles de message.',
+                    'template-label' => 'Modèle de message',
+                    'title' => 'Notifications de commande',
+
+                    'order-placed' => [
+                        'title' => 'Commande passée',
+                        'title-info' => 'Avertir le client par SMS lorsqu\'une commande est passée.',
+                    ],
+
+                    'order-shipped' => [
+                        'title' => 'Commande expédiée',
+                        'title-info' => 'Avertir le client par SMS lorsque sa commande est expédiée.',
+                    ],
+
+                    'order-cancelled' => [
+                        'title' => 'Commande annulée',
+                        'title-info' => 'Avertir le client par SMS lorsque sa commande est annulée.',
+                    ],
+
+                    'invoice-created' => [
+                        'title' => 'Facture créée',
+                        'title-info' => 'Avertir le client par SMS lorsqu\'une facture est créée pour sa commande.',
+                    ],
+
+                    'refund-created' => [
+                        'title' => 'Remboursement créé',
+                        'title-info' => 'Avertir le client par SMS lorsqu\'un remboursement est créé pour sa commande.',
+                    ],
+                ],
+
+                'two-factor' => [
+                    'info' => 'Autoriser les administrateurs à utiliser le SMS comme méthode d\'authentification à deux facteurs.',
+                    'title' => 'Authentification à deux facteurs',
+
+                    'settings' => [
+                        'enabled' => 'Activé',
+                        'title' => 'Paramètres',
+                'sms' => 'SMS',
+                        'title-info' => 'Activez le SMS comme méthode d\'authentification à deux facteurs disponible pour les comptes administrateurs.',
+                    ],
+                ],
+            ],
         ],
     ],
 
@@ -5531,6 +5684,7 @@ return [
                     'use-cases' => 'Utilisations',
                     'zoom' => 'Zoom',
                 ],
+        'sms' => 'Journaux SMS',
             ],
 
             'videos' => [
@@ -5593,6 +5747,7 @@ return [
         'events' => 'Événements',
         'exchange-rates' => 'Taux de change',
         'gdpr' => 'RGPD',
+        'gift-cards' => 'Cartes Cadeaux',
         'groups' => 'Groupes',
         'import' => 'Importer',
         'imports' => 'Importations',
@@ -5955,6 +6110,55 @@ return [
             'refunded' => 'La rétractation a été marquée comme remboursée.',
             'confirmation_resent' => 'L’e-mail de confirmation a été renvoyé.',
             'confirmation_failed' => 'Impossible d’envoyer l’e-mail de confirmation. Consultez la chronologie pour plus de détails.',
+        ],
+    ],
+
+    'sms' => [
+        'title' => 'Journaux SMS',
+
+        'index' => [
+            'title' => 'Journaux SMS',
+
+            'datagrid' => [
+                'created-at' => 'Envoyé le',
+                'delete' => 'Supprimer',
+                'event' => 'Événement',
+                'gateway' => 'Passerelle',
+                'id' => 'ID',
+                'message' => 'Message',
+                'recipient' => 'Destinataire',
+                'status' => 'Statut',
+            ],
+        ],
+
+        'notifications' => [
+            'order-placed' => [
+                'default-template' => 'Bonjour {customer_name}, votre commande #{order_id} a été passée avec succès. Total : {order_total}. Merci de votre achat chez nous !',
+            ],
+
+            'order-shipped' => [
+                'default-template' => 'Bonjour {customer_name}, votre commande #{order_id} a été expédiée et est en route.',
+            ],
+
+            'order-cancelled' => [
+                'default-template' => 'Bonjour {customer_name}, votre commande #{order_id} a été annulée.',
+            ],
+
+            'invoice-created' => [
+                'default-template' => 'Bonjour {customer_name}, une facture a été générée pour votre commande #{order_id}. Total : {order_total}.',
+            ],
+
+            'refund-created' => [
+                'default-template' => 'Bonjour {customer_name}, un remboursement a été traité pour votre commande #{order_id}.',
+            ],
+        ],
+
+        'two-factor' => [
+            'otp-message' => 'Votre code de vérification est :code. Il expirera dans 5 minutes.',
+        ],
+
+        'messages' => [
+            'delete-success' => 'Journal SMS supprimé avec succès.',
         ],
     ],
 ];

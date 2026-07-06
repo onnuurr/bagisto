@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Kargo Ücreti (KDV Hariç)',
                 'delivery-charges-incl-tax' => 'Kargo Ücreti (KDV Dahil)',
                 'discount-amount' => 'İndirim',
+                'gift-card-amount' => 'Hediye Çeki',
                 'grand-total' => 'Genel Toplam',
                 'included' => 'Dahil',
                 'excl-tax' => 'Vergi Hariç:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Kargo (KDV Hariç)',
                 'delivery-charges-incl-tax' => 'Kargo (KDV Dahil)',
                 'discount-amount' => 'İndirim',
+                'gift-card-amount' => 'Hediye Çeki',
                 'excl-tax' => 'KDV Hariç:',
                 'grand-total' => 'Genel Toplam',
                 'included' => 'Dahil',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Kupon başarıyla uygulandı.',
             'usage-limit-exceeded' => 'Bu kupon kodu kullanım sınırına ulaştı ve artık geçerli değil.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'Hediye çeki kodu zaten uygulandı.',
+            'applied' => 'Hediye Çeki Uygulandı',
+            'apply' => 'Hediye Çeki Uygula',
+            'button-title' => 'Uygula',
+            'enter-your-code' => 'Kodu girin',
+            'invalid' => 'Geçersiz hediye çeki kodu.',
+            'remove' => 'Hediye Çekini Kaldır',
+            'subtotal' => 'Ara Toplam',
+            'success-apply' => 'Hediye çeki kodu başarıyla uygulandı.',
+            'title' => 'Hediye Çeki',
+        ],
+
 
         'login' => [
             'email' => 'E-posta',

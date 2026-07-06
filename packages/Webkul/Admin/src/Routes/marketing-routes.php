@@ -8,6 +8,7 @@ use Webkul\Admin\Http\Controllers\Marketing\Communications\TemplateController;
 use Webkul\Admin\Http\Controllers\Marketing\Promotions\CartRuleController;
 use Webkul\Admin\Http\Controllers\Marketing\Promotions\CartRuleCouponController;
 use Webkul\Admin\Http\Controllers\Marketing\Promotions\CatalogRuleController;
+use Webkul\Admin\Http\Controllers\Marketing\Promotions\GiftCardController;
 use Webkul\Admin\Http\Controllers\Marketing\SearchSEO\SearchSynonymController;
 use Webkul\Admin\Http\Controllers\Marketing\SearchSEO\SearchTermController;
 use Webkul\Admin\Http\Controllers\Marketing\SearchSEO\SitemapController;
@@ -68,6 +69,21 @@ Route::prefix('marketing')->group(function () {
             Route::put('edit/{id}', 'update')->name('admin.marketing.promotions.catalog_rules.update');
 
             Route::delete('edit/{id}', 'destroy')->name('admin.marketing.promotions.catalog_rules.delete');
+        });
+
+        /**
+         * Gift cards routes.
+         */
+        Route::controller(GiftCardController::class)->prefix('gift-cards')->group(function () {
+            Route::get('', 'index')->name('admin.marketing.promotions.gift_cards.index');
+
+            Route::post('create', 'store')->name('admin.marketing.promotions.gift_cards.store');
+
+            Route::put('edit', 'update')->name('admin.marketing.promotions.gift_cards.update');
+
+            Route::delete('edit/{id}', 'destroy')->name('admin.marketing.promotions.gift_cards.delete');
+
+            Route::post('mass-delete', 'massDestroy')->name('admin.marketing.promotions.gift_cards.mass_delete');
         });
     });
 

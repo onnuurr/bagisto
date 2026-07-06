@@ -14,6 +14,9 @@ use Webkul\Customer\Contracts\Customer as CustomerContract;
 use Webkul\Customer\Contracts\Wishlist as WishlistContract;
 use Webkul\Customer\Repositories\CustomerAddressRepository;
 use Webkul\Customer\Repositories\WishlistRepository;
+use Webkul\GiftCard\Contracts\GiftCard as GiftCardContract;
+use Webkul\GiftCard\Models\GiftCard;
+use Webkul\GiftCard\Repositories\GiftCardRepository;
 use Webkul\Product\Contracts\Product as ProductContract;
 use Webkul\Product\Repositories\ProductRepository;
 use Webkul\Shipping\Facades\Shipping;
@@ -56,7 +59,8 @@ class Cart
         protected ProductRepository $productRepository,
         protected TaxCategoryRepository $taxCategoryRepository,
         protected WishlistRepository $wishlistRepository,
-        protected CustomerAddressRepository $customerAddressRepository
+        protected CustomerAddressRepository $customerAddressRepository,
+        protected GiftCardRepository $giftCardRepository
     ) {
         $this->initCart();
     }
@@ -633,6 +637,26 @@ class Cart
     }
 
     /**
+     * Set gift card to the cart.
+     */
+    public function setGiftCard(?GiftCardContract $giftCard): self
+    {
+        $this->cart->gift_card_id = $giftCard?->id;
+
+        $this->cart->save();
+
+        return $this;
+    }
+
+    /**
+     * Remove gift card from the cart.
+     */
+    public function removeGiftCard(): self
+    {
+        return $this->setGiftCard(null);
+    }
+
+    /**
      * Move a wishlist item to cart.
      */
     public function moveToCart(WishlistContract $wishlistItem, ?int $quantity = 1): bool
@@ -933,6 +957,8 @@ class Cart
 
         $this->cart->base_grand_total = round($this->cart->base_grand_total, 2);
 
+        $this->applyGiftCardAmount();
+
         $this->cart->cart_currency_code = core()->getCurrentCurrencyCode();
 
         $this->cart->save();
@@ -940,6 +966,38 @@ class Cart
         Event::dispatch('checkout.cart.collect.totals.after', $this->cart);
 
         return $this;
+    }
+
+    /**
+     * Deduct the currently attached gift card's redeemable value from the
+     * cart's grand total. Gift cards are consumed in full on redemption, so
+     * any amount beyond the grand total is capped rather than carried over.
+     */
+    protected function applyGiftCardAmount(): void
+    {
+        $this->cart->gift_cards_amount = $this->cart->base_gift_cards_amount = 0;
+
+        if (! $this->cart->gift_card_id) {
+            return;
+        }
+
+        $giftCard = $this->giftCardRepository->find($this->cart->gift_card_id);
+
+        if (
+            ! $giftCard
+            || $giftCard->status != GiftCard::STATUS_UNUSED
+            || ($giftCard->expires_at && $giftCard->expires_at->isPast())
+        ) {
+            $this->cart->gift_card_id = null;
+
+            return;
+        }
+
+        $this->cart->base_gift_cards_amount = min($giftCard->amount, $this->cart->base_grand_total);
+        $this->cart->gift_cards_amount = min(core()->convertPrice($giftCard->amount), $this->cart->grand_total);
+
+        $this->cart->grand_total = max(0, $this->cart->grand_total - $this->cart->gift_cards_amount);
+        $this->cart->base_grand_total = max(0, $this->cart->base_grand_total - $this->cart->base_gift_cards_amount);
     }
 
     /**

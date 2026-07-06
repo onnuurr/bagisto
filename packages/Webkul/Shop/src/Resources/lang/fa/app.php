@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'هزینه ارسال (بدون مالیات)',
                 'delivery-charges-incl-tax' => 'هزینه ارسال (شامل مالیات)',
                 'discount-amount' => 'مقدار تخفیف',
+                'gift-card-amount' => 'کارت هدیه',
                 'grand-total' => 'مجموع کل',
                 'included' => 'شامل',
                 'excl-tax' => 'بدون مالیات:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'هزینه ارسال (بدون مالیات)',
                 'delivery-charges-incl-tax' => 'هزینه ارسال (شامل مالیات)',
                 'discount-amount' => 'مقدار تخفیف',
+                'gift-card-amount' => 'کارت هدیه',
                 'excl-tax' => 'بدون مالیات:',
                 'grand-total' => 'مجموع کل',
                 'included' => 'شامل',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'کد تخفیف با موفقیت اعمال شد.',
             'usage-limit-exceeded' => 'این کد تخفیف به حد مجاز استفاده رسیده و دیگر معتبر نیست.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'کد کارت هدیه در حال حاضر اعمال شده است.',
+            'applied' => 'کارت هدیه اعمال شد',
+            'apply' => 'اعمال کارت هدیه',
+            'button-title' => 'اعمال',
+            'enter-your-code' => 'کد خود را وارد کنید',
+            'invalid' => 'کد کارت هدیه نامعتبر است.',
+            'remove' => 'حذف کارت هدیه',
+            'subtotal' => 'جمع کل',
+            'success-apply' => 'کد کارت هدیه با موفقیت اعمال شد.',
+            'title' => 'کارت هدیه',
+        ],
+
 
         'login' => [
             'email' => 'ایمیل',

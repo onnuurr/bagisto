@@ -18,6 +18,7 @@ use Webkul\DebugBar\Providers\DebugBarServiceProvider;
 use Webkul\EUWithdrawal\Providers\EUWithdrawalServiceProvider;
 use Webkul\FPC\Providers\FPCServiceProvider;
 use Webkul\GDPR\Providers\GDPRServiceProvider;
+use Webkul\GiftCard\Providers\GiftCardServiceProvider;
 use Webkul\ImageCache\Providers\ImageCacheServiceProvider;
 use Webkul\Installer\Providers\InstallerServiceProvider;
 use Webkul\Inventory\Providers\InventoryServiceProvider;
@@ -38,6 +39,7 @@ use Webkul\Sales\Providers\SalesServiceProvider;
 use Webkul\Shipping\Providers\ShippingServiceProvider;
 use Webkul\Shop\Providers\ShopServiceProvider;
 use Webkul\Sitemap\Providers\SitemapServiceProvider;
+use Webkul\SMS\Providers\SMSServiceProvider;
 use Webkul\SocialLogin\Providers\SocialLoginServiceProvider;
 use Webkul\SocialShare\Providers\SocialShareServiceProvider;
 use Webkul\Stripe\Providers\StripeServiceProvider;
@@ -71,6 +73,7 @@ return [
     EUWithdrawalServiceProvider::class,
     FPCServiceProvider::class,
     GDPRServiceProvider::class,
+    GiftCardServiceProvider::class,
     ImageCacheServiceProvider::class,
     InstallerServiceProvider::class,
     InventoryServiceProvider::class,
@@ -91,6 +94,7 @@ return [
     ShippingServiceProvider::class,
     ShopServiceProvider::class,
     SitemapServiceProvider::class,
+    SMSServiceProvider::class,
     SocialLoginServiceProvider::class,
     SocialShareServiceProvider::class,
     StripeServiceProvider::class,
