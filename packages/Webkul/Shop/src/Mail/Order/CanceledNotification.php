@@ -25,7 +25,7 @@ class CanceledNotification extends Mailable
             to: [
                 new Address($this->order->customer_email, $this->order->customer_full_name),
             ],
-            subject: trans('shop::app.emails.orders.canceled.subject'),
+            subject: $this->resolveSubject('shop.orders.canceled', 'shop::app.emails.orders.canceled.subject'),
         );
     }
 
@@ -34,8 +34,11 @@ class CanceledNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.orders.canceled',
-        );
+        return $this->resolveContent('shop.orders.canceled', 'shop::emails.orders.canceled', [
+            '{{customer_name}}' => $this->order->customer_full_name,
+            '{{order_id}}' => '<a href="'.route('shop.customers.account.orders.view', $this->order->id).'" style="color: #2969FF;">#'.$this->order->increment_id.'</a>',
+            '{{order_date}}' => core()->formatDate($this->order->created_at, 'Y-m-d H:i:s'),
+            '{{order_details}}' => view('shop::emails.orders.partials.canceled', ['order' => $this->order])->render(),
+        ]);
     }
 }

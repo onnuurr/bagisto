@@ -26,7 +26,7 @@ class EmailVerificationNotification extends Mailable
             to: [
                 new Address($this->customer->email),
             ],
-            subject: trans('shop::app.emails.customers.verification.subject'),
+            subject: $this->resolveSubject('shop.customers.email-verification', 'shop::app.emails.customers.verification.subject'),
         );
     }
 
@@ -35,8 +35,9 @@ class EmailVerificationNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.email-verification',
-        );
+        return $this->resolveContent('shop.customers.email-verification', 'shop::emails.customers.email-verification', [
+            '{{customer_name}}' => $this->customer->name,
+            '{{verify_email_url}}' => route('shop.customers.verify', $this->customer->token),
+        ]);
     }
 }

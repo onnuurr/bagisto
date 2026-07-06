@@ -26,7 +26,7 @@ class RegistrationNotification extends Mailable
             to: [
                 new Address($this->customer->email),
             ],
-            subject: trans('shop::app.emails.customers.registration.subject'),
+            subject: $this->resolveSubject('shop.customers.registration', 'shop::app.emails.customers.registration.subject'),
         );
     }
 
@@ -35,8 +35,9 @@ class RegistrationNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.registration',
-        );
+        return $this->resolveContent('shop.customers.registration', 'shop::emails.customers.registration', [
+            '{{customer_name}}' => $this->customer->name,
+            '{{sign_in_url}}' => route('shop.customer.session.index'),
+        ]);
     }
 }

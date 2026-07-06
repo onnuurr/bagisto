@@ -29,7 +29,7 @@ class CanceledNotification extends Mailable
                     core()->getAdminEmailDetails()['name']
                 ),
             ],
-            subject: trans('admin::app.emails.orders.canceled.subject'),
+            subject: $this->resolveSubject('admin.orders.canceled', 'admin::app.emails.orders.canceled.subject'),
         );
     }
 
@@ -38,8 +38,11 @@ class CanceledNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'admin::emails.orders.canceled',
-        );
+        return $this->resolveContent('admin.orders.canceled', 'admin::emails.orders.canceled', [
+            '{{admin_name}}' => core()->getAdminEmailDetails()['name'],
+            '{{order_id}}' => '<a href="'.route('admin.sales.orders.view', $this->order->id).'" style="color: #2969FF;">#'.$this->order->increment_id.'</a>',
+            '{{order_date}}' => core()->formatDate($this->order->created_at, 'Y-m-d H:i:s'),
+            '{{order_details}}' => view('admin::emails.orders.partials.canceled', ['order' => $this->order])->render(),
+        ]);
     }
 }

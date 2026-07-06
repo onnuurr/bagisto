@@ -29,7 +29,7 @@ class ShippedNotification extends Mailable
                     core()->getAdminEmailDetails()['name']
                 ),
             ],
-            subject: trans('admin::app.emails.orders.shipped.subject'),
+            subject: $this->resolveSubject('admin.orders.shipped', 'admin::app.emails.orders.shipped.subject'),
         );
     }
 
@@ -38,8 +38,12 @@ class ShippedNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'admin::emails.orders.shipped',
-        );
+        return $this->resolveContent('admin.orders.shipped', 'admin::emails.orders.shipped', [
+            '{{admin_name}}' => core()->getAdminEmailDetails()['name'],
+            '{{shipment_id}}' => $this->shipment->increment_id,
+            '{{order_id}}' => '<a href="'.route('admin.sales.orders.view', $this->shipment->order_id).'" style="color: #2969FF;">#'.$this->shipment->order->increment_id.'</a>',
+            '{{order_date}}' => core()->formatDate($this->shipment->order->created_at, 'Y-m-d H:i:s'),
+            '{{order_details}}' => view('admin::emails.orders.partials.shipped', ['shipment' => $this->shipment])->render(),
+        ]);
     }
 }

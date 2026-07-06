@@ -3375,6 +3375,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'सूचना ईमेल',
+
+                'datagrid' => [
+                    'active' => 'सक्रिय',
+                    'code' => 'कोड',
+                    'edit' => 'संपादित करें',
+                    'id' => 'आईडी',
+                    'inactive' => 'निष्क्रिय',
+                    'name' => 'नाम',
+                    'status' => 'स्थिति',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'सक्रिय',
+                'back-btn' => 'पीछे जाएँ',
+                'code' => 'कोड',
+                'content' => 'सामग्री',
+                'general' => 'सामान्य',
+                'inactive' => 'निष्क्रिय',
+                'name' => 'नाम',
+                'save-btn' => 'सहेजें',
+                'status' => 'स्थिति',
+                'subject' => 'विषय',
+                'title' => 'सूचना ईमेल संपादित करें',
+                'variables' => 'उपलब्ध वेरिएबल',
+                'variables-info' => 'आप विषय और सामग्री में निम्नलिखित वेरिएबल का उपयोग कर सकते हैं। ईमेल भेजे जाने पर इन्हें स्वचालित रूप से वास्तविक डेटा से बदल दिया जाएगा।',
+            ],
+
+            'update-success' => 'सूचना ईमेल सफलतापूर्वक अपडेट किया गया।',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5470,6 +5504,7 @@ return [
                 'inventory-sources' => 'सूची स्रोत',
                 'invoices' => 'चालान',
                 'locales' => 'स्थान',
+                'notification-emails' => 'सूचना ईमेल',
                 'marketing' => 'मार्केटिंग',
                 'mode' => 'डार्क मोड',
                 'newsletter-subscriptions' => 'समाचार पत्रिका सदस्यता',
@@ -5722,6 +5757,7 @@ return [
         'marketing' => 'मार्केटिंग',
         'newsletter-subscriptions' => 'न्यूज़लेटर सदस्यता',
         'note' => 'टिप्पणी',
+        'notification-emails' => 'सूचना ईमेल',
         'orders' => 'आदेश',
         'products' => 'उत्पाद',
         'promotions' => 'प्रमोशन',

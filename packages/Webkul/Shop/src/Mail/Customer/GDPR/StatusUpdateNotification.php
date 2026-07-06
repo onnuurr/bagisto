@@ -26,7 +26,7 @@ class StatusUpdateNotification extends Mailable
             to: [
                 new Address($this->gdprRequest->email),
             ],
-            subject: trans('shop::app.emails.customers.gdpr.status-update.subject')
+            subject: $this->resolveSubject('shop.customers.gdpr.status-update', 'shop::app.emails.customers.gdpr.status-update.subject'),
         );
     }
 
@@ -35,8 +35,11 @@ class StatusUpdateNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.gdpr.status-update-notification',
-        );
+        return $this->resolveContent('shop.customers.gdpr.status-update', 'shop::emails.customers.gdpr.status-update-notification', [
+            '{{customer_name}}' => $this->gdprRequest->customer->name,
+            '{{request_status}}' => $this->gdprRequest->status,
+            '{{request_type}}' => $this->gdprRequest->type,
+            '{{message}}' => e($this->gdprRequest->message),
+        ], layoutView: 'shop::emails.layout');
     }
 }

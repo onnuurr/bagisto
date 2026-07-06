@@ -3375,6 +3375,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'বিজ্ঞপ্তি ইমেইল',
+
+                'datagrid' => [
+                    'active' => 'সক্রিয়',
+                    'code' => 'কোড',
+                    'edit' => 'সম্পাদনা',
+                    'id' => 'আইডি',
+                    'inactive' => 'নিষ্ক্রিয়',
+                    'name' => 'নাম',
+                    'status' => 'স্থিতি',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'সক্রিয়',
+                'back-btn' => 'পিছনে যান',
+                'code' => 'কোড',
+                'content' => 'বিষয়বস্তু',
+                'general' => 'সাধারণ',
+                'inactive' => 'নিষ্ক্রিয়',
+                'name' => 'নাম',
+                'save-btn' => 'সংরক্ষণ করুন',
+                'status' => 'স্থিতি',
+                'subject' => 'বিষয়',
+                'title' => 'বিজ্ঞপ্তি ইমেইল সম্পাদনা করুন',
+                'variables' => 'উপলব্ধ ভেরিয়েবল',
+                'variables-info' => 'আপনি বিষয় এবং বিষয়বস্তুতে নিম্নলিখিত ভেরিয়েবলগুলি ব্যবহার করতে পারেন। ইমেইল পাঠানোর সময় এগুলি স্বয়ংক্রিয়ভাবে প্রকৃত তথ্য দ্বারা প্রতিস্থাপিত হবে।',
+            ],
+
+            'update-success' => 'বিজ্ঞপ্তি ইমেইল সফলভাবে আপডেট হয়েছে।',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5470,6 +5504,7 @@ return [
                 'inventory-sources' => 'মূল মদ',
                 'invoices' => 'চালান',
                 'locales' => 'লোকেল',
+                'notification-emails' => 'বিজ্ঞপ্তি ইমেইল',
                 'marketing' => 'মার্কেটিং',
                 'mode' => 'ডার্ক মোড',
                 'newsletter-subscriptions' => 'নিউজলেটার সাবস্ক্রিপশন',
@@ -5722,6 +5757,7 @@ return [
         'marketing' => 'মার্কেটিং',
         'newsletter-subscriptions' => 'নিউজলেটার সাবস্ক্রিপশন',
         'note' => 'মন্তব্য',
+        'notification-emails' => 'বিজ্ঞপ্তি ইমেইল',
         'orders' => 'অর্ডার',
         'products' => 'পণ্য',
         'promotions' => 'প্রচারণা',

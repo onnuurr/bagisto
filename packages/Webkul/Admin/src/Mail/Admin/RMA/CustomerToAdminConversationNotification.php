@@ -2,18 +2,14 @@
 
 namespace Webkul\Admin\Mail\Admin\RMA;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Queue\SerializesModels;
+use Webkul\Admin\Mail\Mailable;
 use Webkul\RMA\Contracts\RMAMessage;
 
 class CustomerToAdminConversationNotification extends Mailable
 {
-    use Queueable, SerializesModels;
-
     /**
      * Create a new message instance.
      */
@@ -33,7 +29,7 @@ class CustomerToAdminConversationNotification extends Mailable
                 core()->getConfigData('emails.configure.email_settings.admin_email') ?: config('mail.admin.address'),
                 core()->getConfigData('emails.configure.email_settings.admin_name') ?: config('mail.admin.name')
             )],
-            subject: trans('admin::app.emails.rma.conversation.subject'),
+            subject: $this->resolveSubject('admin.rma.conversation', 'admin::app.emails.rma.conversation.subject'),
         );
     }
 
@@ -42,8 +38,9 @@ class CustomerToAdminConversationNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'admin::emails.rma.conversation.message',
-        );
+        return $this->resolveContent('admin.rma.conversation', 'admin::emails.rma.conversation.message', [
+            '{{admin_name}}' => core()->getAdminEmailDetails()['name'],
+            '{{message}}' => e($this->rmaMessage->message),
+        ]);
     }
 }

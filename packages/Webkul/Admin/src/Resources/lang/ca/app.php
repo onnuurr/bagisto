@@ -3375,6 +3375,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'Correus de notificació',
+
+                'datagrid' => [
+                    'active' => 'Actiu',
+                    'code' => 'Codi',
+                    'edit' => 'Editar',
+                    'id' => 'ID',
+                    'inactive' => 'Inactiu',
+                    'name' => 'Nom',
+                    'status' => 'Estat',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'Actiu',
+                'back-btn' => 'Tornar',
+                'code' => 'Codi',
+                'content' => 'Contingut',
+                'general' => 'General',
+                'inactive' => 'Inactiu',
+                'name' => 'Nom',
+                'save-btn' => 'Desar',
+                'status' => 'Estat',
+                'subject' => 'Assumpte',
+                'title' => 'Edita el correu de notificació',
+                'variables' => 'Variables disponibles',
+                'variables-info' => 'Podeu utilitzar les variables següents a l\'assumpte i al contingut. Se substituiran automàticament per les dades reals en enviar el correu.',
+            ],
+
+            'update-success' => 'El correu de notificació s\'ha actualitzat correctament.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5470,6 +5504,7 @@ return [
                 'inventory-sources' => 'Fonts d\'inventari',
                 'invoices' => 'Factures',
                 'locales' => 'Ubicacions',
+                'notification-emails' => 'Correus de notificació',
                 'marketing' => 'Màrqueting',
                 'mode' => 'Mode fosc',
                 'newsletter-subscriptions' => 'Subscriure\'s al butlletí',
@@ -5722,6 +5757,7 @@ return [
         'marketing' => 'Màrqueting',
         'newsletter-subscriptions' => 'Subscripcions al Butlletí',
         'note' => 'Nota',
+        'notification-emails' => 'Correus de notificació',
         'orders' => 'Comandes',
         'products' => 'Productes',
         'promotions' => 'Promocions',

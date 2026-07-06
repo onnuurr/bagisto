@@ -30,7 +30,7 @@ class NewRequestNotification extends Mailable
             to: [
                 new Address($this->gdprRequest->email),
             ],
-            subject: trans($subjectKey)
+            subject: $this->resolveSubject('shop.customers.gdpr.new-request', $subjectKey),
         );
     }
 
@@ -39,8 +39,16 @@ class NewRequestNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.gdpr.new-request',
-        );
+        $summaryKey = $this->gdprRequest->type === 'update'
+            ? 'shop::app.emails.customers.gdpr.new-request.update-summary'
+            : 'shop::app.emails.customers.gdpr.new-request.delete-summary';
+
+        return $this->resolveContent('shop.customers.gdpr.new-request', 'shop::emails.customers.gdpr.new-request', [
+            '{{customer_name}}' => $this->gdprRequest->customer->name,
+            '{{request_summary}}' => trans($summaryKey),
+            '{{request_status}}' => $this->gdprRequest->status,
+            '{{request_type}}' => $this->gdprRequest->type,
+            '{{message}}' => e($this->gdprRequest->message),
+        ], layoutView: 'shop::emails.layout');
     }
 }

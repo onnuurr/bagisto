@@ -3375,6 +3375,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'ایمیل‌های اطلاع‌رسانی',
+
+                'datagrid' => [
+                    'active' => 'فعال',
+                    'code' => 'کد',
+                    'edit' => 'ویرایش',
+                    'id' => 'شناسه',
+                    'inactive' => 'غیرفعال',
+                    'name' => 'نام',
+                    'status' => 'وضعیت',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'فعال',
+                'back-btn' => 'بازگشت',
+                'code' => 'کد',
+                'content' => 'محتوا',
+                'general' => 'عمومی',
+                'inactive' => 'غیرفعال',
+                'name' => 'نام',
+                'save-btn' => 'ذخیره',
+                'status' => 'وضعیت',
+                'subject' => 'موضوع',
+                'title' => 'ویرایش ایمیل اطلاع‌رسانی',
+                'variables' => 'متغیرهای موجود',
+                'variables-info' => 'می‌توانید از متغیرهای زیر در موضوع و محتوا استفاده کنید. هنگام ارسال ایمیل، آن‌ها به طور خودکار با داده‌های واقعی جایگزین می‌شوند.',
+            ],
+
+            'update-success' => 'ایمیل اطلاع‌رسانی با موفقیت به‌روزرسانی شد.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5470,6 +5504,7 @@ return [
                 'inventory-sources' => 'منابع موجودی',
                 'invoices' => 'فاکتورها',
                 'locales' => 'محلی‌ها',
+                'notification-emails' => 'ایمیل‌های اطلاع‌رسانی',
                 'marketing' => 'بازاریابی',
                 'mode' => 'حالت تاریک',
                 'newsletter-subscriptions' => 'اشتراک‌های خبرنامه',
@@ -5722,6 +5757,7 @@ return [
         'marketing' => 'بازاریابی',
         'newsletter-subscriptions' => 'اشتراک‌های خبرنامه',
         'note' => 'یادداشت',
+        'notification-emails' => 'ایمیل‌های اطلاع‌رسانی',
         'orders' => 'سفارش‌ها',
         'products' => 'محصولات',
         'promotions' => 'تبلیغات',

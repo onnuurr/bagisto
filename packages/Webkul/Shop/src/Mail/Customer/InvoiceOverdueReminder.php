@@ -31,7 +31,7 @@ class InvoiceOverdueReminder extends Mailable
                     core()->getSenderEmailDetails()['name']
                 ),
             ],
-            subject: trans('shop::app.emails.customers.reminder.subject'),
+            subject: $this->resolveSubject('shop.customers.invoice-reminder', 'shop::app.emails.customers.reminder.subject'),
         );
     }
 
@@ -40,8 +40,8 @@ class InvoiceOverdueReminder extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.invoice-reminder',
-        );
+        return $this->resolveContent('shop.customers.invoice-reminder', 'shop::emails.customers.invoice-reminder', [
+            '{{customer_name}}' => $this->invoice->order->customer_full_name,
+        ], layoutView: 'shop::emails.layout');
     }
 }

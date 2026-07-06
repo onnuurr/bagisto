@@ -3375,6 +3375,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'رسائل الإشعارات',
+
+                'datagrid' => [
+                    'active' => 'نشط',
+                    'code' => 'الرمز',
+                    'edit' => 'تعديل',
+                    'id' => 'المعرف',
+                    'inactive' => 'غير نشط',
+                    'name' => 'الاسم',
+                    'status' => 'الحالة',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'نشط',
+                'back-btn' => 'عودة',
+                'code' => 'الرمز',
+                'content' => 'المحتوى',
+                'general' => 'عام',
+                'inactive' => 'غير نشط',
+                'name' => 'الاسم',
+                'save-btn' => 'حفظ',
+                'status' => 'الحالة',
+                'subject' => 'الموضوع',
+                'title' => 'تعديل رسالة الإشعار',
+                'variables' => 'المتغيرات المتاحة',
+                'variables-info' => 'يمكنك استخدام المتغيرات التالية في الموضوع والمحتوى. سيتم استبدالها تلقائيًا بالبيانات الفعلية عند إرسال البريد الإلكتروني.',
+            ],
+
+            'update-success' => 'تم تحديث رسالة الإشعار بنجاح.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5470,6 +5504,7 @@ return [
                 'inventory-sources' => 'مصادر المخزون',
                 'invoices' => 'الفواتير',
                 'locales' => 'الإعدادات المحلية',
+                'notification-emails' => 'رسائل الإشعارات',
                 'marketing' => 'التسويق',
                 'mode' => 'وضع الظلام',
                 'newsletter-subscriptions' => 'اشتراكات النشرة الإخبارية',
@@ -5722,6 +5757,7 @@ return [
         'marketing' => 'التسويق',
         'newsletter-subscriptions' => 'اشتراكات النشرة الإخبارية',
         'note' => 'ملاحظة',
+        'notification-emails' => 'رسائل الإشعارات',
         'orders' => 'الطلبيات',
         'products' => 'المنتجات',
         'promotions' => 'العروض',

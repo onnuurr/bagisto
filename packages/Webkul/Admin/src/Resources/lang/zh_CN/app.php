@@ -3375,6 +3375,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => '通知邮件',
+
+                'datagrid' => [
+                    'active' => '激活',
+                    'code' => '代码',
+                    'edit' => '编辑',
+                    'id' => 'ID',
+                    'inactive' => '禁用',
+                    'name' => '姓名',
+                    'status' => '状态',
+                ],
+            ],
+
+            'edit' => [
+                'active' => '激活',
+                'back-btn' => '返回',
+                'code' => '代码',
+                'content' => '内容',
+                'general' => '通用',
+                'inactive' => '禁用',
+                'name' => '姓名',
+                'save-btn' => '保存',
+                'status' => '状态',
+                'subject' => '主题',
+                'title' => '编辑通知邮件',
+                'variables' => '可用变量',
+                'variables-info' => '您可以在主题和内容中使用以下变量。发送邮件时，它们将自动替换为实际数据。',
+            ],
+
+            'update-success' => '通知邮件更新成功。',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5470,6 +5504,7 @@ return [
                 'inventory-sources' => '库存来源',
                 'invoices' => '发票',
                 'locales' => '语言环境',
+                'notification-emails' => '通知邮件',
                 'marketing' => '营销',
                 'mode' => '暗模式',
                 'newsletter-subscriptions' => '订阅通讯',
@@ -5722,6 +5757,7 @@ return [
         'marketing' => '营销',
         'newsletter-subscriptions' => '通讯订阅',
         'note' => '备注',
+        'notification-emails' => '通知邮件',
         'orders' => '订单',
         'products' => '产品',
         'promotions' => '促销',

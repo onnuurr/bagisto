@@ -31,7 +31,7 @@ class NewRequestNotification extends Mailable
                     core()->getAdminEmailDetails()['name']
                 ),
             ],
-            subject: trans($subjectKey)
+            subject: $this->resolveSubject('admin.customers.gdpr.new-request', $subjectKey),
         );
     }
 
@@ -40,8 +40,17 @@ class NewRequestNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'admin::emails.customers.gdpr.new-request'
-        );
+        $summaryKey = $this->gdprRequest->type === 'update'
+            ? 'admin::app.emails.customers.gdpr.new-request.update-summary'
+            : 'admin::app.emails.customers.gdpr.new-request.delete-summary';
+
+        return $this->resolveContent('admin.customers.gdpr.new-request', 'admin::emails.customers.gdpr.new-request', [
+            '{{admin_name}}' => core()->getAdminEmailDetails()['name'],
+            '{{customer_name}}' => $this->gdprRequest->customer->name,
+            '{{request_summary}}' => trans($summaryKey),
+            '{{request_status}}' => $this->gdprRequest->status,
+            '{{request_type}}' => $this->gdprRequest->type,
+            '{{message}}' => e($this->gdprRequest->message),
+        ]);
     }
 }

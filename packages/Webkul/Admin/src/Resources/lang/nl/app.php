@@ -3375,6 +3375,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'Meldings-e-mails',
+
+                'datagrid' => [
+                    'active' => 'Actief',
+                    'code' => 'Code',
+                    'edit' => 'Bewerken',
+                    'id' => 'ID',
+                    'inactive' => 'Inactief',
+                    'name' => 'Naam',
+                    'status' => 'Status',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'Actief',
+                'back-btn' => 'Terug',
+                'code' => 'Code',
+                'content' => 'Inhoud',
+                'general' => 'Algemeen',
+                'inactive' => 'Inactief',
+                'name' => 'Naam',
+                'save-btn' => 'Opslaan',
+                'status' => 'Status',
+                'subject' => 'Onderwerp',
+                'title' => 'Meldings-e-mail bewerken',
+                'variables' => 'Beschikbare variabelen',
+                'variables-info' => 'U kunt de volgende variabelen gebruiken in het onderwerp en de inhoud. Ze worden automatisch vervangen door de werkelijke gegevens wanneer de e-mail wordt verzonden.',
+            ],
+
+            'update-success' => 'Meldings-e-mail succesvol bijgewerkt.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5470,6 +5504,7 @@ return [
                 'inventory-sources' => 'Voorraadbronnen',
                 'invoices' => 'Facturen',
                 'locales' => 'Locaties',
+                'notification-emails' => 'Meldings-e-mails',
                 'marketing' => 'Marketing',
                 'mode' => 'Donkere Modus',
                 'newsletter-subscriptions' => 'Nieuwsbriefabonnementen',
@@ -5722,6 +5757,7 @@ return [
         'marketing' => 'Marketing',
         'newsletter-subscriptions' => 'Nieuwsbriefabonnementen',
         'note' => 'Notitie',
+        'notification-emails' => 'Meldings-e-mails',
         'orders' => 'Bestellingen',
         'products' => 'Producten',
         'promotions' => 'Promoties',

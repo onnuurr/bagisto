@@ -29,7 +29,7 @@ class ShippedNotification extends Mailable
                     $this->shipment->order->customer_full_name
                 ),
             ],
-            subject: trans('shop::app.emails.orders.shipped.subject'),
+            subject: $this->resolveSubject('shop.orders.shipped', 'shop::app.emails.orders.shipped.subject'),
         );
     }
 
@@ -38,8 +38,12 @@ class ShippedNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.orders.shipped',
-        );
+        return $this->resolveContent('shop.orders.shipped', 'shop::emails.orders.shipped', [
+            '{{customer_name}}' => $this->shipment->order->customer_full_name,
+            '{{shipment_id}}' => $this->shipment->increment_id,
+            '{{order_id}}' => '<a href="'.route('shop.customers.account.orders.view', $this->shipment->order_id).'" style="color: #2969FF;">#'.$this->shipment->order->increment_id.'</a>',
+            '{{order_date}}' => core()->formatDate($this->shipment->order->created_at, 'Y-m-d H:i:s'),
+            '{{order_details}}' => view('shop::emails.orders.partials.shipped', ['shipment' => $this->shipment])->render(),
+        ]);
     }
 }

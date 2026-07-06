@@ -2,18 +2,13 @@
 
 namespace Webkul\Shop\Mail\Customer\EUWithdrawal;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Queue\SerializesModels;
+use Webkul\Shop\Mail\Mailable;
 
-class GuestWithdrawalLink extends Mailable implements ShouldQueue
+class GuestWithdrawalLink extends Mailable
 {
-    use Queueable, SerializesModels;
-
     /**
      * Create a new mailable instance.
      */
@@ -33,7 +28,7 @@ class GuestWithdrawalLink extends Mailable implements ShouldQueue
         return new Envelope(
             from: new Address($sender['email'], $sender['name']),
             to: [new Address($this->toEmail)],
-            subject: trans('shop::app.eu_withdrawal.emails.guest_link.subject'),
+            subject: $this->resolveSubject('shop.customers.eu-withdrawal.guest-link', 'shop::app.eu_withdrawal.emails.guest_link.subject'),
         );
     }
 
@@ -42,12 +37,13 @@ class GuestWithdrawalLink extends Mailable implements ShouldQueue
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.eu-withdrawal.guest-link',
-            with: [
-                'signedUrl' => $this->signedUrl,
-                'orderIncrementId' => $this->orderIncrementId,
-            ],
-        );
+        return $this->resolveContent('shop.customers.eu-withdrawal.guest-link', 'shop::emails.customers.eu-withdrawal.guest-link', [
+            '{{customer_name}}' => $this->toEmail,
+            '{{order_id}}' => $this->orderIncrementId,
+            '{{withdrawal_link}}' => $this->signedUrl,
+        ], fallbackWith: [
+            'signedUrl' => $this->signedUrl,
+            'orderIncrementId' => $this->orderIncrementId,
+        ]);
     }
 }

@@ -26,7 +26,7 @@ class NoteNotification extends Mailable
             to: [
                 new Address($this->customerNote->customer->email),
             ],
-            subject: trans('shop::app.emails.orders.commented.subject'),
+            subject: $this->resolveSubject('shop.customers.note', 'shop::app.emails.orders.commented.subject'),
         );
     }
 
@@ -35,8 +35,9 @@ class NoteNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.customers.commented',
-        );
+        return $this->resolveContent('shop.customers.note', 'shop::emails.customers.commented', [
+            '{{customer_name}}' => $this->customerNote->customer->name,
+            '{{note}}' => e($this->customerNote->note),
+        ]);
     }
 }

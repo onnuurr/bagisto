@@ -402,6 +402,12 @@ return [
         'route' => 'admin.sms.index',
         'sort' => 11,
         'icon' => '',
+    ], [
+        'key' => 'settings.email_templates',
+        'name' => 'admin::app.components.layouts.sidebar.notification-emails',
+        'route' => 'admin.settings.email_templates.index',
+        'sort' => 12,
+        'icon' => '',
     ],
 
     /**

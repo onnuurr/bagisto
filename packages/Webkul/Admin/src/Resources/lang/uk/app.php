@@ -3375,6 +3375,40 @@ return [
             ],
         ],
 
+        'email-templates' => [
+            'index' => [
+                'title' => 'Листи-сповіщення',
+
+                'datagrid' => [
+                    'active' => 'Активний',
+                    'code' => 'Код',
+                    'edit' => 'Редагувати',
+                    'id' => 'ID',
+                    'inactive' => 'Неактивна',
+                    'name' => 'Ім\'я',
+                    'status' => 'Статус',
+                ],
+            ],
+
+            'edit' => [
+                'active' => 'Активний',
+                'back-btn' => 'Назад',
+                'code' => 'Код',
+                'content' => 'Зміст',
+                'general' => 'Загальні',
+                'inactive' => 'Неактивна',
+                'name' => 'Ім\'я',
+                'save-btn' => 'Зберегти',
+                'status' => 'Статус',
+                'subject' => 'Тема',
+                'title' => 'Редагувати лист-сповіщення',
+                'variables' => 'Доступні змінні',
+                'variables-info' => 'Ви можете використовувати наступні змінні в темі та вмісті. Вони будуть автоматично замінені реальними даними під час надсилання листа.',
+            ],
+
+            'update-success' => 'Лист-сповіщення успішно оновлено.',
+        ],
+
         'data-transfer' => [
             'imports' => [
                 'create' => [
@@ -5470,6 +5504,7 @@ return [
                 'inventory-sources' => 'Джерела інвентаризації',
                 'invoices' => 'Рахунки',
                 'locales' => 'Локалізації',
+                'notification-emails' => 'Листи-сповіщення',
                 'marketing' => 'Маркетинг',
                 'mode' => 'Темний режим',
                 'newsletter-subscriptions' => 'Підписки на розсилку',
@@ -5722,6 +5757,7 @@ return [
         'marketing' => 'Маркетинг',
         'newsletter-subscriptions' => 'Підписка на розсилку',
         'note' => 'Примітка',
+        'notification-emails' => 'Листи-сповіщення',
         'orders' => 'Замовлення',
         'products' => 'Товари',
         'promotions' => 'Акції',

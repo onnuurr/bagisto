@@ -29,7 +29,7 @@ class RefundedNotification extends Mailable
                     core()->getAdminEmailDetails()['name']
                 ),
             ],
-            subject: trans('admin::app.emails.orders.refunded.subject'),
+            subject: $this->resolveSubject('admin.orders.refunded', 'admin::app.emails.orders.refunded.subject'),
         );
     }
 
@@ -38,8 +38,12 @@ class RefundedNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'admin::emails.orders.refunded',
-        );
+        return $this->resolveContent('admin.orders.refunded', 'admin::emails.orders.refunded', [
+            '{{admin_name}}' => core()->getAdminEmailDetails()['name'],
+            '{{invoice_id}}' => $this->refund->increment_id,
+            '{{order_id}}' => '<a href="'.route('admin.sales.orders.view', $this->refund->order_id).'" style="color: #2969FF;">#'.$this->refund->order->increment_id.'</a>',
+            '{{order_date}}' => core()->formatDate($this->refund->order->created_at, 'Y-m-d H:i:s'),
+            '{{order_details}}' => view('admin::emails.orders.partials.refunded', ['refund' => $this->refund])->render(),
+        ]);
     }
 }

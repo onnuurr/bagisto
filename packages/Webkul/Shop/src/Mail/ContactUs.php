@@ -27,7 +27,10 @@ class ContactUs extends Mailable
                     core()->getAdminEmailDetails()['name']
                 ),
             ],
-            subject: trans('shop::app.emails.contact-us.inquiry-from').' '.$this->contactUs['name'].' '.trans('shop::app.emails.contact-us.contact-from'),
+            subject: $this->resolveSubject(
+                'shop.contact-us',
+                fn () => trans('shop::app.emails.contact-us.inquiry-from').' '.$this->contactUs['name'].' '.trans('shop::app.emails.contact-us.contact-from'),
+            ),
         );
     }
 
@@ -36,8 +39,11 @@ class ContactUs extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.contact-us',
-        );
+        return $this->resolveContent('shop.contact-us', 'shop::emails.contact-us', [
+            '{{name}}' => e($this->contactUs['name']),
+            '{{email}}' => e($this->contactUs['email']),
+            '{{contact}}' => e($this->contactUs['contact'] ?? ''),
+            '{{message}}' => e($this->contactUs['message']),
+        ]);
     }
 }

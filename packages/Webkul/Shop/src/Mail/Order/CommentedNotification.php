@@ -26,7 +26,7 @@ class CommentedNotification extends Mailable
             to: [
                 new Address($this->comment->order->customer_email, $this->comment->order->customer_full_name),
             ],
-            subject: trans('shop::app.emails.orders.commented.subject'),
+            subject: $this->resolveSubject('shop.orders.commented', 'shop::app.emails.orders.commented.subject'),
         );
     }
 
@@ -35,8 +35,11 @@ class CommentedNotification extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'shop::emails.orders.commented',
-        );
+        return $this->resolveContent('shop.orders.commented', 'shop::emails.orders.commented', [
+            '{{customer_name}}' => $this->comment->order->customer_full_name,
+            '{{order_id}}' => '<a href="'.route('shop.customers.account.orders.view', $this->comment->order_id).'" style="color: #2969FF;">#'.$this->comment->order->increment_id.'</a>',
+            '{{order_date}}' => core()->formatDate($this->comment->order->created_at, 'Y-m-d H:i:s'),
+            '{{comment}}' => e($this->comment->comment),
+        ]);
     }
 }

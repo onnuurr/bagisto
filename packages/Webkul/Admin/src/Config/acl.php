@@ -1261,6 +1261,19 @@ return [
             'admin.sms.mass_delete',
         ],
         'sort' => 1,
+    ], [
+        'key' => 'settings.email_templates',
+        'name' => 'admin::app.acl.notification-emails',
+        'route' => 'admin.settings.email_templates.index',
+        'sort' => 12,
+    ], [
+        'key' => 'settings.email_templates.edit',
+        'name' => 'admin::app.acl.edit',
+        'route' => [
+            'admin.settings.email_templates.edit',
+            'admin.settings.email_templates.update',
+        ],
+        'sort' => 1,
     ],
 
     /*
