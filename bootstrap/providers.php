@@ -18,6 +18,7 @@ use Webkul\DebugBar\Providers\DebugBarServiceProvider;
 use Webkul\EUWithdrawal\Providers\EUWithdrawalServiceProvider;
 use Webkul\FPC\Providers\FPCServiceProvider;
 use Webkul\GDPR\Providers\GDPRServiceProvider;
+use Webkul\GiftCard\Providers\GiftCardServiceProvider;
 use Webkul\ImageCache\Providers\ImageCacheServiceProvider;
 use Webkul\Installer\Providers\InstallerServiceProvider;
 use Webkul\Inventory\Providers\InventoryServiceProvider;
@@ -72,6 +73,7 @@ return [
     EUWithdrawalServiceProvider::class,
     FPCServiceProvider::class,
     GDPRServiceProvider::class,
+    GiftCardServiceProvider::class,
     ImageCacheServiceProvider::class,
     InstallerServiceProvider::class,
     InventoryServiceProvider::class,

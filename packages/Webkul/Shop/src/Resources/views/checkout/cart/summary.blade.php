@@ -144,6 +144,25 @@
 
         {!! view_render_event('bagisto.shop.checkout.cart.summary.coupon.after') !!}
 
+        <!-- Apply Gift Card -->
+        {!! view_render_event('bagisto.shop.checkout.cart.summary.gift_card.before') !!}
+
+        @include('shop::checkout.gift-card')
+
+        <template v-if="cart.gift_cards_amount && parseFloat(cart.gift_cards_amount) > 0">
+            <div class="flex justify-between text-right">
+                <p class="text-base text-red-600 max-sm:text-sm">
+                    @lang('shop::app.checkout.cart.summary.gift-card-amount')
+                </p>
+
+                <p class="text-base font-medium text-red-600 max-sm:text-sm">
+                    - @{{ cart.formatted_gift_cards_amount }}
+                </p>
+            </div>
+        </template>
+
+        {!! view_render_event('bagisto.shop.checkout.cart.summary.gift_card.after') !!}
+
         <!-- Shipping Rates -->
         {!! view_render_event('bagisto.shop.checkout.onepage.summary.delivery_charges.before') !!}
         

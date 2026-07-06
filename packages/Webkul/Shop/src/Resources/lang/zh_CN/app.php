@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => '运费（不含税）',
                 'delivery-charges-incl-tax' => '运费（含税）',
                 'discount-amount' => '折扣金额',
+                'gift-card-amount' => '礼品卡',
                 'grand-total' => '总计',
                 'included' => '已含',
                 'excl-tax' => '不含税：',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => '运费（不含税）',
                 'delivery-charges-incl-tax' => '运费（含税）',
                 'discount-amount' => '折扣金额',
+                'gift-card-amount' => '礼品卡',
                 'excl-tax' => '不含税：',
                 'grand-total' => '总计',
                 'included' => '已含',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => '优惠券码已成功应用。',
             'usage-limit-exceeded' => '此优惠券码已达到使用上限，不再有效。',
         ],
+
+        'gift-card' => [
+            'already-applied' => '礼品卡代码已应用。',
+            'applied' => '已应用礼品卡',
+            'apply' => '应用礼品卡',
+            'button-title' => '应用',
+            'enter-your-code' => '输入您的代码',
+            'invalid' => '礼品卡代码无效。',
+            'remove' => '删除礼品卡',
+            'subtotal' => '小计',
+            'success-apply' => '礼品卡代码已成功应用。',
+            'title' => '礼品卡',
+        ],
+
 
         'login' => [
             'email' => '电子邮件',

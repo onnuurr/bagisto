@@ -2671,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Zasady koszyka',
                 'catalog-rule-title' => 'Zasady katalogowe',
+                'gift-card-title' => 'Karty Podarunkowe',
             ],
 
             'cart-rules' => [
@@ -2884,6 +2885,59 @@ return [
 
                 'delete-failed' => 'Usunięcie zasady koszyka nie powiodło się',
                 'delete-success' => 'Zasada koszyka usunięta pomyślnie',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Utwórz Kartę Podarunkową',
+                    'title' => 'Karty Podarunkowe',
+
+                    'datagrid' => [
+                        'amount' => 'Kwota',
+                        'code' => 'Kod',
+                        'delete' => 'Usuń',
+                        'edit' => 'Edytuj',
+                        'expired' => 'Wygasła',
+                        'expires-at' => 'Wygasa',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Wybrane karty podarunkowe zostały pomyślnie usunięte',
+                        'status' => 'Status',
+                        'unused' => 'Nieużyta',
+                        'used' => 'Użyta',
+                        'used-at' => 'Użyta dnia',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Kwota',
+                    'code' => 'Kod',
+                    'code-info' => 'Pozostaw puste, aby wygenerować automatycznie.',
+                    'currency' => 'Waluta',
+                    'customer-email' => 'E-mail Klienta',
+                    'expires-at' => 'Wygasa',
+                    'quantity' => 'Ilość',
+                    'quantity-info' => 'Liczba kart podarunkowych do wygenerowania. Kod jest ignorowany i generowany automatycznie, gdy ilość jest większa niż 1.',
+                    'save-btn' => 'Zapisz Kartę Podarunkową',
+                    'success' => 'Karta podarunkowa została pomyślnie utworzona',
+                    'title' => 'Utwórz Kartę Podarunkową',
+                ],
+
+                'edit' => [
+                    'amount' => 'Kwota',
+                    'code' => 'Kod',
+                    'currency' => 'Waluta',
+                    'customer-email' => 'E-mail Klienta',
+                    'expired' => 'Wygasła',
+                    'expires-at' => 'Wygasa',
+                    'status' => 'Status',
+                    'success' => 'Karta podarunkowa została pomyślnie zaktualizowana',
+                    'title' => 'Edytuj Kartę Podarunkową',
+                    'unused' => 'Nieużyta',
+                    'used' => 'Użyta',
+                ],
+
+                'delete-failed' => 'Nie można usunąć karty podarunkowej, ponieważ została już wykorzystana',
+                'delete-success' => 'Karta podarunkowa została pomyślnie usunięta',
             ],
 
             'catalog-rules' => [
@@ -5658,6 +5712,7 @@ return [
         'events' => 'Wydarzenia',
         'exchange-rates' => 'Kursy walut',
         'gdpr' => 'RODO',
+        'gift-cards' => 'Karty Podarunkowe',
         'groups' => 'Grupy',
         'import' => 'Import',
         'imports' => 'Importy',

@@ -631,6 +631,29 @@ return [
         'route' => 'admin.marketing.promotions.catalog_rules.delete',
         'sort' => 3,
     ], [
+        'key' => 'marketing.promotions.gift_cards',
+        'name' => 'admin::app.acl.gift-cards',
+        'route' => 'admin.marketing.promotions.gift_cards.index',
+        'sort' => 3,
+    ], [
+        'key' => 'marketing.promotions.gift_cards.create',
+        'name' => 'admin::app.acl.create',
+        'route' => 'admin.marketing.promotions.gift_cards.store',
+        'sort' => 1,
+    ], [
+        'key' => 'marketing.promotions.gift_cards.edit',
+        'name' => 'admin::app.acl.edit',
+        'route' => 'admin.marketing.promotions.gift_cards.update',
+        'sort' => 2,
+    ], [
+        'key' => 'marketing.promotions.gift_cards.delete',
+        'name' => 'admin::app.acl.delete',
+        'route' => [
+            'admin.marketing.promotions.gift_cards.delete',
+            'admin.marketing.promotions.gift_cards.mass_delete',
+        ],
+        'sort' => 3,
+    ], [
         'key' => 'marketing.communications',
         'name' => 'admin::app.acl.communications',
         'route' => 'admin.marketing.communications.email_templates.index',

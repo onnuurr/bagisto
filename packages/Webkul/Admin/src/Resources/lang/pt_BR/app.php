@@ -2671,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Regras de Carrinho',
                 'catalog-rule-title' => 'Regras de Catálogo',
+                'gift-card-title' => 'Cartões Presente',
             ],
 
             'cart-rules' => [
@@ -2884,6 +2885,59 @@ return [
 
                 'delete-failed' => 'Falha na exclusão da Regra de Carrinho',
                 'delete-success' => 'Regra de Carrinho excluída com sucesso',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Criar Cartão Presente',
+                    'title' => 'Cartões Presente',
+
+                    'datagrid' => [
+                        'amount' => 'Valor',
+                        'code' => 'Código',
+                        'delete' => 'Excluir',
+                        'edit' => 'Editar',
+                        'expired' => 'Expirado',
+                        'expires-at' => 'Expira em',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Cartões Presente selecionados excluídos com sucesso',
+                        'status' => 'Status',
+                        'unused' => 'Não utilizado',
+                        'used' => 'Utilizado',
+                        'used-at' => 'Utilizado em',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Valor',
+                    'code' => 'Código',
+                    'code-info' => 'Deixe em branco para gerar automaticamente.',
+                    'currency' => 'Moeda',
+                    'customer-email' => 'E-mail do Cliente',
+                    'expires-at' => 'Expira em',
+                    'quantity' => 'Quantidade',
+                    'quantity-info' => 'Número de cartões presente a serem gerados. O código é ignorado e gerado automaticamente quando a quantidade for maior que 1.',
+                    'save-btn' => 'Salvar Cartão Presente',
+                    'success' => 'Cartão presente criado com sucesso',
+                    'title' => 'Criar Cartão Presente',
+                ],
+
+                'edit' => [
+                    'amount' => 'Valor',
+                    'code' => 'Código',
+                    'currency' => 'Moeda',
+                    'customer-email' => 'E-mail do Cliente',
+                    'expired' => 'Expirado',
+                    'expires-at' => 'Expira em',
+                    'status' => 'Status',
+                    'success' => 'Cartão presente atualizado com sucesso',
+                    'title' => 'Editar Cartão Presente',
+                    'unused' => 'Não utilizado',
+                    'used' => 'Utilizado',
+                ],
+
+                'delete-failed' => 'O cartão presente não pode ser excluído porque já foi resgatado',
+                'delete-success' => 'Cartão presente excluído com sucesso',
             ],
 
             'catalog-rules' => [
@@ -5658,6 +5712,7 @@ return [
         'events' => 'Eventos',
         'exchange-rates' => 'Taxas de Câmbio',
         'gdpr' => 'GDPR',
+        'gift-cards' => 'Cartões Presente',
         'groups' => 'Grupos',
         'import' => 'Importar',
         'imports' => 'Importações',

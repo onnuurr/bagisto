@@ -2671,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Regles de la Cistella',
                 'catalog-rule-title' => 'Regles de Catàleg',
+                'gift-card-title' => 'Targetes Regal',
             ],
 
             'cart-rules' => [
@@ -2884,6 +2885,59 @@ return [
 
                 'delete-failed' => 'L\'eliminació de la Regla de la Cistella ha Fallat',
                 'delete-success' => 'Regla de la Cistella Eliminada amb Èxit',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Crear Targeta Regal',
+                    'title' => 'Targetes Regal',
+
+                    'datagrid' => [
+                        'amount' => 'Import',
+                        'code' => 'Codi',
+                        'delete' => 'Eliminar',
+                        'edit' => 'Editar',
+                        'expired' => 'Caducada',
+                        'expires-at' => 'Caduca el',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Targetes Regal Seleccionades Eliminades amb Èxit',
+                        'status' => 'Estat',
+                        'unused' => 'No Utilitzada',
+                        'used' => 'Utilitzada',
+                        'used-at' => 'Utilitzada el',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Import',
+                    'code' => 'Codi',
+                    'code-info' => 'Deixeu en blanc per generar automàticament.',
+                    'currency' => 'Moneda',
+                    'customer-email' => 'Correu Electrònic del Client',
+                    'expires-at' => 'Caduca el',
+                    'quantity' => 'Quantitat',
+                    'quantity-info' => 'Nombre de targetes regal a generar. El codi s\'ignora i es genera automàticament quan la quantitat és superior a 1.',
+                    'save-btn' => 'Desar Targeta Regal',
+                    'success' => 'Targeta regal creada amb èxit',
+                    'title' => 'Crear Targeta Regal',
+                ],
+
+                'edit' => [
+                    'amount' => 'Import',
+                    'code' => 'Codi',
+                    'currency' => 'Moneda',
+                    'customer-email' => 'Correu Electrònic del Client',
+                    'expired' => 'Caducada',
+                    'expires-at' => 'Caduca el',
+                    'status' => 'Estat',
+                    'success' => 'Targeta regal actualitzada amb èxit',
+                    'title' => 'Editar Targeta Regal',
+                    'unused' => 'No Utilitzada',
+                    'used' => 'Utilitzada',
+                ],
+
+                'delete-failed' => 'La targeta regal no es pot eliminar perquè ja ha estat bescanviada',
+                'delete-success' => 'Targeta regal eliminada amb èxit',
             ],
 
             'catalog-rules' => [
@@ -5658,6 +5712,7 @@ return [
         'events' => 'Esdeveniments',
         'exchange-rates' => 'Taxes de Canvi',
         'gdpr' => 'RGPD',
+        'gift-cards' => 'Targetes Regal',
         'groups' => 'Grups',
         'import' => 'Importar',
         'imports' => 'Importacions',

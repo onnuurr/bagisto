@@ -31,6 +31,7 @@ return [
         Webkul\DataTransfer\Providers\ModuleServiceProvider::class,
         Webkul\EUWithdrawal\Providers\ModuleServiceProvider::class,
         Webkul\GDPR\Providers\ModuleServiceProvider::class,
+        Webkul\GiftCard\Providers\ModuleServiceProvider::class,
         Webkul\Inventory\Providers\ModuleServiceProvider::class,
         Webkul\Iyzico\Providers\ModuleServiceProvider::class,
         Webkul\Marketing\Providers\ModuleServiceProvider::class,

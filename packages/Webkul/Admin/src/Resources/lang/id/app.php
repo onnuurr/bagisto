@@ -2671,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Aturan Keranjang',
                 'catalog-rule-title' => 'Aturan Katalog',
+                'gift-card-title' => 'Kartu Hadiah',
             ],
 
             'cart-rules' => [
@@ -2884,6 +2885,59 @@ return [
 
                 'delete-failed' => 'Gagal Menghapus Aturan Keranjang',
                 'delete-success' => 'Aturan Keranjang Berhasil Dihapus',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Buat Kartu Hadiah',
+                    'title' => 'Kartu Hadiah',
+
+                    'datagrid' => [
+                        'amount' => 'Jumlah',
+                        'code' => 'Kode',
+                        'delete' => 'Hapus',
+                        'edit' => 'Edit',
+                        'expired' => 'Kedaluwarsa',
+                        'expires-at' => 'Kedaluwarsa Pada',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Kartu Hadiah Terpilih Berhasil Dihapus',
+                        'status' => 'Status',
+                        'unused' => 'Belum Digunakan',
+                        'used' => 'Sudah Digunakan',
+                        'used-at' => 'Digunakan Pada',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Jumlah',
+                    'code' => 'Kode',
+                    'code-info' => 'Biarkan kosong untuk menghasilkan otomatis.',
+                    'currency' => 'Mata Uang',
+                    'customer-email' => 'Email Pelanggan',
+                    'expires-at' => 'Kedaluwarsa Pada',
+                    'quantity' => 'Jumlah (Kuantitas)',
+                    'quantity-info' => 'Jumlah kartu hadiah yang akan dibuat. Kode akan diabaikan dan dibuat otomatis jika kuantitas lebih dari 1.',
+                    'save-btn' => 'Simpan Kartu Hadiah',
+                    'success' => 'Kartu hadiah berhasil dibuat',
+                    'title' => 'Buat Kartu Hadiah',
+                ],
+
+                'edit' => [
+                    'amount' => 'Jumlah',
+                    'code' => 'Kode',
+                    'currency' => 'Mata Uang',
+                    'customer-email' => 'Email Pelanggan',
+                    'expired' => 'Kedaluwarsa',
+                    'expires-at' => 'Kedaluwarsa Pada',
+                    'status' => 'Status',
+                    'success' => 'Kartu hadiah berhasil diperbarui',
+                    'title' => 'Edit Kartu Hadiah',
+                    'unused' => 'Belum Digunakan',
+                    'used' => 'Sudah Digunakan',
+                ],
+
+                'delete-failed' => 'Kartu hadiah tidak dapat dihapus karena sudah digunakan',
+                'delete-success' => 'Kartu hadiah berhasil dihapus',
             ],
 
             'catalog-rules' => [
@@ -5658,6 +5712,7 @@ return [
         'events' => 'Acara',
         'exchange-rates' => 'Kurs',
         'gdpr' => 'GDPR',
+        'gift-cards' => 'Kartu Hadiah',
         'groups' => 'Grup',
         'import' => 'Impor',
         'imports' => 'Impor',

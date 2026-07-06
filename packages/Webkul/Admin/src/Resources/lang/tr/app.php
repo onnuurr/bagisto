@@ -2671,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Sepet Kuralları',
                 'catalog-rule-title' => 'Katalog Kuralları',
+                'gift-card-title' => 'Hediye Çekleri',
             ],
 
             'cart-rules' => [
@@ -2884,6 +2885,59 @@ return [
 
                 'delete-failed' => 'Sepet Kuralı Silme Başarısız',
                 'delete-success' => 'Sepet Kuralı Başarıyla Silindi',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Hediye Çeki Oluştur',
+                    'title' => 'Hediye Çekleri',
+
+                    'datagrid' => [
+                        'amount' => 'Tutar',
+                        'code' => 'Kod',
+                        'delete' => 'Sil',
+                        'edit' => 'Düzenle',
+                        'expired' => 'Süresi Doldu',
+                        'expires-at' => 'Son Kullanma Tarihi',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Seçilen Hediye Çekleri Başarıyla Silindi',
+                        'status' => 'Durum',
+                        'unused' => 'Kullanılmadı',
+                        'used' => 'Kullanıldı',
+                        'used-at' => 'Kullanım Tarihi',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Tutar',
+                    'code' => 'Kod',
+                    'code-info' => 'Otomatik oluşturmak için boş bırakın.',
+                    'currency' => 'Para Birimi',
+                    'customer-email' => 'Müşteri E-postası',
+                    'expires-at' => 'Son Kullanma Tarihi',
+                    'quantity' => 'Adet',
+                    'quantity-info' => 'Oluşturulacak hediye çeki adedi. Adet 1\'den büyükse kod dikkate alınmaz ve otomatik oluşturulur.',
+                    'save-btn' => 'Hediye Çekini Kaydet',
+                    'success' => 'Hediye çeki başarıyla oluşturuldu',
+                    'title' => 'Hediye Çeki Oluştur',
+                ],
+
+                'edit' => [
+                    'amount' => 'Tutar',
+                    'code' => 'Kod',
+                    'currency' => 'Para Birimi',
+                    'customer-email' => 'Müşteri E-postası',
+                    'expired' => 'Süresi Doldu',
+                    'expires-at' => 'Son Kullanma Tarihi',
+                    'status' => 'Durum',
+                    'success' => 'Hediye çeki başarıyla güncellendi',
+                    'title' => 'Hediye Çekini Düzenle',
+                    'unused' => 'Kullanılmadı',
+                    'used' => 'Kullanıldı',
+                ],
+
+                'delete-failed' => 'Hediye çeki zaten kullanıldığı için silinemez',
+                'delete-success' => 'Hediye çeki başarıyla silindi',
             ],
 
             'catalog-rules' => [
@@ -5658,6 +5712,7 @@ return [
         'events' => 'Etkinlikler',
         'exchange-rates' => 'Döviz Kurları',
         'gdpr' => 'KVKK',
+        'gift-cards' => 'Hediye Çekleri',
         'groups' => 'Gruplar',
         'import' => 'İçe aktarmak',
         'imports' => 'İthalat',

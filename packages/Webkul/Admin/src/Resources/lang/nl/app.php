@@ -2671,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Winkelwagenregels',
                 'catalog-rule-title' => 'Catalogusregels',
+                'gift-card-title' => 'Cadeaubonnen',
             ],
 
             'cart-rules' => [
@@ -2884,6 +2885,59 @@ return [
 
                 'delete-failed' => 'Verwijderen van winkelwagenregel mislukt',
                 'delete-success' => 'Winkelwagenregel succesvol verwijderd',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Cadeaubon Aanmaken',
+                    'title' => 'Cadeaubonnen',
+
+                    'datagrid' => [
+                        'amount' => 'Bedrag',
+                        'code' => 'Code',
+                        'delete' => 'Verwijderen',
+                        'edit' => 'Bewerken',
+                        'expired' => 'Verlopen',
+                        'expires-at' => 'Verloopt op',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Geselecteerde cadeaubonnen succesvol verwijderd',
+                        'status' => 'Status',
+                        'unused' => 'Ongebruikt',
+                        'used' => 'Gebruikt',
+                        'used-at' => 'Gebruikt op',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Bedrag',
+                    'code' => 'Code',
+                    'code-info' => 'Laat leeg om automatisch te genereren.',
+                    'currency' => 'Valuta',
+                    'customer-email' => 'E-mail Klant',
+                    'expires-at' => 'Verloopt op',
+                    'quantity' => 'Aantal',
+                    'quantity-info' => 'Aantal te genereren cadeaubonnen. De code wordt genegeerd en automatisch gegenereerd als het aantal groter is dan 1.',
+                    'save-btn' => 'Cadeaubon Opslaan',
+                    'success' => 'Cadeaubon succesvol aangemaakt',
+                    'title' => 'Cadeaubon Aanmaken',
+                ],
+
+                'edit' => [
+                    'amount' => 'Bedrag',
+                    'code' => 'Code',
+                    'currency' => 'Valuta',
+                    'customer-email' => 'E-mail Klant',
+                    'expired' => 'Verlopen',
+                    'expires-at' => 'Verloopt op',
+                    'status' => 'Status',
+                    'success' => 'Cadeaubon succesvol bijgewerkt',
+                    'title' => 'Cadeaubon Bewerken',
+                    'unused' => 'Ongebruikt',
+                    'used' => 'Gebruikt',
+                ],
+
+                'delete-failed' => 'Cadeaubon kan niet worden verwijderd omdat deze al is verzilverd',
+                'delete-success' => 'Cadeaubon succesvol verwijderd',
             ],
 
             'catalog-rules' => [
@@ -5658,6 +5712,7 @@ return [
         'events' => 'Evenementen',
         'exchange-rates' => 'Wisselkoersen',
         'gdpr' => 'AVG',
+        'gift-cards' => 'Cadeaubonnen',
         'groups' => 'Groepen',
         'import' => 'Importeren',
         'imports' => 'Importeren',

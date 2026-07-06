@@ -2671,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Reglas del Carrito',
                 'catalog-rule-title' => 'Reglas de Catálogo',
+                'gift-card-title' => 'Tarjetas de Regalo',
             ],
 
             'cart-rules' => [
@@ -2884,6 +2885,59 @@ return [
 
                 'delete-failed' => 'Falló la Eliminación de la Regla del Carrito',
                 'delete-success' => 'Regla del Carrito Eliminada Exitosamente',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Crear Tarjeta de Regalo',
+                    'title' => 'Tarjetas de Regalo',
+
+                    'datagrid' => [
+                        'amount' => 'Importe',
+                        'code' => 'Código',
+                        'delete' => 'Eliminar',
+                        'edit' => 'Editar',
+                        'expired' => 'Caducada',
+                        'expires-at' => 'Caduca el',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Tarjetas de Regalo Seleccionadas Eliminadas Exitosamente',
+                        'status' => 'Estado',
+                        'unused' => 'No Utilizada',
+                        'used' => 'Utilizada',
+                        'used-at' => 'Utilizada el',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Importe',
+                    'code' => 'Código',
+                    'code-info' => 'Déjelo en blanco para generar automáticamente.',
+                    'currency' => 'Moneda',
+                    'customer-email' => 'Correo Electrónico del Cliente',
+                    'expires-at' => 'Caduca el',
+                    'quantity' => 'Cantidad',
+                    'quantity-info' => 'Número de tarjetas de regalo a generar. El código se ignora y se genera automáticamente cuando la cantidad es mayor que 1.',
+                    'save-btn' => 'Guardar Tarjeta de Regalo',
+                    'success' => 'Tarjeta de regalo creada exitosamente',
+                    'title' => 'Crear Tarjeta de Regalo',
+                ],
+
+                'edit' => [
+                    'amount' => 'Importe',
+                    'code' => 'Código',
+                    'currency' => 'Moneda',
+                    'customer-email' => 'Correo Electrónico del Cliente',
+                    'expired' => 'Caducada',
+                    'expires-at' => 'Caduca el',
+                    'status' => 'Estado',
+                    'success' => 'Tarjeta de regalo actualizada exitosamente',
+                    'title' => 'Editar Tarjeta de Regalo',
+                    'unused' => 'No Utilizada',
+                    'used' => 'Utilizada',
+                ],
+
+                'delete-failed' => 'La tarjeta de regalo no se puede eliminar porque ya ha sido canjeada',
+                'delete-success' => 'Tarjeta de regalo eliminada exitosamente',
             ],
 
             'catalog-rules' => [
@@ -5658,6 +5712,7 @@ return [
         'events' => 'Eventos',
         'exchange-rates' => 'Tasas de Cambio',
         'gdpr' => 'RGPD',
+        'gift-cards' => 'Tarjetas de Regalo',
         'groups' => 'Grupos',
         'import' => 'Importar',
         'imports' => 'Importaciones',

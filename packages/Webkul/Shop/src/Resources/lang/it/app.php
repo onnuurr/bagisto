@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Spese di consegna (escl. IVA)',
                 'delivery-charges-incl-tax' => 'Spese di consegna (incl. IVA)',
                 'discount-amount' => 'Importo Sconto',
+                'gift-card-amount' => 'Carta Regalo',
                 'grand-total' => 'Totale',
                 'included' => 'Incluso',
                 'excl-tax' => 'Imposte escluse:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Spese di consegna (Escl. IVA)',
                 'delivery-charges-incl-tax' => 'Spese di consegna (Incl. IVA)',
                 'discount-amount' => 'Importo Sconto',
+                'gift-card-amount' => 'Carta Regalo',
                 'excl-tax' => 'Escl. IVA:',
                 'grand-total' => 'Totale',
                 'included' => 'Incluso',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Codice coupon applicato con successo.',
             'usage-limit-exceeded' => 'Questo codice coupon ha raggiunto il limite di utilizzo e non è più valido.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'Il codice della carta regalo è già stato applicato.',
+            'applied' => 'Carta Regalo Applicata',
+            'apply' => 'Applica Carta Regalo',
+            'button-title' => 'Applica',
+            'enter-your-code' => 'Inserisci il tuo codice',
+            'invalid' => 'Il codice della carta regalo non è valido.',
+            'remove' => 'Rimuovi Carta Regalo',
+            'subtotal' => 'Subtotale',
+            'success-apply' => 'Codice carta regalo applicato con successo.',
+            'title' => 'Carta Regalo',
+        ],
+
 
         'login' => [
             'email' => 'Email',

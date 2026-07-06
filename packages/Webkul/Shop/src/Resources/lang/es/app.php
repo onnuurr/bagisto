@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Gastos de Envío (Excl. Impuestos)',
                 'delivery-charges-incl-tax' => 'Gastos de Envío (Incl. Impuestos)',
                 'discount-amount' => 'Monto de Descuento',
+                'gift-card-amount' => 'Tarjeta de Regalo',
                 'grand-total' => 'Total General',
                 'included' => 'Incluido',
                 'excl-tax' => 'Sin impuestos:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Gastos de Envío (Excl. Impuestos)',
                 'delivery-charges-incl-tax' => 'Gastos de Envío (Incl. Impuestos)',
                 'discount-amount' => 'Monto de Descuento',
+                'gift-card-amount' => 'Tarjeta de Regalo',
                 'excl-tax' => 'Excl. Impuestos:',
                 'grand-total' => 'Total General',
                 'included' => 'Incluido',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Código de cupón aplicado con éxito.',
             'usage-limit-exceeded' => 'Este código de cupón ha alcanzado su límite de uso y ya no es válido.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'El código de la tarjeta de regalo ya ha sido aplicado.',
+            'applied' => 'Tarjeta de Regalo Aplicada',
+            'apply' => 'Aplicar Tarjeta de Regalo',
+            'button-title' => 'Aplicar',
+            'enter-your-code' => 'Ingresa tu código',
+            'invalid' => 'El código de la tarjeta de regalo no es válido.',
+            'remove' => 'Eliminar Tarjeta de Regalo',
+            'subtotal' => 'Subtotal',
+            'success-apply' => 'Código de tarjeta de regalo aplicado con éxito.',
+            'title' => 'Tarjeta de Regalo',
+        ],
+
 
         'login' => [
             'email' => 'Correo electrónico',

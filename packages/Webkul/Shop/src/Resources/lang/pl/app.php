@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Koszt dostawy (bez podatku)',
                 'delivery-charges-incl-tax' => 'Koszt dostawy (z podatkiem)',
                 'discount-amount' => 'Kwota rabatu',
+                'gift-card-amount' => 'Karta Podarunkowa',
                 'grand-total' => 'Suma ogólna',
                 'included' => 'Wliczone',
                 'excl-tax' => 'Bez podatku:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Opłaty za dostawę (bez podatku)',
                 'delivery-charges-incl-tax' => 'Opłaty za dostawę (z podatkiem)',
                 'discount-amount' => 'Kwota rabatu',
+                'gift-card-amount' => 'Karta Podarunkowa',
                 'excl-tax' => 'Bez podatku:',
                 'grand-total' => 'Suma ogólna',
                 'included' => 'Wliczone',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Kod rabatowy został pomyślnie zastosowany',
             'usage-limit-exceeded' => 'Ten kod rabatowy został wykorzystany.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'Kod karty podarunkowej jest już zastosowany.',
+            'applied' => 'Karta podarunkowa została zastosowana',
+            'apply' => 'Zastosuj kartę podarunkową',
+            'button-title' => 'Zastosuj',
+            'enter-your-code' => 'Wprowadź swój kod',
+            'invalid' => 'Kod karty podarunkowej jest nieprawidłowy.',
+            'remove' => 'Usuń kartę podarunkową',
+            'subtotal' => 'Suma częściowa',
+            'success-apply' => 'Kod karty podarunkowej został pomyślnie zastosowany.',
+            'title' => 'Karta Podarunkowa',
+        ],
+
 
         'login' => [
             'email' => 'E-mail',

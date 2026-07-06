@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Biaya Pengiriman (Tidak Termasuk Pajak)',
                 'delivery-charges-incl-tax' => 'Biaya Pengiriman (Termasuk Pajak)',
                 'discount-amount' => 'Jumlah Diskon',
+                'gift-card-amount' => 'Kartu Hadiah',
                 'grand-total' => 'Total Keseluruhan',
                 'included' => 'Termasuk',
                 'excl-tax' => 'Tanpa Pajak:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Biaya Pengiriman (Tidak Termasuk Pajak)',
                 'delivery-charges-incl-tax' => 'Biaya Pengiriman (Termasuk Pajak)',
                 'discount-amount' => 'Jumlah Diskon',
+                'gift-card-amount' => 'Kartu Hadiah',
                 'excl-tax' => 'Tidak termasuk pajak:',
                 'grand-total' => 'Total Keseluruhan',
                 'included' => 'Termasuk',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Kode kupon berhasil diterapkan.',
             'usage-limit-exceeded' => 'Kode kupon ini telah mencapai batas penggunaan dan tidak lagi valid.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'Kode kartu hadiah sudah digunakan.',
+            'applied' => 'Kartu Hadiah berhasil diterapkan.',
+            'apply' => 'Gunakan Kartu Hadiah',
+            'button-title' => 'Gunakan',
+            'enter-your-code' => 'Masukkan kode Anda',
+            'invalid' => 'Kode kartu hadiah tidak valid.',
+            'remove' => 'Hapus Kartu Hadiah',
+            'subtotal' => 'Subtotal',
+            'success-apply' => 'Kode kartu hadiah berhasil diterapkan.',
+            'title' => 'Kartu Hadiah',
+        ],
+
 
         'login' => [
             'email' => 'Email',

@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Liefergebühren (exkl. Steuern)',
                 'delivery-charges-incl-tax' => 'Liefergebühren (inkl. Steuern)',
                 'discount-amount' => 'Rabattbetrag',
+                'gift-card-amount' => 'Geschenkgutschein',
                 'grand-total' => 'Gesamtsumme',
                 'included' => 'Enthalten',
                 'excl-tax' => 'Exkl. Steuer:',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Liefergebühren (exkl. Steuern)',
                 'delivery-charges-incl-tax' => 'Liefergebühren (inkl. Steuern)',
                 'discount-amount' => 'Rabattbetrag',
+                'gift-card-amount' => 'Geschenkgutschein',
                 'excl-tax' => 'Exkl. Steuern:',
                 'grand-total' => 'Gesamtsumme',
                 'included' => 'Enthalten',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Gutscheincode erfolgreich angewendet.',
             'usage-limit-exceeded' => 'Dieser Gutscheincode hat sein Nutzungslimit erreicht und ist nicht mehr gültig.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'Geschenkgutscheincode wurde bereits angewendet.',
+            'applied' => 'Geschenkgutschein angewendet',
+            'apply' => 'Geschenkgutschein anwenden',
+            'button-title' => 'Anwenden',
+            'enter-your-code' => 'Geben Sie Ihren Code ein',
+            'invalid' => 'Geschenkgutscheincode ist ungültig.',
+            'remove' => 'Geschenkgutschein entfernen',
+            'subtotal' => 'Zwischensumme',
+            'success-apply' => 'Geschenkgutscheincode erfolgreich angewendet.',
+            'title' => 'Geschenkgutschein',
+        ],
+
 
         'login' => [
             'email' => 'E-Mail',

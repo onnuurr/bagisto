@@ -1122,6 +1122,7 @@ return [
                 'delivery-charges-excl-tax' => 'Frais de livraison (Hors taxes)',
                 'delivery-charges-incl-tax' => 'Frais de livraison (TTC)',
                 'discount-amount' => 'Montant de réduction',
+                'gift-card-amount' => 'Carte Cadeau',
                 'grand-total' => 'Total général',
                 'included' => 'Inclus',
                 'excl-tax' => 'Hors taxe :',
@@ -1196,6 +1197,7 @@ return [
                 'delivery-charges-excl-tax' => 'Frais de livraison (Hors taxes)',
                 'delivery-charges-incl-tax' => 'Frais de livraison (TTC)',
                 'discount-amount' => 'Montant de réduction',
+                'gift-card-amount' => 'Carte Cadeau',
                 'excl-tax' => 'Hors taxes :',
                 'grand-total' => 'Total général',
                 'included' => 'Inclus',
@@ -1229,6 +1231,20 @@ return [
             'success-apply' => 'Le code de coupon a été appliqué avec succès.',
             'usage-limit-exceeded' => 'Ce code de coupon a atteint sa limite d\'utilisation et n\'est plus valide.',
         ],
+
+        'gift-card' => [
+            'already-applied' => 'Le code de la carte cadeau a déjà été appliqué.',
+            'applied' => 'Carte Cadeau Appliquée',
+            'apply' => 'Appliquer la Carte Cadeau',
+            'button-title' => 'Appliquer',
+            'enter-your-code' => 'Entrez votre code',
+            'invalid' => 'Le code de la carte cadeau est invalide.',
+            'remove' => 'Supprimer la Carte Cadeau',
+            'subtotal' => 'Sous-total',
+            'success-apply' => 'Code de carte cadeau appliqué avec succès.',
+            'title' => 'Carte Cadeau',
+        ],
+
 
         'login' => [
             'email' => 'E-mail',

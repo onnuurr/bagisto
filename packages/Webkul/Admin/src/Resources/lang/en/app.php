@@ -2671,6 +2671,7 @@ return [
             'index' => [
                 'cart-rule-title' => 'Cart Rules',
                 'catalog-rule-title' => 'Catalog Rules',
+                'gift-card-title' => 'Gift Cards',
             ],
 
             'cart-rules' => [
@@ -2884,6 +2885,59 @@ return [
 
                 'delete-failed' => 'Cart Rule Deleted Failed',
                 'delete-success' => 'Cart Rule Deleted Successfully',
+            ],
+
+            'gift-cards' => [
+                'index' => [
+                    'create-btn' => 'Create Gift Card',
+                    'title' => 'Gift Cards',
+
+                    'datagrid' => [
+                        'amount' => 'Amount',
+                        'code' => 'Code',
+                        'delete' => 'Delete',
+                        'edit' => 'Edit',
+                        'expired' => 'Expired',
+                        'expires-at' => 'Expires At',
+                        'id' => 'ID',
+                        'mass-delete-success' => 'Selected Gift Cards Deleted Successfully',
+                        'status' => 'Status',
+                        'unused' => 'Unused',
+                        'used' => 'Used',
+                        'used-at' => 'Used At',
+                    ],
+                ],
+
+                'create' => [
+                    'amount' => 'Amount',
+                    'code' => 'Code',
+                    'code-info' => 'Leave blank to auto-generate.',
+                    'currency' => 'Currency',
+                    'customer-email' => 'Customer Email',
+                    'expires-at' => 'Expires At',
+                    'quantity' => 'Quantity',
+                    'quantity-info' => 'Number of gift cards to generate. The code is ignored and auto-generated when quantity is greater than 1.',
+                    'save-btn' => 'Save Gift Card',
+                    'success' => 'Gift card created successfully',
+                    'title' => 'Create Gift Card',
+                ],
+
+                'edit' => [
+                    'amount' => 'Amount',
+                    'code' => 'Code',
+                    'currency' => 'Currency',
+                    'customer-email' => 'Customer Email',
+                    'expired' => 'Expired',
+                    'expires-at' => 'Expires At',
+                    'status' => 'Status',
+                    'success' => 'Gift card updated successfully',
+                    'title' => 'Edit Gift Card',
+                    'unused' => 'Unused',
+                    'used' => 'Used',
+                ],
+
+                'delete-failed' => 'Gift card cannot be deleted because it has already been redeemed',
+                'delete-success' => 'Gift card deleted successfully',
             ],
 
             'catalog-rules' => [
@@ -5658,6 +5712,7 @@ return [
         'events' => 'Events',
         'exchange-rates' => 'Exchange Rates',
         'gdpr' => 'GDPR',
+        'gift-cards' => 'Gift Cards',
         'groups' => 'Groups',
         'import' => 'Import',
         'imports' => 'Imports',
