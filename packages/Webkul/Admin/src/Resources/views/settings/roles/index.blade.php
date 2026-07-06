@@ -4,23 +4,23 @@
         @lang('admin::app.settings.roles.index.title')
     </x-slot>
 
-    <div class="flex items-center justify-between">
-        <p class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.settings.roles.index.title')
-        </p>
-        
-        <div class="flex items-center gap-x-2.5">
+        </x-slot>
+
+        <x-slot:actions>
             <!-- Add Role Button -->
-            @if (bouncer()->hasPermission('settings.roles.create')) 
-                <a 
+            @if (bouncer()->hasPermission('settings.roles.create'))
+                <a
                     href="{{ route('admin.settings.roles.create') }}"
                     class="primary-button"
                 >
                     @lang('admin::app.settings.roles.index.create-btn')
                 </a>
             @endif
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     {!! view_render_event('bagisto.admin.settings.roles.list.before') !!}
     

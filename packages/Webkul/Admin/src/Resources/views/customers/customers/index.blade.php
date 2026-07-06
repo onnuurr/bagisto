@@ -3,39 +3,37 @@
         @lang('admin::app.customers.customers.index.title')
     </x-slot>
 
-    <div class="flex items-center justify-between">
-        <p class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.customers.customers.index.title')
-        </p>
+        </x-slot>
 
-        <div class="flex items-center gap-x-2.5">
+        <x-slot:actions>
             <!-- Export Modal -->
             <x-admin::datagrid.export src="{{ route('admin.customers.customers.index') }}" />
 
-            <div class="flex items-center gap-x-2.5">
-                <!-- Included customer create blade file -->
-                @if (bouncer()->hasPermission('customers.customers.create'))
-                    {!! view_render_event('bagisto.admin.customers.customers.create.before') !!}
+            <!-- Included customer create blade file -->
+            @if (bouncer()->hasPermission('customers.customers.create'))
+                {!! view_render_event('bagisto.admin.customers.customers.create.before') !!}
 
-                    @include('admin::customers.customers.index.create')
+                @include('admin::customers.customers.index.create')
 
-                    <v-create-customer-form
-                        ref="createCustomerComponent"
-                        @customer-created="$refs.customerDatagrid.get()"
-                    ></v-create-customer-form>
+                <v-create-customer-form
+                    ref="createCustomerComponent"
+                    @customer-created="$refs.customerDatagrid.get()"
+                ></v-create-customer-form>
 
-                    {!! view_render_event('bagisto.admin.customers.customers.create.after') !!}
+                {!! view_render_event('bagisto.admin.customers.customers.create.after') !!}
 
-                    <button
-                        class="primary-button"
-                        @click="$refs.createCustomerComponent.openModal()"
-                    >
-                        @lang('admin::app.customers.customers.index.create.create-btn')
-                    </button>
-                @endif
-            </div>
-        </div>
-    </div>
+                <button
+                    class="primary-button"
+                    @click="$refs.createCustomerComponent.openModal()"
+                >
+                    @lang('admin::app.customers.customers.index.create.create-btn')
+                </button>
+            @endif
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     {!! view_render_event('bagisto.admin.customers.customers.list.before') !!}
 

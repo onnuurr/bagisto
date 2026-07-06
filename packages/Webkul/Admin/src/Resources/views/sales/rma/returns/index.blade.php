@@ -4,12 +4,12 @@
         @lang('admin::app.sales.rma.all-rma.index.title')
     </x-slot:title>
 
-    <div class="flex items-center justify-between gap-16 max-sm:flex-wrap">
-        <h1 class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.sales.rma.index.rma-title')
-        </h1>
+        </x-slot>
 
-        <div class="flex items-center gap-x-2.5">
+        <x-slot:actions>
             @if (bouncer()->hasPermission('sales.rma.requests.create'))
                 <a
                     href="{{ route('admin.sales.rma.requests.create') }}"
@@ -18,8 +18,8 @@
                     @lang('admin::app.sales.rma.index.create-rma-title')
                 </a>
             @endif
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     {!! view_render_event('bagisto.admin.rma.list.before') !!}
 
