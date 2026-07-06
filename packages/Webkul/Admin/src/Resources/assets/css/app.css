@@ -456,34 +456,34 @@
     .label-pending_payment,
     .label-completed,
     .label-active {
-        @apply text-[12px] text-white font-semibold py-px px-1.5 max-w-max rounded-[35px];
+        @apply bg-transparent text-xs font-semibold py-1 px-2.5 max-w-max rounded-xl border;
     }
 
 	.label-pending,
     .label-pending_payment {
-		@apply bg-warning;
+		@apply border-warning text-warning dark:bg-warning/10;
 	}
 
 	.label-processing{
-		@apply bg-info;
+		@apply border-info text-info dark:bg-info/10;
     }
 
 	.label-completed,
     .label-active {
-		@apply bg-success;
+		@apply border-success text-success dark:bg-success/10;
 	}
 
 	.label-closed {
-		@apply bg-secondary;
+		@apply border-secondary text-secondary dark:border-secondary-400 dark:text-secondary-400 dark:bg-secondary/10;
 	}
 
     .label-canceled,
     .label-fraud {
-        @apply bg-danger;
+        @apply border-danger text-danger dark:bg-danger/10;
     }
 
     .label-info {
-        @apply bg-slate-400;
+        @apply border-slate-400 text-slate-500 dark:bg-slate-400/10;
     }
 
     /* status */

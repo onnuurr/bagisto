@@ -3,12 +3,12 @@
         @lang('admin::app.settings.taxes.rates.index.title')
     </x-slot>
 
-    <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-        <p class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.settings.taxes.rates.index.title')
-        </p>
+        </x-slot>
 
-        <div class="flex items-center gap-x-2.5">
+        <x-slot:actions>
             <!-- Tax Rate Export -->
             <x-admin::datagrid.export src="{{ route('admin.settings.taxes.rates.index') }}" />
 
@@ -18,8 +18,8 @@
                     @lang('admin::app.settings.taxes.rates.index.button-title')
                 </a>
             @endif
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     <x-admin::datagrid
         :src="route('admin.settings.taxes.rates.index')"

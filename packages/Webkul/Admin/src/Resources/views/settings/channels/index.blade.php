@@ -4,23 +4,23 @@
         @lang('admin::app.settings.channels.index.title')
     </x-slot>
 
-    <div class="flex items-center justify-between">
-        <p class="text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.settings.channels.index.title')
-        </p>
-        
-        <div class="flex items-center gap-x-2.5">
+        </x-slot>
+
+        <x-slot:actions>
             <!-- Create New Channel Button -->
             @if (bouncer()->hasPermission('settings.channels.create'))
-                <a 
+                <a
                     href="{{ route('admin.settings.channels.create') }}"
                     class="primary-button"
                 >
                     @lang('admin::app.settings.channels.index.create-btn')
                 </a>
             @endif
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     {!! view_render_event('bagisto.settings.channels.list.before') !!}
     

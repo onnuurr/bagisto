@@ -4,12 +4,12 @@
         @lang('admin::app.sales.orders.index.title')
     </x-slot>
 
-    <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-        <p class="py-3 text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.sales.orders.index.title')
-        </p>
+        </x-slot>
 
-        <div class="flex items-center gap-x-2.5">
+        <x-slot:actions>
             <x-admin::datagrid.export src="{{ route('admin.sales.orders.index') }}" />
 
             {!! view_render_event('bagisto.admin.sales.orders.create.before') !!}
@@ -24,8 +24,8 @@
             @endif
 
             {!! view_render_event('bagisto.admin.sales.orders.create.after') !!}
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     <v-customer-search ref="selectCustomerComponent"></v-customer-search>
 

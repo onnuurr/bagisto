@@ -4,16 +4,16 @@
         @lang('admin::app.sales.shipments.index.title')
     </x-slot>
 
-    <div class="flex items-center justify-between gap-4 max-sm:flex-wrap">
-        <p class="py-3 text-xl font-bold text-gray-800 dark:text-white">
+    <x-admin::layouts.page-header>
+        <x-slot:title>
             @lang('admin::app.sales.shipments.index.title')
-        </p>
+        </x-slot>
 
-        <div class="flex items-center gap-x-2.5">
+        <x-slot:actions>
             <!-- Export Modal -->
             <x-admin::datagrid.export :src="route('admin.sales.shipments.index')" />
-        </div>
-    </div>
+        </x-slot>
+    </x-admin::layouts.page-header>
 
     <x-admin::datagrid :src="route('admin.sales.shipments.index')" />
 
