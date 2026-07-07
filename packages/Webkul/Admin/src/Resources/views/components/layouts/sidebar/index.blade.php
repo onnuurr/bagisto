@@ -4,9 +4,13 @@
             <!-- Navigation Menu -->
             @foreach (menu()->getItems('admin') as $menuItem)
                 <div
-                    class="px-4 group/item {{ $menuItem->isActive() ? 'active' : 'inactive' }}"
+                    class="relative px-4 group/item {{ $menuItem->isActive() ? 'active' : 'inactive' }}"
                     onmouseenter="adjustSubMenuPosition(event)"
                 >
+                    @if ($menuItem->isActive())
+                        <span class="absolute inset-y-1 left-0 w-[3px] rounded-r bg-primary rtl:left-auto rtl:right-0 rtl:rounded-l rtl:rounded-r-none"></span>
+                    @endif
+
                     <a
                         href="{{ $menuItem->getUrl() }}"
                         class="flex gap-2.5 p-1.5 items-center cursor-pointer hover:rounded-lg {{ $menuItem->isActive() == 'active' ? 'bg-primary/10 rounded-lg dark:bg-primary/20' : ' hover:bg-primary/10 hover:dark:bg-primary/10' }} peer"

@@ -18,7 +18,7 @@
         <template v-else>
             <!-- Stock Threshold Products Details -->
             <div
-                class="box-shadow rounded"
+                class="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800"
                 v-if="report.statistics.length"
             >
                 <!-- Single Product -->
@@ -26,7 +26,7 @@
                     class="relative"
                     v-for="product in report.statistics"
                 >
-                    <div class="row grid grid-cols-2 gap-y-6 border-b bg-white p-4 transition-all hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-950 max-sm:grid-cols-[1fr_auto]">
+                    <div class="row grid grid-cols-2 gap-y-6 border-b bg-white p-4 last:border-b-0 transition-all hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-950 max-sm:grid-cols-[1fr_auto]">
                         <div class="flex gap-2.5">
                             <template v-if="product.image">
                                 <div class="">
@@ -84,7 +84,7 @@
 
             <!-- Empty Product Design -->
             <div
-                class="box-shadow rounded"
+                class="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800"
                 v-else
             >
                 <div class="grid justify-center justify-items-center gap-3.5 px-2.5 py-10">

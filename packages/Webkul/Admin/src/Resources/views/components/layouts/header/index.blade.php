@@ -32,12 +32,12 @@
         <!-- Mega Search Bar Vue Component -->
         <v-mega-search class="hidden sm:block">
             <div class="relative flex w-[200px] items-center sm:w-[300px] md:w-[400px] lg:w-[525px] xl:max-w-[525px] ltr:ml-2 rtl:mr-2 sm:ltr:ml-2.5 sm:rtl:mr-2.5">
-                <i class="icon-search absolute top-1.5 flex items-center text-xl ltr:left-2 rtl:right-2 sm:text-2xl sm:ltr:left-3 sm:rtl:right-3"></i>
+                <i class="icon-search absolute top-1.5 flex items-center text-xl text-gray-400 ltr:left-3 rtl:right-3 sm:text-2xl sm:ltr:left-4 sm:rtl:right-4"></i>
 
-                <input 
-                    type="text" 
-                    class="block w-full rounded-lg border bg-white px-8 py-1.5 text-sm leading-6 text-gray-600 transition-all hover:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 sm:px-10 sm:text-base"
-                    placeholder="@lang('admin::app.components.layouts.header.mega-search.title')" 
+                <input
+                    type="text"
+                    class="block w-full rounded-full border border-transparent bg-gray-100 px-8 py-1.5 text-sm leading-6 text-gray-600 transition-all hover:border-gray-300 focus:border-gray-300 focus:bg-white dark:border-gray-800 dark:bg-gray-950 dark:text-gray-300 sm:px-10 sm:text-base"
+                    placeholder="@lang('admin::app.components.layouts.header.mega-search.title')"
                 >
             </div>
         </v-mega-search>
@@ -48,19 +48,19 @@
         <v-dark>
             <div class="flex">
                 <span
-                    class="{{ request()->cookie('dark_mode') ? 'icon-light' : 'icon-dark' }} cursor-pointer rounded-md p-1.5 text-xl transition-all hover:bg-gray-100 dark:hover:bg-gray-950 sm:text-2xl"
+                    class="{{ request()->cookie('dark_mode') ? 'icon-light' : 'icon-dark' }} cursor-pointer rounded-full border border-transparent p-1.5 text-xl transition-all hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-800 dark:hover:bg-gray-950 sm:text-2xl"
                 ></span>
             </div>
         </v-dark>
 
         <!-- Visit Shop Link -->
-        <a 
-            href="{{ route('shop.home.index') }}" 
+        <a
+            href="{{ route('shop.home.index') }}"
             target="_blank"
             class="hidden sm:flex"
         >
-            <span 
-                class="icon-store cursor-pointer rounded-md p-1.5 text-xl transition-all hover:bg-gray-100 dark:hover:bg-gray-950 sm:text-2xl"
+            <span
+                class="icon-store cursor-pointer rounded-full border border-transparent p-1.5 text-xl transition-all hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-800 dark:hover:bg-gray-950 sm:text-2xl"
                 title="@lang('admin::app.components.layouts.header.visit-shop')"
             >
             </span>
@@ -69,29 +69,46 @@
        <!-- Notification Component -->
         <v-notifications {{ $attributes }}>
             <span class="relative flex">
-                <span 
-                    class="icon-notification cursor-pointer rounded-md p-1.5 text-xl transition-all hover:bg-gray-100 dark:hover:bg-gray-950 sm:text-2xl" 
+                <span
+                    class="icon-notification cursor-pointer rounded-full border border-transparent p-1.5 text-xl transition-all hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-800 dark:hover:bg-gray-950 sm:text-2xl"
                     title="@lang('admin::app.components.layouts.header.notifications')"
                 >
                 </span>
             </span>
         </v-notifications>
 
+        <!-- Divider -->
+        <div class="mx-1 hidden h-8 w-px bg-gray-200 dark:bg-gray-800 sm:block"></div>
+
         <!-- Admin profile -->
         <x-admin::dropdown position="bottom-{{ core()->getCurrentLocale()->direction === 'ltr' ? 'right' : 'left' }}">
             <x-slot:toggle>
-                @if ($admin->image)
-                    <button class="flex h-8 w-8 cursor-pointer overflow-hidden rounded-full hover:opacity-80 focus:opacity-80 sm:h-9 sm:w-9">
-                        <img
-                            src="{{ $admin->image_url }}"
-                            class="h-full w-full object-cover"
-                        />
-                    </button>
-                @else
-                    <button class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-primary text-xs font-semibold leading-6 text-white transition-all hover:opacity-90 focus:opacity-90 sm:h-9 sm:w-9 sm:text-sm">
-                        {{ substr($admin->name, 0, 1) }}
-                    </button>
-                @endif
+                <button class="flex cursor-pointer items-center gap-2 rounded-full p-1 pr-1.5 transition-all hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-gray-950 dark:focus:bg-gray-950 sm:pr-2.5">
+                    @if ($admin->image)
+                        <span class="flex h-8 w-8 shrink-0 overflow-hidden rounded-full sm:h-9 sm:w-9">
+                            <img
+                                src="{{ $admin->image_url }}"
+                                class="h-full w-full object-cover"
+                            />
+                        </span>
+                    @else
+                        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold leading-6 text-white sm:h-9 sm:w-9 sm:text-sm">
+                            {{ substr($admin->name, 0, 1) }}
+                        </span>
+                    @endif
+
+                    <span class="hidden text-left leading-tight md:grid">
+                        <span class="text-sm font-semibold text-gray-800 dark:text-white">
+                            {{ $admin->name }}
+                        </span>
+
+                        <span class="text-xs text-gray-500 dark:text-gray-400">
+                            {{ $admin->role->name }}
+                        </span>
+                    </span>
+
+                    <span class="icon-sort-down hidden text-lg text-gray-500 dark:text-gray-400 md:block"></span>
+                </button>
             </x-slot>
 
             <!-- Admin Dropdown -->
@@ -208,12 +225,12 @@
         id="v-mega-search-template"
     >
         <div class="relative flex w-[200px] items-center sm:w-[300px] md:w-[400px] lg:w-[525px] xl:max-w-[525px] ltr:ml-2 rtl:mr-2 sm:ltr:ml-2.5 sm:rtl:mr-2.5">
-            <i class="icon-search absolute top-1.5 flex items-center text-xl ltr:left-2 rtl:right-2 sm:text-2xl sm:ltr:left-3 sm:rtl:right-3"></i>
+            <i class="icon-search absolute top-1.5 flex items-center text-xl text-gray-400 ltr:left-3 rtl:right-3 sm:text-2xl sm:ltr:left-4 sm:rtl:right-4"></i>
 
-            <input 
+            <input
                 type="text"
-                class="peer block w-full rounded-lg border bg-white px-8 py-1.5 text-sm leading-6 text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400 sm:px-10 sm:text-base"
-                :class="{'border-gray-400': isDropdownOpen}"
+                class="peer block w-full rounded-full border border-transparent bg-gray-100 px-8 py-1.5 text-sm leading-6 text-gray-600 transition-all hover:border-gray-300 focus:border-gray-300 focus:bg-white dark:border-gray-800 dark:bg-gray-950 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400 sm:px-10 sm:text-base"
+                :class="{'border-gray-300 bg-white': isDropdownOpen}"
                 placeholder="@lang('admin::app.components.layouts.header.mega-search.title')"
                 v-model.lazy="searchTerm"
                 @click="searchTerm.length >= 2 ? isDropdownOpen = true : {}"

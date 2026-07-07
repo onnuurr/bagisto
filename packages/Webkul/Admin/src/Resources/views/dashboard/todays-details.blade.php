@@ -16,12 +16,13 @@
 
         <!-- Total Sales Section -->
         <template v-else>
-            <div class="box-shadow rounded">
-                <div class="flex flex-wrap gap-4 border-b bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
+            <div class="grid gap-4">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
                     <!-- Today's Sales -->
-                    <div class="flex min-w-[200px] flex-1 gap-2.5">
-                        <div class="h-[60px] max-h-[60px] w-full max-w-[60px] dark:mix-blend-exclusion dark:invert">
+                    <div class="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
+                        <div class="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20">
                             <img
+                                class="h-6 w-6 dark:mix-blend-exclusion dark:invert"
                                 src="{{ bagisto_asset('images/total-sales.svg')}}"
                                 title="@lang('admin::app.dashboard.index.today-sales')"
                             >
@@ -29,11 +30,11 @@
 
                         <!-- Sales Stats -->
                         <div class="grid place-content-start gap-1">
-                            <p class="text-base font-semibold leading-none text-gray-800 dark:text-white">
+                            <p class="text-lg font-bold leading-none text-gray-800 dark:text-white">
                                 @{{ report.statistics.total_sales.formatted_total }}
                             </p>
 
-                            <p class="text-xs font-semibold text-gray-600 dark:text-gray-300">
+                            <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
                                 @lang('admin::app.dashboard.index.today-sales')
                             </p>
 
@@ -55,9 +56,10 @@
                     </div>
 
                     <!-- Today's Orders -->
-                    <div class="flex min-w-[200px] flex-1 gap-2.5">
-                        <div class="h-[60px] max-h-[60px] w-full max-w-[60px] dark:mix-blend-exclusion dark:invert">
+                    <div class="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
+                        <div class="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-success/10 dark:bg-success/20">
                             <img
+                                class="h-6 w-6 dark:mix-blend-exclusion dark:invert"
                                 src="{{ bagisto_asset('images/total-orders.svg')}}"
                                 title="@lang('admin::app.dashboard.index.today-orders')"
                             >
@@ -65,11 +67,11 @@
 
                         <!-- Orders Stats -->
                         <div class="grid place-content-start gap-1">
-                            <p class="text-base font-semibold leading-none text-gray-800 dark:text-white">
+                            <p class="text-lg font-bold leading-none text-gray-800 dark:text-white">
                                 @{{ report.statistics.total_orders.current }}
                             </p>
 
-                            <p class="text-xs font-semibold text-gray-600 dark:text-gray-300">
+                            <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
                                 @lang('admin::app.dashboard.index.today-orders')
                             </p>
 
@@ -91,9 +93,10 @@
                     </div>
 
                     <!-- Today's Customers -->
-                    <div class="flex min-w-[200px] flex-1 gap-2.5">
-                        <div class="h-[60px] max-h-[60px] w-full max-w-[60px] dark:mix-blend-exclusion dark:invert">
+                    <div class="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
+                        <div class="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/40">
                             <img
+                                class="h-6 w-6 dark:mix-blend-exclusion dark:invert"
                                 src="{{ bagisto_asset('images/customers.svg')}}"
                                 title="@lang('admin::app.dashboard.index.today-customers')"
                             >
@@ -101,11 +104,11 @@
 
                         <!-- Customers Stats -->
                         <div class="grid place-content-start gap-1">
-                            <p class="text-base font-semibold leading-none text-gray-800 dark:text-white">
+                            <p class="text-lg font-bold leading-none text-gray-800 dark:text-white">
                                 @{{ report.statistics.total_customers.current }}
                             </p>
 
-                            <p class="text-xs font-semibold text-gray-600 dark:text-gray-300">
+                            <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
                                 @lang('admin::app.dashboard.index.today-customers')
                             </p>
 
@@ -128,9 +131,10 @@
                 </div>
 
                 <!-- Today Orders Details -->
-                <div 
+                <div class="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
+                <div
                     v-for="order in report.statistics.orders"
-                    class="border-b bg-white p-4 transition-all hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-950"
+                    class="border-b bg-white p-4 last:border-b-0 transition-all hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-950"
                 >
                     <div class="flex flex-wrap gap-4">
                         <!-- Total Sales -->
@@ -204,6 +208,7 @@
                             </a>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </template>

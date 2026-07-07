@@ -83,7 +83,7 @@
             {!! view_render_event('bagisto.admin.dashboard.store_stats.before') !!}
 
             <!-- Store Stats -->
-            <div class="bg-white rounded box-shadow dark:bg-gray-900">
+            <div class="overflow-hidden rounded-lg border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
                 <!-- Total Sales Details -->
                 @include('admin::dashboard.total-sales')
 
