@@ -209,7 +209,8 @@
                 @foreach (menu()->getItems('admin') as $menuItem)
                     <div class="group/item relative">
                         <a
-                            href="{{ $menuItem->getUrl() }}"
+                            href="{{ $menuItem->haveChildren() ? 'javascript:void(0)' : $menuItem->getUrl() }}"
+                            @if ($menuItem->haveChildren()) data-sidebar-toggle @endif
                             class="flex items-center gap-2 p-1.5 cursor-pointer hover:rounded-lg {{ $menuItem->isActive() == 'active' ? 'bg-primary/10 rounded-lg dark:bg-primary/20' : ' hover:bg-primary/10 hover:dark:bg-primary/10' }} peer sm:gap-2.5"
                         >
                             <span class="{{ $menuItem->getIcon() }} text-xl {{ $menuItem->isActive() ? 'text-primary' : ''}} sm:text-2xl"></span>
@@ -217,10 +218,16 @@
                             <p class="font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap text-sm group-[.sidebar-collapsed]/container:hidden {{ $menuItem->isActive() ? 'text-primary' : ''}} sm:text-base">
                                 {{ $menuItem->getName() }}
                             </p>
+
+                            @if ($menuItem->haveChildren())
+                                <span
+                                    class="icon-sort-down sidebar-submenu-arrow ltr:ml-auto rtl:mr-auto text-base transition-transform duration-200 {{ $menuItem->isActive() ? 'rotate-180 text-primary' : 'text-gray-400' }}"
+                                ></span>
+                            @endif
                         </a>
 
                         @if ($menuItem->haveChildren())
-                            <div class="{{ $menuItem->isActive() ? ' !grid bg-gray-100 dark:bg-gray-950' : '' }} hidden min-w-[180px] ltr:pl-8 rtl:pr-8 pb-2 rounded-b-lg z-[100] sm:ltr:pl-10 sm:rtl:pr-10">
+                            <div class="sidebar-submenu {{ $menuItem->isActive() ? '' : 'hidden' }} grid min-w-[180px] gap-1 ltr:pl-8 rtl:pr-8 pb-2 rounded-b-lg z-[100] sm:ltr:pl-10 sm:rtl:pr-10">
                                 @foreach ($menuItem->getChildren() as $subMenuItem)
                                     <a
                                         href="{{ $subMenuItem->getUrl() }}"
