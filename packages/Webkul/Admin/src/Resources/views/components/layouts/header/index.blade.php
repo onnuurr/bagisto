@@ -206,42 +206,53 @@
         <div class="journal-scroll h-[calc(100vh-100px)] overflow-auto">
             <nav class="grid w-full gap-1.5 sm:gap-2">
                 <!-- Navigation Menu -->
-                @foreach (menu()->getItems('admin') as $menuItem)
-                    <div class="group/item relative">
-                        <a
-                            href="{{ $menuItem->haveChildren() ? 'javascript:void(0)' : $menuItem->getUrl() }}"
-                            @if ($menuItem->haveChildren()) data-sidebar-toggle @endif
-                            class="relative flex items-center gap-2.5 rounded-[5px] px-[15px] py-2 cursor-pointer peer {{ $menuItem->isActive() ? 'bg-primary/10 text-primary' : 'text-[#67748E] hover:bg-primary/10 hover:text-primary' }}"
-                        >
-                            <span class="{{ $menuItem->getIcon() }} shrink-0 text-lg {{ $menuItem->isActive() ? 'text-primary' : 'text-[#637381] group-hover/item:text-primary' }}"></span>
+                @foreach (menu()->getItems('admin') as $topMenuItem)
+                    @if ($topMenuItem->haveChildren())
+                        <!-- Section: real top-level item name used as-is, no invented category -->
+                        <p class="mb-1 mt-3 text-xs font-semibold uppercase tracking-wide text-[#1B2950] first:mt-0 dark:text-gray-400">
+                            {{ $topMenuItem->getName() }}
+                        </p>
+                    @endif
 
-                            <p class="whitespace-nowrap text-sm font-medium leading-none {{ $menuItem->isActive() ? 'text-primary' : '' }} sm:text-[15px]">
-                                {{ $menuItem->getName() }}
-                            </p>
-
-                            @if ($menuItem->haveChildren())
-                                <span
-                                    class="sidebar-submenu-arrow ltr:ml-auto rtl:mr-auto flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[rgba(27,41,80,0.04)] transition-transform duration-200 {{ $menuItem->isActive() ? 'rotate-90 !bg-[#FFEDDC]' : '' }}"
+                    <div class="grid gap-0.5" @if ($topMenuItem->haveChildren()) data-sidebar-section @endif>
+                        @foreach ($topMenuItem->haveChildren() ? $topMenuItem->getChildren() : [$topMenuItem] as $menuItem)
+                            <div class="group/item relative">
+                                <a
+                                    href="{{ $menuItem->haveChildren() ? 'javascript:void(0)' : $menuItem->getUrl() }}"
+                                    @if ($menuItem->haveChildren()) data-sidebar-toggle @endif
+                                    class="relative flex items-center gap-2.5 rounded-[5px] px-[15px] py-2 cursor-pointer peer {{ $menuItem->isActive() ? 'bg-primary/10 text-primary' : 'text-[#67748E] hover:bg-primary/10 hover:text-primary' }}"
                                 >
-                                    <span class="block h-[5px] w-[5px] rotate-[-45deg] border-b-2 border-r-2 border-[#5B6670]"></span>
-                                </span>
-                            @endif
-                        </a>
+                                    <span class="{{ $menuItem->getIcon() }} shrink-0 text-lg {{ $menuItem->isActive() ? 'text-primary' : 'text-[#637381] group-hover/item:text-primary' }}"></span>
 
-                        @if ($menuItem->haveChildren())
-                            <div class="sidebar-submenu {{ $menuItem->isActive() ? '' : 'hidden' }} grid min-w-[180px] gap-0.5 border-b border-[rgba(222,226,230,0.5)] pb-3.5 pt-1 ltr:pl-8 rtl:pr-8 z-[100] sm:ltr:pl-10 sm:rtl:pr-10">
-                                @foreach ($menuItem->getChildren() as $subMenuItem)
-                                    <a
-                                        href="{{ $subMenuItem->getUrl() }}"
-                                        class="group/sub flex items-center gap-2.5 whitespace-nowrap rounded-[5px] py-1.5 text-xs font-medium {{ $subMenuItem->isActive() ? 'text-primary' : 'text-[#67748E] hover:text-primary' }} sm:text-sm"
-                                    >
-                                        <span class="h-2 w-2 shrink-0 rounded-full border-2 border-white {{ $subMenuItem->isActive() ? 'bg-[#FE9F43]' : 'bg-[rgba(50,71,92,0.38)] group-hover/sub:bg-[#FE9F43]' }}"></span>
+                                    <p class="whitespace-nowrap text-sm font-medium leading-none {{ $menuItem->isActive() ? 'text-primary' : '' }} sm:text-[15px]">
+                                        {{ $menuItem->getName() }}
+                                    </p>
 
-                                        {{ $subMenuItem->getName() }}
-                                    </a>
-                                @endforeach
+                                    @if ($menuItem->haveChildren())
+                                        <span
+                                            class="sidebar-submenu-arrow ltr:ml-auto rtl:mr-auto flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[rgba(27,41,80,0.04)] transition-transform duration-200 {{ $menuItem->isActive() ? 'rotate-90 !bg-[#FFEDDC]' : '' }}"
+                                        >
+                                            <span class="block h-[5px] w-[5px] rotate-[-45deg] border-b-2 border-r-2 border-[#5B6670]"></span>
+                                        </span>
+                                    @endif
+                                </a>
+
+                                @if ($menuItem->haveChildren())
+                                    <div class="sidebar-submenu {{ $menuItem->isActive() ? '' : 'hidden' }} grid min-w-[180px] gap-0.5 border-b border-[rgba(222,226,230,0.5)] pb-3.5 pt-1 ltr:pl-8 rtl:pr-8 z-[100] sm:ltr:pl-10 sm:rtl:pr-10">
+                                        @foreach ($menuItem->getChildren() as $subMenuItem)
+                                            <a
+                                                href="{{ $subMenuItem->getUrl() }}"
+                                                class="group/sub flex items-center gap-2.5 whitespace-nowrap rounded-[5px] py-1.5 text-xs font-medium {{ $subMenuItem->isActive() ? 'text-primary' : 'text-[#67748E] hover:text-primary' }} sm:text-sm"
+                                            >
+                                                <span class="h-2 w-2 shrink-0 rounded-full border-2 border-white {{ $subMenuItem->isActive() ? 'bg-[#FE9F43]' : 'bg-[rgba(50,71,92,0.38)] group-hover/sub:bg-[#FE9F43]' }}"></span>
+
+                                                {{ $subMenuItem->getName() }}
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                @endif
                             </div>
-                        @endif
+                        @endforeach
                     </div>
                 @endforeach
             </nav>
