@@ -173,44 +173,49 @@
          * expands its own submenu inline and collapses any other open submenu
          * at the same level. In collapsed (icons-only) mode, children continue
          * to reveal via the existing hover flyout instead, so clicks are ignored.
+         *
+         * Delegated on `document` (rather than bound per toggle element) because
+         * Vue re-creates this whole subtree when it mounts on `#app` on window
+         * `load`, which happens after `DOMContentLoaded` and would silently drop
+         * any listeners attached directly to the server-rendered elements.
          */
-        const initSidebarAccordion = () => {
-            document.querySelectorAll('[data-sidebar-toggle]').forEach((toggle) => {
-                toggle.addEventListener('click', function (e) {
-                    e.preventDefault();
+        document.addEventListener('click', function (e) {
+            const toggle = e.target.closest('[data-sidebar-toggle]');
 
-                    if (this.closest('.sidebar-collapsed')) {
-                        return;
-                    }
+            if (! toggle) {
+                return;
+            }
 
-                    const submenu = this.parentElement.querySelector(':scope > .sidebar-submenu');
+            e.preventDefault();
 
-                    if (! submenu) {
-                        return;
-                    }
+            if (toggle.closest('.sidebar-collapsed')) {
+                return;
+            }
 
-                    const isOpen = ! submenu.classList.contains('hidden');
+            const submenu = toggle.parentElement.querySelector(':scope > .sidebar-submenu');
 
-                    const scope = this.closest('nav') ?? document;
+            if (! submenu) {
+                return;
+            }
 
-                    scope.querySelectorAll('.sidebar-submenu').forEach((otherSubmenu) => {
-                        if (otherSubmenu !== submenu) {
-                            otherSubmenu.classList.add('hidden');
+            const isOpen = ! submenu.classList.contains('hidden');
 
-                            otherSubmenu.parentElement
-                                .querySelector(':scope > a .sidebar-submenu-arrow')
-                                ?.classList.remove('rotate-90', '!bg-[#FFEDDC]');
-                        }
-                    });
+            const scope = toggle.closest('nav') ?? document;
 
-                    submenu.classList.toggle('hidden', isOpen);
+            scope.querySelectorAll('.sidebar-submenu').forEach((otherSubmenu) => {
+                if (otherSubmenu !== submenu) {
+                    otherSubmenu.classList.add('hidden');
 
-                    this.querySelector('.sidebar-submenu-arrow')?.classList.toggle('rotate-90', ! isOpen);
-                    this.querySelector('.sidebar-submenu-arrow')?.classList.toggle('!bg-[#FFEDDC]', ! isOpen);
-                });
+                    otherSubmenu.parentElement
+                        .querySelector(':scope > a .sidebar-submenu-arrow')
+                        ?.classList.remove('rotate-90', '!bg-[#FFEDDC]');
+                }
             });
-        };
 
-        document.addEventListener('DOMContentLoaded', initSidebarAccordion);
+            submenu.classList.toggle('hidden', isOpen);
+
+            toggle.querySelector('.sidebar-submenu-arrow')?.classList.toggle('rotate-90', ! isOpen);
+            toggle.querySelector('.sidebar-submenu-arrow')?.classList.toggle('!bg-[#FFEDDC]', ! isOpen);
+        });
     </script>
 @endpushOnce
