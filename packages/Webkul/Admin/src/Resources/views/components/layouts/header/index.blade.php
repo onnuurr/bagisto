@@ -32,7 +32,11 @@
         <!-- Mega Search Bar Vue Component -->
         <v-mega-search class="hidden sm:block">
             <div class="relative flex w-[200px] items-center sm:w-[300px] md:w-[400px] lg:w-[525px] xl:max-w-[525px] ltr:ml-2 rtl:mr-2 sm:ltr:ml-2.5 sm:rtl:mr-2.5">
-                <i class="icon-search absolute top-1.5 flex items-center text-xl text-gray-400 ltr:left-3 rtl:right-3 sm:text-2xl sm:ltr:left-4 sm:rtl:right-4"></i>
+                <img
+                    src="{{ bagisto_asset('images/icons/search.svg') }}"
+                    class="absolute top-2 h-4 w-4 ltr:left-3 rtl:right-3 dark:mix-blend-exclusion dark:invert sm:h-[18px] sm:w-[18px] sm:ltr:left-4 sm:rtl:right-4"
+                    alt="@lang('admin::app.components.layouts.header.mega-search.title')"
+                >
 
                 <input
                     type="text"
@@ -70,9 +74,14 @@
         <v-notifications {{ $attributes }}>
             <span class="relative flex">
                 <span
-                    class="icon-notification cursor-pointer rounded-full border border-transparent p-1.5 text-xl transition-all hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-800 dark:hover:bg-gray-950 sm:text-2xl"
+                    class="flex cursor-pointer items-center justify-center rounded-full border border-transparent p-1.5 transition-all hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-800 dark:hover:bg-gray-950"
                     title="@lang('admin::app.components.layouts.header.notifications')"
                 >
+                    <img
+                        src="{{ bagisto_asset('images/icons/notification-bing.svg') }}"
+                        class="h-5 w-5 dark:mix-blend-exclusion dark:invert sm:h-6 sm:w-6"
+                        alt="@lang('admin::app.components.layouts.header.notifications')"
+                    >
                 </span>
             </span>
         </v-notifications>
@@ -107,7 +116,11 @@
                         </span>
                     </span>
 
-                    <span class="icon-sort-down hidden text-lg text-gray-500 dark:text-gray-400 md:block"></span>
+                    <img
+                        src="{{ bagisto_asset('images/icons/chevron-down.svg') }}"
+                        class="hidden h-4 w-4 dark:mix-blend-exclusion dark:invert md:block"
+                        alt=""
+                    >
                 </button>
             </x-slot>
 
@@ -144,10 +157,16 @@
                     </x-admin::form>
 
                     <a
-                        class="cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-950 sm:px-5 sm:text-base"
+                        class="flex cursor-pointer items-center gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-950 sm:px-5 sm:text-base"
                         href="{{ route('admin.session.destroy') }}"
                         onclick="event.preventDefault(); document.getElementById('adminLogout').submit();"
                     >
+                        <img
+                            src="{{ bagisto_asset('images/icons/log-out.svg') }}"
+                            class="h-4 w-4"
+                            alt=""
+                        >
+
                         @lang('admin::app.components.layouts.header.logout')
                     </a>
                 </div>
@@ -225,7 +244,11 @@
         id="v-mega-search-template"
     >
         <div class="relative flex w-[200px] items-center sm:w-[300px] md:w-[400px] lg:w-[525px] xl:max-w-[525px] ltr:ml-2 rtl:mr-2 sm:ltr:ml-2.5 sm:rtl:mr-2.5">
-            <i class="icon-search absolute top-1.5 flex items-center text-xl text-gray-400 ltr:left-3 rtl:right-3 sm:text-2xl sm:ltr:left-4 sm:rtl:right-4"></i>
+            <img
+                src="{{ bagisto_asset('images/icons/search.svg') }}"
+                class="absolute top-2 h-4 w-4 ltr:left-3 rtl:right-3 dark:mix-blend-exclusion dark:invert sm:h-[18px] sm:w-[18px] sm:ltr:left-4 sm:rtl:right-4"
+                alt="@lang('admin::app.components.layouts.header.mega-search.title')"
+            >
 
             <input
                 type="text"
@@ -560,11 +583,16 @@
             <x-slot:toggle>
                 <span class="relative flex">
                     <span
-                        class="icon-notification text-red cursor-pointer rounded-md p-1.5 text-2xl transition-all hover:bg-gray-100 dark:hover:bg-gray-950" 
+                        class="flex cursor-pointer items-center justify-center rounded-full border border-transparent p-1.5 transition-all hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-800 dark:hover:bg-gray-950"
                         title="@lang('admin::app.components.layouts.header.notifications')"
                     >
+                        <img
+                            src="{{ bagisto_asset('images/icons/notification-bing.svg') }}"
+                            class="h-5 w-5 dark:mix-blend-exclusion dark:invert sm:h-6 sm:w-6"
+                            alt="@lang('admin::app.components.layouts.header.notifications')"
+                        >
                     </span>
-                
+
                     <span
                         class="absolute -top-2 flex h-5 min-w-5 cursor-pointer items-center justify-center rounded-full bg-primary p-1.5 text-[10px] font-semibold leading-[9px] text-white ltr:left-5 rtl:right-5"
                         v-if="totalUnRead"
