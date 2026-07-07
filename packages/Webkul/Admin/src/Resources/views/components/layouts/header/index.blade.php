@@ -32,12 +32,16 @@
         <!-- Mega Search Bar Vue Component -->
         <v-mega-search class="hidden sm:block">
             <div class="relative flex w-[200px] items-center sm:w-[300px] md:w-[400px] lg:w-[525px] xl:max-w-[525px] ltr:ml-2 rtl:mr-2 sm:ltr:ml-2.5 sm:rtl:mr-2.5">
-                <i class="icon-search absolute top-1.5 flex items-center text-xl ltr:left-2 rtl:right-2 sm:text-2xl sm:ltr:left-3 sm:rtl:right-3"></i>
+                <img
+                    src="{{ bagisto_asset('images/icons/search.svg') }}"
+                    class="absolute top-2 h-4 w-4 ltr:left-3 rtl:right-3 dark:mix-blend-exclusion dark:invert sm:h-[18px] sm:w-[18px] sm:ltr:left-4 sm:rtl:right-4"
+                    alt="@lang('admin::app.components.layouts.header.mega-search.title')"
+                >
 
-                <input 
-                    type="text" 
-                    class="block w-full rounded-lg border bg-white px-8 py-1.5 text-sm leading-6 text-gray-600 transition-all hover:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 sm:px-10 sm:text-base"
-                    placeholder="@lang('admin::app.components.layouts.header.mega-search.title')" 
+                <input
+                    type="text"
+                    class="block w-full rounded-full border border-transparent bg-gray-100 px-8 py-1.5 text-sm leading-6 text-gray-600 transition-all hover:border-gray-300 focus:border-gray-300 focus:bg-white dark:border-gray-800 dark:bg-gray-950 dark:text-gray-300 sm:px-10 sm:text-base"
+                    placeholder="@lang('admin::app.components.layouts.header.mega-search.title')"
                 >
             </div>
         </v-mega-search>
@@ -48,19 +52,19 @@
         <v-dark>
             <div class="flex">
                 <span
-                    class="{{ request()->cookie('dark_mode') ? 'icon-light' : 'icon-dark' }} cursor-pointer rounded-md p-1.5 text-xl transition-all hover:bg-gray-100 dark:hover:bg-gray-950 sm:text-2xl"
+                    class="{{ request()->cookie('dark_mode') ? 'icon-light' : 'icon-dark' }} cursor-pointer rounded-full border border-transparent p-1.5 text-xl transition-all hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-800 dark:hover:bg-gray-950 sm:text-2xl"
                 ></span>
             </div>
         </v-dark>
 
         <!-- Visit Shop Link -->
-        <a 
-            href="{{ route('shop.home.index') }}" 
+        <a
+            href="{{ route('shop.home.index') }}"
             target="_blank"
             class="hidden sm:flex"
         >
-            <span 
-                class="icon-store cursor-pointer rounded-md p-1.5 text-xl transition-all hover:bg-gray-100 dark:hover:bg-gray-950 sm:text-2xl"
+            <span
+                class="icon-store cursor-pointer rounded-full border border-transparent p-1.5 text-xl transition-all hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-800 dark:hover:bg-gray-950 sm:text-2xl"
                 title="@lang('admin::app.components.layouts.header.visit-shop')"
             >
             </span>
@@ -69,29 +73,55 @@
        <!-- Notification Component -->
         <v-notifications {{ $attributes }}>
             <span class="relative flex">
-                <span 
-                    class="icon-notification cursor-pointer rounded-md p-1.5 text-xl transition-all hover:bg-gray-100 dark:hover:bg-gray-950 sm:text-2xl" 
+                <span
+                    class="flex cursor-pointer items-center justify-center rounded-full border border-transparent p-1.5 transition-all hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-800 dark:hover:bg-gray-950"
                     title="@lang('admin::app.components.layouts.header.notifications')"
                 >
+                    <img
+                        src="{{ bagisto_asset('images/icons/notification-bing.svg') }}"
+                        class="h-5 w-5 dark:mix-blend-exclusion dark:invert sm:h-6 sm:w-6"
+                        alt="@lang('admin::app.components.layouts.header.notifications')"
+                    >
                 </span>
             </span>
         </v-notifications>
 
+        <!-- Divider -->
+        <div class="mx-1 hidden h-8 w-px bg-gray-200 dark:bg-gray-800 sm:block"></div>
+
         <!-- Admin profile -->
         <x-admin::dropdown position="bottom-{{ core()->getCurrentLocale()->direction === 'ltr' ? 'right' : 'left' }}">
             <x-slot:toggle>
-                @if ($admin->image)
-                    <button class="flex h-8 w-8 cursor-pointer overflow-hidden rounded-full hover:opacity-80 focus:opacity-80 sm:h-9 sm:w-9">
-                        <img
-                            src="{{ $admin->image_url }}"
-                            class="h-full w-full object-cover"
-                        />
-                    </button>
-                @else
-                    <button class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-primary text-xs font-semibold leading-6 text-white transition-all hover:opacity-90 focus:opacity-90 sm:h-9 sm:w-9 sm:text-sm">
-                        {{ substr($admin->name, 0, 1) }}
-                    </button>
-                @endif
+                <button class="flex cursor-pointer items-center gap-2 rounded-full p-1 pr-1.5 transition-all hover:bg-gray-100 focus:bg-gray-100 dark:hover:bg-gray-950 dark:focus:bg-gray-950 sm:pr-2.5">
+                    @if ($admin->image)
+                        <span class="flex h-8 w-8 shrink-0 overflow-hidden rounded-full sm:h-9 sm:w-9">
+                            <img
+                                src="{{ $admin->image_url }}"
+                                class="h-full w-full object-cover"
+                            />
+                        </span>
+                    @else
+                        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold leading-6 text-white sm:h-9 sm:w-9 sm:text-sm">
+                            {{ substr($admin->name, 0, 1) }}
+                        </span>
+                    @endif
+
+                    <span class="hidden text-left leading-tight md:grid">
+                        <span class="text-sm font-semibold text-gray-800 dark:text-white">
+                            {{ $admin->name }}
+                        </span>
+
+                        <span class="text-xs text-gray-500 dark:text-gray-400">
+                            {{ $admin->role->name }}
+                        </span>
+                    </span>
+
+                    <img
+                        src="{{ bagisto_asset('images/icons/chevron-down.svg') }}"
+                        class="hidden h-4 w-4 dark:mix-blend-exclusion dark:invert md:block"
+                        alt=""
+                    >
+                </button>
             </x-slot>
 
             <!-- Admin Dropdown -->
@@ -127,10 +157,16 @@
                     </x-admin::form>
 
                     <a
-                        class="cursor-pointer px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-950 sm:px-5 sm:text-base"
+                        class="flex cursor-pointer items-center gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-950 sm:px-5 sm:text-base"
                         href="{{ route('admin.session.destroy') }}"
                         onclick="event.preventDefault(); document.getElementById('adminLogout').submit();"
                     >
+                        <img
+                            src="{{ bagisto_asset('images/icons/log-out.svg') }}"
+                            class="h-4 w-4"
+                            alt=""
+                        >
+
                         @lang('admin::app.components.layouts.header.logout')
                     </a>
                 </div>
@@ -173,23 +209,34 @@
                 @foreach (menu()->getItems('admin') as $menuItem)
                     <div class="group/item relative">
                         <a
-                            href="{{ $menuItem->getUrl() }}"
-                            class="flex items-center gap-2 p-1.5 cursor-pointer hover:rounded-lg {{ $menuItem->isActive() == 'active' ? 'bg-primary/10 rounded-lg dark:bg-primary/20' : ' hover:bg-primary/10 hover:dark:bg-primary/10' }} peer sm:gap-2.5"
+                            href="{{ $menuItem->haveChildren() ? 'javascript:void(0)' : $menuItem->getUrl() }}"
+                            @if ($menuItem->haveChildren()) data-sidebar-toggle @endif
+                            class="relative flex items-center gap-2.5 rounded-[5px] px-[15px] py-2 cursor-pointer peer {{ $menuItem->isActive() ? 'bg-primary/10 text-primary' : 'text-[#67748E] hover:bg-primary/10 hover:text-primary' }}"
                         >
-                            <span class="{{ $menuItem->getIcon() }} text-xl {{ $menuItem->isActive() ? 'text-primary' : ''}} sm:text-2xl"></span>
+                            <span class="{{ $menuItem->getIcon() }} shrink-0 text-lg {{ $menuItem->isActive() ? 'text-primary' : 'text-[#637381] group-hover/item:text-primary' }}"></span>
 
-                            <p class="font-semibold text-gray-600 dark:text-gray-300 whitespace-nowrap text-sm group-[.sidebar-collapsed]/container:hidden {{ $menuItem->isActive() ? 'text-primary' : ''}} sm:text-base">
+                            <p class="whitespace-nowrap text-sm font-medium leading-none {{ $menuItem->isActive() ? 'text-primary' : '' }} sm:text-[15px]">
                                 {{ $menuItem->getName() }}
                             </p>
+
+                            @if ($menuItem->haveChildren())
+                                <span
+                                    class="sidebar-submenu-arrow ltr:ml-auto rtl:mr-auto flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[rgba(27,41,80,0.04)] transition-transform duration-200 {{ $menuItem->isActive() ? 'rotate-90 !bg-[#FFEDDC]' : '' }}"
+                                >
+                                    <span class="block h-[5px] w-[5px] rotate-[-45deg] border-b-2 border-r-2 border-[#5B6670]"></span>
+                                </span>
+                            @endif
                         </a>
 
                         @if ($menuItem->haveChildren())
-                            <div class="{{ $menuItem->isActive() ? ' !grid bg-gray-100 dark:bg-gray-950' : '' }} hidden min-w-[180px] ltr:pl-8 rtl:pr-8 pb-2 rounded-b-lg z-[100] sm:ltr:pl-10 sm:rtl:pr-10">
+                            <div class="sidebar-submenu {{ $menuItem->isActive() ? '' : 'hidden' }} grid min-w-[180px] gap-0.5 border-b border-[rgba(222,226,230,0.5)] pb-3.5 pt-1 ltr:pl-8 rtl:pr-8 z-[100] sm:ltr:pl-10 sm:rtl:pr-10">
                                 @foreach ($menuItem->getChildren() as $subMenuItem)
                                     <a
                                         href="{{ $subMenuItem->getUrl() }}"
-                                        class="text-xs {{ $subMenuItem->isActive() ? 'text-primary dark:text-primary-400' : 'text-gray-600 dark:text-gray-300' }} whitespace-nowrap py-1 group-[.sidebar-collapsed]/container:px-4 group-[.sidebar-collapsed]/container:py-2 group-[.inactive]/item:px-4 group-[.inactive]/item:py-2 hover:text-primary dark:hover:bg-gray-950 sm:text-sm sm:group-[.sidebar-collapsed]/container:px-5 sm:group-[.sidebar-collapsed]/container:py-2.5 sm:group-[.inactive]/item:px-5 sm:group-[.inactive]/item:py-2.5"
+                                        class="group/sub flex items-center gap-2.5 whitespace-nowrap rounded-[5px] py-1.5 text-xs font-medium {{ $subMenuItem->isActive() ? 'text-primary' : 'text-[#67748E] hover:text-primary' }} sm:text-sm"
                                     >
+                                        <span class="h-2 w-2 shrink-0 rounded-full border-2 border-white {{ $subMenuItem->isActive() ? 'bg-[#FE9F43]' : 'bg-[rgba(50,71,92,0.38)] group-hover/sub:bg-[#FE9F43]' }}"></span>
+
                                         {{ $subMenuItem->getName() }}
                                     </a>
                                 @endforeach
@@ -208,12 +255,16 @@
         id="v-mega-search-template"
     >
         <div class="relative flex w-[200px] items-center sm:w-[300px] md:w-[400px] lg:w-[525px] xl:max-w-[525px] ltr:ml-2 rtl:mr-2 sm:ltr:ml-2.5 sm:rtl:mr-2.5">
-            <i class="icon-search absolute top-1.5 flex items-center text-xl ltr:left-2 rtl:right-2 sm:text-2xl sm:ltr:left-3 sm:rtl:right-3"></i>
+            <img
+                src="{{ bagisto_asset('images/icons/search.svg') }}"
+                class="absolute top-2 h-4 w-4 ltr:left-3 rtl:right-3 dark:mix-blend-exclusion dark:invert sm:h-[18px] sm:w-[18px] sm:ltr:left-4 sm:rtl:right-4"
+                alt="@lang('admin::app.components.layouts.header.mega-search.title')"
+            >
 
-            <input 
+            <input
                 type="text"
-                class="peer block w-full rounded-lg border bg-white px-8 py-1.5 text-sm leading-6 text-gray-600 transition-all hover:border-gray-400 focus:border-gray-400 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400 sm:px-10 sm:text-base"
-                :class="{'border-gray-400': isDropdownOpen}"
+                class="peer block w-full rounded-full border border-transparent bg-gray-100 px-8 py-1.5 text-sm leading-6 text-gray-600 transition-all hover:border-gray-300 focus:border-gray-300 focus:bg-white dark:border-gray-800 dark:bg-gray-950 dark:text-gray-300 dark:hover:border-gray-400 dark:focus:border-gray-400 sm:px-10 sm:text-base"
+                :class="{'border-gray-300 bg-white': isDropdownOpen}"
                 placeholder="@lang('admin::app.components.layouts.header.mega-search.title')"
                 v-model.lazy="searchTerm"
                 @click="searchTerm.length >= 2 ? isDropdownOpen = true : {}"
@@ -543,11 +594,16 @@
             <x-slot:toggle>
                 <span class="relative flex">
                     <span
-                        class="icon-notification text-red cursor-pointer rounded-md p-1.5 text-2xl transition-all hover:bg-gray-100 dark:hover:bg-gray-950" 
+                        class="flex cursor-pointer items-center justify-center rounded-full border border-transparent p-1.5 transition-all hover:border-gray-200 hover:bg-gray-100 dark:hover:border-gray-800 dark:hover:bg-gray-950"
                         title="@lang('admin::app.components.layouts.header.notifications')"
                     >
+                        <img
+                            src="{{ bagisto_asset('images/icons/notification-bing.svg') }}"
+                            class="h-5 w-5 dark:mix-blend-exclusion dark:invert sm:h-6 sm:w-6"
+                            alt="@lang('admin::app.components.layouts.header.notifications')"
+                        >
                     </span>
-                
+
                     <span
                         class="absolute -top-2 flex h-5 min-w-5 cursor-pointer items-center justify-center rounded-full bg-primary p-1.5 text-[10px] font-semibold leading-[9px] text-white ltr:left-5 rtl:right-5"
                         v-if="totalUnRead"
